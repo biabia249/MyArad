@@ -8,9 +8,11 @@
     "scheme": "myarad",
     "userInterfaceStyle": "automatic",
     "ios": {
+      "bundleIdentifier": "com.myarad.app",
       "icon": "./assets/expo.icon"
     },
     "android": {
+      "package": "com.myarad.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -32,7 +34,8 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,
