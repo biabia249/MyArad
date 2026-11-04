@@ -94,3 +94,7 @@ Manually register an account, restart the backend and app, and sign in again. Tr
 Run `npm run backend` with Node 24+, `NODE_ENV=production`, an HTTPS `PUBLIC_BASE_URL`, configured credentials, and a persistent volume at `DATABASE_PATH`. Keep secrets in the hosting provider's secret settings and back up the database. This implementation is a single-instance backend. Multi-instance deployments need a shared database and shared rate limiter. The current limiter uses the connecting IP; configure trusted proxy handling deliberately if hosting behind a reverse proxy. Password signup does not yet require email ownership verification.
 
 Implementation references: [Google server OAuth](https://developers.google.com/identity/protocols/oauth2/web-server), [Expo authentication and redirects](https://docs.expo.dev/guides/authentication/), and [SecureStore](https://docs.expo.dev/versions/v58.0.0/sdk/securestore/).
+
+## Add a password to a Google account
+
+Sign in with Google, then fill New password and Confirm password and press Set password on the signed-in screen. This authenticated action adds a hashed password to the same account, preserves Google sign-in and the current session, and revokes other sessions. It cannot overwrite an existing password; use Forgot password for that. After saving, email/password login and emailed password resets work for this account. No database migration or native rebuild is required.

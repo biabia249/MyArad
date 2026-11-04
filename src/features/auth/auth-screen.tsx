@@ -5,6 +5,7 @@ import { ActivityIndicator, Keyboard, Text, View } from 'react-native';
 import { AuthButton, AuthField, AuthShell, GoogleButton, Title, ui } from './auth-ui';
 import { authService, type Profile } from './auth-service';
 import { validate, type Errors, type Values } from './validation';
+import { SetPasswordForm } from './set-password-form';
 
 const empty: Values = { fullName: '', username: '', email: '', password: '', confirmPassword: '', identifier: '' };
 export default function AuthScreen({ signup = false }: { signup?: boolean }) {
@@ -64,7 +65,8 @@ export default function AuthScreen({ signup = false }: { signup?: boolean }) {
     <Title>{profile ? (signup ? 'You’re all set' : 'Welcome back') : signup ? 'Sign up' : 'Sign in'}</Title>
     {profile ? <>
       <Text style={ui.message}>{`You’re signed in as ${profile.fullName}.`}</Text>
-      {!!message && <Text accessibilityRole="alert" style={ui.error}>{message}</Text>}
+      {profile.hasPassword === false && <SetPasswordForm onSaved={updated => { setProfile(updated); setMessage('Password saved. You can now sign in with your email and password, or Google.'); }} />}
+      {!!message && <Text accessibilityLiveRegion="polite" style={ui.message}>{message}</Text>}
       <View style={ui.actions}><AuthButton title="Sign out" onPress={signOut} loading={busy} /></View>
     </> : <>
       {fields.map(({ key, label, icon, placeholder }) => <AuthField key={key} nativeID={key} label={label} icon={icon} placeholder={placeholder} value={values[key]} error={errors[key]} editable={!busy} password={key === 'password' || key === 'confirmPassword'} autoCapitalize={key === 'fullName' ? 'words' : 'none'} keyboardType={key === 'email' ? 'email-address' : 'default'} autoComplete={key === 'fullName' ? 'name' : key === 'email' ? 'email' : key === 'username' || key === 'identifier' ? 'username' : signup ? 'new-password' : 'current-password'} returnKeyType="done" onSubmitEditing={submit} onBlur={() => setErrors(previous => ({ ...previous, [key]: validate(values, signup)[key] }))} onChangeText={value => {

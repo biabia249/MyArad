@@ -4,7 +4,7 @@ import * as SecureStore from 'expo-secure-store';
 import * as WebBrowser from 'expo-web-browser';
 import { Platform } from 'react-native';
 
-export type Profile = { fullName: string; username: string; email: string };
+export type Profile = { fullName: string; username: string; email: string; hasPassword: boolean };
 type Session = { token: string; profile: Profile };
 const tokenKey = 'myarad.session';
 const verifierKey = 'myarad.google-verifier';
@@ -68,7 +68,7 @@ async function completeGoogleRedirect(code: string | null, error: string | null)
   finally { await clearVerifier(); exchange = null; }
 }
 export const authService = {
-  async signUp(profile: Profile, password: string) {
+  async signUp(profile: Omit<Profile, 'hasPassword'>, password: string) {
     return saveSession(await request<Session>('/auth/signup', { ...profile, password }));
   },
   async signIn(identifier: string, password: string) {
@@ -91,6 +91,13 @@ export const authService = {
     }
     await removeToken();
     completedGoogle = null;
+  },
+  async setPassword(password: string) {
+    const token = await readToken();
+    if (!token) throw new Error('Please sign in with Google first.');
+    const result = await request<{ profile: Profile }>('/auth/password/set', { password }, token);
+    completedGoogle = null;
+    return result.profile;
   },
   async resetPassword(email: string) {
     return (await request<{ message: string }>('/auth/password/reset', { email })).message;

@@ -27,7 +27,7 @@ test('password accounts validate, authenticate by username/email, and revoke ses
   assert.equal((await call('/auth/signup', { ...account, password: 'short' })).status, 400);
   const registered = await call('/auth/signup', account);
   assert.equal(registered.status, 201);
-  assert.deepEqual(registered.data.profile, { fullName: account.fullName, username: account.username, email: account.email });
+  assert.deepEqual(registered.data.profile, { fullName: account.fullName, username: account.username, email: account.email, hasPassword: true });
   assert.equal((await call('/auth/signup', { ...account, email: 'TEST@example.com' })).status, 409);
   for (const identifier of ['TESTER', 'TEST@example.com']) {
     const result = await call('/auth/signin', { identifier, password: account.password });
@@ -158,9 +158,51 @@ test('reset email and server-hosted form update the password through HTTP', asyn
   const token = new URL(email.text.split(' ').at(-1)).searchParams.get('token');
   const form = await fetch(`${base}/auth/password/reset?token=${token}`);
   assert.equal(form.status, 200);
-  assert.match(await form.text(), /autocomplete="new-password"/);
-  const confirm = await fetch(`${base}/auth/password/confirm`, { method: 'POST', headers: { Origin: 'http://localhost:3001', 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ token, password: 'Changed-Password-123!' }) });
+  assert.equal(form.headers.get('referrer-policy'), 'same-origin');
+  const html = await form.text();
+  assert.match(html, /autocomplete="new-password"/);
+  assert.match(html, /name="confirmPassword"/);
+  assert.match(form.headers.get('content-security-policy'), /style-src 'sha256-/);
+  const mismatch = await fetch(`${base}/auth/password/confirm`, { method: 'POST', headers: { Origin: 'http://localhost:3001', 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ token, password: 'Changed-Password-123!', confirmPassword: 'Different-Password-123!' }) });
+  assert.equal(mismatch.status, 400);
+  const mismatchHtml = await mismatch.text();
+  assert.match(mismatchHtml, /Passwords do not match/);
+  assert.equal(mismatchHtml.includes('Changed-Password-123!'), false);
+  assert.equal((await call('/auth/signin', { identifier: account.email, password: account.password })).status, 200);
+  for (const origin of ['null', 'https://untrusted.example']) {
+    const blocked = await fetch(`${base}/auth/password/confirm`, { method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ token, password: 'Changed-Password-123!', confirmPassword: 'Changed-Password-123!' }) });
+    assert.equal(blocked.status, 403);
+  }
+  const confirm = await fetch(`${base}/auth/password/confirm`, { method: 'POST', headers: { Origin: 'http://localhost:3001', 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ token, password: 'Changed-Password-123!', confirmPassword: 'Changed-Password-123!' }) });
   assert.equal(confirm.status, 200);
+  assert.match(await confirm.text(), /Return to the MyArad app/);
   assert.equal((await call('/auth/me', undefined, session.data.token)).status, 401);
   assert.equal((await call('/auth/signin', { identifier: account.email, password: 'Changed-Password-123!' })).status, 200);
+});
+
+
+test('Google users can set an initial password only with a valid session, keeping their account and Google sign-in', async t => {
+  const store = createStore(':memory:');
+  const claims = { sub: 'set-password-google', email: 'google-password@example.com', email_verified: true, name: 'Google User' };
+  const user = store.googleUser(claims);
+  const session = store.session(user), otherSession = store.session(user);
+  const { call } = await setup(t, {}, { store });
+  assert.equal(session.profile.hasPassword, false);
+  assert.equal((await call('/auth/password/set', { password: 'New-Password-123!' })).status, 401);
+  assert.equal((await call('/auth/password/set', { password: 'New-Password-123!' }, randomToken())).status, 401);
+  assert.equal((await call('/auth/password/set', { password: 'short' }, session.token)).status, 400);
+  const saved = await call('/auth/password/set', { password: 'New-Password-123!' }, session.token);
+  assert.equal(saved.status, 200);
+  assert.equal(saved.data.profile.hasPassword, true);
+  assert.equal(saved.data.profile.email, claims.email);
+  assert.equal((await call('/auth/me', undefined, session.token)).status, 200);
+  assert.equal((await call('/auth/me', undefined, otherSession.token)).status, 401);
+  assert.equal((await call('/auth/password/set', { password: 'Overwrite-Password-123!' }, session.token)).status, 409);
+  assert.equal((await call('/auth/signin', { identifier: claims.email, password: 'New-Password-123!' })).status, 200);
+  assert.equal((await call('/auth/signin', { identifier: claims.email, password: 'Overwrite-Password-123!' })).status, 401);
+  assert.equal(store.googleUser(claims).id, user.id);
+  assert.equal(store.db.prepare('SELECT COUNT(*) AS count FROM users').get().count, 1);
+  assert.notEqual(store.get(user.id).password_hash, 'New-Password-123!');
+  const existing = await call('/auth/signup', account);
+  assert.equal((await call('/auth/password/set', { password: 'Overwrite-Password-123!' }, existing.data.token)).status, 409);
 });

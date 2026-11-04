@@ -7,7 +7,7 @@ import { dirname } from 'node:path';
 const scrypt = promisify(scryptCallback);
 export const hash = value => createHash('sha256').update(value).digest('hex');
 export const randomToken = () => randomBytes(32).toString('base64url');
-export const profile = row => ({ fullName: row.full_name, username: row.username, email: row.email });
+export const profile = row => ({ fullName: row.full_name, username: row.username, email: row.email, hasPassword: !!row.password_hash });
 export class HttpError extends Error {
   constructor(status, message) { super(message); this.status = status; }
 }
@@ -78,6 +78,22 @@ export function createStore(filename) {
         user = get(id);
       }
       return user;
+    },
+    async setInitialPassword(token, password) {
+      const user = this.authenticate(token);
+      if (!user.google_sub || user.password_hash) throw new HttpError(409, 'A password is already set. Use Forgot password to change it.');
+      const encoded = await passwordHash(password);
+      // Recheck the session after hashing, and prevent concurrent overwrites.
+      this.authenticate(token);
+      db.exec('BEGIN IMMEDIATE');
+      try {
+        const updated = db.prepare('UPDATE users SET password_hash=? WHERE id=? AND password_hash IS NULL AND google_sub IS NOT NULL').run(encoded, user.id);
+        if (!updated.changes) throw new HttpError(409, 'A password is already set. Use Forgot password to change it.');
+        db.prepare('DELETE FROM sessions WHERE user_id=? AND digest<>?').run(user.id, hash(token));
+        db.prepare('DELETE FROM resets WHERE user_id=?').run(user.id);
+        db.exec('COMMIT');
+      } catch (error) { db.exec('ROLLBACK'); throw error; }
+      return profile(get(user.id));
     },
     async resetPassword(token, password) {
       const row = db.prepare('SELECT * FROM resets WHERE digest=? AND expires>?').get(hash(token), Date.now());

@@ -1,3 +1,4 @@
+import { sendResetPage } from './reset-page.mjs';
 import { createServer } from 'node:http';
 import { OAuth2Client } from 'google-auth-library';
 import { createStore, hash, randomToken, profile, HttpError } from './store.mjs';
@@ -12,7 +13,6 @@ const password = data => {
   if (value.length < 8) throw new HttpError(400, 'Use a password with 8–128 characters.');
   return value;
 };
-const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const json = (res, status, body) => { res.writeHead(status, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(body)); };
 const redirect = (res, location) => { res.writeHead(302, { Location: location }); res.end(); };
 async function body(req) {
@@ -73,6 +73,13 @@ export function createApp(config, dependencies = {}) {
       if (route === 'POST /auth/signin') {
         const data = await body(req);
         json(res, 200, await store.signIn(string(data, 'identifier').trim(), string(data, 'password', 128))); return;
+      }
+      if (route === 'POST /auth/password/set') {
+        const token = req.headers.authorization?.match(/^Bearer ([A-Za-z0-9_-]{43})$/)?.[1];
+        if (!token) throw new HttpError(401, 'Please sign in with Google first.');
+        store.authenticate(token);
+        const data = await body(req);
+        json(res, 200, { profile: await store.setInitialPassword(token, password(data)) }); return;
       }
       if (route === 'GET /auth/me' || route === 'POST /auth/signout') {
         const token = req.headers.authorization?.match(/^Bearer ([A-Za-z0-9_-]{43})$/)?.[1];
@@ -139,13 +146,22 @@ export function createApp(config, dependencies = {}) {
       if (route === 'GET /auth/password/reset') {
         const token = url.searchParams.get('token') || '';
         if (!/^[A-Za-z0-9_-]{43}$/.test(token)) throw new HttpError(400, 'Invalid reset link.');
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        res.end(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Reset MyArad password</title><h1>Reset your password</h1><form method="post" action="/auth/password/confirm"><input type="hidden" name="token" value="${escapeHtml(token)}"><label>New password (8–128 characters) <input type="password" name="password" required minlength="8" maxlength="128" autocomplete="new-password"></label><button type="submit">Save password</button></form></html>`); return;
+        sendResetPage(res, { token }); return;
       }
       if (route === 'POST /auth/password/confirm') {
         const data = await body(req);
-        await store.resetPassword(string(data, 'token', 128), password(data));
-        json(res, 200, { message: 'Password updated. Return to MyArad to sign in.' }); return;
+        const form = req.headers['content-type']?.startsWith('application/x-www-form-urlencoded');
+        try {
+          const nextPassword = password(data);
+          if (string(data, 'confirmPassword', 128) !== nextPassword) throw new HttpError(400, 'Passwords do not match. Please enter the same password in both fields.');
+          await store.resetPassword(string(data, 'token', 128), nextPassword);
+        } catch (error) {
+          if (!form || !(error instanceof HttpError)) throw error;
+          sendResetPage(res, { token: typeof data.token === 'string' ? data.token : '', error: error.message, status: error.status }); return;
+        }
+        if (form) sendResetPage(res, { success: true });
+        else json(res, 200, { message: 'Password updated. Return to MyArad to sign in.' });
+        return;
       }
       throw new HttpError(404, 'Not found.');
     } catch (error) {
