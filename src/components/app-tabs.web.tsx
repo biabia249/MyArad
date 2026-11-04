@@ -1,3 +1,4 @@
+import { SoundPressable as Pressable } from '@/components/sound-pressable';
 import {
   Tabs,
   TabList,
@@ -8,7 +9,7 @@ import {
 } from 'expo-router/ui';
 import { SymbolView } from 'expo-symbols';
 import type { ComponentProps } from 'react';
-import { Pressable, useColorScheme, View, StyleSheet } from 'react-native';
+import { useColorScheme, View, StyleSheet } from 'react-native';
 
 import { Colors, MaxContentWidth, Spacing } from '@/constants/theme';
 

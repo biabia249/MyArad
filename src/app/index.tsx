@@ -1,6 +1,7 @@
+import { SoundPressable as Pressable } from '@/components/sound-pressable';
 import { AuthShell, coral, ui } from '@/features/auth/auth-ui';
 import { Link } from 'expo-router';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default function WelcomeScreen() {
   return <AuthShell variant="welcome"><Text accessibilityRole="header" style={ui.title}>Welcome</Text>

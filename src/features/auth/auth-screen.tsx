@@ -1,3 +1,4 @@
+import { useButtonSound } from '@/components/button-sound';
 import { Link } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Keyboard, Text, View } from 'react-native';
@@ -7,6 +8,7 @@ import { validate, type Errors, type Values } from './validation';
 
 const empty: Values = { fullName: '', username: '', email: '', password: '', confirmPassword: '', identifier: '' };
 export default function AuthScreen({ signup = false }: { signup?: boolean }) {
+  const playButtonSound = useButtonSound();
   const [values, setValues] = useState(empty);
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
@@ -71,11 +73,11 @@ export default function AuthScreen({ signup = false }: { signup?: boolean }) {
         else setErrors(previous => ({ ...previous, [key]: undefined }));
         setMessage('');
       }} />)}
-      {!signup && <Link href="/forgot-password" style={[ui.link, { alignSelf: 'flex-end' }]}>Forgot password?</Link>}
+      {!signup && <Link onPress={playButtonSound} href="/forgot-password" style={[ui.link, { alignSelf: 'flex-end' }]}>Forgot password?</Link>}
       {!!message && <Text accessibilityRole="alert" style={ui.error}>{message}</Text>}
       <View style={ui.actions}><AuthButton title={signup ? 'Sign Up' : 'Sign In'} onPress={submit} loading={busy} />
         <GoogleButton onPress={googleSignIn} disabled={busy} loading={googleBusy} signup={signup} />
-        <View style={ui.footer}><Text style={ui.small}>{signup ? 'Already have an account?' : 'Don’t have an account?'}</Text><Link href={signup ? '/signin' : '/signup'} replace style={ui.link}>{signup ? 'Sign in' : 'Sign up'}</Link></View>
+        <View style={ui.footer}><Text style={ui.small}>{signup ? 'Already have an account?' : 'Don’t have an account?'}</Text><Link onPress={playButtonSound} href={signup ? '/signin' : '/signup'} replace style={ui.link}>{signup ? 'Sign in' : 'Sign up'}</Link></View>
       </View>
     </>}
   </AuthShell>;
