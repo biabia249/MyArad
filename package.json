@@ -38,11 +38,12 @@
     "typescript": "~6.0.3"
   },
   "scripts": {
-    "backend": "node --env-file-if-exists=server/.env server/index.mjs",
+    "backend": "node --use-system-ca --env-file-if-exists=server/.env server/index.mjs",
     "test:backend": "node --test server/*.test.mjs",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
+    "android:windows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/android-windows.ps1",
     "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "expo lint"
