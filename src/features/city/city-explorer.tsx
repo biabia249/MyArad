@@ -266,7 +266,9 @@ export default function CityExplorer(props: CityProps) {
             setMobileList(false);
           }
         });
-        const observer = new ResizeObserver(() => { if (!cancelled) m.invalidateSize(); });
+        const observer = new ResizeObserver(() => {
+          if (!cancelled && mapElement.current?.clientWidth && mapElement.current.clientHeight) m.invalidateSize({ pan: false });
+        });
         observer.observe(mapElement.current);
         (m as Leaflet.Map & { disposeResize?: () => void }).disposeResize =
           () => observer.disconnect();
@@ -477,11 +479,13 @@ export default function CityExplorer(props: CityProps) {
   }, [mapReady, mapZoom, items.map((p) => p.id).join("|"), selected?.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!selected || !map.current) return;
-    map.current.flyTo(
-      [selected.lat, selected.lng],
-      Math.max(map.current.getZoom(), 16),
-      { duration: 0.6 },
-    );
+    // Keep selection stable when Expo hides this screen during navigation.
+    if (Number.isFinite(selected.lat) && Number.isFinite(selected.lng))
+      map.current.setView(
+        [selected.lat, selected.lng],
+        Math.max(map.current.getZoom(), 16),
+        { animate: false },
+      );
     setDetails(null);
     setComment("");
     setCorrection(false);
