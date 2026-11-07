@@ -713,7 +713,6 @@ export default function CityExplorer(props: CityProps) {
             ["/map", t.explore],
             ["/transport", lang === "ro" ? "Cum ajung?" : "Get there"],
             ["/events", t.events],
-            ["/vasile", "Vasile"],
             ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
             ["/schools", lang === "ro" ? "Școli & UAV" : "Schools & UAV"],
             ["/schedule", lang === "ro" ? "Programul meu" : "My schedule"],
@@ -1541,12 +1540,20 @@ export default function CityExplorer(props: CityProps) {
           </aside>
         )}
       </div>
+      {!vasilePage && !composer && <button
+        className="vasile-launcher"
+        aria-label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"}
+        title={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"}
+        onClick={() => void action(() => props.onNavigate("/vasile"))}
+      >
+        <span className="vasile-launcher-letter" aria-hidden="true">V</span>
+        <span className="vasile-launcher-name" aria-hidden="true">Vasile</span>
+      </button>}
       <nav className="mobile-page-nav">
         {[
           ["/map", t.street],
           ["/transport", lang === "ro" ? "Cum ajung?" : "Directions"],
           ["/events", t.events],
-            ["/vasile", "Vasile"],
           ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
           ["/schools", lang === "ro" ? "Școli" : "Schools"],
           ["/schedule", lang === "ro" ? "Program" : "Schedule"],

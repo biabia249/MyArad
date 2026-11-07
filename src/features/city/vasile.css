@@ -274,3 +274,39 @@
     padding-right: 5px !important;
   }
 }
+
+.city-app .vasile-launcher {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 650;
+  width: 66px;
+  height: 66px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border: 2px solid #dce7f5;
+  border-radius: 50%;
+  background: #244e83;
+  color: #fff;
+  box-shadow: 0 5px 18px #152b4940;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.vasile-launcher-letter { font: 29px/1 Georgia, serif; }
+.vasile-launcher-name { font-size: 10px; font-weight: 600; letter-spacing: .02em; }
+.city-app .vasile-launcher:hover { transform: translateY(-3px); box-shadow: 0 8px 22px #152b4955; }
+.city-app .vasile-launcher:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+@media (max-width: 700px) {
+  .city-app .vasile-launcher {
+    width: 60px;
+    height: 60px;
+    right: 16px;
+    bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .city-app .vasile-launcher { transition: none; }
+}
