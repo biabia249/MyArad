@@ -80,3 +80,31 @@ and scrolling behavior too. Google sign-in needs Google credentials and a
 browser-accessible backend callback; password reset delivery needs Resend.
 See `AUTHENTICATION.md` for those integrations. Automated integration tests use
 test doubles for Google and email delivery.
+
+## Physical Android phone (current development build)
+
+Run `npm run phones` for Metro with a LAN API address (rather than the emulator-only
+10.0.2.2 address), alongside `npm run backend`. The current Android WebView startup
+fix is applied by `npm ci` through `patch-package`; use a MyArad development build,
+not stock Expo Go on Android, to include it.
+
+Build an APK for physical phones and the emulator:
+
+```bash
+cd android
+./gradlew assembleDebug -PreactNativeArchitectures=arm64-v8a,x86_64
+cd ..
+npm run android:share
+```
+
+Open the install page printed by `android:share` on the phone. Download/install the
+APK, return to the page and tap **Open MyArad** to connect it to Metro. Alternatively,
+use `adb install -r android/app/build/outputs/apk/debug/app-debug.apk` over USB.
+The backend and Metro must stay running. Allow the printed ports through the host
+firewall for the local network. The generated install page is for local development only and uses Metro’s existing port.
+Remove `public/device-test/` before making a release export.
+
+The Android WebView patch registers Expo's initial props using AndroidX's document
+start script API, avoiding the asynchronous onPageStarted injection race. Keep
+Android System WebView updated. The patch is limited to RNCWebView.java and pinned
+to react-native-webview 14.0.1. Re-evaluate it before updating that dependency.

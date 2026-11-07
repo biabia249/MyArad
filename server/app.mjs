@@ -113,10 +113,28 @@ export function createApp(config, dependencies = {}) {
       }
       const ip = req.socket.remoteAddress || "unknown";
       // No untrusted X-Forwarded-For; configure proxy IP handling before scaling.
-      const count = (limits.get(ip) || 0) + 1;
-      if (limits.size > 10000 || count > 60)
+      let budgetKey = ip,
+        budget = 60;
+      if (url.pathname.startsWith("/city/")) {
+        budgetKey = `city:${ip}`;
+        budget = 120;
+        const token = req.headers.authorization?.match(
+          /^Bearer ([A-Za-z0-9_-]{43})$/,
+        )?.[1];
+        if (token) {
+          try {
+            const user = store.authenticate(token);
+            budgetKey = `city:${user.id}`;
+            budget = 240;
+          } catch {
+            /* Invalid credentials retain the public limit. */
+          }
+        }
+      }
+      const count = (limits.get(budgetKey) || 0) + 1;
+      if (limits.size > 10000 || count > budget)
         throw new HttpError(429, "Too many attempts. Please wait a minute.");
-      limits.set(ip, count);
+      limits.set(budgetKey, count);
       if (
         origin &&
         !allowedOrigins.has(origin) &&

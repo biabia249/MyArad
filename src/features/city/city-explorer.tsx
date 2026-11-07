@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type * as Leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./city.css";
+import { Notifications } from "./notifications";
+import { SocialView, Avatar } from "./social-view";
 import { Journey } from "./journey";
 import { decodePath, type Itinerary } from "./transit-types";
 import { ScheduleView, AddPlan } from "./schedule-view";
@@ -32,6 +34,10 @@ const categories = [
   "park",
   "nightlife",
   "education",
+  "sport",
+  "health",
+  "entertainment",
+  "stay",
   "events",
 ] as const;
 const eventCategories = [
@@ -341,7 +347,13 @@ export default function CityExplorer(props: CityProps) {
         landmark: "attraction sights atractii turism",
         park: "park parc outdoors natura",
         culture: "culture cultura arta museum muzeu",
-        nightlife: "bar pub nightlife seara",
+        nightlife: "bar pub nightlife seara club",
+        sport:
+          "sport gym fitness sala dans dance crossfit fotbal baschet tenis",
+        health: "clinica clinic spital doctor sanatate medical",
+        entertainment:
+          "entertainment distractie bowling biliard escape catarat",
+        stay: "cazare hotel pensiune camping",
         music: "music muzica concert",
         coffee: "coffee cafea",
         art: "art arta",
@@ -592,6 +604,7 @@ export default function CityExplorer(props: CityProps) {
         maxZoom: 16,
       });
   };
+  const socialPage = props.initialPage === "people";
   const schedulePage = props.initialPage === "schedule";
   const transportPage = props.initialPage === "transport";
   return (
@@ -631,6 +644,7 @@ export default function CityExplorer(props: CityProps) {
             ["/map", t.explore],
             ["/transport", lang === "ro" ? "Cum ajung?" : "Get there"],
             ["/events", t.events],
+            ["/people", lang === "ro" ? "Oameni" : "People"],
             ["/schools", lang === "ro" ? "Școli & UAV" : "Schools & UAV"],
             ["/schedule", lang === "ro" ? "Programul meu" : "My schedule"],
           ].map(([path, title]) => (
@@ -646,6 +660,14 @@ export default function CityExplorer(props: CityProps) {
           ))}
         </nav>
         <div className="header-actions">
+          {props.userName && (
+            <Notifications
+              api={api}
+              onEnablePush={props.onEnablePush}
+              ro={lang === "ro"}
+              onOpen={() => void props.onNavigate("/people")}
+            />
+          )}
           <button
             className="theme-toggle"
             aria-label={
@@ -687,6 +709,17 @@ export default function CityExplorer(props: CityProps) {
           </button>
         </div>
       </header>
+      {socialPage && (
+        <SocialView
+          api={api}
+          lang={lang}
+          signedIn={!!props.userName}
+          onSignIn={() => void props.onSignIn()}
+          onProfile={(username) =>
+            void props.onNavigate("/citizen/" + username)
+          }
+        />
+      )}
       {schedulePage && (
         <ScheduleView
           lang={lang}
@@ -696,7 +729,7 @@ export default function CityExplorer(props: CityProps) {
       )}
       <div
         className="city-workspace"
-        style={schedulePage ? { display: "none" } : undefined}
+        style={schedulePage || socialPage ? { display: "none" } : undefined}
       >
         {transportPage && (
           <aside className="transport-sidebar">
@@ -715,6 +748,7 @@ export default function CityExplorer(props: CityProps) {
               lang={lang}
               props={props}
               places={data.places}
+              destination={props.initialDestination}
               position={position}
               onRoute={setJourney}
               onLine={drawLine}
@@ -1023,6 +1057,29 @@ export default function CityExplorer(props: CityProps) {
                       </small>
                     </div>
                   </div>
+                  {!!details?.participants?.length && (
+                    <div
+                      className="participant-list"
+                      aria-label={
+                        lang === "ro" ? "Participanți" : "Participants"
+                      }
+                    >
+                      {details.participants.map((person) => (
+                        <button
+                          key={person.username}
+                          title={
+                            person.fullName + " (@" + person.username + ")"
+                          }
+                          onClick={() => {
+                            void props.onNavigate("/people");
+                          }}
+                        >
+                          <Avatar person={person} />
+                          <small>{person.fullName}</small>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                   <button
                     className={`primary attendance ${details?.going ? "attendance-going" : ""}`}
                     disabled={busy || !details}
@@ -1122,7 +1179,10 @@ export default function CityExplorer(props: CityProps) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {selectedPlace.wiki_source ? "Wikipedia" : t.source} ↗
+                    {selectedPlace.wiki_source
+                      ? "Wikipedia"
+                      : selectedPlace.source_label || t.source}{" "}
+                    ↗
                   </a>
                   {selectedPlace.image && (
                     <a
@@ -1358,6 +1418,7 @@ export default function CityExplorer(props: CityProps) {
           ["/map", t.street],
           ["/transport", lang === "ro" ? "Cum ajung?" : "Directions"],
           ["/events", t.events],
+          ["/people", lang === "ro" ? "Oameni" : "People"],
           ["/schools", lang === "ro" ? "Școli" : "Schools"],
           ["/schedule", lang === "ro" ? "Program" : "Schedule"],
         ].map(([path, title]) => (

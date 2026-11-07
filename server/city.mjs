@@ -1,3 +1,4 @@
+import { createSocial } from "./social.mjs";
 import { randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { HttpError } from "./store.mjs";
@@ -49,6 +50,7 @@ export function createCity(store, config) {
     if (!token) throw new HttpError(401, "Please sign in to participate.");
     return store.authenticate(token);
   };
+  const social = createSocial(db, author);
   const event = (id) => {
     const row = db
       .prepare(
@@ -62,6 +64,7 @@ export function createCity(store, config) {
     !!user && (config.eventPosting === "signed-in" || !!user.google_sub);
   return async function city(req, url, body) {
     const path = url.pathname;
+    if (path.startsWith("/city/social/")) return social(req, url, body);
     if (req.method === "GET" && path === "/city/bootstrap") {
       let user = null;
       if (req.headers.authorization) {
@@ -280,6 +283,11 @@ export function createCity(store, config) {
         }
         return {
           event: found,
+          participants: db
+            .prepare(
+              "SELECT u.username,u.full_name AS fullName,COALESCE(b.photo,'') AS photo FROM city_attendance a JOIN users u ON u.id=a.user_id LEFT JOIN city_bios b ON b.user_id=u.id WHERE a.event_id=? ORDER BY u.full_name LIMIT 200",
+            )
+            .all(id),
           attending: db
             .prepare(
               "SELECT COUNT(*) AS n FROM city_attendance WHERE event_id=?",

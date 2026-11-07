@@ -2312,3 +2312,340 @@ body,
     font-size: 18px !important;
   }
 }
+
+.social-page {
+  overflow: auto;
+  flex: 1;
+  padding: 32px clamp(16px, 4vw, 64px);
+  background: var(--bg, #f5f5f2);
+  color: var(--text, #202b36);
+}
+.social-page h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 10px 0;
+}
+.social-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 28px auto;
+}
+.social-search {
+  display: grid;
+  gap: 10px;
+  font-weight: 600;
+}
+.social-search input,
+.social-compose textarea {
+  padding: 14px;
+  border: 1px solid #8996a455;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+.social-person {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #8996a433;
+}
+.social-avatar {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #dbe4f3;
+  color: #214467;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.social-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.social-person-info {
+  flex: 1;
+  min-width: 0;
+}
+.social-person-info small {
+  display: block;
+  opacity: 0.65;
+}
+.social-person-info p {
+  overflow-wrap: anywhere;
+  margin: 6px 0;
+}
+.social-person-actions {
+  display: grid;
+  gap: 6px;
+}
+.social-page button {
+  cursor: pointer;
+  border: 1px solid #8996a444;
+  border-radius: 9px;
+  padding: 8px 12px;
+  color: inherit;
+  background: transparent;
+}
+.social-page button.primary {
+  background: #245b93;
+  color: white;
+}
+.social-page button:disabled {
+  opacity: 0.5;
+}
+.social-chat {
+  border: 1px solid #8996a444;
+  border-radius: 20px;
+  padding: 22px;
+  align-self: start;
+  position: sticky;
+  top: 0;
+}
+.social-chat header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.social-chat header button {
+  margin-left: auto;
+}
+.social-messages {
+  max-height: 45vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0;
+}
+.social-messages article {
+  align-self: flex-start;
+  background: #8996a422;
+  border-radius: 14px;
+  padding: 10px 14px;
+  max-width: 88%;
+  overflow-wrap: anywhere;
+}
+.social-messages article.mine {
+  align-self: flex-end;
+  background: #2764a027;
+}
+.social-messages p {
+  white-space: pre-wrap;
+  margin: 0 0 5px;
+}
+.social-messages small {
+  opacity: 0.6;
+  font-size: 11px;
+}
+.social-compose {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.social-error {
+  color: #c53a49;
+}
+.participant-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 12px 0;
+}
+.participant-list button {
+  background: none;
+  border: 0;
+  color: inherit;
+  min-width: 60px;
+  max-width: 85px;
+  cursor: pointer;
+}
+.participant-list small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[data-theme="dark"] .social-page {
+  background: #141d29;
+  color: #e6eaf0;
+}
+@media (max-width: 750px) {
+  .social-layout {
+    grid-template-columns: 1fr;
+  }
+  .social-chat {
+    position: static;
+  }
+  .social-person {
+    flex-wrap: wrap;
+  }
+  .social-page {
+    padding-bottom: 100px;
+  }
+}
+.notification-control {
+  position: relative;
+}
+.notification-bell {
+  position: relative;
+  padding: 9px !important;
+}
+.notification-badge {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  border-radius: 20px;
+  background: #cb4353;
+  color: white;
+  font-size: 10px;
+  padding: 1px 5px;
+  min-width: 16px;
+}
+.notification-popover {
+  position: absolute;
+  right: 0;
+  top: 43px;
+  width: min(340px, 88vw);
+  max-height: 65vh;
+  overflow: auto;
+  padding: 18px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 14px 45px #0003;
+  z-index: 1000;
+}
+.notification-popover header {
+  display: flex;
+  justify-content: space-between;
+}
+.notification-popover .notification-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  padding: 14px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.notification-item.unread {
+  background: #2967a416;
+}
+.notification-item small {
+  opacity: 0.6;
+}
+.notification-popover p {
+  font-size: 13px;
+}
+.notification-popover > button {
+  margin-top: 8px;
+}
+@media (max-width: 700px) {
+  .notification-popover {
+    position: fixed;
+    top: 72px;
+    right: 10px;
+  }
+}
+.message-toast {
+  position: fixed;
+  right: 20px;
+  top: 95px;
+  width: min(320px, 90vw);
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3px 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid #285d99;
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 10px 30px #0003;
+  z-index: 1200;
+}
+.message-toast p {
+  margin: 0;
+  grid-column: 1;
+  font-size: 13px;
+  line-height: 20px;
+}
+.message-toast > strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.message-toast button {
+  padding: 0 !important;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.message-toast button:first-of-type {
+  grid-column: 2;
+  grid-row: 2;
+}
+.message-toast button:last-of-type {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  min-width: 24px;
+}
+.message-toast {
+  animation: message-toast-lifetime 5.4s both;
+  will-change: opacity, transform;
+}
+.message-toast-preview {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@keyframes message-toast-lifetime {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  5%,
+  93% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .message-toast {
+    animation-name: message-toast-lifetime-reduced;
+    will-change: opacity;
+  }
+}
+@keyframes message-toast-lifetime-reduced {
+  0% {
+    opacity: 0;
+  }
+  5%,
+  93% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

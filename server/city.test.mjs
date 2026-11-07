@@ -189,13 +189,291 @@ test("personal plans are private by default, public only by opt-in, and owner-co
   );
 });
 
-test('profile edits persist and stay private until the schedule is published',async t=>{
- const{call,token}=await fixture(t);const details={fullName:'Updated Name',bio:'Coffee and cycling.',location:'Arad',interests:'coffee, cycling',photo:''};
- assert.equal((await call('/city/profile',details)).status,401);
- assert.equal((await call('/city/profile',{...details,photo:'data:image/svg+xml;base64,AAAA'},token)).status,400);
- assert.equal((await call('/city/profile',details,token)).status,200);
- const mine=(await call('/city/schedule',undefined,token)).data;assert.equal(mine.fullName,details.fullName);assert.equal(mine.profile.bio,details.bio);
- assert.equal((await call('/city/citizens/city_tester')).status,404);
- await call('/city/schedule/visibility',{public:true},token);
- const publicProfile=(await call('/city/citizens/city_tester')).data;assert.equal(publicProfile.profile.interests,details.interests);assert.equal(publicProfile.email,undefined);
+test("profile edits persist and stay private until the schedule is published", async (t) => {
+  const { call, token } = await fixture(t);
+  const details = {
+    fullName: "Updated Name",
+    bio: "Coffee and cycling.",
+    location: "Arad",
+    interests: "coffee, cycling",
+    photo: "",
+  };
+  assert.equal((await call("/city/profile", details)).status, 401);
+  assert.equal(
+    (
+      await call(
+        "/city/profile",
+        { ...details, photo: "data:image/svg+xml;base64,AAAA" },
+        token,
+      )
+    ).status,
+    400,
+  );
+  assert.equal((await call("/city/profile", details, token)).status, 200);
+  const mine = (await call("/city/schedule", undefined, token)).data;
+  assert.equal(mine.fullName, details.fullName);
+  assert.equal(mine.profile.bio, details.bio);
+  assert.equal((await call("/city/citizens/city_tester")).status, 404);
+  await call("/city/schedule/visibility", { public: true }, token);
+  const publicProfile = (await call("/city/citizens/city_tester")).data;
+  assert.equal(publicProfile.profile.interests, details.interests);
+  assert.equal(publicProfile.email, undefined);
+});
+
+test("social requests require acceptance; messages stay between friends; participants expose no email", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const second = await store.signUp({
+    fullName: "Second Person",
+    username: "second_person",
+    email: "second@example.com",
+    password: "Testing-123!",
+  });
+  const third = await store.signUp({
+    fullName: "Third Person",
+    username: "third_person",
+    email: "third@example.com",
+    password: "Testing-123!",
+  });
+  assert.equal((await call("/city/social/users?q=second")).status, 401);
+  const found = await call("/city/social/users?q=second", null, token);
+  assert.equal(found.data.users[0].username, "second_person");
+  assert.equal("email" in found.data.users[0], false);
+  assert.equal(
+    (
+      await call(
+        "/city/social/messages/second_person",
+        { body: "hello" },
+        token,
+      )
+    ).status,
+    403,
+  );
+  assert.equal(
+    (
+      await call(
+        "/city/social/friend/second_person",
+        { action: "request" },
+        token,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await call(
+        "/city/social/friend/second_person",
+        { action: "accept" },
+        token,
+      )
+    ).status,
+    403,
+  );
+  assert.equal(
+    (await call("/city/social/friends", null, second.token)).data.users[0]
+      .incoming,
+    true,
+  );
+  assert.equal(
+    (
+      await call(
+        "/city/social/friend/city_tester",
+        { action: "accept" },
+        second.token,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await call(
+        "/city/social/messages/second_person",
+        { body: "Hello Arad!" },
+        token,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await call("/city/social/messages/city_tester", null, second.token)).data
+      .messages[0].body,
+    "Hello Arad!",
+  );
+  assert.equal(
+    (await call("/city/social/messages/city_tester", null, third.token)).status,
+    403,
+  );
+  const inbox = await call("/city/social/notifications", null, second.token);
+  assert.equal(
+    inbox.data.items.find((n) => n.kind === "message").preview,
+    "Hello Arad!",
+  );
+  assert.equal(
+    (await call("/city/social/notifications", null, third.token)).data.items
+      .length,
+    0,
+  );
+  const created = await call("/city/events", event(), token);
+  await call(
+    `/city/events/${created.data.event.id}/attend`,
+    { going: true },
+    second.token,
+  );
+  const details = await call(`/city/events/${created.data.event.id}`);
+  assert.equal(details.data.participants[0].username, "second_person");
+  assert.equal("email" in details.data.participants[0], false);
+  await call("/city/social/friend/second_person", { action: "remove" }, token);
+  assert.equal(
+    (await call("/city/social/messages/city_tester", null, second.token))
+      .status,
+    403,
+  );
+});
+
+test("notifications belong to their recipient and read markers cannot change another inbox", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const other = await store.signUp({
+    fullName: "Inbox Friend",
+    username: "inbox_friend",
+    email: "inbox@example.com",
+    password: "Testing-123!",
+  });
+  await call("/city/social/friend/inbox_friend", { action: "request" }, token);
+  const inbox = await call("/city/social/notifications", null, other.token);
+  assert.equal(inbox.data.unread, 1);
+  assert.equal(inbox.data.items[0].kind, "request");
+  assert.equal(
+    (await call("/city/social/notifications", null, token)).data.unread,
+    0,
+  );
+  await call(
+    "/city/social/notifications",
+    { ids: [inbox.data.items[0].id] },
+    token,
+  );
+  assert.equal(
+    (await call("/city/social/notifications", null, other.token)).data.unread,
+    1,
+  );
+  await call(
+    "/city/social/notifications",
+    { ids: [inbox.data.items[0].id] },
+    other.token,
+  );
+  assert.equal(
+    (await call("/city/social/notifications", null, other.token)).data.unread,
+    0,
+  );
+  assert.equal(
+    (await call("/city/social/push", { token: "bad" }, token)).status,
+    400,
+  );
+  const fake = "ExpoPushToken[local_test_token_123]";
+  assert.equal(
+    (await call("/city/social/push", { token: fake }, token)).status,
+    200,
+  );
+  assert.equal(
+    store.db.prepare("SELECT COUNT(*) AS n FROM city_push_tokens").get().n,
+    1,
+  );
+  await call("/city/social/push", { token: fake, enabled: false }, other.token);
+  assert.equal(
+    store.db.prepare("SELECT COUNT(*) AS n FROM city_push_tokens").get().n,
+    1,
+  );
+  await call("/city/social/push", { token: fake, enabled: false }, token);
+  assert.equal(
+    store.db.prepare("SELECT COUNT(*) AS n FROM city_push_tokens").get().n,
+    0,
+  );
+});
+
+test("reading displayed messages clears only that recipient and conversation message notifications", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const b = await store.signUp({
+    fullName: "Read Friend",
+    username: "read_friend",
+    email: "read@example.com",
+    password: "Testing-123!",
+  });
+  const c = await store.signUp({
+    fullName: "Other Friend",
+    username: "other_friend",
+    email: "other@example.com",
+    password: "Testing-123!",
+  });
+  for (const account of [b, c]) {
+    const username = account === b ? "read_friend" : "other_friend";
+    await call("/city/social/friend/" + username, { action: "request" }, token);
+    await call(
+      "/city/social/friend/city_tester",
+      { action: "accept" },
+      account.token,
+    );
+    await call(
+      "/city/social/messages/city_tester",
+      { body: "Unread hello" },
+      account.token,
+    );
+  }
+  const before = (await call("/city/social/notifications", null, token)).data;
+  const messages = (
+    await call("/city/social/messages/read_friend", null, token)
+  ).data.messages;
+  assert.equal(
+    (await call("/city/social/notifications", null, token)).data.unread,
+    before.unread,
+    "Fetching alone does not read messages",
+  );
+  await call(
+    "/city/social/read/read_friend",
+    { ids: messages.map((m) => m.id) },
+    c.token,
+  );
+  assert.equal(
+    (await call("/city/social/notifications", null, token)).data.unread,
+    before.unread,
+  );
+  await call(
+    "/city/social/read/other_friend",
+    { ids: messages.map((m) => m.id) },
+    token,
+  );
+  assert.equal(
+    (await call("/city/social/notifications", null, token)).data.unread,
+    before.unread,
+    "Wrong conversation cannot mark a message",
+  );
+  await call(
+    "/city/social/read/read_friend",
+    { ids: messages.map((m) => m.id) },
+    token,
+  );
+  const after = (await call("/city/social/notifications", null, token)).data;
+  assert.equal(after.unread, before.unread - 1);
+  assert.equal(
+    after.items.find(
+      (n) => n.kind === "message" && n.username === "read_friend",
+    ).seen,
+    1,
+  );
+  assert.equal(
+    after.items.find(
+      (n) => n.kind === "message" && n.username === "other_friend",
+    ).seen,
+    0,
+  );
+  assert.equal(
+    after.items.filter((n) => n.kind === "accepted" && !n.seen).length,
+    2,
+  );
+  await call(
+    "/city/social/read/read_friend",
+    { ids: messages.map((m) => m.id) },
+    token,
+  );
+  assert.equal(
+    (await call("/city/social/notifications", null, token)).data.unread,
+    after.unread,
+  );
 });

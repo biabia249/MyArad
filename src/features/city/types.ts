@@ -6,6 +6,7 @@ export type Place = {
   description_en?: string;
   description_ro?: string;
   wiki_source?: string;
+  source_label?: string;
   image_source?: string;
   image_credit?: string;
   image_license?: string;
@@ -44,6 +45,7 @@ export type Comment = {
 };
 export type EventDetails = {
   event: CityEvent;
+  participants: import("./social-view").Person[];
   attending: number;
   going: boolean;
   comments: Comment[];
@@ -62,9 +64,11 @@ export type CityProps = {
   onToggleTheme: () => Promise<void>;
   initialPage?: string;
   publicUsername?: string;
+  initialDestination?: { lat: number; lng: number; name: string };
   onNavigate: (path: string) => Promise<void>;
   onRequest: (path: string, data: string | null) => Promise<ApiResult>;
   onExternalLink: (url: string) => Promise<void>;
+  onEnablePush: () => Promise<void>;
   onSignIn: () => Promise<void>;
   onSignOut: () => Promise<void>;
   onLocate: () => Promise<{ lat: number; lng: number; error?: string }>;

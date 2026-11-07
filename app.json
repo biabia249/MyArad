@@ -55,7 +55,9 @@
           "locationAlwaysAndWhenInUsePermission": false,
           "locationAlwaysPermission": false
         }
-      ]
+      ],
+      "expo-notifications",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true,

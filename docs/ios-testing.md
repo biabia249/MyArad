@@ -1,5 +1,31 @@
 # Install MyArad on an iPhone
 
+## Quick test without Apple Developer membership
+
+Install Expo Go from the App Store (SDK 58 compatible). Connect the iPhone and
+computer to the same Wi-Fi/hotspot, then run in separate terminals:
+
+```bash
+npm run backend
+npm run phones
+```
+
+`npm run phones` selects the computer's LAN address and gives the phone a reachable
+API URL. Scan Metro's Expo Go QR code with the iPhone Camera. Allow local-network
+access and location when requested. The computer and both servers must stay running.
+The web app, Android development app and iPhone all use the same backend accounts.
+An existing session made under `localhost` in a browser is separate from a native login.
+
+If automatic network selection is wrong, set `MYARAD_DEV_HOST` to the computer's
+Wi-Fi address. `MYARAD_API_URL` can override the development backend URL.
+
+This tests through Expo Go; it is not a separately signed MyArad installation.
+Push notifications for this project's own app identity require a development build
+and configured platform credentials. iPhone hardware validation is still required;
+an iOS bundle export alone does not prove device behavior.
+
+## Signed builds
+
 You can build using Expo's cloud service from Linux. A signed iPhone build requires
 an Apple Developer Program account and access to this app's Expo project. An iOS
 Simulator runs on macOS; it cannot run inside the Android emulator on Linux.

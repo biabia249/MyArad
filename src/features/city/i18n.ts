@@ -1,5 +1,8 @@
 export const copy = {
   ro: {
+    health: "Clinici",
+    entertainment: "Distracție",
+    stay: "Cazare",
     education: "Școli & UAV",
     discover: "Descoperă Aradul",
     subtitle: "Locuri cunoscute. Întâlniri noi.",
@@ -96,6 +99,9 @@ export const copy = {
     starting: "Se deschide…",
   },
   en: {
+    health: "Clinics",
+    entertainment: "Entertainment",
+    stay: "Stay",
     education: "Schools & UAV",
     discover: "Discover Arad",
     subtitle: "Familiar places. New connections.",

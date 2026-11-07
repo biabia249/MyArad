@@ -1,0 +1,3261 @@
+{
+  "places": 659,
+  "withPhoto": 308,
+  "missingPhoto": [
+    {
+      "id": "node/3108940316",
+      "name": "Boeme Cafe"
+    },
+    {
+      "id": "node/8655712317",
+      "name": "CafeBar Kensu"
+    },
+    {
+      "id": "node/4355523605",
+      "name": "Chic center"
+    },
+    {
+      "id": "node/258652106",
+      "name": "Corso"
+    },
+    {
+      "id": "node/1520218998",
+      "name": "Dom Caffe II"
+    },
+    {
+      "id": "node/261768079",
+      "name": "Elisa Best Cafe"
+    },
+    {
+      "id": "node/13269843694",
+      "name": "Gano Excel"
+    },
+    {
+      "id": "node/317992364",
+      "name": "Gelateria Coandi"
+    },
+    {
+      "id": "node/317992338",
+      "name": "Hazard"
+    },
+    {
+      "id": "node/11306727984",
+      "name": "Jay Bubble Tea"
+    },
+    {
+      "id": "node/3112613927",
+      "name": "KF"
+    },
+    {
+      "id": "node/13173336406",
+      "name": "Le Petit café"
+    },
+    {
+      "id": "node/3111988073",
+      "name": "Loja Bistro"
+    },
+    {
+      "id": "node/4724684691",
+      "name": "Makor Specialty Coffee"
+    },
+    {
+      "id": "node/13055092035",
+      "name": "Maria's Coffee"
+    },
+    {
+      "id": "node/268989950",
+      "name": "Pelican"
+    },
+    {
+      "id": "way/304620785",
+      "name": "Pisica Albastră"
+    },
+    {
+      "id": "node/8655684318",
+      "name": "Platinium"
+    },
+    {
+      "id": "node/8647635018",
+      "name": "Raiff caffe"
+    },
+    {
+      "id": "node/317992354",
+      "name": "Sahara Caffe"
+    },
+    {
+      "id": "node/13028381646",
+      "name": "Snooze Coffee"
+    },
+    {
+      "id": "node/11306727994",
+      "name": "Starbucks"
+    },
+    {
+      "id": "node/4953373321",
+      "name": "Tic tac"
+    },
+    {
+      "id": "node/11218045012",
+      "name": "Tucano Coffee"
+    },
+    {
+      "id": "node/13022506200",
+      "name": "Urban Café"
+    },
+    {
+      "id": "node/8714771919",
+      "name": "Visolux Coffee Shop"
+    },
+    {
+      "id": "node/8647648217",
+      "name": "Biblioteca Jud. A.D. Xenopol filiala Aurel Vlaicu"
+    },
+    {
+      "id": "node/2305063647",
+      "name": "Biblioteca Județeană Arad - Filiala Aradul Nou"
+    },
+    {
+      "id": "way/34219353",
+      "name": "Biblioteca Județeană Arad A.D. Xenopol Sediul Central"
+    },
+    {
+      "id": "way/945392090",
+      "name": "Cinema Solidaritatea"
+    },
+    {
+      "id": "node/13270020755",
+      "name": "Filarmonica de Stat"
+    },
+    {
+      "id": "node/8672195817",
+      "name": "Grădiște"
+    },
+    {
+      "id": "node/13118881104",
+      "name": "HappyCinema"
+    },
+    {
+      "id": "node/11296585769",
+      "name": "la biserica baptista"
+    },
+    {
+      "id": "node/3704026315",
+      "name": "Libraria LOGOS"
+    },
+    {
+      "id": "node/599197438",
+      "name": "Takacs Gallery"
+    },
+    {
+      "id": "relation/12185205",
+      "name": "Campus Universitar Vasile Goldiș"
+    },
+    {
+      "id": "node/6579692687",
+      "name": "CASA CORPULUI DIDACTIC \"ALEXANDRU GAVRA\" ARAD"
+    },
+    {
+      "id": "node/13743600801",
+      "name": "Colegiul de Arte ,,Sabin Drăgoi\""
+    },
+    {
+      "id": "node/13745160308",
+      "name": "Colegiul Economic Arad"
+    },
+    {
+      "id": "way/472292001",
+      "name": "Colegiul Național „Preparandia - Dimitrie Țichindeal”"
+    },
+    {
+      "id": "node/258676138",
+      "name": "Facultatea de Științe ale Naturii, Inginerie și Informatică a Universității \"Vasile Goldiș\""
+    },
+    {
+      "id": "node/260664784",
+      "name": "Generală 8"
+    },
+    {
+      "id": "node/270328143",
+      "name": "Generală nr. 20"
+    },
+    {
+      "id": "node/262884691",
+      "name": "Generaă 8"
+    },
+    {
+      "id": "way/472292000",
+      "name": "Grup Școlar Industrial Aurel Vlaicu"
+    },
+    {
+      "id": "node/391814406",
+      "name": "Grup Școlar Transporturi Auto „Henri Coadndă”"
+    },
+    {
+      "id": "node/252246615",
+      "name": "Grup Școlar „Francisc Neuman” Arad"
+    },
+    {
+      "id": "way/906693433",
+      "name": "Grupul Școlar de Arte și Meserii Spiru Haret"
+    },
+    {
+      "id": "node/6579692686",
+      "name": "Grădinița PP \"Toy Story\""
+    },
+    {
+      "id": "way/1317422659",
+      "name": "Grădinița PP 12"
+    },
+    {
+      "id": "node/8582812018",
+      "name": "ifptr"
+    },
+    {
+      "id": "node/8564444217",
+      "name": "Leisure garden"
+    },
+    {
+      "id": "way/310073728",
+      "name": "Liceul Baptist Alexa Popovici"
+    },
+    {
+      "id": "way/1226996211",
+      "name": "Liceul Național de Informatică - Corp A"
+    },
+    {
+      "id": "way/44043854",
+      "name": "Liceul Național de Informatică - Corp B"
+    },
+    {
+      "id": "wiki-en/12152166",
+      "name": "Liceul Tehnologic de Construcții și Protecția Mediului"
+    },
+    {
+      "id": "node/13745154502",
+      "name": "Liceul Tehnologic de Electronică și Automatizări „Caius Iacob”"
+    },
+    {
+      "id": "way/1117719328",
+      "name": "Liceul Teologic Baptist „Alexa Popovici” Arad"
+    },
+    {
+      "id": "way/1486965443",
+      "name": "Liceul Teologic Penticostal"
+    },
+    {
+      "id": "node/8714772217",
+      "name": "Octopus Kids after school"
+    },
+    {
+      "id": "node/390341459",
+      "name": "Palatul Copiilor"
+    },
+    {
+      "id": "node/4576290092",
+      "name": "Universitatea Aurel Vlaicu"
+    },
+    {
+      "id": "way/304702007",
+      "name": "Universitatea Aurel Vlaicu Cămine Studențești"
+    },
+    {
+      "id": "way/304518556",
+      "name": "Universitatea Aurel Vlaicu din Arad"
+    },
+    {
+      "id": "way/1364227269",
+      "name": "Universitatea de Vest Vasile Goldiș - Facultatea de Educație Fizică și Sport"
+    },
+    {
+      "id": "wikipedia/24886329",
+      "name": "Universitatea „Aurel Vlaicu” din Arad"
+    },
+    {
+      "id": "node/258684740",
+      "name": "Vasile Goldiș: Facultatea de Științe Juridice"
+    },
+    {
+      "id": "way/1455510127",
+      "name": "Școala Generală ,,Aron Cotruș\""
+    },
+    {
+      "id": "way/304171330",
+      "name": "Școala Generală Nr. 13 „Aron Cotruș”"
+    },
+    {
+      "id": "way/1150658554",
+      "name": "Școala Generală Nr. 2"
+    },
+    {
+      "id": "way/305828799",
+      "name": "Școala Gimnazială 1 ”Mihai Eminescu”"
+    },
+    {
+      "id": "way/1317422660",
+      "name": "Școala Gimnazială Aron Cotruș"
+    },
+    {
+      "id": "way/309215428",
+      "name": "Școala Gimnazială nr. 12 Regina Maria"
+    },
+    {
+      "id": "way/472291998",
+      "name": "Școala Gimnazială nr. 2"
+    },
+    {
+      "id": "way/472289436",
+      "name": "Școala Gimnazială nr. 21 Aurel Vlaicu"
+    },
+    {
+      "id": "way/472291996",
+      "name": "Școala Gimnazială nr. 3 Iosif Moldovan"
+    },
+    {
+      "id": "way/305377693",
+      "name": "Școala Gimnazială nr. 4 Ioan Slavici"
+    },
+    {
+      "id": "wiki-ro/1917227",
+      "name": "Școala normală de fete din Arad"
+    },
+    {
+      "id": "node/599200871",
+      "name": "Școala populară de arte"
+    },
+    {
+      "id": "node/6314037737",
+      "name": "One More Beer"
+    },
+    {
+      "id": "node/258660850",
+      "name": "Asia Wok"
+    },
+    {
+      "id": "way/1455413054",
+      "name": "Balnkan Fresh"
+    },
+    {
+      "id": "node/513794978",
+      "name": "Beijing"
+    },
+    {
+      "id": "node/4346087589",
+      "name": "Boccaccio"
+    },
+    {
+      "id": "node/257607247",
+      "name": "Cabana Lac"
+    },
+    {
+      "id": "node/258660859",
+      "name": "cairo"
+    },
+    {
+      "id": "way/305378299",
+      "name": "Carolina"
+    },
+    {
+      "id": "way/131607840",
+      "name": "Casa Bulzan"
+    },
+    {
+      "id": "node/4609315392",
+      "name": "Casa Neamtiu"
+    },
+    {
+      "id": "node/312352291",
+      "name": "Casa Românească"
+    },
+    {
+      "id": "node/13657180812",
+      "name": "Casa Schnitzel Arad"
+    },
+    {
+      "id": "node/258660851",
+      "name": "Coandi Mic"
+    },
+    {
+      "id": "node/8647745718",
+      "name": "Dacris si Cartel Impex"
+    },
+    {
+      "id": "node/3178707096",
+      "name": "Ema Del Mar"
+    },
+    {
+      "id": "node/13672312701",
+      "name": "Falezza"
+    },
+    {
+      "id": "node/269249616",
+      "name": "Fostă Han"
+    },
+    {
+      "id": "node/10705973684",
+      "name": "Grenier Braserie"
+    },
+    {
+      "id": "way/316365342",
+      "name": "Hong Kong"
+    },
+    {
+      "id": "node/11186368325",
+      "name": "Il Classico"
+    },
+    {
+      "id": "node/4655251889",
+      "name": "Imperial Ballroom"
+    },
+    {
+      "id": "node/3172505608",
+      "name": "Ire Di Napoli"
+    },
+    {
+      "id": "node/2617152683",
+      "name": "Jazz Garden"
+    },
+    {
+      "id": "way/308835554",
+      "name": "Kardesler"
+    },
+    {
+      "id": "node/6069369130",
+      "name": "KHARMA"
+    },
+    {
+      "id": "way/1056656398",
+      "name": "Kulinarium Bistro"
+    },
+    {
+      "id": "node/9755513241",
+      "name": "La Bottega"
+    },
+    {
+      "id": "node/9755510305",
+      "name": "La Casa di San Marco"
+    },
+    {
+      "id": "node/272013039",
+      "name": "La Dan 3 Insule"
+    },
+    {
+      "id": "node/513794991",
+      "name": "La Dolce Vita"
+    },
+    {
+      "id": "node/8579723517",
+      "name": "La Hassan pizza and more"
+    },
+    {
+      "id": "node/12145536645",
+      "name": "La Strada"
+    },
+    {
+      "id": "node/8647745917",
+      "name": "Let's Pizza"
+    },
+    {
+      "id": "way/306588398",
+      "name": "Lido"
+    },
+    {
+      "id": "node/266697229",
+      "name": "Lido CFR"
+    },
+    {
+      "id": "node/8582868637",
+      "name": "Mancare ca la mama acasa"
+    },
+    {
+      "id": "node/10848129789",
+      "name": "Mantua"
+    },
+    {
+      "id": "node/9755524223",
+      "name": "Marin & Friends"
+    },
+    {
+      "id": "way/316349189",
+      "name": "Milenium Garden"
+    },
+    {
+      "id": "way/306053433",
+      "name": "MONDOPIZZA"
+    },
+    {
+      "id": "node/4454053838",
+      "name": "Noi"
+    },
+    {
+      "id": "node/270328651",
+      "name": "Paradis"
+    },
+    {
+      "id": "node/3160865741",
+      "name": "Piccolo"
+    },
+    {
+      "id": "node/4982214921",
+      "name": "Pit Stop Bistro"
+    },
+    {
+      "id": "node/13415713545",
+      "name": "Pizza 5 Colțuri"
+    },
+    {
+      "id": "node/317992362",
+      "name": "Pizzeria Don"
+    },
+    {
+      "id": "node/6310779059",
+      "name": "Pizzeria La Strada"
+    },
+    {
+      "id": "node/1188054435",
+      "name": "Pizzeria Ornella"
+    },
+    {
+      "id": "way/308270066",
+      "name": "Première Salon de Evenimente"
+    },
+    {
+      "id": "node/265334345",
+      "name": "Queen Matinal"
+    },
+    {
+      "id": "node/257422374",
+      "name": "Ratio Beach"
+    },
+    {
+      "id": "node/4338389423",
+      "name": "Rațio"
+    },
+    {
+      "id": "node/13055092037",
+      "name": "Restaurant 3F"
+    },
+    {
+      "id": "node/9755524782",
+      "name": "Restaurant Belvedere"
+    },
+    {
+      "id": "node/317992366",
+      "name": "Restaurant Coandi"
+    },
+    {
+      "id": "node/4692531093",
+      "name": "Restaurant Picasso"
+    },
+    {
+      "id": "node/4362451194",
+      "name": "Restaurant Romanesc"
+    },
+    {
+      "id": "node/258669785",
+      "name": "Restaurant Transilvania"
+    },
+    {
+      "id": "node/8753456917",
+      "name": "Ristorante pizzeria"
+    },
+    {
+      "id": "node/1520219053",
+      "name": "Shock Kebab"
+    },
+    {
+      "id": "node/13854427715",
+      "name": "Sunrise Brunch"
+    },
+    {
+      "id": "node/8286645020",
+      "name": "Taverna Boierească"
+    },
+    {
+      "id": "way/306588830",
+      "name": "Taverna Libaneză"
+    },
+    {
+      "id": "node/155229919",
+      "name": "The Eden"
+    },
+    {
+      "id": "node/3992704716",
+      "name": "Vegan Time"
+    },
+    {
+      "id": "way/304527876",
+      "name": "Venezzia Pizza Express"
+    },
+    {
+      "id": "node/11618808903",
+      "name": "Veranda Restaurant"
+    },
+    {
+      "id": "way/106229664",
+      "name": "WaterHouse"
+    },
+    {
+      "id": "node/272013043",
+      "name": "Zori de Zi"
+    },
+    {
+      "id": "node/8668509317",
+      "name": "Accu Med"
+    },
+    {
+      "id": "node/4695536690",
+      "name": "Affidea"
+    },
+    {
+      "id": "node/4362476589",
+      "name": "Analize medicale"
+    },
+    {
+      "id": "node/6105853086",
+      "name": "Ayedent"
+    },
+    {
+      "id": "way/304623345",
+      "name": "B Braun Centru de Dializă"
+    },
+    {
+      "id": "node/5158712521",
+      "name": "Bioclinica"
+    },
+    {
+      "id": "node/8582774617",
+      "name": "Bioclinica analize medicale"
+    },
+    {
+      "id": "node/8647590317",
+      "name": "Cabinet ginecologic Popescu Aurora"
+    },
+    {
+      "id": "node/5176013922",
+      "name": "Cabinet Medical"
+    },
+    {
+      "id": "node/13748447701",
+      "name": "Centrul de Permanență MedLife Genesys"
+    },
+    {
+      "id": "way/305036605",
+      "name": "Centrul de Transfuzie Sanguină"
+    },
+    {
+      "id": "node/4694701890",
+      "name": "Centrul medical Arad West"
+    },
+    {
+      "id": "node/2302258509",
+      "name": "Centrul Medical Laser System"
+    },
+    {
+      "id": "way/310581449",
+      "name": "Centrul Medical Mediar"
+    },
+    {
+      "id": "node/10026039650",
+      "name": "Clinica City Med"
+    },
+    {
+      "id": "way/310627979",
+      "name": "CRRCH Centru de Recuperare și Reabilitare pentru Copii cu Handicap"
+    },
+    {
+      "id": "node/312348935",
+      "name": "Dispensarul TBC"
+    },
+    {
+      "id": "node/8659073617",
+      "name": "Dr. Vărșăndan Mariana dermato-venerologie"
+    },
+    {
+      "id": "node/4434654590",
+      "name": "Ecomed"
+    },
+    {
+      "id": "node/8668509518",
+      "name": "Ginecolog Dr. Miclea"
+    },
+    {
+      "id": "way/304951003",
+      "name": "Infomedica"
+    },
+    {
+      "id": "way/305375276",
+      "name": "Labormed"
+    },
+    {
+      "id": "way/829383211",
+      "name": "Laser OncoMed - Clinica De Oncologie"
+    },
+    {
+      "id": "way/171042409",
+      "name": "Laser System Hospital"
+    },
+    {
+      "id": "way/310596285",
+      "name": "Medfemme"
+    },
+    {
+      "id": "way/1455510137",
+      "name": "Medic de Famlie"
+    },
+    {
+      "id": "node/13352673875",
+      "name": "Medical Service Centrum"
+    },
+    {
+      "id": "node/14174570542",
+      "name": "Medima Arad - RMN - CT"
+    },
+    {
+      "id": "way/304620616",
+      "name": "MEDIQA Centru Medical"
+    },
+    {
+      "id": "node/8283448518",
+      "name": "Oncologie Spitalul Clinic Județean de Urgență Arad"
+    },
+    {
+      "id": "node/4373195689",
+      "name": "Policlinica AS"
+    },
+    {
+      "id": "way/131607842",
+      "name": "Policlinica cu Plată"
+    },
+    {
+      "id": "node/4362598889",
+      "name": "Policlinica Doctor Turcin"
+    },
+    {
+      "id": "way/307819449",
+      "name": "Policlinica Județeană"
+    },
+    {
+      "id": "way/305045190",
+      "name": "Policlinica Municipală"
+    },
+    {
+      "id": "way/305043556",
+      "name": "Policlinica Vlaicu"
+    },
+    {
+      "id": "node/4317970789",
+      "name": "REDMEDICA"
+    },
+    {
+      "id": "node/4510807589",
+      "name": "Serviciul Județean de Ambulanță Arad"
+    },
+    {
+      "id": "way/307819186",
+      "name": "Serviciul Județean de Medicină Legală"
+    },
+    {
+      "id": "way/1564571975",
+      "name": "Spital de Recuperare Medicală Laser System"
+    },
+    {
+      "id": "way/472284148",
+      "name": "Spitalul Clinic de Urgență Arad"
+    },
+    {
+      "id": "node/5158723228",
+      "name": "Spitalul Clinic Județean - Secțiile O.R.L. și Oftalmologie"
+    },
+    {
+      "id": "way/310005964",
+      "name": "Spitalul Clinic Municipal"
+    },
+    {
+      "id": "node/3153613107",
+      "name": "Spitalul Clinic Municipal Secția Oncologie"
+    },
+    {
+      "id": "node/418592986",
+      "name": "Spitalul clinic municipal secția TBC"
+    },
+    {
+      "id": "node/410080220",
+      "name": "Spitalul Matern"
+    },
+    {
+      "id": "node/13748217501",
+      "name": "Spitalul MedLife Genesys Arad"
+    },
+    {
+      "id": "node/7725507893",
+      "name": "Spitalul pentru Urgente Stomatologice"
+    },
+    {
+      "id": "node/8647709218",
+      "name": "Synevo"
+    },
+    {
+      "id": "county-wiki/37283701",
+      "name": "Castelul din Macea"
+    },
+    {
+      "id": "county-ro/188630",
+      "name": "Cetatea Șiriei"
+    },
+    {
+      "id": "county-ro/352185",
+      "name": "Cetatea Șoimoș"
+    },
+    {
+      "id": "county-wiki/19998811",
+      "name": "Mănăstirea Hodoș-Bodrog"
+    },
+    {
+      "id": "node/258669769",
+      "name": "Afrodita Sexi Club"
+    },
+    {
+      "id": "node/13270297564",
+      "name": "Armin Pariuri Sportive"
+    },
+    {
+      "id": "node/6104245793",
+      "name": "Arrest (pariuri sportive)"
+    },
+    {
+      "id": "node/258669780",
+      "name": "Atlantic"
+    },
+    {
+      "id": "node/8582798817",
+      "name": "Bamboo"
+    },
+    {
+      "id": "node/4451138394",
+      "name": "Bar"
+    },
+    {
+      "id": "node/4451149593",
+      "name": "Bar"
+    },
+    {
+      "id": "node/4609327889",
+      "name": "Bar Eclipse"
+    },
+    {
+      "id": "node/4681076090",
+      "name": "Bar Loja"
+    },
+    {
+      "id": "node/4609270598",
+      "name": "Bar Metropolis"
+    },
+    {
+      "id": "node/4345987391",
+      "name": "Bar Roza"
+    },
+    {
+      "id": "node/3645195713",
+      "name": "Biliard & Bar"
+    },
+    {
+      "id": "node/4325330595",
+      "name": "briliant cafee"
+    },
+    {
+      "id": "node/4325369397",
+      "name": "Briliant Cafee"
+    },
+    {
+      "id": "node/268985820",
+      "name": "Cafenea Orizont Vest"
+    },
+    {
+      "id": "node/4786940728",
+      "name": "Caffe Anonymous"
+    },
+    {
+      "id": "way/332151330",
+      "name": "Carys"
+    },
+    {
+      "id": "node/4340674189",
+      "name": "Casino 777"
+    },
+    {
+      "id": "node/4353584396",
+      "name": "Casino 777"
+    },
+    {
+      "id": "node/4451149494",
+      "name": "City Night Line"
+    },
+    {
+      "id": "node/2301130513",
+      "name": "Errea"
+    },
+    {
+      "id": "node/13932248303",
+      "name": "Flex"
+    },
+    {
+      "id": "node/312357269",
+      "name": "Flex"
+    },
+    {
+      "id": "node/263899847",
+      "name": "Georges"
+    },
+    {
+      "id": "node/2300834199",
+      "name": "Jad Café"
+    },
+    {
+      "id": "node/258669774",
+      "name": "Joy's"
+    },
+    {
+      "id": "node/267173570",
+      "name": "Kmikze Rap"
+    },
+    {
+      "id": "node/4373196294",
+      "name": "La Ponton"
+    },
+    {
+      "id": "node/258669790",
+      "name": "Lost"
+    },
+    {
+      "id": "node/317992347",
+      "name": "Luci Bar"
+    },
+    {
+      "id": "node/4335681193",
+      "name": "Maxim cafe"
+    },
+    {
+      "id": "node/4609270602",
+      "name": "Metropolis"
+    },
+    {
+      "id": "way/308626310",
+      "name": "Mis Amigos"
+    },
+    {
+      "id": "way/308626713",
+      "name": "Old Lady's Pub"
+    },
+    {
+      "id": "node/266678997",
+      "name": "Port Arthur"
+    },
+    {
+      "id": "node/390341118",
+      "name": "Renessance"
+    },
+    {
+      "id": "node/4692531092",
+      "name": "Salon Onix"
+    },
+    {
+      "id": "node/4609327790",
+      "name": "Service Bar"
+    },
+    {
+      "id": "node/258897698",
+      "name": "Sică"
+    },
+    {
+      "id": "node/393143428",
+      "name": "Sky"
+    },
+    {
+      "id": "node/265334336",
+      "name": "Steaua"
+    },
+    {
+      "id": "node/3160274908",
+      "name": "Unic"
+    },
+    {
+      "id": "node/4373201892",
+      "name": "UTA"
+    },
+    {
+      "id": "way/1258128166",
+      "name": "Curte Bl Z11"
+    },
+    {
+      "id": "way/88366992",
+      "name": "Fosta fabrică de cărămidă"
+    },
+    {
+      "id": "way/686961846",
+      "name": "Kossuth park"
+    },
+    {
+      "id": "way/574021727",
+      "name": "Parc Gai"
+    },
+    {
+      "id": "way/23885827",
+      "name": "Parcul 23 August"
+    },
+    {
+      "id": "node/13743616701",
+      "name": "Parcul Alfa"
+    },
+    {
+      "id": "way/35387453",
+      "name": "Parcul Caius Iacob"
+    },
+    {
+      "id": "way/218706735",
+      "name": "Parcul Copiilor"
+    },
+    {
+      "id": "way/16076528",
+      "name": "Parcul Europa"
+    },
+    {
+      "id": "way/218706734",
+      "name": "Parcul Mihai Eminescu"
+    },
+    {
+      "id": "county-wiki/20082533",
+      "name": "Parcul Natural Lunca Mureșului"
+    },
+    {
+      "id": "way/521518185",
+      "name": "Parcul Piticii Veseli"
+    },
+    {
+      "id": "way/20857974",
+      "name": "Parcul Pădurice"
+    },
+    {
+      "id": "way/28558118",
+      "name": "Parcul Tudor Arghezi"
+    },
+    {
+      "id": "way/154509183",
+      "name": "Piața 13 Martiri"
+    },
+    {
+      "id": "way/24877785",
+      "name": "Piața Avram Iancu"
+    },
+    {
+      "id": "way/154511477",
+      "name": "Piața Eroilor"
+    },
+    {
+      "id": "way/472292003",
+      "name": "Piața Olimp"
+    },
+    {
+      "id": "way/221521248",
+      "name": "Piața Sârbească"
+    },
+    {
+      "id": "way/109862583",
+      "name": "Părculeț Zona 300"
+    },
+    {
+      "id": "node/13118865699",
+      "name": "18Gym"
+    },
+    {
+      "id": "way/1362615269",
+      "name": "ActivClub"
+    },
+    {
+      "id": "node/13098918407",
+      "name": "ARED Active Park"
+    },
+    {
+      "id": "way/743225667",
+      "name": "Bazinul de înot \"Subcetate Arad\""
+    },
+    {
+      "id": "way/171921350",
+      "name": "Bazinul Olimpic Delfinul"
+    },
+    {
+      "id": "node/269672837",
+      "name": "Băile termale GAI"
+    },
+    {
+      "id": "node/245481195",
+      "name": "Cartodrom"
+    },
+    {
+      "id": "way/1280755455",
+      "name": "Clubul Sportiv Școlar Gloria Arad"
+    },
+    {
+      "id": "way/218779999",
+      "name": "Complex Sportiv"
+    },
+    {
+      "id": "way/1558837486",
+      "name": "Complex Sportiv Vecchia Signora"
+    },
+    {
+      "id": "node/261072608",
+      "name": "CSM Arad - Sala de Jocuri"
+    },
+    {
+      "id": "way/93513281",
+      "name": "Decebal Arena"
+    },
+    {
+      "id": "node/261072609",
+      "name": "Hala Atletico"
+    },
+    {
+      "id": "way/218705899",
+      "name": "Intersport"
+    },
+    {
+      "id": "node/13685010210",
+      "name": "Kratos Gym 1"
+    },
+    {
+      "id": "node/11218068040",
+      "name": "Kratos Gym 3"
+    },
+    {
+      "id": "way/317679436",
+      "name": "Lifestyle Gym"
+    },
+    {
+      "id": "way/109863623",
+      "name": "Miniteren de fotbal"
+    },
+    {
+      "id": "way/1058083298",
+      "name": "OneMove Arad"
+    },
+    {
+      "id": "way/154492913",
+      "name": "Parcul Chinologic"
+    },
+    {
+      "id": "way/218780003",
+      "name": "Patinoar"
+    },
+    {
+      "id": "way/109863291",
+      "name": "Piscina - Baza Sportivă C.E.T. Arad"
+    },
+    {
+      "id": "way/1286671128",
+      "name": "Sala de gimnastică Emilia Eberle"
+    },
+    {
+      "id": "node/262147800",
+      "name": "Sala Sport UAV"
+    },
+    {
+      "id": "way/154042544",
+      "name": "Sala Sporturilor \"Victoria\" - Sala Polivalentă"
+    },
+    {
+      "id": "way/817871595",
+      "name": "Sală Sport - Corp B Liceul Național de Informatică"
+    },
+    {
+      "id": "way/311569654",
+      "name": "Serie A Club"
+    },
+    {
+      "id": "way/232892253",
+      "name": "Stadionul CPL \"Ladislau Brosovszky\""
+    },
+    {
+      "id": "wikipedia/59833460",
+      "name": "Stadionul Francisc Neuman"
+    },
+    {
+      "id": "way/154510754",
+      "name": "Stadionul Motorul"
+    },
+    {
+      "id": "way/100143801",
+      "name": "Stadionul Trei Colegi"
+    },
+    {
+      "id": "node/12728262683",
+      "name": "Stay Fit Gym"
+    },
+    {
+      "id": "way/154489400",
+      "name": "Tennis Club Pro"
+    },
+    {
+      "id": "way/1364227261",
+      "name": "Teren de baschet"
+    },
+    {
+      "id": "way/1421060630",
+      "name": "Teren de baschet"
+    },
+    {
+      "id": "way/438523680",
+      "name": "Teren de baschet"
+    },
+    {
+      "id": "way/894802683",
+      "name": "Teren de baschet"
+    },
+    {
+      "id": "way/1395730215",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/1421060634",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/1508201986",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/221478239",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/24510508",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/342712433",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/438523678",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/906693421",
+      "name": "Teren de fotbal"
+    },
+    {
+      "id": "way/893584690",
+      "name": "Teren de handbal"
+    },
+    {
+      "id": "way/894802682",
+      "name": "Teren de handbal"
+    },
+    {
+      "id": "node/13347484040",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1044579847",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1079138576",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1312517706",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1317422663",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1508201999",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1528074961",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1528074968",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/1558837485",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/221471776",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/304961238",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/894802684",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/93513282",
+      "name": "Teren de sport"
+    },
+    {
+      "id": "way/106222280",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/1258115061",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/1421060636",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/221096830",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/221471773",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/221479483",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/259554389",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/895794205",
+      "name": "Teren de tenis"
+    },
+    {
+      "id": "way/109863346",
+      "name": "Teren de Tenis/Bachet/Volei"
+    },
+    {
+      "id": "way/1508201974",
+      "name": "Teren de volei"
+    },
+    {
+      "id": "way/218710683",
+      "name": "Teren de volei"
+    },
+    {
+      "id": "way/109863625",
+      "name": "Teren de volei - nisip"
+    },
+    {
+      "id": "way/154494032",
+      "name": "Teren fotbal"
+    },
+    {
+      "id": "way/220433832",
+      "name": "Teren Fotbal"
+    },
+    {
+      "id": "way/1508201964",
+      "name": "Teren multisport"
+    },
+    {
+      "id": "way/218778067",
+      "name": "Teren multisport"
+    },
+    {
+      "id": "way/236705520",
+      "name": "Teren multisport"
+    },
+    {
+      "id": "way/849731682",
+      "name": "Teren multisport"
+    },
+    {
+      "id": "way/317679332",
+      "name": "Teren sintetic"
+    },
+    {
+      "id": "node/13667839901",
+      "name": "Terenul de fotbal AMEFA"
+    },
+    {
+      "id": "way/436953765",
+      "name": "Terenul de fotbal Sanleani"
+    },
+    {
+      "id": "way/34127132",
+      "name": "Terenul Sportiv ,,Ioan Marconi\""
+    },
+    {
+      "id": "node/12145955446",
+      "name": "Top Fighter's Club"
+    },
+    {
+      "id": "node/13745160502",
+      "name": "Trucker's Gym"
+    },
+    {
+      "id": "way/154492090",
+      "name": "UTA Tennis Club"
+    },
+    {
+      "id": "way/574045498",
+      "name": "Ștrand termal Gai"
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Biserica_s%C3%A2rbeasc%C4%83.jpg/960px-Biserica_s%C3%A2rbeasc%C4%83.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Arad_2023_-_Catedrala_Sf%C3%A2nta_Treime_din_Arad_04.jpg/960px-Arad_2023_-_Catedrala_Sf%C3%A2nta_Treime_din_Arad_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Arad_-_Teatrul_%E2%80%9EIoan_Slavici%E2%80%9D_%282023%29_-_img_01.jpg/960px-Arad_-_Teatrul_%E2%80%9EIoan_Slavici%E2%80%9D_%282023%29_-_img_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Arad%2C_biserica_Sf_Anton_de_Padova.jpg/960px-Arad%2C_biserica_Sf_Anton_de_Padova.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Arad_Bahnhof_3929-33.jpg/960px-Arad_Bahnhof_3929-33.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Arad_-_Palatul_Neumann_%282023%29_-_img_05.jpg/960px-Arad_-_Palatul_Neumann_%282023%29_-_img_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Moise_Nicoara_National_College_-_facade.JPG/960px-Moise_Nicoara_National_College_-_facade.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Arad%2C_Romania_-_Administrative_Palace_%282023%29.jpg/960px-Arad%2C_Romania_-_Administrative_Palace_%282023%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Catedrala_Nasterea_St_Ioan_Botezatorul_Arad.jpg/960px-Catedrala_Nasterea_St_Ioan_Botezatorul_Arad.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Cetatea_Aradului.png/960px-Cetatea_Aradului.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arad%2C_Vama_veche.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/10/pestera-sinesie-72f51f4b21c41776e946635a123ece84.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/100/pensiunea-konak-dsc-0068.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/101/hotel-xe-mar-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/102/hotel-stejarii-rsz-1dsc-0458.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/11/catedrala-ortodoxa-noua-podgoria-mg-7005.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/115/hotel-central-rsz-hotel-central-ineu.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/117/hanul-moara-cu-noroc-moara-cu-noroc-4.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/119/agro-tur-minis-dsc-0346.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/12/monumentul-eroilor-de-la-paulis-0f1e49d778dd713f97b6f6e344b98738.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/120/pensiunea-turistica-la-foresteria-dsc-0244.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/123/pensiunea-turistica-mara-whatsapp-image-2026-08-04-at-092911-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/127/art-cafe-rsz-82765241-2187437261563797-3907622736947576832-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/13/ansamblul-castelului-solymosy-120fc473c909213d62c64326c9da52bf.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/130/soft-coffee-whatsapp-image-2026-09-28-at-143739-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/133/gradina-termala-gradina-termala.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/134/arcul-de-triumf-mg-7196.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/135/statuia-libertatii-mg-7185.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/137/parcul-natural-lunca-muresului-rsz-dsc-0334.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/143/pensiunea-komodo-pensiune-komodo-pecica.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/144/pensiunea-onyx-pensiunea-onix.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/145/han-barsa-hanul-de-la-barsa-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/146/taverna-pecicana-dsc-0441.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/147/pensiunea-casa-verde-casa-verde.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/148/casa-bata-casa-bata.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/149/maria-rustic-resort-dsc04928.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/150/hanul-motilor-hanul-motilor-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/151/wine-princess-geza3.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/152/cinema-arta-arta-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/153/pizzeria-ornella-micalaca-ornella-micalaca.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/154/cinematograf-gradiste-cinema-gradiste.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/155/cinema-city-cinema-city-arad-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/156/hotel-coandi-coandi.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/157/cuibul-cocorilor-cuibul-cocorilor.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/158/piccolo-bistro-piccolo-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/159/fast-food-express-fastfoodexpress-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/165/big-chicken-big-chicken.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/169/hotel-queen-hotel-queen.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/170/hotel-crisana-hotel-crisana-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/171/irish-pub-irish-pub-interior.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/174/aqua-strand-moneasa-518314556-1372744454328202-8887757498749619878-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/175/strand-curtici-curtici.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/177/strandul-neptun-dsc-0249.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/178/baile-lipova-baile-lipova-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/179/palatul-bohus-l59a2151.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/18/sinagoga-neologa-dsc-0376.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/180/teatru-de-stat-ioan-slavici-mg-7149.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/181/muzeul-memorial-ioan-slavici-si-emil-montia-dji-0292.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/182/muzeul-orasenesc-lipova-muzeu-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/183/muzeul-tramvaiului-electric-19243921-10209869085947766-518590019-o.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/184/muzeul-viei-si-al-vinului-19340156-10209808863562244-1961596858-o.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/185/apfel-haus-apfel-haus-edit.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/187/muzeul-crisului-alb-muzeu-sebis-2-edit.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/19/biserica-luterana-mg-9331.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/191/xo-residence-xo-residence.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/194/castelul-regal-domeniul-regal-savarsin-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/195/monumentul-sfintei-treimi-img-20171114-142119.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/196/tabara-de-sculptura-img-20180717-120031.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/197/podul-traian-podul-lui-traian-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/198/muzeul-etnografic-alexandru-chis-rsz-1dsc-0534.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/2/slide3.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/200/casa-memoriala-ioan-t-florea-6-casa-memoriala-ioan-t-florea.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/201/pensiunea-oxana-oxana.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/202/fantana-cu-apa-buna-fantana-cu-apa-buna-zabrani.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/203/monumentul-eroilor-pro-patria-dsc-6876.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/204/biserica-romano-catolica-rsz-vinga-perspectiva.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/205/academia-teologica-academia-teologica.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/206/biserica-de-lemn-din-corbesti-dsc-0206.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/207/biserica-de-lemn-din-bodesti-dsc02826.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/208/biserica-de-lemn-de-la-luncsoara-dsc-0087.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/209/biserica-de-lemn-din-cristesti-dsc02876.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/21/castelul-cernovici-cernovici-castle-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/210/biserica-de-lemn-din-tisa-dsc03126.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/211/biserica-de-lemn-din-ionesti-dsc02993.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/212/biserica-de-lemn-din-tarmure-biserica-de-lemn-tarmure-3.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/214/colegiul-national-elena-ghiba-birta-ghiba-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/216/liceul-pedagogic-dimitrie-tichindeal-peda-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/217/preparandia-preparandia.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/218/palatul-andrenyi-palatul-andrenyi-1-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/219/palatul-bancii-nationale-570.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/22/palatul-cultural-dsc00746.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/220/monumentul-ostasilor-romani-monumentul-ostasului-roman-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/221/palatul-cenad-dsc-0078.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/222/palatul-oncu-palatul-oncu.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/223/muzeul-memorial-vasile-goldis-muzeul-memorial-vasile-goldis.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/225/ruinele-unei-bazilici-romanice-ruinele-unei-bazilici-romane-vladmirescu.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/226/monumentul-lui-ion-buteanu-800px-troitaluibuteanu-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/227/bustul-lui-sever-bocu-bust-sever-bocu.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/228/mormintele-lui-v-goldis-st-cicio-pop-iustin-marseu-p-pipos-si-moise-riscutia-monument-morminte-cimitir-eternitatea-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/229/teatrul-de-marionete-dsc-0020.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/231/obeliscul-celor-13-generali-monumentul-celor-13-generali.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/232/monumentul-lui-gelu-glad-si-menumorut-macea-glad-gelu-si-menumorut.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/233/tabara-de-sculptura-monumentala-de-pe-malul-muresului-tabere-de-sculptura-malul-muresului-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/234/ansamblul-monumental-pavel-mercea-img-3219.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/235/ansamblul-monumental-din-parcul-liceului-sabin-dragoi-dsc-0161-3.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/236/castelul-konopi-rsz-castelul-konopi1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/237/castelul-conop-dsc-0009.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/238/palatul-foldes-dsc03528.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/24/palatul-szantay-dsc-0851.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/240/hang-zhou-0212-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/241/pizzeria-la-strada-la-strada.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/242/casa-jelen-jelen-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/243/sep-hotel-20200114-164837.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/244/venetia-venetia-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/246/restaurant-orizont-restaurant-orizont-interior.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-interior.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/248/pensiunea-radena-pensiunea-radena-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/249/pensiunea-belanco-pensiunea-belanco-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/25/palatul-sarbesc-palatul-sarbesc.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/250/pensiunea-alexander-pensiunea-alexander-strada.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/251/hotel-ana-hotel-ana-interior.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/254/cofetaria-caprice-caprice-deco.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/255/pensiunea-panorama-panorama-2.png",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/256/pensiunea-arada-intrare-pensiune-arada.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/257/pensiunea-bella-pensiunea-bella-curte.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/258/dolci-pensieri-dolci-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/259/pensiunea-sergiugeanina-camera-2-sg.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/26/biserica-sarbeasca-sfantul-petru-si-pavel-mg-7163.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/260/pensiunea-etap-pensiunea-etap-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/262/pizza-drive-pizza-drive.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/263/angelis-food-angeli-s-food.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/264/restaurant-orhideea-restaurant-orhideea-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/266/mondo-pizza-mondo-pizza-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/267/pizzeria-milano-pizza-milano.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/269/apetit-bistro-apetit-bistro-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/271/bunatati-de-halmagiu-bunatati-de-halmagiu-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/274/cine-citta-cinecitta-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/275/michelangelo-michelangeki.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/277/restaurant-bucegi-bucegi-rest.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/278/pensiunea-diskkret-diskkret-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/279/cofetaria-delice-delice-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/280/cafe-clasic-1890-fb-img-1582723875757.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/281/restaurant-km-0-km-0-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/282/papa-bun-papa-bun.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/284/hotel-hanul-de-la-rascruce-hdlr-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/286/cofetaria-libelula-libelula-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/287/pensiunea-star-pensiunea-star-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/288/pensiunea-xe-mar-pensiunea-xe-mar.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/289/segafredo-segafredo-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/29/schitul-sfintii-apostoli-petru-si-pavel-schit-moneasa-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/293/hotel-darosy-camera-dubla-darosy.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/296/hotel-miky-hotel-miky-1.png",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/298/hotel-iris-hotel-iris-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/299/pensiunea-nimbus-53720153.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/30/manastirea-gai-manastirea-gai.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/300/vintage-pub-caffe-vintage-pub-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/301/restaurant-carolina-carolina.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/302/hotel-lotus-126848252.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/306/eclipse-eclipse.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/309/biserica-de-lemn-din-grosii-noi-biserica-de-lemn.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/31/manastirea-feredeu-mg-0002.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/312/agro-village-resort-dsc02743.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/316/pony-club-fb-img-1598423756918.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/319/roca-bruna-64-4-roca-bruna.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/32/ansamblul-manastirii-adormirea-maicii-domnului-bodrogul-nou-rsz-manastirea-bezdin-tur6.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/321/amefa-amc-dsc05792.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/322/cabana-deltei-dsc-0666.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/323/pensiunea-lunca-dsc-0556.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/326/biserica-de-lemn-din-rosia-biserica-din-rosia-jpg.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/327/despre-statiunea-moneasa-img-7734.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/328/despre-plaja-ghioroc-dsc02570.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/329/despre-drumul-vinului-cetatea-soimos-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/33/manastirea-bezdin-3-manastirea-sarbeasca-bezdin.png",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/34/biserica-romano-catolica-duminica-sfintei-treimi-mg-7223.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/343/biserica-de-lemn-din-budesti-budesti-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/35/basilica-maria-radna-maria-radna-altar.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/358/palatul-rozsnyay-dsc-0749.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/359/templul-masonic-rsz-templul-masonic.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/360/the-premiere-dsc09655.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/361/sageata-verde-1-1024x675-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/362/parcul-eutopia-290012036-614313603079580-1526911248900415495-n.png",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/363/punctul-de-belvedere-288838211-107357518681254-4727638383329603054-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/364/pestera-grota-ursului-295504058-424047136430372-7018151914782813967-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/366/via-ferrata-308451280-127915263346253-8687523570977899721-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/367/restaurant-damici-dsf9657websize.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/368/crazy-bubble-arad-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/370/cafein-cafein-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/372/bontalenti-20220301-102756.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-2022-01-23.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/376/kaffeine-whatsapp-image-2023-01-03-at-103256.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/377/nissaras-brasato-al-barbera.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/378/lento-cafe-bistro-08923ef6-05c2-4929-991c-ca52f2122cf0.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/379/pizza-ruby-1-3-01.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/38/biserica-de-lemn-din-julita-biserica-din-lemn-julita.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/380/5-to-go-whatsapp-image-2023-01-10-at-151512.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/381/pizza-vero-amore-1ef7a81f-aaa6-419e-8c09-36a215f59d9a.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/382/casa-pianului-jaques-faix-img-4472.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/383/casa-pitoreasca-296721155-633403828151819-2289666196436109145-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/384/vatra-calda-667a3948-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/385/zoo-land-arad-whatsapp-image-2023-07-10-at-94025-am.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/386/wine-road-glamping-image-6483441.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/387/tabara-casoaia-tabara-casoaia.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/388/moby-dick-camping-park-ghioroc-moby-dick-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/389/aniroc-signature-hotel-aniroc-curte.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/39/casa-memoriala-si-colectia-de-arta-eugenia-si-eugen-popa-dsc09482.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/390/muzeul-maria-radna-mmr-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/391/tabara-ortodoxa-img-1850.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/392/muzeul-viei-si-al-vinului-whatsapp-image-2023-11-08-at-82331-am.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/393/la-mosu-si-maica-dsc02620.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/394/muzeul-almasi-bela-dsc02160.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/395/crama-daiconi-daiconi-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/396/crama-dorvena-dorvena-struguri.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/397/crama-villa-veche-villa-veche-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/40/casa-memoriala-iosif-conta-casa-memoriala-iosif-conta.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/403/crama-podrumu-lu-gurban-dsc04981.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/404/crama-dradara-aer-ph-5.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/405/crama-milo-whatsapp-image-2023-09-28-at-133820.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/408/manastirea-feredeu-mg-9985.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/409/parcul-de-sculptura-monumentala-din-casoaia-whatsapp-image-2026-02-25-at-095333-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/410/pivnitele-birauas-img-2151.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/411/crama-halta-lupilor-whatsapp-image-2023-12-05-at-201357.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/412/biserica-de-lemn-izvorul-tamaduirii-ineu-biserica-de-lemn-din-ineu.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/413/biserica-de-lemn-izvorul-tamaduirii-ineu-biserica-de-lemn-din-ineu-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/414/biserica-de-lemn-din-iercoseni-dsc-0187.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/416/muzeul-etnografic-din-dud-muzeul-satului-dud-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/418/arborele-sequoia-dsc05251.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/419/parcul-dendrologic-din-ineu-20210610-145446.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/42/casa-memoriala-stefan-cicio-pop-casa-memoriala-cicio-pop.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/421/muzeul-scolii-sabin-manuila-sambateni-muzeu-sabin-manoila-sambateni-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/422/bazarul-turcesc-din-lipova-bazarul-turcesc.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/423/crama-rab-wine-dsc-0434.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/424/casa-urbariala-20231222-115648.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/426/lacul-taut-dji-0032.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/428/celalalt-teatru-whatsapp-image-2024-12-20-at-85429-am.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/429/spark-bistro-img-1490.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/430/ceva-buuun-whatsapp-image-2024-12-20-at-151741-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/431/over-dose-cafe-2b2d9ed9-a6fa-4071-9b67-f280a252b95a.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/432/cofetaria-la-creme-whatsapp-image-2025-01-15-at-42505-pm.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/433/lcaffe-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/434/just-blvck-coffee-d7e195e0-c762-4431-bece-34b132f7f67e.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/435/conacul-sf-sava-brancovici-359247408.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/436/biserica-ortodoxa-adormirea-maicii-domnului-1roc-6298-hdr-1.png",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/437/camino-social-place-whatsapp-image-2025-01-27-at-084908-2.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/438/casa-maximus-casa-maximus-pentru-site-copy.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/439/pensiunea-lacul-linistit-50a9beb8-e77e-4716-a52b-5566e70079b9.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/44/cetatea-ineului-cetatea-ineului.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/440/casa-flori-de-nuc-187110825-4057467671008331-8101652584620524233-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/441/monumentul-lui-czaran-gyula-whatsapp-image-2025-04-17-at-120619-pm-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/442/muzeul-satului-whatsapp-image-2025-04-17-at-122233-pm-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/444/camping-nela-tur-l59a5482.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/445/alternative-speciality-coffee-alternative-coffee-1-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/446/palatul-reinhardt-whatsapp-image-2025-09-22-at-134206.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/448/vok-luxury-homecity-loft-apartamente0006jpg-5.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/449/vok-luxury-hometropical-living-apartamente0092jpg-2.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/45/cetatea-siriei-dji-0319.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/451/punctul-turistic-de-la-capruta-img-6418.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/452/boulevard-cafe-whatsapp-image-2026-06-25-at-093434.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/453/biserica-evanghelica-luterana-slovaca-biserica-luterana-slovaca-din-nadlac.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/454/dor-tin-whatsapp-image-2026-07-22-at-143705.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/455/casutele-vanatorului-whatsapp-image-2026-08-13-at-140559.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/456/cabana-casa-luca-whatsapp-image-2026-08-18-at-151847-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/457/crama-elite-wine-0.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/458/snooze-coffee-whatsapp-image-2026-09-18-at-145553-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/459/cafecito-whatsapp-image-2026-09-14-at-182943.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/46/cetatea-de-la-soimos-dsc04163-1-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/460/tazze-pazze-whatsapp-image-2026-09-23-at-151837.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/461/moo-coffee-whatsapp-image-2026-09-17-at-160223-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/462/zoz-coffee-whatsapp-image-2026-09-23-at-165539-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/463/noor-whatsapp-image-2026-09-22-at-154558.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/464/focaccia-romana-whatsapp-image-2026-09-23-at-184803-1.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/465/mocsa-speciality-coffee-whatsapp-image-2026-09-28-at-134450.jpeg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/47/cetatea-deznei-2015-08-22-23-moneasa-dezna-ar-salvamont-robi-64.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/48/biblioteca-judeteana-ad-xenopol-biblioteca-judeteana.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/49/casa-cu-ghiulele-casa-cu-ghiulele.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/50/casa-cu-lacat-casa-cu-lacat.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/51/casa-comitatului-casa-comitatului.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/52/cladirea-convict-ului-cladirea-convict-ului-azi-azil-de-batrani.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/53/cladirea-fostei-prefecturi-44194852-498135867334862-4634459051722276864-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/55/lacul-ghioroc-2-lacul-ghioroc.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/57/balta-soimos-balta-soimos.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/58/lacul-taut-dji-0030.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/60/complexul-muzeal-arad-complexul-muzeal-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/61/expozitia-de-caricaturi-stefan-popa-popas-rsz-macea-muzeul-de-caricaturi.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/62/galeriile-turnul-de-apa-mg-7203.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/63/muzeul-adam-muller-guttenbrunn-muzeul-memorial-adam-muller-guttenbrunn-din-zabrani.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/65/ruinele-cuptorului-de-topit-fier-cuptor-moneasa-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/66/statuia-lui-vasile-goldis-bustul-lui-vasile-goldis.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/67/statuia-sfantului-ioan-de-nepomuk-statuia-sf-ioan-de-nepomuk.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/68/parcul-reconcilierii-parcul-reconcilierii-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/69/bustul-lui-ioan-slavici-bustul-lui-ioan-slavici-arad.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/70/statuia-fotbalistului-statuia-fotbalistului.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/71/statuia-sfantului-florian-monumentul-sfantului-florian.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/72/ansamblul-sculptural-din-siria-rsz-bust-2-remodificat.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/75/hotel-continental-conti-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/76/hotel-parc-hotel-parc-moneasa-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/77/motel-maria-magdalena-dsc-0753.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/78/hotel-leon-spa-conferinta-3.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/79/hotel-best-western-central-hotel-best-western-central-arad-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/8/biserica-din-lemn-troas-biserica-din-lemn-troas-1-remade.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/80/situl-arheologic-manastirea-bizere-bizere.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/81/euphoria-biergarten-euphoria-2.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/86/restaurant-ratio-dsc-0440-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/87/cocosul-de-aur-cocosul-de-aur-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/89/restaurantul-bucatarul-meserias-dsc-0868-1.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/9/palatul-justitiei-1273c08b9fb83158a016de491629eb9b.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/96/wings-rsz-3694987995ad5a867458e4388940852.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.visitarad.ro/storage/locations/000/000/98/joys-pub-83325465-768200293685172-2753813161952935936-n.jpg",
+      "status": 200,
+      "imageResponse": true,
+      "contentType": "image/jpeg"
+    }
+  ],
+  "note": "Source association only. HTTP failures may be temporary or hotlink protection. All photos have NOT been individually visually verified."
+}

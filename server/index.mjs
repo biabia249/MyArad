@@ -1,11 +1,15 @@
+import {networkInterfaces} from 'node:os';
 import { createApp } from './app.mjs';
 
 const port = Number(process.env.PORT || 3001);
+const localHosts = ['localhost','127.0.0.1',...Object.values(networkInterfaces()).flatMap(entries=>(entries||[]).filter(a=>a.family==='IPv4'&&!a.internal).map(a=>a.address))];
+const developmentOrigins = localHosts.flatMap(host=>[8081,8082].map(port=>`http://${host}:${port}`));
+if(process.env.WEB_ORIGIN) developmentOrigins.push(process.env.WEB_ORIGIN);
 const server = createApp({
   publicUrl: process.env.PUBLIC_BASE_URL || `http://localhost:${port}`,
   database: process.env.DATABASE_PATH || 'server/data/myarad.sqlite',
   production: process.env.NODE_ENV === 'production',
-  webOrigins: process.env.NODE_ENV === 'production' ? undefined : ['http://localhost:8081','http://localhost:8082','http://127.0.0.1:8081','http://127.0.0.1:8082'],
+  webOrigins: process.env.NODE_ENV === 'production' ? undefined : developmentOrigins,
   webOrigin: process.env.WEB_ORIGIN || 'http://localhost:8081',
   eventPosting: process.env.EVENT_POSTING || 'google',
   googleClientId: process.env.GOOGLE_CLIENT_ID,

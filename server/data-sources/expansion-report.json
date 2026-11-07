@@ -1,0 +1,31 @@
+{
+  "retrievedAt": "2026-11-07T12:17:22.965870+00:00",
+  "total": 659,
+  "added": 438,
+  "merged": 188,
+  "categories": {
+    "cafe": 55,
+    "culture": 29,
+    "education": 47,
+    "entertainment": 9,
+    "food": 109,
+    "health": 49,
+    "landmark": 128,
+    "nightlife": 49,
+    "park": 28,
+    "sport": 92,
+    "stay": 64
+  },
+  "photosAvailable": 308,
+  "photoChecks": "Pending HTTP and visual review; source association alone is not visual verification.",
+  "sources": [
+    "https://baditaflorin.github.io/hack4arad-turism-arad/",
+    "https://www.visitarad.ro/",
+    "https://www.openstreetmap.org/copyright"
+  ],
+  "notes": [
+    "Metadata/photo links imported; long VisitArad descriptions are not copied.",
+    "Source photo rights are retained by their respective owners.",
+    "Geographic coordinates are source positions, not field-verified entrances."
+  ]
+}

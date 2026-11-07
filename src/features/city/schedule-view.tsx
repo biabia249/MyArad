@@ -218,10 +218,12 @@ export function ScheduleView({
                     <button
                       className="text-button"
                       onClick={() =>
-                        void props.onDirections(p.lat, p.lng, "walking", "")
+                        void props.onNavigate(
+                          `/transport?lat=${p.lat}&lng=${p.lng}&name=${encodeURIComponent(p.venue)}`,
+                        )
                       }
                     >
-                      {lang === "ro" ? "Cum ajung?" : "Get directions"} ↗
+                      {lang === "ro" ? "Cum ajung?" : "Get directions"} →
                     </button>
                   </div>
                   {!username && (

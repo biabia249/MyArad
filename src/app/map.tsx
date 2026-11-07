@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { enablePush, disablePush } from "@/features/push";
 import { Alert, Linking, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router, type Href } from "expo-router";
@@ -23,9 +24,11 @@ async function safely(action: () => Promise<void>) {
 export function CityScreen({
   initialPage = "map",
   publicUsername,
+  initialDestination,
 }: {
   initialPage?: string;
   publicUsername?: string;
+  initialDestination?: { lat: number; lng: number; name: string };
 }) {
   const { theme, toggle } = useAppTheme();
   const [name, setName] = useState<string | null>(null);
@@ -86,15 +89,21 @@ export function CityScreen({
       <CityExplorer
         dom={{
           useExpoDOMWebView: false,
+          // See patches/react-native-webview+14.0.1.patch: Android must expose
+          // Expo's initial props before the DOM entry script executes.
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
         }}
+        onEnablePush={enablePush}
         initialPage={initialPage}
         publicUsername={publicUsername}
+        initialDestination={initialDestination}
         onNavigate={async (path) => {
+          const target = new URL(path, "https://myarad.local");
           if (
-            !/^\/(map|events|schedule|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(
-              path,
+            target.origin !== "https://myarad.local" ||
+            !/^\/(map|events|schedule|schools|transport|people|citizen\/[a-zA-Z0-9_]+)$/.test(
+              target.pathname,
             )
           )
             throw new Error("Invalid page.");
@@ -121,6 +130,7 @@ export function CityScreen({
         onDirections={async (...args) => safely(() => directions(...args))}
         onSignIn={async () => router.push("/signin")}
         onSignOut={async () => {
+          await disablePush();
           await authService.signOut();
           setName(null);
         }}
