@@ -276,6 +276,7 @@ export default function CityExplorer(props: CityProps) {
   }, [mapReady, satellite, cycling]);
   useEffect(() => {
     journeyLayer.current?.remove();
+    journeyLayer.current = null;
     if (!journey || !mapReady || !lib.current || !map.current) return;
     const L = lib.current,
       group = L.layerGroup().addTo(map.current);
@@ -311,6 +312,10 @@ export default function CityExplorer(props: CityProps) {
         ],
         maxZoom: 16,
       });
+    return () => {
+      group.remove();
+      if (journeyLayer.current === group) journeyLayer.current = null;
+    };
   }, [journey, mapReady]);
   const now = new Date();
   const endToday = new Date(
@@ -591,6 +596,11 @@ export default function CityExplorer(props: CityProps) {
         ],
         maxZoom: 16,
       });
+  };
+  const clearJourney = () => {
+    setJourney(null);
+    journeyLayer.current?.remove();
+    journeyLayer.current = null;
   };
   const schedulePage = props.initialPage === "schedule";
   const transportPage = props.initialPage === "transport";
@@ -962,6 +972,7 @@ export default function CityExplorer(props: CityProps) {
               onClick={() => {
                 setSelected(null);
                 setDetails(null);
+                clearJourney();
               }}
               aria-label={t.close}
             >
