@@ -721,7 +721,7 @@ export default function CityExplorer(props: CityProps) {
           </span>
         </a>
         <div className="header-actions">
-          {!socialPage && !schedulePage && !vasilePage && <button className="panel-toggle" aria-pressed={mapOnly} onClick={() => {
+          {!socialPage && !schedulePage && !vasilePage && <button className="panel-toggle" aria-label={mapOnly ? (lang === 'ro' ? 'Deschide panoul' : 'Show panel') : (lang === 'ro' ? 'Doar harta' : 'Map only')} aria-pressed={mapOnly} onClick={() => {
             setMapOnly(!mapOnly); setNewsMap(!mapOnly); setMobileList(true); setMapOptionsOpen(false);
             requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
           }}><Icon name={mapOnly ? 'search' : 'layers'} size={18} /><span>{mapOnly ? (lang === 'ro' ? 'Panou' : 'Panel') : (lang === 'ro' ? 'Hartă' : 'Map')}</span></button>}
@@ -1537,7 +1537,7 @@ export default function CityExplorer(props: CityProps) {
       {props.calendarPlatform === 'web' && !vasilePage && !composer && <VasileLauncher label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"} onOpen={() => void action(() => props.onNavigate("/vasile"))} />}
       <dialog ref={menu} className="app-drawer" aria-labelledby="drawer-title" onClick={event => { if (event.target === event.currentTarget) menu.current?.close(); }}>
         <div className="drawer-content">
-          <div className="drawer-heading"><strong id="drawer-title">MyArad</strong><button aria-label={lang === 'ro' ? '?nchide meniul' : 'Close menu'} onClick={() => menu.current?.close()}><Icon name="close" size={20} /></button></div>
+          <div className="drawer-heading"><strong id="drawer-title">MyArad</strong><button aria-label={lang === 'ro' ? 'Închide meniul' : 'Close menu'} onClick={() => menu.current?.close()}><Icon name="close" size={20} /></button></div>
       <nav className="drawer-links" aria-label={lang === 'ro' ? 'Pagini' : 'Pages'}>
         {[
           ["/map", t.street, 'pin'],
@@ -1560,7 +1560,8 @@ export default function CityExplorer(props: CityProps) {
           </button>
         ))}
       </nav>
-          <p className="drawer-hint">{lang === 'ro' ? 'Ora?ul t?u, la un pas.' : 'Your city, one tap away.'}</p>
+          {props.calendarPlatform === 'web' && <button className="drawer-download" onClick={() => { menu.current?.close(); void props.onExternalLink(window.location.origin + '/download'); }}>↓ {lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'}</button>}
+          <p className="drawer-hint">{lang === 'ro' ? 'Orașul tău, la un pas.' : 'Your city, one tap away.'}</p>
         </div>
       </dialog>
       {(error || notice) && (
