@@ -23,6 +23,11 @@ export function CalendarChoices({ item, props, lang }: { item: Place | CityEvent
         const result = await props.onAddToCalendar(entry);
         setMessage(result === 'saved' ? (ro ? 'Eveniment salvat în calendar.' : 'Event saved to calendar.') : result === 'canceled' ? (ro ? 'Adăugare anulată.' : 'Canceled.') : (ro ? 'Verifică în calendar dacă ai confirmat salvarea evenimentului.' : 'Check your calendar to confirm the event was saved.'));
       } else if (provider === 'ics') {
+        if (props.calendarPlatform !== 'web') {
+          await props.onShareCalendar(entry);
+          setMessage(ro ? 'Alege aplicația de calendar sau salvează fișierul .ics din meniul telefonului.' : 'Choose your calendar app or save the .ics file from the phone share menu.');
+          return;
+        }
         const url = URL.createObjectURL(new Blob([calendarFile(entry)], { type: 'text/calendar;charset=utf-8' }));
         const link = document.createElement('a'); link.href = url; link.download = 'myarad-event.ics';
         document.body.appendChild(link); link.click(); link.remove();
@@ -39,7 +44,7 @@ export function CalendarChoices({ item, props, lang }: { item: Place | CityEvent
     ...(props.calendarPlatform && props.calendarPlatform !== 'web' ? [['device', props.calendarPlatform === 'ios' ? 'Apple Calendar / iCloud' : 'Calendar Android', ro ? 'Alege un calendar configurat pe telefon' : 'Choose a calendar set up on your phone'] as [CalendarProvider, string, string]] : []),
     ['google', 'Google Calendar', ro ? 'Cont Google personal sau Workspace' : 'Personal Google or Workspace account'],
     ['outlook', 'Outlook Calendar', ro ? 'Cont Microsoft / Outlook.com' : 'Microsoft / Outlook.com account'],
-    ...(props.calendarPlatform === 'web' ? [['ics', ro ? 'Alte calendare (.ics)' : 'Other calendars (.ics)', 'Apple Calendar · Thunderbird · Outlook'] as [CalendarProvider, string, string]] : []),
+    ['ics', ro ? 'Alte calendare (.ics)' : 'Other calendars (.ics)', props.calendarPlatform === 'web' ? 'Apple Calendar · Thunderbird · Outlook' : (ro ? 'Partajează sau salvează fișierul pe telefon' : 'Share or save the file on your phone')],
   ];
   return <fieldset className="calendar-choices"><legend>{ro ? 'Sau adaugă în calendarul personal' : 'Or add to your personal calendar'}</legend>
     <p className="calendar-help">{ro ? 'Confirmă data și ora de mai sus, apoi alege calendarul. Orele sunt afișate în fusul orar al dispozitivului.' : 'Confirm the date and time above, then choose a calendar. Times use your device timezone.'}</p>

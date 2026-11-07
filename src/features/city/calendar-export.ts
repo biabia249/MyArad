@@ -30,7 +30,8 @@ export function calendarFile(entry: CalendarEntry) {
   const fold = (line: string) => {
     let result = '', count = 0;
     for (const char of line) {
-      const bytes = new TextEncoder().encode(char).length;
+      const point = char.codePointAt(0)!;
+      const bytes = point <= 0x7f ? 1 : point <= 0x7ff ? 2 : point <= 0xffff ? 3 : 4;
       if (count + bytes > 75) { result += '\r\n '; count = 1; }
       result += char; count += bytes;
     }

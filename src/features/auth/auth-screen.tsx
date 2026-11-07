@@ -208,7 +208,7 @@ export default function AuthScreen({ signup = false }: { signup?: boolean }) {
       {profile ? (
         <>
           <Text
-            style={[ui.message, dark && { color: "#d9e3f3" }]}
+            style={[ui.message, dark && { color: "#f1f3ff" }]}
           >{`You’re signed in as ${profile.fullName}.`}</Text>
           {profile.hasPassword === false && (
             <SetPasswordForm
@@ -223,7 +223,7 @@ export default function AuthScreen({ signup = false }: { signup?: boolean }) {
           {!!message && (
             <Text
               accessibilityLiveRegion="polite"
-              style={[ui.message, dark && { color: "#d9e3f3" }]}
+              style={[ui.message, dark && { color: "#f1f3ff" }]}
             >
               {message}
             </Text>
@@ -306,7 +306,7 @@ export default function AuthScreen({ signup = false }: { signup?: boolean }) {
               signup={signup}
             />
             <View style={ui.footer}>
-              <Text style={[ui.small, dark && { color: "#aab8cc" }]}>
+              <Text style={[ui.small, dark && { color: "#D5BAC4" }]}>
                 {signup ? "Already have an account?" : "Don’t have an account?"}
               </Text>
               <Link

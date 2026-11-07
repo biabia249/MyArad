@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { createSocial } from './social.mjs';
 import { readFileSync } from "node:fs";
 import { HttpError } from "./store.mjs";
 import { createEventNews } from "./event-news.mjs";
@@ -135,6 +136,7 @@ export function createCity(store, config) {
     if (!token) throw new HttpError(401, "Please sign in to participate.");
     return store.authenticate(token);
   };
+  const social = createSocial(db, author);
   const event = (id) => {
     const row = db
       .prepare(
@@ -148,6 +150,7 @@ export function createCity(store, config) {
     !!user && (config.eventPosting === "signed-in" || !!user.google_sub);
   return async function city(req, url, body) {
     const path = url.pathname;
+    if (path.startsWith('/city/social/')) return social(req, url, body);
     if (req.method === 'GET' && path === '/city/schools') return schoolCatalog;
     if (req.method === "GET" && path === "/city/event-news") return eventNews(places, url.searchParams.get('q') || '');
     if (req.method === "GET" && path === "/city/bootstrap") {
@@ -166,9 +169,9 @@ export function createCity(store, config) {
           config.eventPosting === "signed-in" ? "signed-in" : "google",
         events: db
           .prepare(
-            `SELECT e.*,u.full_name AS author,(SELECT COUNT(*) FROM city_attendance a WHERE a.event_id=e.id) AS attending FROM city_events e JOIN users u ON u.id=e.author_id WHERE e.ends_at>? ORDER BY e.starts_at LIMIT 500`,
+            `SELECT e.*,u.full_name AS author,(SELECT COUNT(*) FROM city_attendance a WHERE a.event_id=e.id) AS attending,EXISTS(SELECT 1 FROM city_attendance a WHERE a.event_id=e.id AND a.user_id=?) AS going FROM city_events e JOIN users u ON u.id=e.author_id WHERE e.ends_at>? ORDER BY e.starts_at LIMIT 500`,
           )
-          .all(new Date().toISOString()),
+          .all(user?.id || '', new Date().toISOString()),
       };
     }
     if (req.method === "POST" && path === "/city/events") {
@@ -424,6 +427,9 @@ export function createCity(store, config) {
         }
         return {
           event: found,
+          participants: db.prepare(
+            'SELECT u.username,u.full_name AS fullName FROM city_attendance a JOIN users u ON u.id=a.user_id WHERE a.event_id=? ORDER BY u.full_name COLLATE NOCASE,u.username',
+          ).all(id),
           attending: db
             .prepare(
               "SELECT COUNT(*) AS n FROM city_attendance WHERE event_id=?",

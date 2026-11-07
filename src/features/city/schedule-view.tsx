@@ -1,5 +1,6 @@
 import { ProfileCard, type CitizenProfile } from "./profile-card";
 import { CalendarChoices } from "./calendar-choices";
+import { ResultsSplitter } from './results-splitter';
 import { useCallback, useEffect, useState } from "react";
 import type { CityProps, Language, Place, CityEvent } from "./types";
 
@@ -134,6 +135,7 @@ export function ScheduleView({
         </div>
       ) : (
         <>
+          <div className="schedule-controls">
           {schedule && (
             <ProfileCard
               name={schedule.fullName}
@@ -200,6 +202,8 @@ export function ScheduleView({
               {error} <button onClick={() => void load()}>{t.retry}</button>
             </div>
           )}
+          </div>
+          <ResultsSplitter page={username ? 'public-schedule' : 'my-schedule'} />
           <div className="schedule-list">
             {schedule?.plans.length ? (
               schedule.plans.map((p) => (

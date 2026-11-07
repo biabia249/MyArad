@@ -4,20 +4,19 @@
     "slug": "MyArad",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/app-icon.png",
     "scheme": "myarad",
     "userInterfaceStyle": "automatic",
     "ios": {
       "bundleIdentifier": "com.myarad.app",
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/app-icon.png"
     },
     "android": {
       "package": "com.myarad.app",
+      "icon": "./assets/images/app-icon.png",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundColor": "#885c40",
+        "foregroundImage": "./assets/images/app-icon-adaptive.png"
       },
       "predictiveBackGestureEnabled": false,
       "permissions": [
@@ -26,7 +25,7 @@
     },
     "web": {
       "output": "server",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/app-favicon.png"
     },
     "plugins": [
       "./plugins/with-android-cmake",
@@ -57,7 +56,15 @@
         }
       ],
       "expo-asset",
-      ["expo-calendar", { "writeOnlyAccess": true, "writeOnlyCalendarPermission": "MyArad adaugă în calendar evenimentele pe care le alegi.", "calendarPermission": "MyArad folosește calendarul ales pentru a adăuga evenimentele tale." }]
+      [
+        "expo-calendar",
+        {
+          "writeOnlyAccess": true,
+          "writeOnlyCalendarPermission": "MyArad adaugă în calendar evenimentele pe care le alegi.",
+          "calendarPermission": "MyArad folosește calendarul ales pentru a adăuga evenimentele tale."
+        }
+      ],
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true,

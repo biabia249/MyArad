@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { smartSearchScore } from "./smart-search";
+import { ResultsSplitter } from './results-splitter';
+import { locationErrorMessage } from './location-errors';
 import type { CityProps, Language, Place } from "./types";
 import type { Itinerary, TransitNetwork } from "./transit-types";
 export function Journey({
@@ -10,17 +12,22 @@ export function Journey({
   onRoute,
   position,
   onLine,
+  onPosition,
+  routeRequest = 0,
 }: {
   lang: Language;
   props: CityProps;
   destination?: { lat: number; lng: number; name: string };
   places: Place[];
-  onRoute: (i: Itinerary) => void;
+  onRoute: (i: Itinerary | null) => void;
   position?: { lat: number; lng: number } | null;
   onLine?: (encoded: string) => void;
+  onPosition?: (point: { lat: number; lng: number }) => void;
+  routeRequest?: number;
 }) {
   const ro = lang === "ro";
-  const [mode, setMode] = useState("transit"),
+  const { onRequest, onLocate } = props;
+  const [mode, setMode] = useState("walking"),
     [origin, setOrigin] = useState(""),
     [to, setTo] = useState(""),
     [busy, setBusy] = useState(false),
@@ -29,13 +36,15 @@ export function Journey({
     [active, setActive] = useState(0),
     [network, setNetwork] = useState<TransitNetwork | null>(null);
   const [useGps, setUseGps] = useState(true);
+  const handledRequest = useRef(0);
+  const planVersion = useRef(0);
+  useEffect(() => () => { planVersion.current++; }, []);
   const [originSearch, setOriginSearch] = useState(''), [destinationSearch, setDestinationSearch] = useState('');
   const [lineId, setLineId] = useState(0),
     [patternId, setPatternId] = useState(0);
   useEffect(() => {
     let live = true;
-    props
-      .onRequest("/city/transit/network", null)
+    onRequest("/city/transit/network", null)
       .then((r) => {
         if (live && r.ok) setNetwork(JSON.parse(r.data));
       })
@@ -43,7 +52,7 @@ export function Journey({
     return () => {
       live = false;
     };
-  }, [props]);
+  }, [onRequest]);
   const minutes = (n: number) => (n <= 0 ? 0 : Math.max(1, Math.round(n / 60)));
   const time = (n: number) =>
     new Date(n * 1000).toLocaleTimeString(ro ? "ro-RO" : "en-GB", {
@@ -60,37 +69,40 @@ export function Journey({
       RAIL: ro ? "Tren" : "Train",
     })[mode] || mode;
   const official = "https://arad-transport.telelink.city/app/";
-  const locateOption = (id: string) => {
+  const locateOption = useCallback((id: string) => {
     if (id.startsWith("stop:")) {
       const s = network?.stops.find((s) => String(s.id) === id.slice(5));
       return s ? { lat: s.latitude, lng: s.longitude } : null;
     }
     return places.find((p) => p.id === id) || null;
-  };
-  async function plan() {
+  }, [network, places]);
+  const plan = useCallback(async (forceGps = false) => {
+    const version = ++planVersion.current;
     setBusy(true);
     setError("");
     setResults([]);
+    onRoute(null);
     try {
-      let from = useGps ? position : locateOption(origin);
-      if (useGps && !from) {
-        const p = await props.onLocate();
-        if (p.error)
-          throw new Error(
-            ro
-              ? "Permite localizarea sau alege o stație de plecare."
-              : "Allow location or choose a starting stop.",
-          );
-        from = p;
-      }
+      const gps = forceGps || useGps;
+      if (forceGps) setUseGps(true);
       const dest = destination || locateOption(to);
+      if (!dest) throw new Error(ro ? 'Alege destinația.' : 'Choose a destination.');
+      let from = gps ? position : locateOption(origin);
+      if (gps) {
+        const p = await onLocate();
+        if (version !== planVersion.current) return;
+        if (p.error)
+          throw new Error(locationErrorMessage(p.error, ro));
+        from = p;
+        onPosition?.(p);
+      }
       if (!from || !dest)
         throw new Error(
           ro
             ? "Alege plecarea și destinația."
             : "Choose a start and destination.",
         );
-      const r = await props.onRequest(
+      const r = await onRequest(
         "/city/transit/plan",
         JSON.stringify({
           from: { lat: from.lat, lng: from.lng },
@@ -98,8 +110,10 @@ export function Journey({
           mode,
         }),
       );
+      if (version !== planVersion.current) return;
       if (!r.ok) throw new Error(r.error);
       const j = JSON.parse(r.data);
+      if (!Array.isArray(j.itineraries)) throw new Error(ro ? 'Răspunsul serviciului de rute este invalid.' : 'Invalid route service response.');
       setResults(j.itineraries);
       setActive(0);
       if (!j.itineraries.length)
@@ -110,6 +124,7 @@ export function Journey({
         );
       onRoute(j.itineraries[0]);
     } catch (e) {
+      if (version !== planVersion.current) return;
       const message = (e as Error).message;
       setError(
         ro && message.includes("Transport service")
@@ -117,9 +132,14 @@ export function Journey({
           : message,
       );
     } finally {
-      setBusy(false);
+      if (version === planVersion.current) setBusy(false);
     }
-  }
+  }, [useGps, position, locateOption, origin, destination, to, onLocate, onRequest, onPosition, onRoute, mode, ro]);
+  useEffect(() => {
+    if (!routeRequest || handledRequest.current === routeRequest) return;
+    handledRequest.current = routeRequest;
+    void plan(true);
+  }, [routeRequest, plan]);
   const options = (query: string, selected: string) => (
     <>
       <optgroup label={ro ? "Stații de transport public" : "Transit stops"}>
@@ -140,9 +160,10 @@ export function Journey({
   );
   return (
     <section className="journey">
+      <div className="journey-filter-panel">
       <div className="journey-heading">
         <span className="eyebrow">
-          CTP ARAD / {ro ? "TRANSPORT PUBLIC" : "PUBLIC TRANSPORT"}
+          MYARAD / {ro ? "RUTA TA" : "YOUR ROUTE"}
         </span>
         <h3>{ro ? "Cum ajung?" : "How do I get there?"}</h3>
       </div>
@@ -210,6 +231,9 @@ export function Journey({
             : "Find my route"}{" "}
         →
       </button>
+      </div>
+      <ResultsSplitter page={routeRequest ? 'transport-results' : destination ? 'journey-detail-results' : 'transport-results'} />
+      <div className="journey-results-panel">
       {error && (
         <p className="journey-error" role="alert">
           {error}
@@ -387,6 +411,7 @@ export function Journey({
           ? "Plata și validarea se fac în serviciul oficial. MyArad nu emite bilete."
           : "Payment and validation happen in the official service. MyArad does not issue tickets."}
       </small>
+      </div>
     </section>
   );
 }

@@ -100,9 +100,18 @@ test("guests browse places; authenticated users create, attend, comment and sugg
   );
   const details = (await call(`/city/events/${id}`, undefined, token)).data;
   assert.equal(details.going, true);
+  assert.deepEqual(details.participants, [{ username: 'city_tester', fullName: 'City Tester' }]);
+  const ownEvent = (await call('/city/bootstrap', undefined, token)).data.events.find((event) => event.id === id);
+  assert.equal(ownEvent.attending, 1);
+  assert.equal(ownEvent.going, 1);
+  const guestEvent = (await call('/city/bootstrap')).data.events.find((event) => event.id === id);
+  assert.equal(guestEvent.attending, 1);
+  assert.equal(guestEvent.going, 0);
   assert.equal(details.comments[0].body, "Is this accessible?");
   await call(`/city/events/${id}/attend`, { going: false }, token);
   assert.equal((await call(`/city/events/${id}`)).data.attending, 0);
+  assert.deepEqual((await call(`/city/events/${id}`)).data.participants, []);
+  assert.equal((await call('/city/bootstrap', undefined, token)).data.events.find((event) => event.id === id).going, 0);
   assert.equal(
     (
       await call(
@@ -127,6 +136,32 @@ test("guests browse places; authenticated users create, attend, comment and sugg
     404,
   );
 });
+test('friend chat restores private conversations and enforces accepted friendship', async t => {
+  const { call, token, store } = await fixture(t);
+  const friend = await store.signUp({ fullName: 'Chat Friend', username: 'chat_friend', email: 'friend@example.com', password: 'Testing-123!' });
+  assert.equal((await call('/city/social/messages/chat_friend', { body: 'Denied before friendship' }, token)).status, 403);
+  assert.equal((await call('/city/social/friend/chat_friend', { action: 'request' }, token)).status, 200);
+  assert.equal((await call('/city/social/friend/city_tester', { action: 'accept' }, friend.token)).status, 200);
+  assert.equal((await call('/city/social/messages/chat_friend', { body: 'Hello from an isolated test' }, token)).status, 200);
+  const messages = (await call('/city/social/messages/city_tester', undefined, friend.token)).data.messages;
+  assert.equal(messages.at(-1).body, 'Hello from an isolated test');
+  assert.equal(messages.at(-1).sender, 'city_tester');
+  assert.equal((await call('/city/social/read/city_tester', { ids: [messages.at(-1).id] }, friend.token)).status, 200);
+  const outsider = await store.signUp({ fullName: 'Outside User', username: 'outside_user', email: 'outside@example.com', password: 'Testing-123!' });
+  assert.equal((await call('/city/social/messages/chat_friend', undefined, outsider.token)).status, 403);
+  assert.equal((await call('/city/social/messages/chat_friend')).status, 401);
+  const created = await call('/city/events', event(), token);
+  const id = created.data.event.id;
+  await call(`/city/events/${id}/attend`, { going: true }, token);
+  await call(`/city/events/${id}/attend`, { going: true }, friend.token);
+  const attendees = (await call(`/city/events/${id}`)).data;
+  assert.equal(attendees.attending, 2);
+  assert.deepEqual(attendees.participants.map(person => person.username), ['chat_friend', 'city_tester']);
+  assert.ok(attendees.participants.every(person => !('email' in person) && !('id' in person)));
+  await call(`/city/events/${id}/attend`, { going: false }, friend.token);
+  assert.equal((await call(`/city/events/${id}`)).data.participants.length, 1);
+});
+
 test("event validation rejects out-of-city coordinates, invalid times, oversized and empty content", async (t) => {
   const { call, token } = await fixture(t);
   for (const patch of [

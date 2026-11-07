@@ -48,6 +48,7 @@ export type CityEvent = {
   ends_at: string;
   author: string;
   attending?: number;
+  going?: boolean | number;
 };
 export type Comment = {
   id: string;
@@ -57,6 +58,7 @@ export type Comment = {
 };
 export type EventDetails = {
   event: CityEvent;
+  participants: { username: string; fullName: string }[];
   attending: number;
   going: boolean;
   comments: Comment[];
@@ -71,6 +73,7 @@ export type ApiResult = { ok: boolean; data: string; error?: string };
 export type CityProps = {
   calendarPlatform?: 'ios' | 'android' | 'web';
   onAddToCalendar: (entry: import('./calendar-export').CalendarEntry) => Promise<string>;
+  onShareCalendar: (entry: import('./calendar-export').CalendarEntry) => Promise<void>;
   dom?: import("expo/dom").DOMProps;
   userName: string | null;
   theme: "light" | "dark";

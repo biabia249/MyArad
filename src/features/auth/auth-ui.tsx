@@ -15,8 +15,9 @@ import {
   type TextInputProps,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { fonts, palette } from '@/features/design-system';
 
-export const coral = "#214b91";
+export const coral = "#8E93CB";
 const svg = (body: string, box: string) => ({
   uri: `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${box}">${body}</svg>`)}`,
 });
@@ -25,7 +26,7 @@ const contours = Array.from({ length: 15 }, (_, i) => {
   return `<path d="M ${185 - r} 120 C ${150 - r} ${75 - r}, ${210 + r} ${60 - r}, ${215 + r} 110 S ${230 + r} ${160 + r}, 180 ${155 + r} S ${125 - r} ${180 + r}, ${185 - r} 120 Z"/>`;
 }).join("");
 const pattern = svg(
-  `<rect width="400" height="600" fill="${coral}"/><g fill="none" stroke="#809bcd" stroke-width="1.15" opacity=".7">${contours}<g transform="translate(-180 310) rotate(-30 180 120)">${contours}</g><g transform="translate(220 340)">${contours}</g></g>`,
+  `<rect width="400" height="600" fill="${coral}"/><g fill="none" stroke="#B4BDDB" stroke-width="1.15" opacity=".7">${contours}<g transform="translate(-180 310) rotate(-30 180 120)">${contours}</g><g transform="translate(220 340)">${contours}</g></g>`,
   "0 0 400 600",
 );
 const wave = svg(
@@ -70,7 +71,7 @@ export function AuthShell({
         ? Math.min(height * 0.3, 250)
         : Math.min(height * 0.47, 410);
   return (
-    <View style={[ui.screen, dark && { backgroundColor: "#111925" }]}>
+    <View style={[ui.screen, dark && { backgroundColor: "#10182e" }]}>
       <KeyboardAvoidingView
         style={ui.fill}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -100,7 +101,7 @@ export function AuthShell({
               source={wave}
               style={ui.wave}
               contentFit="fill"
-              tintColor={dark ? "#111925" : undefined}
+              tintColor={dark ? "#10182e" : "#f1f3ff"}
             />
           </View>
           <View
@@ -126,7 +127,7 @@ export function Title({ children }: { children: string }) {
     <View style={ui.titleWrap}>
       <Text
         accessibilityRole="header"
-        style={[ui.title, theme === "dark" && { color: "#edf2fa" }]}
+        style={[ui.title, theme === "dark" && { color: "#f1f3ff" }]}
       >
         {children}
       </Text>
@@ -155,16 +156,15 @@ export function AuthField({
     <View style={ui.field}>
       <Text
         nativeID={`${props.nativeID}-label`}
-        style={[ui.label, dark && { color: "#d9e3f3" }]}
+        style={[ui.label, dark && { color: "#f1f3ff" }]}
       >
         {label}
       </Text>
       <View
         style={[
           ui.inputRow,
-          (focused || !!error) && {
-            borderBottomColor: error ? "#b52236" : coral,
-          },
+          { backgroundColor: dark ? '#1b2743' : '#ffffff', borderColor: dark ? '#344568' : '#cdd2eb' },
+          (focused || !!error) && { borderColor: error ? '#b52236' : coral },
         ]}
       >
         <Icon name={icon} />
@@ -175,14 +175,14 @@ export function AuthField({
           accessibilityLabelledBy={`${props.nativeID}-label`}
           secureTextEntry={password && !visible}
           autoCorrect={false}
-          onFocus={() => setFocused(true)}
+          onFocus={(event) => { setFocused(true); props.onFocus?.(event); }}
           onBlur={(event) => {
             setFocused(false);
             props.onBlur?.(event);
           }}
-          placeholderTextColor="#a0a0a0"
+          placeholderTextColor={dark ? '#bac7e4' : palette.muted}
           underlineColorAndroid="transparent"
-          style={[ui.input, dark && { color: "#edf2fa" }]}
+          style={[ui.input, dark && { color: "#f1f3ff" }]}
         />
         {password && (
           <Pressable
@@ -257,8 +257,9 @@ export function GoogleButton({
         {
           minHeight: 50,
           borderWidth: 1,
-          borderColor: "#dadce0",
-          borderRadius: 7,
+          borderColor: theme === 'dark' ? '#344568' : '#cdd2eb',
+          backgroundColor: theme === 'dark' ? '#1b2743' : '#ffffff',
+          borderRadius: 16,
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
@@ -280,9 +281,10 @@ export function GoogleButton({
           />
           <Text
             style={{
-              color: theme === "dark" ? "#e1e9f5" : "#203552",
+              color: theme === "dark" ? "#f1f3ff" : "#3D0000",
               fontSize: 16,
               fontWeight: "600",
+              fontFamily: fonts.semibold,
             }}
           >
             {label}
@@ -294,40 +296,45 @@ export function GoogleButton({
 }
 export const ui = StyleSheet.create({
   fill: { flex: 1 },
-  screen: { flex: 1, backgroundColor: "white" },
+  screen: { flex: 1, backgroundColor: "#f1f3ff" },
   scroll: { flexGrow: 1, width: "100%", maxWidth: 520, alignSelf: "center" },
   hero: { width: "100%", overflow: "hidden", backgroundColor: coral },
   wave: { position: "absolute", bottom: -1, width: "100%", height: 125 },
-  content: { flexGrow: 1, paddingTop: 4 },
+  content: { flexGrow: 1, paddingTop: 4, paddingBottom: 24 },
   titleWrap: { alignSelf: "flex-start", marginBottom: 30 },
   title: {
-    color: "#203552",
+    color: "#3D0000",
     fontSize: 34,
-    fontWeight: "800",
+    fontFamily: fonts.heading,
+    fontWeight: "700",
+    lineHeight: 44,
     letterSpacing: -0.7,
   },
   titleLine: {
-    height: 2,
-    backgroundColor: "#d8b13e",
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "#FFEB99",
     marginTop: -2,
     width: "100%",
   },
   field: { marginBottom: 16 },
-  label: { color: "#203552", fontSize: 14, fontWeight: "500" },
+  label: { color: "#3D0000", fontSize: 14, fontFamily: fonts.medium, marginBottom: 8 },
   inputRow: {
-    minHeight: 44,
+    minHeight: 54,
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: "#c5c5c5",
+    gap: 10,
+    paddingHorizontal: 14,
+    borderWidth: 1,
+    borderRadius: 14,
   },
   input: {
     flex: 1,
     minWidth: 0,
-    fontSize: 14,
+    fontSize: 16,
+    fontFamily: fonts.body,
     paddingVertical: 12,
-    color: "#203552",
+    color: "#3D0000",
   },
   eye: {
     minWidth: 44,
@@ -335,16 +342,16 @@ export const ui = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  error: { color: "#b52236", fontSize: 12, lineHeight: 18, marginTop: 4 },
+  error: { color: "#b52236", fontFamily: fonts.body, fontSize: 12, lineHeight: 18, marginTop: 6 },
   button: {
     backgroundColor: coral,
-    minHeight: 50,
-    borderRadius: 7,
+    minHeight: 54,
+    borderRadius: 16,
     alignItems: "center",
     justifyContent: "center",
     padding: 12,
   },
-  buttonText: { color: "white", fontSize: 17, fontWeight: "700" },
+  buttonText: { color: palette.accent, fontSize: 16, fontFamily: fonts.semibold },
   actions: { marginTop: "auto", paddingTop: 42 },
   footer: {
     flexDirection: "row",
@@ -353,13 +360,14 @@ export const ui = StyleSheet.create({
     alignItems: "center",
     marginTop: 4,
   },
-  small: { color: "#656565", fontSize: 13 },
+  small: { color: palette.muted, fontSize: 14, fontFamily: fonts.body, lineHeight: 22 },
   link: {
-    color: "#b8404c",
+    color: "#8E93CB",
     fontSize: 13,
+    fontFamily: fonts.semibold,
     paddingVertical: 14,
     paddingHorizontal: 4,
   },
-  notice: { color: "#777", fontSize: 11, textAlign: "center", marginTop: 4 },
-  message: { color: "#203552", fontSize: 15, lineHeight: 23, marginBottom: 24 },
+  notice: { color: palette.muted, fontFamily: fonts.body, fontSize: 12, lineHeight: 18, textAlign: "center", marginTop: 8 },
+  message: { color: "#3D0000", fontFamily: fonts.body, fontSize: 15, lineHeight: 24, marginBottom: 24 },
 });

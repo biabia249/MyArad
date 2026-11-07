@@ -1,13 +1,14 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { Alert, Linking, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { router, type Href } from "expo-router";
+import { router, useFocusEffect, type Href } from "expo-router";
 import * as Location from "expo-location";
 import { useAppTheme } from "@/features/app-theme";
 import CityExplorer from "@/features/city/city-explorer";
 import { authService } from "@/features/auth/auth-service";
 import type { CityProps } from "@/features/city/types";
-import { addToDeviceCalendar } from "@/features/city/device-calendar";
+import { addToDeviceCalendar, shareCalendarFile } from "@/features/city/device-calendar";
+import { browserLocation } from '@/features/city/browser-location';
 
 function reportError(e: unknown) {
   const message = e instanceof Error ? e.message : String(e);
@@ -32,12 +33,14 @@ export function CityScreen({
   const [name, setName] = useState<string | null>(null);
   const latestLocation = useRef<{ lat: number; lng: number } | null>(null);
   const locationRefresh = useRef<Promise<void> | null>(null);
-  useEffect(() => {
-    authService
+  useFocusEffect(useCallback(() => {
+    let active = true;
+    void authService
       .getProfile()
-      .then((p) => setName(p?.fullName || null))
+      .then((p) => { if (active) setName(p?.fullName || null); })
       .catch(() => {});
-  }, []);
+    return () => { active = false; };
+  }, []));
   const request = useCallback<CityProps["onRequest"]>(async (path, data) => {
     try {
       return {
@@ -58,10 +61,18 @@ export function CityScreen({
     }
   }, []);
   const locate = useCallback<CityProps["onLocate"]>(async () => {
+    if (Platform.OS === 'web') return browserLocation({ secure: window.isSecureContext, geolocation: navigator.geolocation });
     try {
-      const permission = await Location.requestForegroundPermissionsAsync();
-      if (permission.status !== "granted")
-        return { lat: 0, lng: 0, error: "permission" };
+      let permission = await Location.getForegroundPermissionsAsync();
+      if (!permission.granted && permission.canAskAgain) permission = await Location.requestForegroundPermissionsAsync();
+      if (!permission.granted) {
+        if (!permission.canAskAgain) Alert.alert('Acces la locație', 'Activează locația pentru MyArad din permisiunile aplicației.', [
+          { text: 'Anulează', style: 'cancel' },
+          { text: 'Deschide setările', onPress: () => { void Linking.openSettings(); } },
+        ]);
+        return { lat: 0, lng: 0, error: permission.canAskAgain ? 'permission' : 'permission-blocked' };
+      }
+      if (!await Location.hasServicesEnabledAsync()) return { lat: 0, lng: 0, error: 'services-disabled' };
 
       // iOS can take several seconds to acquire a brand-new high-accuracy fix.
       // Use a recent cached fix immediately, then improve it in the background.
@@ -116,12 +127,13 @@ export function CityScreen({
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: theme === "dark" ? "#111925" : "#f7f8fa",
+        backgroundColor: theme === "dark" ? "#10182e" : "#f1f3ff",
       }}
     >
       <CityExplorer
         calendarPlatform={Platform.OS === 'ios' ? 'ios' : Platform.OS === 'android' ? 'android' : 'web'}
         onAddToCalendar={addToDeviceCalendar}
+        onShareCalendar={shareCalendarFile}
         dom={{
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
@@ -134,12 +146,12 @@ export function CityScreen({
         publicUsername={publicUsername}
         onNavigate={async (path) => {
           if (
-            !/^\/(map|events|schedule|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(
+            !/^\/(map|events|people|schedule|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(
               path,
             )
           )
             throw new Error("Invalid page.");
-          router.push(path as Href);
+          router.navigate(path as Href);
         }}
         theme={theme}
         onToggleTheme={async () => toggle()}
@@ -151,8 +163,6 @@ export function CityScreen({
             if (Platform.OS === "web")
               window.open(url, "_blank", "noopener,noreferrer");
             else {
-              if (!(await Linking.canOpenURL(url)))
-                throw new Error("No app is available to open this link.");
               await Linking.openURL(url);
             }
           })

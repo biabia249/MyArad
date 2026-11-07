@@ -1,5 +1,18 @@
 import { Platform } from 'react-native';
-import { validateEntry, type CalendarEntry } from './calendar-export';
+import { calendarFile, validateEntry, type CalendarEntry } from './calendar-export';
+
+export async function shareCalendarFile(entry: CalendarEntry) {
+  validateEntry(entry);
+  if (Platform.OS === 'web') throw new Error('Use the browser calendar download.');
+  const [{ File, Paths }, Sharing] = await Promise.all([import('expo-file-system'), import('expo-sharing')]);
+  if (!(await Sharing.isAvailableAsync())) throw new Error('Partajarea fișierelor nu este disponibilă pe acest dispozitiv.');
+  const file = new File(Paths.cache, `myarad-event-${Date.now()}.ics`);
+  file.create();
+  await file.write(calendarFile(entry));
+  // Keep the cache file available after the share sheet returns: the receiving
+  // app may not have copied it yet. The OS can reclaim the cache later.
+  await Sharing.shareAsync(file.uri, { mimeType: 'text/calendar', UTI: 'public.calendar-event', dialogTitle: 'Adaugă evenimentul în calendar' });
+}
 
 export async function addToDeviceCalendar(entry: CalendarEntry) {
   const { start, end } = validateEntry(entry);
