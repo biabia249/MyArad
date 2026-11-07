@@ -74,3 +74,13 @@ because usage was low and continue on another Codex account.
 - iOS export including DOM bundle succeeded (`/tmp/myarad-ios-export`). iOS device test pending; Android physical device test pending. Push credentials still unconfigured.
 - Docs updated in docs/ios-testing.md and docs/android-development-linux.md.
 - Final active-WebView Android smoke test PASSED: satellite tiles, native theme callback, People/Transport/Schools/Map navigation, university search results, simulated Arad GPS, DOM reload, and no uncaught DOM exceptions. Screenshot `/tmp/myarad-android-running.png`. Lint/typecheck passed.
+
+## Team merge completed
+- Integrated origin/main d615176 and origin/bia f0c008b with local f883cb0, preserving the colleague's UI, school directory, search/event/calendar features and local social/native fixes.
+- Merge commits d95522c and 77ae51c. 77ae51c pushed to main and fix/team-sync; bia left untouched.
+- Profiles now use friend requests/counts like People; old follow API/data retained for compatibility. Persistent web sessions migrate existing sessionStorage tokens.
+- Combined places: 807, including 202 education map entries. School registry: 456 official 2025–26 rows, 47 matched to map features. Unmatched school coordinates are explicitly unavailable, not guessed. Nicolae Bălcescu included.
+- Coordinate audit: 219 source footprints checked, 15 outside points moved inside; no entrance accuracy claimed. Audit rerun makes zero additional changes. Source aliases preserved for both tourism imports.
+- Verified 36 backend tests + 8 script tests, lint/typecheck and Expo doctor 20/20. Two-browser social/login/read-notification flow passed. Live web school-directory/Bălcescu selection passed.
+- Updated universal Android development APK (arm64-v8a/x86_64) built in 27s, installed to emulator and staged at the existing install page on port8083. New native module expo-calendar included.
+- Phone install page: http://172.20.10.8:8083/device-test/index.html. iPhone Expo Go exp://172.20.10.8:8083, hardware test still pending.
