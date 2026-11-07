@@ -1,5 +1,5 @@
 .traveler-marker { background: none; border: 0; }
-.traveler-person { position: relative; width: 48px; height: 64px; filter: drop-shadow(0 2px 3px #3d000044); }
+.traveler-person { position: relative; display: block; width: 48px; height: 64px; object-fit: cover; object-position: center; pointer-events: none; filter: drop-shadow(0 2px 3px #3d000044); }
 .traveler-halo { position: absolute; width: 86px; height: 86px; left: -19px; top: 0; border-radius: 50%; background: #8e93cb40; border: 1px solid #8e93cb66; box-shadow: 0 0 0 12px #8e93cb16; }
 .route-destination-marker { display: grid; place-items: center; border-radius: 50% 50% 50% 3px; background: #800020; color: #FFEB99; border: 3px solid white; box-shadow: 0 3px 12px #3d000044; font-size: 21px; }
 .route-search-overlay { position: absolute; z-index: 460; top: 22px; left: 22px; width: min(460px, calc(100% - 44px)); color: var(--ink); }

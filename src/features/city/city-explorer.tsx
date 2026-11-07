@@ -13,6 +13,7 @@ import './route-interface.css';
 import './social-design.css';
 import './notifications.css';
 import { Journey } from "./journey";
+import { FavoritePlaces, FavoritePlaceButton } from './place-favorites';
 import { SocialView } from './social-view';
 import { Notifications } from './notifications';
 import { EventParticipants } from './event-participants';
@@ -872,6 +873,7 @@ export default function CityExplorer(props: CityProps) {
               </button>
             ))}
           </div>
+          <FavoritePlaces places={data.places} lang={lang} onSelect={place => { setSelected(place); setMobileList(false); setMapOnly(false); }} />
           </div>
           <ResultsSplitter page={props.initialPage || 'map'} />
           <div className="results-heading" style={props.initialPage === 'schools' ? { display: 'none' } : undefined}>
@@ -1107,6 +1109,7 @@ export default function CityExplorer(props: CityProps) {
             </div>
             <ResultsSplitter page="place-details" />
             <div className="detail-body">
+              {selectedPlace && <FavoritePlaceButton place={selectedPlace} lang={lang} />}
               <span className="eyebrow">
                 ARAD · {selectedEvent ? t.events : label(selected.category)}
               </span>
