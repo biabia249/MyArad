@@ -78,7 +78,9 @@ export function AuthShell({
       >
         <ScrollView
           keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
+          keyboardDismissMode="none"
+          // Keep focused fields mounted while the keyboard resizes the form.
+          removeClippedSubviews={false}
           contentContainerStyle={[
             ui.scroll,
             { paddingBottom: Math.max(insets.bottom, 16) },
