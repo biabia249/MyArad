@@ -1,6 +1,7 @@
 "use dom";
 
 import { VasileView } from "./vasile-view";
+import { VasileLauncher } from "./vasile-launcher";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useFonts } from 'expo-font';
 import { DMSans_400Regular } from '@expo-google-fonts/dm-sans/400Regular';
@@ -675,6 +676,7 @@ export default function CityExplorer(props: CityProps) {
     journeyLayer.current?.remove();
     journeyLayer.current = null;
   };
+  const [mapOptionsOpen, setMapOptionsOpen] = useState(false);
   const vasilePage = props.initialPage === "vasile";
   const schedulePage = props.initialPage === "schedule";
   const socialPage = props.initialPage === 'people';
@@ -718,7 +720,6 @@ export default function CityExplorer(props: CityProps) {
             ["/transport", lang === "ro" ? "Cum ajung?" : "Get there"],
             ["/events", t.events],
             ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
-            ["/schools", lang === "ro" ? "Școli & UAV" : "Schools & UAV"],
             ["/schedule", lang === "ro" ? "Programul meu" : "My schedule"],
           ].map(([path, title]) => (
             <button
@@ -733,7 +734,7 @@ export default function CityExplorer(props: CityProps) {
           ))}
         </nav>
         <div className="header-actions">
-          {props.calendarPlatform === 'web' && <button className="theme-toggle" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span></button>}
+          {props.calendarPlatform === 'web' && <button className="android-download" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span><span>APK</span></button>}
           {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
           <button
             className="theme-toggle"
@@ -999,11 +1000,13 @@ export default function CityExplorer(props: CityProps) {
           <div ref={mapElement} className="map-canvas" />
           {transportPage && !mapOnly && <RouteSearch places={data.places} lang={lang} onChoose={chooseRouteDestination} />}
           {transportPage && !position && <button className="route-enable-location" disabled={locating} onClick={() => void locate()}><Icon name="locate" size={18} />{locating ? (lang === 'ro' ? 'Te localizez…' : 'Locating…') : (lang === 'ro' ? 'Arată locația mea' : 'Show my location')}</button>}
-          <div className="map-top-controls">
+          <div className={`map-top-controls ${mapOptionsOpen ? "options-open" : ""}`}>
             <span className="city-label">
               <span className="status-dot" /> ARAD{" "}
               <span>46.1753° N · 21.3192° E</span>
             </span>
+            <button className="map-button map-options-toggle" aria-expanded={mapOptionsOpen} aria-label={lang === 'ro' ? 'Opțiuni hartă' : 'Map options'} onClick={() => setMapOptionsOpen(value => !value)}><Icon name="layers" size={17} />{lang === 'ro' ? 'Hartă' : 'Map'}</button>
+            <div className="map-option-buttons" onClick={() => setMapOptionsOpen(false)}>
             <button
               className="map-button"
               onClick={() =>
@@ -1028,6 +1031,7 @@ export default function CityExplorer(props: CityProps) {
               <Icon name="layers" size={17} />
               {satellite ? t.street : t.satellite}
             </button>
+            </div>
           </div>
           <button
             className={`map-button locate-button ${tracking ? "tracking" : ""}`}
@@ -1547,22 +1551,13 @@ export default function CityExplorer(props: CityProps) {
           </aside>
         )}
       </div>
-      {!vasilePage && !composer && <button
-        className="vasile-launcher"
-        aria-label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"}
-        title={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"}
-        onClick={() => void action(() => props.onNavigate("/vasile"))}
-      >
-        <span className="vasile-launcher-letter" aria-hidden="true">V</span>
-        <span className="vasile-launcher-name" aria-hidden="true">Vasile</span>
-      </button>}
+      {!vasilePage && !composer && <VasileLauncher label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"} onOpen={() => void action(() => props.onNavigate("/vasile"))} />}
       <nav className="mobile-page-nav">
         {[
           ["/map", t.street],
           ["/transport", lang === "ro" ? "Cum ajung?" : "Directions"],
           ["/events", t.events],
           ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
-          ["/schools", lang === "ro" ? "Școli" : "Schools"],
           ["/schedule", lang === "ro" ? "Program" : "Schedule"],
         ].map(([path, title]) => (
           <button

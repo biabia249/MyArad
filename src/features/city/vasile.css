@@ -310,3 +310,21 @@
 @media (prefers-reduced-motion: reduce) {
   .city-app .vasile-launcher { transition: none; }
 }
+
+.city-app .android-download { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; min-height: 40px; background: var(--paper); color: var(--ink); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.city-app .android-download:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.map-option-buttons { display: flex; gap: 8px; }
+.city-app .map-options-toggle { display: none; }
+@media (max-width: 700px) {
+  .city-app .map-options-toggle { display: inline-flex; min-height: 40px; align-items: center; gap: 7px; }
+  .map-top-controls .map-option-buttons { display: none; }
+  .map-top-controls.options-open .map-option-buttons { display: flex; flex-direction: column; position: absolute; top: 48px; right: 0; min-width: 160px; padding: 8px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 8px 24px #152b4920; }
+  .map-option-buttons .map-button { width: 100%; justify-content: flex-start; }
+  .city-app .city-workspace .mobile-map-toggle { right: auto; left: 16px; width: max-content; max-width: calc(100% - 100px); }
+  .mobile-page-nav button { flex: 1; }
+}
+
+.city-app .vasile-launcher { touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; transition: box-shadow .18s ease; }
+.city-app .vasile-launcher:hover { transform: none; }
+.city-app .vasile-launcher:active { cursor: grabbing; }
