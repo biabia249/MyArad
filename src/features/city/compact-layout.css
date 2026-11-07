@@ -77,3 +77,17 @@
   .city-app .social-page,.city-app .schedule-page,.city-app .vasile-page { padding-bottom:16px; }
   .city-app .social-page.chat-open { padding-bottom:0; }
 }
+/* Use the event palette consistently across every content surface. */
+.city-app[data-theme="dark"] { --paper:#111f3d; --surface:#1b2b50; --line:#3f5580; --ink:#f1f3ff; --muted:#c1cde8; }
+.city-app :is(.event-news,.discovery,.detail-panel,.schedule-page,.social-page,.vasile-page,.favorites-page,.notification-popover) { background:var(--paper); color:var(--ink); border-color:var(--line); }
+.city-app :is(.news-card,.place-row,.plan-card,.social-chat,.social-contacts,.citizen-profile,.news-schedule,.event-participation,.notification-popover li) { background:var(--surface); color:var(--ink); border-color:var(--line); }
+.city-app :is(.place-row small,.place-kind,.news-kicker,.news-date,.favorites-storage-note) { color:var(--muted); }
+.city-app .favorites-page { flex:1; width:100%; max-width:none; max-height:none; border:0; border-radius:0; box-shadow:none; padding:24px max(20px,calc((100% - 760px)/2)); overflow:auto; }
+.city-app .favorites-page header { align-items:center; }
+.city-app .drawer-settings .theme-toggle { width:100%; height:auto; min-height:48px; border:1px solid var(--line); border-radius:12px; background:var(--surface); color:var(--ink); }
+.city-app .theme-switch { margin-left:auto; width:36px; height:22px; border-radius:20px; padding:3px; background:var(--line); display:inline-flex; flex-shrink:0; }
+.theme-switch i { width:16px; height:16px; border-radius:50%; background:var(--ink); transition:transform 160ms ease; }
+.city-app .theme-toggle[aria-pressed="true"] .theme-switch { background:#8E93CB; }
+.city-app .theme-toggle[aria-pressed="true"] .theme-switch i { transform:translateX(14px); background:#FFEB99; }
+.city-app.map-only .city-workspace { overflow:hidden; }
+.city-app.map-only .panel-resize-layer,.city-app.map-only .panel-resize-handle { display:none!important; }

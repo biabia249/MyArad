@@ -13,7 +13,6 @@ export function Notifications({
   api,
   ro,
   onOpen,
-  onEnablePush,
 }: {
   api: <T>(path: string, value?: object) => Promise<T>;
   ro: boolean;
@@ -27,7 +26,6 @@ export function Notifications({
   const [toast, setToast] = useState<Item | null>(null);
   const control = useRef<HTMLDivElement>(null);
   const pending = useRef(false);
-  const [pushBusy, setPushBusy] = useState(false);
   useEffect(() => {
     if (!open) return;
     const closeOutside = (event: PointerEvent) => {
@@ -165,24 +163,6 @@ export function Notifications({
               ×
             </button>
           </header>
-          <button
-            disabled={pushBusy}
-            onClick={() => {
-              setPushBusy(true);
-              void onEnablePush()
-                .then(() =>
-                  setError(
-                    ro
-                      ? "Push activat pe acest telefon."
-                      : "Push enabled on this phone.",
-                  ),
-                )
-                .catch((e) => setError(e.message))
-                .finally(() => setPushBusy(false));
-            }}
-          >
-            {pushBusy ? (ro ? 'Se activează…' : 'Enabling…') : ro ? "Activează push pe telefon" : "Enable phone push"}
-          </button>
           {error && <p role="alert">{error}</p>}
           {inbox.unread > 0 && (
             <button

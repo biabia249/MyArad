@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Language, Place } from './types';
 import './place-favorites.css';
 
@@ -40,26 +40,14 @@ export function FavoritePlaceButton({ place, lang }: { place: Place; lang: Langu
   </div>;
 }
 
-export function FavoritePlaces({ places, lang, onSelect }: { places: Place[]; lang: Language; onSelect: (place: Place) => void }) {
+export function FavoritePlaces({ places, lang, onSelect, page = false, onOpen, onBack }: { places: Place[]; lang: Language; onSelect: (place: Place) => void; page?: boolean; onOpen?: () => void; onBack?: () => void }) {
   const { ids, toggle, error } = useFavorites();
-  const [open, setOpen] = useState(false);
-  const trigger = useRef<HTMLButtonElement>(null);
-  function close() { setOpen(false); trigger.current?.focus(); }
-  const ro = lang === 'ro';
-  const favorites = places.filter(place => ids.includes(place.id));
-  useEffect(() => {
-    if (!open) return;
-    const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') { setOpen(false); trigger.current?.focus(); } };
-    document.addEventListener('keydown', escape);
-    return () => document.removeEventListener('keydown', escape);
-  }, [open]);
-  return <div className="favorite-places-control">
-    <button ref={trigger} className="chip favorites-open-button" aria-expanded={open} onClick={() => setOpen(!open)}><span aria-hidden="true">♥</span>{ro ? 'Favorite' : 'Favorites'}<span className="favorites-count">{favorites.length}</span></button>
-    {open && <div className="favorites-backdrop" onClick={close}><section className="favorites-dialog" role="dialog" aria-modal="true" aria-label={ro ? 'Locurile tale favorite' : 'Your favorite places'} onClick={event => event.stopPropagation()}>
-      <header><div><span className="eyebrow">MYARAD / {ro ? 'COLECȚIA TA' : 'YOUR COLLECTION'}</span><h2>{ro ? 'Locuri pe care le iubești' : 'Places you love'}</h2></div><button autoFocus aria-label={ro ? 'Închide favoritele' : 'Close favorites'} onClick={close}>×</button></header>
-      <p className="favorites-storage-note">{ro ? 'Salvate în acest browser sau pe acest dispozitiv.' : 'Saved in this browser or on this device.'}</p>
-      {error && <p role="alert">{ro ? 'Nu am putut salva modificarea.' : 'Could not save this change.'}</p>}
-      {favorites.length ? <ul>{favorites.map(place => <li key={place.id}><button className="favorite-place-link" onClick={() => { setOpen(false); onSelect(place); }}><span className="favorite-place-symbol" aria-hidden="true">♥</span><span><strong>{lang === 'en' ? place.name_en || place.name : place.name}</strong><small>{place.address}</small></span><span aria-hidden="true">↗</span></button><button className="favorite-remove" aria-label={`${ro ? 'Elimină din favorite' : 'Remove from favorites'}: ${place.name}`} onClick={() => toggle(place.id)}>♥</button></li>)}</ul> : <div className="favorites-empty"><span aria-hidden="true">♡</span><h3>{ro ? 'Începe colecția ta' : 'Start your collection'}</h3><p>{ro ? 'Deschide un loc de pe hartă sau din rezultate și apasă „Adaugă la favorite”.' : 'Open a place from the map or results and choose “Add to favorites”.'}</p></div>}
-    </section></div>}
-  </div>;
+  const ro = lang === 'ro', favorites = places.filter(place => ids.includes(place.id));
+  if (!page) return <div className="favorite-places-control"><button className="chip favorites-open-button" onClick={onOpen}><span aria-hidden="true">♥</span>{ro ? 'Favorite' : 'Favorites'}<span className="favorites-count">{favorites.length}</span></button></div>;
+  return <section className="favorites-page favorites-dialog" aria-label={ro ? 'Locuri favorite' : 'Favorite places'}>
+    <header><h1>{ro ? 'Locuri favorite' : 'Favorite places'}</h1><button onClick={onBack} aria-label={ro ? 'Inapoi la harta' : 'Back to map'}>←</button></header>
+    <p className="favorites-storage-note">{ro ? 'Salvate pe acest dispozitiv.' : 'Saved on this device.'}</p>
+    {error && <p role="alert">{ro ? 'Nu am putut salva modificarea.' : 'Could not save changes.'}</p>}
+    {favorites.length ? <ul>{favorites.map(place => <li key={place.id}><button className="favorite-place-link" onClick={() => onSelect(place)}><span><strong>{lang === 'en' ? place.name_en || place.name : place.name}</strong><small>{place.address}</small></span><span aria-hidden="true">↗</span></button><button className="favorite-remove" aria-label={`Remove: ${place.name}`} onClick={() => toggle(place.id)}>♥</button></li>)}</ul> : <div className="favorites-empty"><h2>{ro ? 'Niciun loc salvat' : 'No saved places'}</h2><p>{ro ? 'Deschide un loc si adauga-l la favorite.' : 'Open a place and save it to favorites.'}</p></div>}
+  </section>;
 }

@@ -681,6 +681,7 @@ export default function CityExplorer(props: CityProps) {
     journeyLayer.current = null;
   };
   const [mapOptionsOpen, setMapOptionsOpen] = useState(false);
+  const favoritesPage = props.initialPage === 'favorites';
   const vasilePage = props.initialPage === "vasile";
   const schedulePage = props.initialPage === "schedule";
   const socialPage = props.initialPage === 'people';
@@ -721,7 +722,7 @@ export default function CityExplorer(props: CityProps) {
           </span>
         </a>
         <div className="header-actions">
-          {!socialPage && !schedulePage && !vasilePage && <button className="panel-toggle" aria-label={mapOnly ? (lang === 'ro' ? 'Deschide panoul' : 'Show panel') : (lang === 'ro' ? 'Doar harta' : 'Map only')} aria-pressed={mapOnly} onClick={() => {
+          {!socialPage && !schedulePage && !vasilePage && !favoritesPage && <button className="panel-toggle" aria-label={mapOnly ? (lang === 'ro' ? 'Deschide panoul' : 'Show panel') : (lang === 'ro' ? 'Doar harta' : 'Map only')} aria-pressed={mapOnly} onClick={() => {
             setMapOnly(!mapOnly); setNewsMap(!mapOnly); setMobileList(true); setMapOptionsOpen(false);
             requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
           }}><Icon name={mapOnly ? 'search' : 'layers'} size={18} /><span>{mapOnly ? (lang === 'ro' ? 'Panou' : 'Panel') : (lang === 'ro' ? 'Hartă' : 'Map')}</span></button>}
@@ -748,6 +749,7 @@ export default function CityExplorer(props: CityProps) {
           </button>
         </div>
       </header>
+      {favoritesPage && <FavoritePlaces page places={data.places} lang={lang} onBack={() => void props.onNavigate('/map')} onSelect={place => void props.onNavigate('/map?place=' + encodeURIComponent(place.id))} />}
       {vasilePage && <VasileView key={props.userName || "guest"} api={api} lang={lang} signedIn={!!props.userName} onSignIn={() => void props.onSignIn()} onPlace={id => void action(() => props.onNavigate("/map?place=" + encodeURIComponent(id)))} />}
       {socialPage && <SocialView active={props.isFocused !== false} api={api} lang={lang} signedIn={!!props.userName} onSignIn={() => void props.onSignIn()} onProfile={username => void props.onNavigate('/citizen/' + username)} />}
       {schedulePage && (
@@ -759,9 +761,9 @@ export default function CityExplorer(props: CityProps) {
       )}
       <div
         className="city-workspace"
-        style={schedulePage || socialPage || vasilePage ? { display: "none" } : undefined}
+        style={schedulePage || socialPage || vasilePage || favoritesPage ? { display: "none" } : undefined}
       >
-        <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />
+        {!mapOnly && <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />}
         {eventsPage && <EventNews onArticleOpen={() => { setMapOnly(false); setNewsMap(false); setMobileList(true); }} publishedEvent={selected && isEvent(selected) ? selected : publishedEvent} onEventsChanged={load} calendarProps={props} request={api} events={data.events} onSelect={(place) => { setSelected(place); setNewsMap(false); setMapOnly(false); }} onCloseMap={() => { setNewsMap(true); setMapOnly(true); setTimeout(() => { map.current?.invalidateSize(); if (selected) map.current?.setView([selected.lat, selected.lng], 16); }, 50); }} onPublish={openComposer} />}
         {transportPage && (
           <aside className="transport-sidebar">
@@ -810,6 +812,12 @@ export default function CityExplorer(props: CityProps) {
                 setQuery(e.target.value);
                 setMobileList(true);
               }}
+              onKeyDown={event => {
+                if (event.key === 'Enter' && items[0]) {
+                  event.preventDefault(); event.currentTarget.blur(); setSelected(items[0]); setMobileList(false); setMapOnly(true); setNewsMap(true);
+                  map.current?.setView([items[0].lat, items[0].lng], 16);
+                }
+              }}
               placeholder={t.search}
               aria-label={t.search}
             />
@@ -834,7 +842,7 @@ export default function CityExplorer(props: CityProps) {
               </button>
             ))}
           </div>
-          <FavoritePlaces places={data.places} lang={lang} onSelect={place => { setSelected(place); setMobileList(false); setMapOnly(false); }} />
+          <FavoritePlaces onOpen={() => void props.onNavigate('/favorites')} places={data.places} lang={lang} onSelect={place => { setSelected(place); setMobileList(false); setMapOnly(false); }} />
           </div>
           <ResultsSplitter page={props.initialPage || 'map'} />
           <div className="results-heading" style={props.initialPage === 'schools' ? { display: 'none' } : undefined}>
@@ -1523,6 +1531,7 @@ export default function CityExplorer(props: CityProps) {
           ["/map", t.street, 'pin'],
           ...(props.calendarPlatform !== 'web' ? [["/vasile", "Vasile", "vasile"]] : []),
           ["/events", t.events, 'events'],
+          ["/favorites", lang === "ro" ? "Favorite" : "Favorites", "pin"],
           ['/people', lang === 'ro' ? 'Mesaje' : 'Messages', 'message'],
           ["/schedule", lang === "ro" ? "Program" : "Schedule", 'calendar'],
         ].map(([path, title, icon]) => (
@@ -1543,6 +1552,7 @@ export default function CityExplorer(props: CityProps) {
           <div className="drawer-settings">
           <button
             className="theme-toggle"
+            aria-pressed={props.theme === 'dark'}
             aria-label={
               props.theme === "dark"
                 ? "Switch to light mode"
@@ -1551,7 +1561,7 @@ export default function CityExplorer(props: CityProps) {
             title={props.theme === "dark" ? "Light mode" : "Dark mode"}
             onClick={() => void props.onToggleTheme()}
           >
-            {props.theme === "dark" ? "☀" : "☾"}<span>{props.theme === "dark" ? "Light mode" : "Dark mode"}</span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">{props.theme === 'dark' ? <><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></> : <path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z" />}</svg><span>{props.theme === 'dark' ? (lang === 'ro' ? 'Mod luminos' : 'Light mode') : (lang === 'ro' ? 'Mod întunecat' : 'Dark mode')}</span><span className="theme-switch" aria-hidden="true"><i /></span>
           </button>
           <button
             className="language"

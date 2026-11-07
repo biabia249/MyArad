@@ -20,6 +20,7 @@ export function RouteSearch({ places, lang, onChoose }: {
   function choose(place: Place) {
     setQuery(place.name);
     setOpen(false);
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
     onChoose(place);
   }
   return <div className="route-search-overlay" onBlur={event => {
