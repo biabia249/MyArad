@@ -59,6 +59,29 @@ test("guests browse places; authenticated users create, attend, comment and sugg
   const initial = await call("/city/bootstrap");
   assert.equal(initial.status, 200);
   assert.ok(initial.data.places.length > 100);
+  for (const place of initial.data.places) {
+    assert.ok(
+      place.description_ro?.trim(),
+      `${place.name} needs a Romanian description`,
+    );
+    assert.ok(
+      place.description_en?.trim(),
+      `${place.name} needs an English description`,
+    );
+    assert.ok(
+      place.image?.startsWith("https://") ||
+        place.image?.startsWith("data:image/svg+xml;charset=UTF-8,"),
+      `${place.name} needs an image`,
+    );
+    assert.ok(
+      place.image_source?.startsWith("https://"),
+      `${place.name} needs an image source`,
+    );
+    assert.ok(
+      place.image_credit?.trim(),
+      `${place.name} needs an image credit`,
+    );
+  }
   assert.equal(initial.data.canPost, false);
   assert.deepEqual(initial.data.events, []);
   assert.equal((await call("/city/events", event())).status, 401);
@@ -476,4 +499,106 @@ test("reading displayed messages clears only that recipient and conversation mes
     (await call("/city/social/notifications", null, token)).data.unread,
     after.unread,
   );
+});
+
+test("public profiles can be followed and expose social counts without private account data", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const other = await store.signUp({
+    fullName: "Profile Visitor",
+    username: "visitor",
+    email: "visitor@example.com",
+    password: "Testing-123!",
+  });
+  assert.equal(
+    (
+      await call(
+        "/city/citizens/city_tester/follow",
+        { following: true },
+        other.token,
+      )
+    ).status,
+    404,
+  );
+  await call("/city/schedule/visibility", { public: true }, token);
+  const followed = await call(
+    "/city/citizens/city_tester/follow",
+    { following: true },
+    other.token,
+  );
+  assert.equal(followed.status, 200);
+  const publicProfile = (
+    await call("/city/citizens/city_tester", undefined, other.token)
+  ).data;
+  assert.equal(publicProfile.followers, 1);
+  assert.equal(publicProfile.following, 0);
+  assert.equal(publicProfile.isFollowing, true);
+  assert.equal(publicProfile.isOwnProfile, false);
+  assert.equal(publicProfile.email, undefined);
+  assert.equal(
+    (
+      await call(
+        "/city/citizens/city_tester/follow",
+        { following: true },
+        token,
+      )
+    ).status,
+    400,
+  );
+  await call(
+    "/city/citizens/city_tester/follow",
+    { following: false },
+    other.token,
+  );
+  assert.equal((await call("/city/citizens/city_tester")).data.followers, 0);
+});
+
+test("profile friendship state agrees with friend requests and accepted relationships", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const b = await store.signUp({
+    fullName: "Profile Friend",
+    username: "profile_friend",
+    email: "profile-friend@example.com",
+    password: "Testing-123!",
+  });
+  await call("/city/schedule/visibility", { public: true }, b.token);
+  assert.equal(
+    (await call("/city/citizens/profile_friend", null, token)).data.friendship,
+    "none",
+  );
+  await call(
+    "/city/social/friend/profile_friend",
+    { action: "request" },
+    token,
+  );
+  assert.equal(
+    (await call("/city/citizens/profile_friend", null, token)).data.friendship,
+    "outgoing",
+  );
+  assert.equal((await call("/city/schedule", null, b.token)).data.friends, 0);
+  await call("/city/social/friend/city_tester", { action: "accept" }, b.token);
+  const profile = (await call("/city/citizens/profile_friend", null, token))
+    .data;
+  assert.equal(profile.friendship, "friends");
+  assert.equal(profile.friends, 1);
+  assert.equal((await call("/city/schedule", null, token)).data.friends, 1);
+  await call("/city/social/friend/profile_friend", { action: "remove" }, token);
+  assert.equal(
+    (await call("/city/citizens/profile_friend", null, token)).data.friends,
+    0,
+  );
+});
+test("place IDs from both tourism imports still resolve for existing clients", async (t) => {
+  const { call, token } = await fixture(t);
+  const place = (await call("/city/bootstrap")).data.places.find(
+    (p) => p.alias_ids?.length,
+  );
+  assert.ok(place);
+  const plan = {
+    place_id: place.alias_ids[0],
+    starts_at: new Date(Date.now() + 3600000).toISOString(),
+    ends_at: new Date(Date.now() + 7200000).toISOString(),
+  };
+  assert.equal((await call("/city/schedule", plan, token)).status, 200);
+  const saved = (await call("/city/schedule", null, token)).data.plans[0];
+  assert.equal(saved.title, place.name);
 });

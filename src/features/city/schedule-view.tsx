@@ -16,6 +16,9 @@ type Schedule = {
   username: string;
   fullName: string;
   public: boolean;
+  friends: number;
+  friendship: string;
+  isOwnProfile: boolean;
   plans: Plan[];
 };
 const words = {
@@ -136,6 +139,18 @@ export function ScheduleView({
               profile={schedule.profile || {}}
               plans={schedule.plans}
               editable={!username}
+              friends={schedule.friends || 0}
+              friendship={schedule.friendship || "none"}
+              canFriend={
+                !!username && !!props.userName && !schedule.isOwnProfile
+              }
+              busy={busy}
+              onFriend={(action) =>
+                change(
+                  `/city/social/friend/${encodeURIComponent(schedule.username)}`,
+                  { action },
+                )
+              }
               lang={lang}
               props={props}
               onSaved={load}

@@ -103,6 +103,10 @@ function validUrl(s: string) {
     return undefined;
   }
 }
+function validImageUrl(s: string) {
+  if (s.startsWith("data:image/svg+xml;charset=UTF-8,")) return s;
+  return validUrl(s);
+}
 function isEvent(p: Place | CityEvent): p is CityEvent {
   return "starts_at" in p;
 }
@@ -282,6 +286,7 @@ export default function CityExplorer(props: CityProps) {
   }, [mapReady, satellite, cycling]);
   useEffect(() => {
     journeyLayer.current?.remove();
+    journeyLayer.current = null;
     if (!journey || !mapReady || !lib.current || !map.current) return;
     const L = lib.current,
       group = L.layerGroup().addTo(map.current);
@@ -317,6 +322,10 @@ export default function CityExplorer(props: CityProps) {
         ],
         maxZoom: 16,
       });
+    return () => {
+      group.remove();
+      if (journeyLayer.current === group) journeyLayer.current = null;
+    };
   }, [journey, mapReady]);
   const now = new Date();
   const endToday = new Date(
@@ -605,6 +614,11 @@ export default function CityExplorer(props: CityProps) {
       });
   };
   const socialPage = props.initialPage === "people";
+  const clearJourney = () => {
+    setJourney(null);
+    journeyLayer.current?.remove();
+    journeyLayer.current = null;
+  };
   const schedulePage = props.initialPage === "schedule";
   const transportPage = props.initialPage === "transport";
   return (
@@ -844,9 +858,9 @@ export default function CityExplorer(props: CityProps) {
                     }}
                   >
                     <span className={`place-thumb ${item.category}`}>
-                      {!ev && validUrl(item.image) ? (
+                      {!ev && validImageUrl(item.image) ? (
                         <img
-                          src={validUrl(item.image)}
+                          src={validImageUrl(item.image)}
                           alt=""
                           loading="lazy"
                           onError={(e) => {
@@ -996,15 +1010,16 @@ export default function CityExplorer(props: CityProps) {
               onClick={() => {
                 setSelected(null);
                 setDetails(null);
+                clearJourney();
               }}
               aria-label={t.close}
             >
               <Icon name="close" />
             </button>
             <div className={`detail-hero ${selected.category}`}>
-              {selectedPlace && validUrl(selectedPlace.image) ? (
+              {selectedPlace && validImageUrl(selectedPlace.image) ? (
                 <img
-                  src={validUrl(selectedPlace.image)}
+                  src={validImageUrl(selectedPlace.image)}
                   alt={selectedPlace.name}
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
@@ -1039,6 +1054,44 @@ export default function CityExplorer(props: CityProps) {
                   ? placeDescription(selectedPlace)
                   : selected.description) || t.noDescription}
               </p>
+              {selectedPlace?.cnipt_source && (
+                <div className="cnipt-metadata">
+                  {selectedPlace.cnipt_type && (
+                    <span>{selectedPlace.cnipt_type}</span>
+                  )}
+                  {selectedPlace.cnipt_category && (
+                    <span>{selectedPlace.cnipt_category}</span>
+                  )}
+                  {selectedPlace.locality && (
+                    <span>{selectedPlace.locality}</span>
+                  )}
+                  {selectedPlace.cnipt_area && (
+                    <span>{selectedPlace.cnipt_area}</span>
+                  )}
+                </div>
+              )}
+              {selectedPlace?.cnipt_photos &&
+                selectedPlace.cnipt_photos.filter(validUrl).length > 1 && (
+                  <div className="place-gallery" aria-label={t.photoSource}>
+                    {selectedPlace.cnipt_photos
+                      .filter(validUrl)
+                      .slice(1, 7)
+                      .map((photo, index) => (
+                        <a
+                          href={photo}
+                          target="_blank"
+                          rel="noreferrer"
+                          key={`${photo}-${index}`}
+                        >
+                          <img
+                            src={photo}
+                            alt={`${placeName(selectedPlace)} ${index + 2}`}
+                            loading="lazy"
+                          />
+                        </a>
+                      ))}
+                  </div>
+                )}
               {selectedEvent ? (
                 <>
                   <div className="info-row">
@@ -1115,21 +1168,25 @@ export default function CityExplorer(props: CityProps) {
                     ["pin", "address", selectedPlace?.address],
                     ["clock", "hours", selectedPlace?.hours],
                     ["phone", "phone", selectedPlace?.phone],
-                  ].map(([icon, key, value]) => (
-                    <div className="info-row" key={key}>
-                      <Icon name={icon || "pin"} size={19} />
-                      <div>
-                        <small>{label(key || "")}</small>
-                        {key === "phone" && value ? (
-                          <a href={`tel:${value.replace(/[^+\d;]/g, "")}`}>
-                            {value}
-                          </a>
-                        ) : (
-                          <strong>{value || t.missing}</strong>
-                        )}
+                  ]
+                    .filter(([, , value]) => String(value || "").trim())
+                    .map(([icon, key, value]) => (
+                      <div className="info-row" key={key}>
+                        <Icon name={icon || "pin"} size={19} />
+                        <div>
+                          <small>{label(key || "")}</small>
+                          {key === "phone" ? (
+                            <a
+                              href={`tel:${String(value).replace(/[^+\d;]/g, "")}`}
+                            >
+                              {value}
+                            </a>
+                          ) : (
+                            <strong>{value}</strong>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                   {selectedPlace?.website &&
                     validUrl(selectedPlace.website) && (
                       <a
@@ -1140,6 +1197,32 @@ export default function CityExplorer(props: CityProps) {
                       >
                         <Icon name="globe" size={17} />
                         {t.website}
+                        <Icon name="arrow" size={17} />
+                      </a>
+                    )}
+                  {selectedPlace?.facebook &&
+                    validUrl(selectedPlace.facebook) && (
+                      <a
+                        className="website-link"
+                        href={validUrl(selectedPlace.facebook)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Icon name="globe" size={17} />
+                        Facebook
+                        <Icon name="arrow" size={17} />
+                      </a>
+                    )}
+                  {selectedPlace?.cnipt_category_url &&
+                    validUrl(selectedPlace.cnipt_category_url) && (
+                      <a
+                        className="website-link"
+                        href={validUrl(selectedPlace.cnipt_category_url)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Icon name="globe" size={17} />
+                        {selectedPlace.cnipt_category}
                         <Icon name="arrow" size={17} />
                       </a>
                     )}
@@ -1181,7 +1264,9 @@ export default function CityExplorer(props: CityProps) {
                   >
                     {selectedPlace.wiki_source
                       ? "Wikipedia"
-                      : selectedPlace.source_label || t.source}{" "}
+                      : selectedPlace.cnipt_source
+                        ? "CNIPT Arad / visitarad.ro"
+                        : selectedPlace.source_label || t.source}{" "}
                     ↗
                   </a>
                   {selectedPlace.image && (
@@ -1201,6 +1286,14 @@ export default function CityExplorer(props: CityProps) {
                         : ""}{" "}
                       ↗
                     </a>
+                  )}
+                  {selectedPlace.retrieved_at && (
+                    <small className="data-freshness">
+                      {lang === "ro" ? "Date colectate" : "Data collected"}:{" "}
+                      {new Date(selectedPlace.retrieved_at).toLocaleDateString(
+                        lang === "ro" ? "ro-RO" : "en-GB",
+                      )}
+                    </small>
                   )}
                   <button
                     className="correction-link"

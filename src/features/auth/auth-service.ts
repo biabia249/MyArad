@@ -71,7 +71,13 @@ async function request<T>(
 async function readToken() {
   if (Platform.OS === "web") {
     if (typeof window === "undefined") return null;
-    const saved = window.localStorage.getItem(tokenKey);
+    const saved =
+      window.localStorage.getItem(tokenKey) ||
+      window.sessionStorage.getItem(tokenKey);
+    if (saved) {
+      window.localStorage.setItem(tokenKey, saved);
+      window.sessionStorage.removeItem(tokenKey);
+    }
     if (!saved && memoryToken)
       window.localStorage.setItem(tokenKey, memoryToken);
     return saved || memoryToken;
@@ -88,7 +94,10 @@ async function saveSession(session: Session) {
 async function removeToken() {
   memoryToken = null;
   if (Platform.OS === "web") {
-    if (typeof window !== "undefined") window.localStorage.removeItem(tokenKey);
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem(tokenKey);
+      window.sessionStorage.removeItem(tokenKey);
+    }
   } else await SecureStore.deleteItemAsync(tokenKey);
 }
 async function getVerifier() {

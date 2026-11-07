@@ -12,6 +12,11 @@ export function ProfileCard({
   profile,
   plans,
   editable,
+  friends,
+  friendship,
+  canFriend,
+  busy: actionBusy,
+  onFriend,
   lang,
   props,
   onSaved,
@@ -21,6 +26,11 @@ export function ProfileCard({
   profile: CitizenProfile;
   plans: { venue: string; starts_at: string }[];
   editable: boolean;
+  friends: number;
+  friendship: string;
+  canFriend: boolean;
+  busy: boolean;
+  onFriend: (action: string) => Promise<void>;
   lang: Language;
   props: CityProps;
   onSaved: () => Promise<void>;
@@ -64,6 +74,44 @@ export function ProfileCard({
             {ro ? "Editează profilul" : "Edit profile"}
           </button>
         )}
+        {canFriend && (
+          <div className="profile-friend-actions">
+            {friendship === "friends" ? (
+              <button
+                className="primary"
+                onClick={() => void props.onNavigate("/people")}
+              >
+                {ro ? "Mesaj" : "Message"}
+              </button>
+            ) : (
+              <button
+                className="secondary"
+                disabled={actionBusy}
+                onClick={() =>
+                  void onFriend(
+                    friendship === "incoming"
+                      ? "accept"
+                      : friendship === "outgoing"
+                        ? "remove"
+                        : "request",
+                  )
+                }
+              >
+                {friendship === "incoming"
+                  ? ro
+                    ? "Acceptă cererea"
+                    : "Accept request"
+                  : friendship === "outgoing"
+                    ? ro
+                      ? "Anulează cererea"
+                      : "Cancel request"
+                    : ro
+                      ? "Adaugă prieten"
+                      : "Add friend"}
+              </button>
+            )}
+          </div>
+        )}
       </div>
       <p className="profile-bio">
         {profile.bio ||
@@ -92,6 +140,10 @@ export function ProfileCard({
         <span>
           <strong>{new Set(plans.map((p) => p.venue)).size}</strong>
           {ro ? "locuri" : "places"}
+        </span>
+        <span>
+          <strong>{friends}</strong>
+          {ro ? "prieteni" : "friends"}
         </span>
       </div>
       {editing && (

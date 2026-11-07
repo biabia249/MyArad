@@ -10,6 +10,18 @@ export type Place = {
   image_source?: string;
   image_credit?: string;
   image_license?: string;
+  cnipt_source?: string;
+  cnipt_photos?: string[];
+  cnipt_slug?: string;
+  cnipt_marker?: string;
+  cnipt_type?: string;
+  cnipt_category?: string;
+  cnipt_category_url?: string;
+  cnipt_area?: string;
+  cnipt_data_source?: string;
+  locality?: string;
+  facebook?: string;
+  retrieved_at?: string;
   lat: number;
   lng: number;
   category: string;

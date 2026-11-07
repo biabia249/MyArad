@@ -1,4 +1,4 @@
-import { createSocial } from "./social.mjs";
+import { createSocial, friendshipSummary } from "./social.mjs";
 import { randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { HttpError } from "./store.mjs";
@@ -10,6 +10,92 @@ export const inArad = (lat, lng) =>
   lat <= 46.23 &&
   lng >= 21.23 &&
   lng <= 21.39;
+const placeDefaults = {
+  landmark: {
+    ro: "obiectiv arhitectural și punct de interes",
+    en: "architectural landmark and point of interest",
+  },
+  education: {
+    ro: "instituție de educație și reper al comunității locale",
+    en: "educational institution and local community landmark",
+  },
+  culture: {
+    ro: "spațiu cultural și loc de întâlnire pentru comunitate",
+    en: "cultural venue and community meeting place",
+  },
+  nightlife: {
+    ro: "local de socializare și petrecere a timpului liber",
+    en: "social and leisure venue",
+  },
+  cafe: {
+    ro: "cafenea din oferta locală a orașului",
+    en: "café in the city's local hospitality scene",
+  },
+  food: {
+    ro: "restaurant sau punct gastronomic local",
+    en: "local restaurant or food venue",
+  },
+  park: {
+    ro: "zonă naturală și destinație pentru recreere în aer liber",
+    en: "natural area and outdoor recreation destination",
+  },
+};
+const coverColors = [
+  ["#173d5d", "#4e8f8b"],
+  ["#503b66", "#b26a78"],
+  ["#544a2d", "#b28b4a"],
+  ["#214c42", "#75a16c"],
+  ["#4d3540", "#ad6d55"],
+];
+const xml = (value) =>
+  String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+function placeCover(place) {
+  const seed = [...`${place.id}:${place.name}`].reduce(
+    (sum, char) => (sum * 31 + char.codePointAt(0)) >>> 0,
+    7,
+  );
+  const [from, to] = coverColors[seed % coverColors.length];
+  const name =
+    place.name.length > 42 ? `${place.name.slice(0, 39)}…` : place.name;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><metadata>${xml(place.id)}</metadata><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs><rect width="1200" height="760" fill="url(#g)"/><circle cx="1000" cy="90" r="260" fill="#fff" opacity=".08"/><path d="M120 530h960M210 530V330l180-125 180 125v200m70 0V270h290v260" fill="none" stroke="#fff" stroke-width="22" opacity=".32"/><text x="90" y="105" fill="#fff" opacity=".75" font-family="Arial,sans-serif" font-size="28" letter-spacing="7">MYARAD · ${xml(place.category.toUpperCase())}</text><text x="90" y="650" fill="#fff" font-family="Arial,sans-serif" font-size="54" font-weight="700">${xml(name)}</text><text x="90" y="704" fill="#fff" opacity=".72" font-family="Arial,sans-serif" font-size="24">Ilustrație · fotografie verificată indisponibilă</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+function completePlace(place) {
+  const fallback = placeDefaults[place.category] || placeDefaults.landmark;
+  const addressRo = place.address
+    ? ` Se află la adresa ${place.address}, iar poziția din hartă te ajută să o găsești și să planifici traseul.`
+    : " Poziția marcată în hartă te ajută să o găsești și să planifici traseul.";
+  const addressEn = place.address
+    ? ` It is located at ${place.address}; use its mapped position to find it and plan a route.`
+    : " Use its mapped position to find it and plan a route.";
+  const descriptionRo = `${place.name} este ${fallback.ro} din Arad.${addressRo} Informațiile de localizare sunt furnizate de comunitatea OpenStreetMap și pot fi actualizate pe măsură ce locul se schimbă.`;
+  const descriptionEn = `${place.name_en || place.name} is a local ${fallback.en} in Arad.${addressEn} Location information is provided by the OpenStreetMap community and may be updated as the place changes.`;
+  const hasImage = typeof place.image === "string" && place.image.trim();
+  return {
+    ...place,
+    description_ro: place.description_ro?.trim() || descriptionRo,
+    description_en:
+      place.description_en?.trim() ||
+      place.description?.trim() ||
+      descriptionEn,
+    description:
+      place.description?.trim() ||
+      place.description_en?.trim() ||
+      descriptionEn,
+    image: hasImage ? place.image : placeCover(place),
+    image_source: hasImage
+      ? place.image_source || place.wiki_source || place.source
+      : place.source,
+    image_credit: hasImage
+      ? place.image_credit || "Fotografie documentară · sursa indicată"
+      : "Ilustrație MyArad · fotografie verificată indisponibilă",
+    image_license: hasImage ? place.image_license || "" : "",
+  };
+}
 const text = (data, key, max, required = true) => {
   const value = data[key];
   if (
@@ -24,6 +110,7 @@ export function createCity(store, config) {
   const db = store.db;
   db.exec(`CREATE TABLE IF NOT EXISTS city_bios(user_id TEXT PRIMARY KEY REFERENCES users(id),bio TEXT NOT NULL DEFAULT '',location TEXT NOT NULL DEFAULT '',interests TEXT NOT NULL DEFAULT '',photo TEXT NOT NULL DEFAULT '');
     CREATE TABLE IF NOT EXISTS city_profiles (user_id TEXT PRIMARY KEY REFERENCES users(id), public INTEGER NOT NULL DEFAULT 0);
+    CREATE TABLE IF NOT EXISTS city_follows (follower_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, followed_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, created_at TEXT NOT NULL, PRIMARY KEY(follower_id,followed_id), CHECK(follower_id<>followed_id));
     CREATE TABLE IF NOT EXISTS city_plans (id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id),place_id TEXT,event_id TEXT REFERENCES city_events(id) ON DELETE CASCADE,title TEXT NOT NULL,venue TEXT NOT NULL,lat REAL NOT NULL,lng REAL NOT NULL,starts_at TEXT NOT NULL,ends_at TEXT NOT NULL,created_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS city_events (
     id TEXT PRIMARY KEY, author_id TEXT NOT NULL REFERENCES users(id), title TEXT NOT NULL,
@@ -39,7 +126,7 @@ export function createCity(store, config) {
         new URL("./data-sources/places.json", import.meta.url),
         "utf8",
       ),
-    );
+    ).map(completePlace);
   } catch {
     /* Empty until data import finishes. */
   }
@@ -175,6 +262,15 @@ export function createCity(store, config) {
         public: !!db
           .prepare("SELECT public FROM city_profiles WHERE user_id=?")
           .get(user.id)?.public,
+        followers: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE followed_id=?")
+          .get(user.id).n,
+        following: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE follower_id=?")
+          .get(user.id).n,
+        ...friendshipSummary(db, user.id, user.id),
+        isOwnProfile: true,
+        isFollowing: false,
         plans: db
           .prepare(
             "SELECT * FROM city_plans WHERE user_id=? ORDER BY starts_at",
@@ -199,7 +295,12 @@ export function createCity(store, config) {
       if (d.event_id) {
         const e = event(text(d, "event_id", 100));
         place = { ...e, name: e.title, address: e.venue };
-      } else place = places.find((p) => p.id === text(d, "place_id", 100));
+      } else
+        place = places.find(
+          (p) =>
+            p.id === text(d, "place_id", 100) ||
+            p.alias_ids?.includes(d.place_id),
+        );
       if (!place) throw new HttpError(404, "Place not found.");
       const start = new Date(d.starts_at),
         end = new Date(d.ends_at);
@@ -249,6 +350,14 @@ export function createCity(store, config) {
         .get(username);
       if (!u)
         throw new HttpError(404, "This schedule is private or does not exist.");
+      let viewer = null;
+      if (req.headers.authorization) {
+        try {
+          viewer = author(req);
+        } catch {
+          /* Public profiles remain visible when a stored session expired. */
+        }
+      }
       return {
         username: u.username,
         fullName: u.full_name,
@@ -259,12 +368,55 @@ export function createCity(store, config) {
             )
             .get(u.id) || {},
         public: true,
+        followers: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE followed_id=?")
+          .get(u.id).n,
+        following: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE follower_id=?")
+          .get(u.id).n,
+        ...friendshipSummary(db, u.id, viewer?.id),
+        isOwnProfile: viewer?.id === u.id,
+        isFollowing:
+          !!viewer &&
+          !!db
+            .prepare(
+              "SELECT 1 FROM city_follows WHERE follower_id=? AND followed_id=?",
+            )
+            .get(viewer.id, u.id),
         plans: db
           .prepare(
             "SELECT id,title,venue,lat,lng,starts_at,ends_at FROM city_plans WHERE user_id=? ORDER BY starts_at",
           )
           .all(u.id),
       };
+    }
+    const followMatch = path.match(/^\/city\/citizens\/([^/]+)\/follow$/);
+    if (followMatch && req.method === "POST") {
+      const user = author(req),
+        username = decodeURIComponent(followMatch[1]),
+        target = db
+          .prepare(
+            "SELECT u.id FROM users u JOIN city_profiles p ON p.user_id=u.id AND p.public=1 WHERE u.username=? COLLATE NOCASE",
+          )
+          .get(username);
+      if (!target)
+        throw new HttpError(404, "This profile is private or does not exist.");
+      if (target.id === user.id)
+        throw new HttpError(400, "You cannot follow yourself.");
+      const d = await body(req);
+      if (typeof d.following !== "boolean")
+        throw new HttpError(400, "Invalid follow preference.");
+      if (d.following)
+        db.prepare("INSERT OR IGNORE INTO city_follows VALUES (?,?,?)").run(
+          user.id,
+          target.id,
+          new Date().toISOString(),
+        );
+      else
+        db.prepare(
+          "DELETE FROM city_follows WHERE follower_id=? AND followed_id=?",
+        ).run(user.id, target.id);
+      return { ok: true };
     }
     const match = path.match(
       /^\/city\/events\/([a-f0-9-]+)(?:\/(attend|comments))?$/,

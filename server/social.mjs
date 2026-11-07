@@ -222,3 +222,31 @@ export function createSocial(db, author) {
     throw new HttpError(404, "Not found.");
   };
 }
+
+export function friendshipSummary(db, ownerId, viewerId) {
+  const friends = db
+    .prepare(
+      "SELECT COUNT(*) AS n FROM city_friends WHERE status='accepted' AND (sender=? OR recipient=?)",
+    )
+    .get(ownerId, ownerId).n;
+  const row =
+    viewerId &&
+    db
+      .prepare(
+        "SELECT sender,recipient,status FROM city_friends WHERE (sender=? AND recipient=?) OR (sender=? AND recipient=?)",
+      )
+      .get(ownerId, viewerId, viewerId, ownerId);
+  return {
+    friends,
+    friendship:
+      ownerId === viewerId
+        ? "self"
+        : row?.status === "accepted"
+          ? "friends"
+          : row
+            ? row.sender === viewerId
+              ? "outgoing"
+              : "incoming"
+            : "none",
+  };
+}
