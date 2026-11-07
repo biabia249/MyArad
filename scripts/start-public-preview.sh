@@ -79,6 +79,12 @@ for attempt in {1..120}; do
  sleep 1
 done
 [[ "$ready" == 1 ]] || { tail -15 "$STATE/api.log" "$STATE/web.log"; exit 1; }
+public_ready=0
+for attempt in {1..30}; do
+ if [[ "$(curl --silent --max-time 5 "$url/api/health" || true)" == '{"ok":true}' ]]; then public_ready=1; break; fi
+ sleep 1
+done
+[[ "$public_ready" == 1 ]] || { echo 'The public Cloudflare connection did not become ready.' >&2; tail -15 "$STATE/tunnel.log"; exit 1; }
 success=1
 printf '\nMyArad is running. Share this HTTPS link on any network:\n\n  %s/map\n\n' "$url"
 printf 'Logs: %s\nRerun ~/start-myarad.sh to restart; --stop to stop; --status to show the URL.\n' "$STATE"
