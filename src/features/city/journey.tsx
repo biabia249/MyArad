@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { smartSearchScore } from "./smart-search";
 import type { CityProps, Language, Place } from "./types";
 import type { Itinerary, TransitNetwork } from "./transit-types";
 export function Journey({
@@ -28,6 +29,7 @@ export function Journey({
     [active, setActive] = useState(0),
     [network, setNetwork] = useState<TransitNetwork | null>(null);
   const [useGps, setUseGps] = useState(true);
+  const [originSearch, setOriginSearch] = useState(''), [destinationSearch, setDestinationSearch] = useState('');
   const [lineId, setLineId] = useState(0),
     [patternId, setPatternId] = useState(0);
   useEffect(() => {
@@ -118,17 +120,17 @@ export function Journey({
       setBusy(false);
     }
   }
-  const options = (
+  const options = (query: string, selected: string) => (
     <>
       <optgroup label={ro ? "Stații de transport public" : "Transit stops"}>
-        {network?.stops.map((s) => (
+        {network?.stops.filter((s) => selected === 'stop:' + s.id || smartSearchScore(query, s.name, String(s.id)) > 0).map((s) => (
           <option key={s.id} value={"stop:" + s.id}>
             {s.name} · #{s.id}
           </option>
         ))}
       </optgroup>
       <optgroup label={ro ? "Locuri" : "Places"}>
-        {places.map((p) => (
+        {places.filter((p) => selected === p.id || smartSearchScore(query, p.name, `${p.address} ${p.tags.join(' ')}`) > 0).map((p) => (
           <option key={p.id} value={p.id}>
             {p.name}
           </option>
@@ -171,11 +173,12 @@ export function Journey({
       {!useGps && (
         <label>
           {ro ? "De la" : "From"}
+          <input aria-label={ro ? 'Caută plecarea' : 'Search origin'} placeholder={ro ? 'Caută un loc sau o stație…' : 'Search a place or stop…'} value={originSearch} onChange={(e) => setOriginSearch(e.target.value)} />
           <select value={origin} onChange={(e) => setOrigin(e.target.value)}>
             <option value="">
               {ro ? "Alege o stație sau un loc" : "Choose a stop or place"}
             </option>
-            {options}
+            {options(originSearch, origin)}
           </select>
         </label>
       )}
@@ -184,11 +187,12 @@ export function Journey({
       ) : (
         <label>
           {ro ? "Până la" : "To"}
+          <input aria-label={ro ? 'Caută destinația' : 'Search destination'} placeholder={ro ? 'Caută un loc sau o stație…' : 'Search a place or stop…'} value={destinationSearch} onChange={(e) => setDestinationSearch(e.target.value)} />
           <select value={to} onChange={(e) => setTo(e.target.value)}>
             <option value="">
               {ro ? "Alege destinația" : "Choose destination"}
             </option>
-            {options}
+            {options(destinationSearch, to)}
           </select>
         </label>
       )}

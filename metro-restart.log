@@ -1,0 +1,304 @@
+env: load .env.local
+env: export EXPO_PUBLIC_API_URL
+Starting project at C:\Users\Bianca\Documents\GitHub\MyArad
+Using src/app as the root directory for Expo Router.
+React Compiler enabled
+Starting Metro Bundler
+
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:10696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| Importing local resources in CSS is not supported yet. (node_modules\leaflet\dist\leaflet.css:359:24):
+|   357 | 	}
+|   358 | .leaflet-control-layers-toggle {
+| > 359 | 	background-image: url(images/layers.png);
+|       | 	                      ^
+|   360 | 	width: 36px;
+|   361 | 	height: 36px;
+|   362 | 	}
+| Importing local resources in CSS is not supported yet. (node_modules\leaflet\dist\leaflet.css:364:24):
+|   362 | 	}
+|   363 | .leaflet-retina .leaflet-control-layers-toggle {
+| > 364 | 	background-image: url(images/layers-2x.png);
+|       | 	                      ^
+|   365 | 	background-size: 26px 26px;
+|   366 | 	}
+|   367 | .leaflet-touch .leaflet-control-layers-toggle {
+| Importing local resources in CSS is not supported yet. (node_modules\leaflet\dist\leaflet.css:407:24):
+|   405 | /* Default icon URLs */
+|   406 | .leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
+| > 407 | 	background-image: url(images/marker-icon.png);
+|       | 	                      ^
+|   408 | 	}
+|   409 |
+|   410 |
+λ Bundled 8289ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1409 modules)
+Web Bundled 3944ms node_modules\expo-router\entry.js (833 modules)
+λ Bundled 210ms src\app\(tabs)\index.tsx (37 modules)
+λ Bundled 613ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 458ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 32ms src\app\map.tsx (1 module)
+λ Bundled 64ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 28ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 23ms src\app\events.tsx (1 module)
+λ Bundled 57ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 28ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 23ms src\app\schools.tsx (1 module)
+Web Bundled 4924ms node_modules\expo-router\entry.js (833 modules)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams: {"hydrate": true, "rootTag": "#root"}
+Web Bundled 663ms src\app\_layout.tsx (812 modules)
+| Importing local resources in CSS is not supported yet. (node_modules\leaflet\dist\leaflet.css:359:24):
+|   357 | 	}
+|   358 | .leaflet-control-layers-toggle {
+| > 359 | 	background-image: url(images/layers.png);
+|       | 	                      ^
+|   360 | 	width: 36px;
+|   361 | 	height: 36px;
+|   362 | 	}
+| Importing local resources in CSS is not supported yet. (node_modules\leaflet\dist\leaflet.css:364:24):
+|   362 | 	}
+|   363 | .leaflet-retina .leaflet-control-layers-toggle {
+| > 364 | 	background-image: url(images/layers-2x.png);
+|       | 	                      ^
+|   365 | 	background-size: 26px 26px;
+|   366 | 	}
+|   367 | .leaflet-touch .leaflet-control-layers-toggle {
+| Importing local resources in CSS is not supported yet. (node_modules\leaflet\dist\leaflet.css:407:24):
+|   405 | /* Default icon URLs */
+|   406 | .leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
+| > 407 | 	background-image: url(images/marker-icon.png);
+|       | 	                      ^
+|   408 | 	}
+|   409 |
+|   410 |
+Web Bundled 1472ms src\app\schools.tsx (843 modules)
+Web Bundled 816ms node_modules\leaflet\dist\leaflet-src.js (1 module)
+Web Bundled 215ms src\app\events.tsx (512 modules)
+Web Bundled 248ms src\app\transport.tsx (513 modules)
+Web  WARN  An error occurred in the <CityExplorer> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  WARN  An error occurred in the <CityExplorer> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  WARN  An error occurred in the <CityExplorer> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: Cannot read properties of null (reading 'project')] 
+
+Code: city-explorer.tsx
+[0m [90m 382 |[39m     [36mconst[39m grouped [33m=[39m [36mnew[39m [33mMap[39m[33m<[39m[33mstring[39m[33m,[39m ([33mPlace[39m [33m|[39m [33mCityEvent[39m)[][33m>[39m()[33m;[39m
+ [90m 383 |[39m     [36mfor[39m ([36mconst[39m item [36mof[39m items) {
+[31m[1m>[22m[39m[90m 384 |[39m       [36mconst[39m p [33m=[39m map[33m.[39mcurrent[33m![39m[33m.[39mproject([item[33m.[39mlat[33m,[39m item[33m.[39mlng][33m,[39m mapZoom)[33m;[39m
+ [90m     |[39m                              [31m[1m^[22m[39m
+ [90m 385 |[39m       [36mconst[39m key [33m=[39m
+ [90m 386 |[39m         mapZoom [33m<[39m [35m17[39m [33m&&[39m item[33m.[39mid [33m!==[39m selected[33m?[39m[33m.[39mid
+ [90m 387 |[39m           [33m?[39m [32m`${Math.floor(p.x / 46)}:${Math.floor(p.y / 46)}`[39m[0m
+Call Stack
+  useEffect$argument_0 (src\features\city\city-explorer.tsx:384:30) 
+
+Code: fetchThenEvalJs.js
+[0m [90m 18 |[39m         [36mif[39m (status [33m===[39m [35m200[39m) {
+ [90m 19 |[39m             [90m// eslint-disable-next-line no-eval[39m
+[31m[1m>[22m[39m[90m 20 |[39m             [36mreturn[39m eval(body)[33m;[39m
+ [90m    |[39m                    [31m[1m^[22m[39m
+ [90m 21 |[39m         } [36melse[39m {
+ [90m 22 |[39m             [90m// Format Metro errors if possible.[39m
+ [90m 23 |[39m             [36mif[39m (process[33m.[39menv[33m.[39m[33mNODE_ENV[39m [33m===[39m [32m'development'[39m) {[0m
+Call Stack
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+Web  ERROR  [TypeError: Cannot read properties of null (reading 'project')] 
+
+Code: city-explorer.tsx
+[0m [90m 382 |[39m     [36mconst[39m grouped [33m=[39m [36mnew[39m [33mMap[39m[33m<[39m[33mstring[39m[33m,[39m ([33mPlace[39m [33m|[39m [33mCityEvent[39m)[][33m>[39m()[33m;[39m
+ [90m 383 |[39m     [36mfor[39m ([36mconst[39m item [36mof[39m items) {
+[31m[1m>[22m[39m[90m 384 |[39m       [36mconst[39m p [33m=[39m map[33m.[39mcurrent[33m![39m[33m.[39mproject([item[33m.[39mlat[33m,[39m item[33m.[39mlng][33m,[39m mapZoom)[33m;[39m
+ [90m     |[39m                              [31m[1m^[22m[39m
+ [90m 385 |[39m       [36mconst[39m key [33m=[39m
+ [90m 386 |[39m         mapZoom [33m<[39m [35m17[39m [33m&&[39m item[33m.[39mid [33m!==[39m selected[33m?[39m[33m.[39mid
+ [90m 387 |[39m           [33m?[39m [32m`${Math.floor(p.x / 46)}:${Math.floor(p.y / 46)}`[39m[0m
+Call Stack
+  useEffect$argument_0 (src\features\city\city-explorer.tsx:384:30) 
+
+Code: fetchThenEvalJs.js
+[0m [90m 18 |[39m         [36mif[39m (status [33m===[39m [35m200[39m) {
+ [90m 19 |[39m             [90m// eslint-disable-next-line no-eval[39m
+[31m[1m>[22m[39m[90m 20 |[39m             [36mreturn[39m eval(body)[33m;[39m
+ [90m    |[39m                    [31m[1m^[22m[39m
+ [90m 21 |[39m         } [36melse[39m {
+ [90m 22 |[39m             [90m// Format Metro errors if possible.[39m
+ [90m 23 |[39m             [36mif[39m (process[33m.[39menv[33m.[39m[33mNODE_ENV[39m [33m===[39m [32m'development'[39m) {[0m
+Call Stack
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+Web  ERROR  [TypeError: Cannot read properties of null (reading 'project')] 
+
+Code: city-explorer.tsx
+[0m [90m 382 |[39m     [36mconst[39m grouped [33m=[39m [36mnew[39m [33mMap[39m[33m<[39m[33mstring[39m[33m,[39m ([33mPlace[39m [33m|[39m [33mCityEvent[39m)[][33m>[39m()[33m;[39m
+ [90m 383 |[39m     [36mfor[39m ([36mconst[39m item [36mof[39m items) {
+[31m[1m>[22m[39m[90m 384 |[39m       [36mconst[39m p [33m=[39m map[33m.[39mcurrent[33m![39m[33m.[39mproject([item[33m.[39mlat[33m,[39m item[33m.[39mlng][33m,[39m mapZoom)[33m;[39m
+ [90m     |[39m                              [31m[1m^[22m[39m
+ [90m 385 |[39m       [36mconst[39m key [33m=[39m
+ [90m 386 |[39m         mapZoom [33m<[39m [35m17[39m [33m&&[39m item[33m.[39mid [33m!==[39m selected[33m?[39m[33m.[39mid
+ [90m 387 |[39m           [33m?[39m [32m`${Math.floor(p.x / 46)}:${Math.floor(p.y / 46)}`[39m[0m
+Call Stack
+  useEffect$argument_0 (src\features\city\city-explorer.tsx:384:30) 
+
+Code: fetchThenEvalJs.js
+[0m [90m 18 |[39m         [36mif[39m (status [33m===[39m [35m200[39m) {
+ [90m 19 |[39m             [90m// eslint-disable-next-line no-eval[39m
+[31m[1m>[22m[39m[90m 20 |[39m             [36mreturn[39m eval(body)[33m;[39m
+ [90m    |[39m                    [31m[1m^[22m[39m
+ [90m 21 |[39m         } [36melse[39m {
+ [90m 22 |[39m             [90m// Format Metro errors if possible.[39m
+ [90m 23 |[39m             [36mif[39m (process[33m.[39menv[33m.[39m[33mNODE_ENV[39m [33m===[39m [32m'development'[39m) {[0m
+Call Stack
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+λ Bundled 950ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 579ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 7ms src\app\map.tsx (1 module)
+λ Bundled 77ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 48ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 18ms src\app\transport.tsx (1 module)
+λ Bundled 69ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 30ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 5ms src\app\events.tsx (1 module)
+λ Bundled 177ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 32ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 2ms src\app\map.tsx (1 module)
+λ Bundled 46ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 24ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 3ms src\app\events.tsx (1 module)
+λ Bundled 52ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 208ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 4ms src\app\transport.tsx (1 module)
+λ Bundled 81ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 30ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 3ms src\app\map.tsx (1 module)
+Web Bundled 65ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams: {"hydrate": true, "rootTag": "#root"}
+Web Bundled 89ms src\app\_layout.tsx (1 module)
+Web Bundled 812ms src\app\map.tsx (756 modules)
+Web Bundled 11ms node_modules\leaflet\dist\leaflet-src.js (1 module)
+Web  WARN  Cannot record touch end without a touch start.
+ Touch End: {"identifier":0,"pageX":304,"pageY":495,"timestamp":97137.29999999702}
+ Touch Bank: []
+Web  WARN  Cannot record touch end without a touch start.
+ Touch End: {"identifier":0,"pageX":304,"pageY":495,"timestamp":98416.19999999925}
+ Touch Bank: []
+Web Bundled 80ms src\app\events.tsx (1 module)
+λ Bundled 104ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 25ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 4ms src\app\events.tsx (1 module)
+Web Bundled 32ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams: {"hydrate": true, "rootTag": "#root"}
+Web Bundled 32ms src\app\_layout.tsx (1 module)
+Web Bundled 34ms src\app\events.tsx (1 module)
+Web Bundled 7ms node_modules\leaflet\dist\leaflet-src.js (1 module)
+Web Bundled 100ms src\app\schools.tsx (1 module)
+λ Bundled 593ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 30ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 4ms src\app\schools.tsx (1 module)
+Web Bundled 96ms src\app\transport.tsx (1 module)
+Web Bundled 814ms src\app\schedule.tsx (769 modules)
+Web  WARN  An error occurred in the <CityExplorer> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: data.places is not iterable] 
+
+Code: city-explorer.tsx
+[0m [90m 334 |[39m   )[33m;[39m
+ [90m 335 |[39m   [36mconst[39m endWeek [33m=[39m [36mnew[39m [33mDate[39m([33m+[39mnow [33m+[39m [35m7[39m [33m*[39m [35m86400000[39m)[33m;[39m
+[31m[1m>[22m[39m[90m 336 |[39m   [36mconst[39m items[33m:[39m ([33mPlace[39m [33m|[39m [33mCityEvent[39m)[] [33m=[39m [[33m...[39mdata[33m.[39mplaces[33m,[39m [33m...[39mdata[33m.[39mevents][33m.[39mfilter(
+ [90m     |[39m                                                 [31m[1m^[22m[39m
+ [90m 337 |[39m     (p) [33m=>[39m {
+ [90m 338 |[39m       [36mconst[39m event [33m=[39m isEvent(p)[33m;[39m
+ [90m 339 |[39m       [36mif[39m (category [33m===[39m [32m"events"[39m [33m&&[39m [33m![39mevent) [36mreturn[39m [36mfalse[39m[33m;[39m[0m
+Call Stack
+  CityExplorer (src\features\city\city-explorer.tsx:336:49) 
+
+Code: fetchThenEvalJs.js
+[0m [90m 18 |[39m         [36mif[39m (status [33m===[39m [35m200[39m) {
+ [90m 19 |[39m             [90m// eslint-disable-next-line no-eval[39m
+[31m[1m>[22m[39m[90m 20 |[39m             [36mreturn[39m eval(body)[33m;[39m
+ [90m    |[39m                    [31m[1m^[22m[39m
+ [90m 21 |[39m         } [36melse[39m {
+ [90m 22 |[39m             [90m// Format Metro errors if possible.[39m
+ [90m 23 |[39m             [36mif[39m (process[33m.[39menv[33m.[39m[33mNODE_ENV[39m [33m===[39m [32m'development'[39m) {[0m
+Call Stack
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+λ Bundled 63ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 30ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 51ms src\app\schedule.tsx (1 module)
+Web Bundled 39ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams: {"hydrate": true, "rootTag": "#root"}
+Web Bundled 594ms src\app\_layout.tsx (1 module)
+Web Bundled 157ms src\app\schedule.tsx (1 module)
+Web Bundled 12ms node_modules\leaflet\dist\leaflet-src.js (1 module)
+Web Bundled 551ms src\app\events.tsx (1 module)
+Web  WARN  An error occurred in the <CityExplorer> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+Web  ERROR  [TypeError: data.places is not iterable] 
+
+Code: city-explorer.tsx
+[0m [90m 335 |[39m   )[33m;[39m
+ [90m 336 |[39m   [36mconst[39m endWeek [33m=[39m [36mnew[39m [33mDate[39m([33m+[39mnow [33m+[39m [35m7[39m [33m*[39m [35m86400000[39m)[33m;[39m
+[31m[1m>[22m[39m[90m 337 |[39m   [36mconst[39m items[33m:[39m ([33mPlace[39m [33m|[39m [33mCityEvent[39m)[] [33m=[39m [[33m...[39mdata[33m.[39mplaces[33m,[39m [33m...[39mdata[33m.[39mevents][33m.[39mfilter(
+ [90m     |[39m                                                 [31m[1m^[22m[39m
+ [90m 338 |[39m     (p) [33m=>[39m {
+ [90m 339 |[39m       [36mconst[39m event [33m=[39m isEvent(p)[33m;[39m
+ [90m 340 |[39m       [36mif[39m (category [33m===[39m [32m"events"[39m [33m&&[39m [33m![39mevent) [36mreturn[39m [36mfalse[39m[33m;[39m[0m
+Call Stack
+  CityExplorer (src\features\city\city-explorer.tsx:337:49) 
+
+Code: fetchThenEvalJs.js
+[0m [90m 18 |[39m         [36mif[39m (status [33m===[39m [35m200[39m) {
+ [90m 19 |[39m             [90m// eslint-disable-next-line no-eval[39m
+[31m[1m>[22m[39m[90m 20 |[39m             [36mreturn[39m eval(body)[33m;[39m
+ [90m    |[39m                    [31m[1m^[22m[39m
+ [90m 21 |[39m         } [36melse[39m {
+ [90m 22 |[39m             [90m// Format Metro errors if possible.[39m
+ [90m 23 |[39m             [36mif[39m (process[33m.[39menv[33m.[39m[33mNODE_ENV[39m [33m===[39m [32m'development'[39m) {[0m
+Call Stack
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)
+  fetchAsync.then$argument_0 (node_modules\expo\build\async-require\fetchThenEvalJs.js:20:20)

@@ -56,7 +56,8 @@
           "locationAlwaysPermission": false
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      ["expo-calendar", { "writeOnlyAccess": true, "writeOnlyCalendarPermission": "MyArad adaugă în calendar evenimentele pe care le alegi.", "calendarPermission": "MyArad folosește calendarul ales pentru a adăuga evenimentele tale." }]
     ],
     "experiments": {
       "typedRoutes": true,

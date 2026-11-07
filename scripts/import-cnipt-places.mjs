@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { correctPlaces } from "../server/place-corrections.mjs";
 
 const DATA_URL =
   "https://raw.githubusercontent.com/baditaflorin/hack4arad-turism-arad/main/data/locations.json";
@@ -145,7 +146,8 @@ for (const sourcePlace of incoming) {
   }
 }
 
-await writeFile(OUTPUT, `${JSON.stringify(existing, null, 2)}\n`);
+const corrected = correctPlaces(existing).places;
+await writeFile(OUTPUT, `${JSON.stringify(corrected, null, 2)}\n`);
 console.log(
-  `Imported ${incoming.length} CNIPT records: ${merged} merged, ${existing.length} total places.`,
+  `Imported ${incoming.length} CNIPT records: ${merged} merged, ${corrected.length} total places.`,
 );

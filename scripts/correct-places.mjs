@@ -1,0 +1,13 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { correctPlaces } from '../server/place-corrections.mjs';
+const file = new URL('../server/data-sources/places.json', import.meta.url);
+const input = JSON.parse(await readFile(file, 'utf8'));
+const { places, report } = correctPlaces(input);
+await writeFile(file, JSON.stringify(places, null, 2) + '\n');
+const metadataFile = new URL('../server/data-sources/README.json', import.meta.url);
+const metadata = JSON.parse(await readFile(metadataFile, 'utf8'));
+metadata.count = places.length;
+metadata.corrections = 'Reviewed locality/name fixes and exact CNIPT duplicates; alias_ids retain original identifiers. See corrections-report.json.';
+await writeFile(metadataFile, JSON.stringify(metadata, null, 2) + '\n');
+await writeFile(new URL('../server/data-sources/corrections-report.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify({ before: input.length, after: places.length, localities: report.localities.length, names: report.names.length, duplicates: report.duplicates.length }));

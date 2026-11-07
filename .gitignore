@@ -46,3 +46,9 @@ example
 # generated native folders
 /ios
 /android
+
+# School import download intermediates (county JSON snapshots are tracked)
+server/data-sources/schools/*.xlsx
+server/data-sources/schools/*.pdf
+server/data-sources/schools/county-emergency.txt
+server/data-sources/schools/osm-overpass.*.json

@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { HttpError } from "./store.mjs";
+import { createEventNews } from "./event-news.mjs";
 
 export const inArad = (lat, lng) =>
   Number.isFinite(lat) &&
@@ -101,6 +102,7 @@ const text = (data, key, max, required = true) => {
   return value.trim();
 };
 export function createCity(store, config) {
+  const eventNews = createEventNews();
   const db = store.db;
   db.exec(`CREATE TABLE IF NOT EXISTS city_bios(user_id TEXT PRIMARY KEY REFERENCES users(id),bio TEXT NOT NULL DEFAULT '',location TEXT NOT NULL DEFAULT '',interests TEXT NOT NULL DEFAULT '',photo TEXT NOT NULL DEFAULT '');
     CREATE TABLE IF NOT EXISTS city_profiles (user_id TEXT PRIMARY KEY REFERENCES users(id), public INTEGER NOT NULL DEFAULT 0);
@@ -124,6 +126,8 @@ export function createCity(store, config) {
   } catch {
     /* Empty until data import finishes. */
   }
+  let schoolCatalog = { total: 0, mapped: 0, schools: [] };
+  try { schoolCatalog = JSON.parse(readFileSync(new URL('./data-sources/schools/catalog.json', import.meta.url), 'utf8')); } catch {}
   const author = (req) => {
     const token = req.headers.authorization?.match(
       /^Bearer ([A-Za-z0-9_-]{43})$/,
@@ -144,6 +148,8 @@ export function createCity(store, config) {
     !!user && (config.eventPosting === "signed-in" || !!user.google_sub);
   return async function city(req, url, body) {
     const path = url.pathname;
+    if (req.method === 'GET' && path === '/city/schools') return schoolCatalog;
+    if (req.method === "GET" && path === "/city/event-news") return eventNews(places, url.searchParams.get('q') || '');
     if (req.method === "GET" && path === "/city/bootstrap") {
       let user = null;
       if (req.headers.authorization) {
@@ -286,7 +292,10 @@ export function createCity(store, config) {
       if (d.event_id) {
         const e = event(text(d, "event_id", 100));
         place = { ...e, name: e.title, address: e.venue };
-      } else place = places.find((p) => p.id === text(d, "place_id", 100));
+      } else {
+        const placeId = text(d, "place_id", 100);
+        place = places.find((p) => p.id === placeId || p.alias_ids?.includes(placeId));
+      }
       if (!place) throw new HttpError(404, "Place not found.");
       const start = new Date(d.starts_at),
         end = new Date(d.ends_at);
@@ -466,7 +475,7 @@ export function createCity(store, config) {
         d = await body(req),
         id = text(d, "place_id", 100),
         value = text(d, "body", 2000);
-      if (!places.some((p) => p.id === id))
+      if (!places.some((p) => p.id === id || p.alias_ids?.includes(id)))
         throw new HttpError(404, "Place not found.");
       db.prepare("INSERT INTO city_corrections VALUES (?,?,?,?,?)").run(
         randomUUID(),

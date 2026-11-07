@@ -1,0 +1,140 @@
+{
+  "localities": [
+    {
+      "id": "cnipt/13",
+      "from": "Ineu",
+      "to": "Mocrea",
+      "municipality": "Ineu",
+      "source": "https://www.visitarad.ro/ro/harta-locatie/13-ansamblul-castelului-solymosy"
+    },
+    {
+      "id": "cnipt/32",
+      "from": "Zădăreni",
+      "to": "Bodrogul Nou",
+      "municipality": "Zădăreni",
+      "source": "https://www.visitarad.ro/ro/harta-locatie/32-ansamblul-manastirii-adormirea-maicii-domnului-bodrogul-nou"
+    },
+    {
+      "id": "cnipt/33",
+      "from": "Secusigiu",
+      "to": "Munar",
+      "municipality": "Secusigiu",
+      "source": "https://www.visitarad.ro/ro/harta-locatie/33-manastirea-bezdin"
+    },
+    {
+      "id": "cnipt/309",
+      "from": "Bârzava",
+      "to": "Groșii Noi",
+      "municipality": "Bârzava",
+      "source": "https://www.visitarad.ro/ro/harta-locatie/309-biserica-de-lemn-din-grosii-noi"
+    },
+    {
+      "id": "cnipt/414",
+      "from": "Șilindia",
+      "to": "Iercoșeni",
+      "municipality": "Șilindia",
+      "source": "https://www.visitarad.ro/ro/harta-locatie/414-biserica-de-lemn-din-iercoseni"
+    },
+    {
+      "id": "cnipt/415",
+      "from": "Șilindia",
+      "to": "Iercoșeni",
+      "municipality": "Șilindia",
+      "source": "https://www.visitarad.ro/ro/harta-locatie/415-biserica-de-lemn-din-iercoseni"
+    }
+  ],
+  "names": [
+    {
+      "id": "way/1455510127",
+      "from": "Școala Generală ,,Aron Cotruș\"",
+      "to": "Școala Generală „Aron Cotruș”"
+    },
+    {
+      "id": "node/262884691",
+      "from": "Generaă 8",
+      "to": "Generală 8"
+    },
+    {
+      "id": "cnipt/399",
+      "from": "Casa memorială „Ioan T. Florea",
+      "to": "Casa memorială „Ioan T. Florea”"
+    },
+    {
+      "id": "cnipt/400",
+      "from": "Muzeul etnografic ,,Zestrea Satului\"",
+      "to": "Muzeul etnografic „Zestrea Satului”"
+    }
+  ],
+  "duplicates": [
+    {
+      "kept": "cnipt/46",
+      "alias": "cnipt/330",
+      "name": "Cetatea de la Șoimoș"
+    },
+    {
+      "kept": "cnipt/184",
+      "alias": "cnipt/331",
+      "name": "Muzeul Viei și al Vinului"
+    },
+    {
+      "kept": "cnipt/183",
+      "alias": "cnipt/332",
+      "name": "Muzeul Tramvaiului Electric"
+    },
+    {
+      "kept": "cnipt/12",
+      "alias": "cnipt/333",
+      "name": "Monumentul eroilor de la Păuliș"
+    },
+    {
+      "kept": "cnipt/181",
+      "alias": "cnipt/334",
+      "name": "Muzeul Memorial „Ioan Slavici și Emil Monția”"
+    },
+    {
+      "kept": "cnipt/35",
+      "alias": "cnipt/336",
+      "name": "Basilica Maria Radna"
+    },
+    {
+      "kept": "cnipt/182",
+      "alias": "cnipt/337",
+      "name": "Muzeul Orășenesc Lipova"
+    },
+    {
+      "kept": "cnipt/44",
+      "alias": "cnipt/338",
+      "name": "Cetatea Ineului"
+    },
+    {
+      "kept": "cnipt/29",
+      "alias": "cnipt/339",
+      "name": "Schitul „Sfinții Apostoli Petru și Pavel”"
+    },
+    {
+      "kept": "cnipt/174",
+      "alias": "cnipt/340",
+      "name": "Aqua Ștrand Moneasa"
+    },
+    {
+      "kept": "cnipt/65",
+      "alias": "cnipt/341",
+      "name": "Ruinele cuptorului de topit fier"
+    },
+    {
+      "kept": "cnipt/393",
+      "alias": "cnipt/402",
+      "name": "Muzeul etnografic „La Moșu și Maica”"
+    },
+    {
+      "kept": "cnipt/414",
+      "alias": "cnipt/415",
+      "name": "Biserica de lemn din Iercoșeni"
+    },
+    {
+      "kept": "cnipt/416",
+      "alias": "cnipt/417",
+      "name": "Muzeul etnografic din Dud"
+    }
+  ]
+}

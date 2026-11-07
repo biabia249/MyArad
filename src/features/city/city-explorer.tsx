@@ -5,6 +5,11 @@ import type * as Leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./city.css";
 import { Journey } from "./journey";
+import { SchoolDirectory } from "./school-directory";
+import { ResultsSplitter } from "./results-splitter";
+import { smartSearchScore } from "./smart-search";
+import { PanelResizers } from "./panel-resizers";
+import { EventNews } from "./event-news";
 import { decodePath, type Itinerary } from "./transit-types";
 import { ScheduleView, AddPlan } from "./schedule-view";
 import coatOfArms from "./coat-of-arms.json";
@@ -43,11 +48,6 @@ const eventCategories = [
   "sport",
   "other",
 ] as const;
-const normalize = (s: string) =>
-  s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
 function Icon({ name, size = 20 }: { name: string; size?: number }) {
   const paths: Record<string, string> = {
     search: "m21 21-5-5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
@@ -129,11 +129,12 @@ export default function CityExplorer(props: CityProps) {
   const [selected, setSelected] = useState<Place | CityEvent | null>(null),
     [details, setDetails] = useState<EventDetails | null>(null);
   const [mapZoom, setMapZoom] = useState(14);
+  const [newsMap, setNewsMap] = useState(false);
   const [cycling, setCycling] = useState(false);
   const [journey, setJourney] = useState<Itinerary | null>(null);
   const journeyLayer = useRef<Leaflet.LayerGroup | null>(null);
   const [satellite, setSatellite] = useState(true),
-    [mapReady, setMapReady] = useState(false),
+    [mapReady, setMapReady] = useState<Leaflet.Map | null>(null),
     [mobileList, setMobileList] = useState(false);
   const [position, setPosition] = useState<{ lat: number; lng: number } | null>(
       null,
@@ -215,7 +216,7 @@ export default function CityExplorer(props: CityProps) {
         L.control.zoom({ position: "bottomright" }).addTo(m);
         L.control.scale({ position: "bottomleft", imperial: false }).addTo(m);
         markers.current = L.layerGroup().addTo(m);
-        m.on("zoomend", () => setMapZoom(m.getZoom()));
+        m.on("zoomend", () => { if (!cancelled) setMapZoom(m.getZoom()); });
         m.on("click", (e: Leaflet.LeafletMouseEvent) => {
           if (composerRef.current) {
             setPin({ lat: e.latlng.lat, lng: e.latlng.lng });
@@ -239,13 +240,13 @@ export default function CityExplorer(props: CityProps) {
             setMobileList(false);
           }
         });
-        const observer = new ResizeObserver(() => m.invalidateSize());
+        const observer = new ResizeObserver(() => { if (!cancelled) m.invalidateSize(); });
         observer.observe(mapElement.current);
         (m as Leaflet.Map & { disposeResize?: () => void }).disposeResize =
           () => observer.disconnect();
-        setMapReady(true);
+        setMapReady(m);
       })
-      .catch((e) => setError(String(e)));
+      .catch((e) => { if (!cancelled) setError(String(e)); });
     return () => {
       cancelled = true;
       if (map.current) {
@@ -255,6 +256,11 @@ export default function CityExplorer(props: CityProps) {
         map.current.remove();
         map.current = null;
       }
+      markers.current = null;
+      tiles.current = null;
+      journeyLayer.current = null;
+      locationMarker.current = null;
+      pinMarker.current = null;
     };
   }, []);
   useEffect(() => {
@@ -356,7 +362,7 @@ export default function CityExplorer(props: CityProps) {
         art: "art arta",
         outdoors: "outdoors natura parc",
       };
-      return normalize(
+      return smartSearchScore(query, event ? p.title : p.name,
         [
           event ? p.title : p.name,
           p.description,
@@ -365,19 +371,22 @@ export default function CityExplorer(props: CityProps) {
           event ? "" : p.tags.join(" "),
           synonyms[p.category] || "",
         ].join(" "),
-      ).includes(normalize(query));
+      ) > 0;
     },
   );
+  if (props.initialPage === "events" && selected && !items.some((item) => item.id === selected.id)) items.push(selected);
   useEffect(() => {
     currentItems.current = items;
   }, [items]);
   useEffect(() => {
-    if (!mapReady || !lib.current || !markers.current) return;
+    const currentMap = map.current;
+    const currentMarkers = markers.current;
+    if (!mapReady || !currentMap || mapReady !== currentMap || !lib.current || !currentMarkers) return;
     const L = lib.current;
-    markers.current.clearLayers();
+    currentMarkers.clearLayers();
     const grouped = new Map<string, (Place | CityEvent)[]>();
     for (const item of items) {
-      const p = map.current!.project([item.lat, item.lng], mapZoom);
+      const p = currentMap.project([item.lat, item.lng], mapZoom);
       const key =
         mapZoom < 17 && item.id !== selected?.id
           ? `${Math.floor(p.x / 46)}:${Math.floor(p.y / 46)}`
@@ -398,7 +407,7 @@ export default function CityExplorer(props: CityProps) {
           }),
           title: `${group.length} places`,
         })
-          .addTo(markers.current)
+          .addTo(currentMarkers)
           .on("click", () => map.current?.flyTo([lat, lng], mapZoom + 2));
         continue;
       }
@@ -416,7 +425,7 @@ export default function CityExplorer(props: CityProps) {
         zIndexOffset: active ? 1000 : ev ? 300 : 0,
         keyboard: true,
         title: ev ? item.title : item.name,
-      }).addTo(markers.current);
+      }).addTo(currentMarkers);
       marker.on("click", () => {
         if (composerRef.current) {
           setPin({ lat: item.lat, lng: item.lng });
@@ -608,10 +617,11 @@ export default function CityExplorer(props: CityProps) {
   };
   const schedulePage = props.initialPage === "schedule";
   const transportPage = props.initialPage === "transport";
+  const eventsPage = props.initialPage === "events";
   return (
     <main
       data-theme={props.theme}
-      className={`city-app ${journey ? "route-active" : ""}`}
+      className={`city-app ${journey ? "route-active" : ""} ${eventsPage ? "events-page" : ""} ${newsMap ? "news-map-open" : ""}`}
       onClick={(e) => {
         const a = (e.target as Element).closest("a");
         if (a && /^(https?:|tel:)/.test(a.getAttribute("href") || "")) {
@@ -712,6 +722,8 @@ export default function CityExplorer(props: CityProps) {
         className="city-workspace"
         style={schedulePage ? { display: "none" } : undefined}
       >
+        <PanelResizers onResize={() => map.current?.invalidateSize({ pan: false })} />
+        {eventsPage && <EventNews calendarProps={props} request={api} events={data.events} onSelect={(place) => { setSelected(place); setNewsMap(false); }} onCloseMap={() => { setNewsMap(true); setTimeout(() => { map.current?.invalidateSize(); if (selected) map.current?.setView([selected.lat, selected.lng], 16); }, 50); }} onPublish={openComposer} />}
         {transportPage && (
           <aside className="transport-sidebar">
             <div className="transport-title">
@@ -736,9 +748,10 @@ export default function CityExplorer(props: CityProps) {
           </aside>
         )}
         <aside
-          style={transportPage ? { display: "none" } : undefined}
+          style={transportPage || eventsPage ? { display: "none" } : undefined}
           className={`discovery ${mobileList ? "mobile-open" : ""}`}
         >
+          <div className="discovery-controls">
           <div className="discovery-heading">
             <span className="eyebrow">PE MALUL MUREȘULUI / ON THE MUREȘ</span>
             <h1>
@@ -765,7 +778,7 @@ export default function CityExplorer(props: CityProps) {
             )}
           </label>
           <div className="filter-chips">
-            {categories.map((c) => (
+            {categories.filter((c) => props.initialPage !== 'schools' || c === 'all' || c === 'education').map((c) => (
               <button
                 key={c}
                 className={category === c ? "chip selected-chip" : "chip"}
@@ -778,7 +791,9 @@ export default function CityExplorer(props: CityProps) {
               </button>
             ))}
           </div>
-          <div className="results-heading">
+          </div>
+          <ResultsSplitter page={props.initialPage || 'map'} />
+          <div className="results-heading" style={props.initialPage === 'schools' ? { display: 'none' } : undefined}>
             <span>
               {category === "events" ? t.events : t.nearby}
               <small>
@@ -805,7 +820,8 @@ export default function CityExplorer(props: CityProps) {
               {t.street} <Icon name="arrow" size={16} />
             </button>
           </div>
-          <div className="results-list">
+          {props.initialPage === 'schools' && <SchoolDirectory query={query} places={data.places} request={api} onSelect={(place) => { setSelected(place); setMobileList(false); }} />}
+          <div className="results-list" style={props.initialPage === 'schools' ? { display: 'none' } : undefined}>
             {loading ? (
               <div className="empty-state">
                 <span className="loader" />
@@ -944,10 +960,10 @@ export default function CityExplorer(props: CityProps) {
           </button>
           <button
             className="mobile-results primary"
-            onClick={() => setMobileList(!mobileList)}
+            onClick={() => eventsPage ? setNewsMap(false) : setMobileList(!mobileList)}
           >
             <Icon name="search" size={17} />
-            {mobileList ? t.street : `${items.length} ${t.results}`}
+            {eventsPage ? "Înapoi la știri" : mobileList ? t.street : `${items.length} ${t.results}`}
           </button>
           <button
             className="mobile-add"
@@ -969,7 +985,7 @@ export default function CityExplorer(props: CityProps) {
             </div>
           )}
         </section>
-        {selected && (
+        {selected && !eventsPage && (
           <aside className="detail-panel" aria-label={t.details}>
             <button
               className="detail-close"
@@ -1027,6 +1043,7 @@ export default function CityExplorer(props: CityProps) {
                     <span>{selectedPlace.cnipt_category}</span>
                   )}
                   {selectedPlace.locality && <span>{selectedPlace.locality}</span>}
+                  {selectedPlace.municipality && <span>UAT: {selectedPlace.municipality}</span>}
                   {selectedPlace.cnipt_area && <span>{selectedPlace.cnipt_area}</span>}
                 </div>
               )}
