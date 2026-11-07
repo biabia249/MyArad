@@ -727,26 +727,6 @@ export default function CityExplorer(props: CityProps) {
           }}><Icon name={mapOnly ? 'search' : 'layers'} size={18} /><span>{mapOnly ? (lang === 'ro' ? 'Panou' : 'Panel') : (lang === 'ro' ? 'Hartă' : 'Map')}</span></button>}
           {props.calendarPlatform === 'web' && <button className="android-download" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span><span>{lang === "ro" ? "Descarcă APK" : "Download APK"}</span></button>}
           {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
-          <button
-            className="theme-toggle"
-            aria-label={
-              props.theme === "dark"
-                ? "Switch to light mode"
-                : "Switch to dark mode"
-            }
-            title={props.theme === "dark" ? "Light mode" : "Dark mode"}
-            onClick={() => void props.onToggleTheme()}
-          >
-            {props.theme === "dark" ? "☀" : "☾"}
-          </button>
-          <button
-            className="language"
-            onClick={() => setLang(lang === "ro" ? "en" : "ro")}
-            aria-label="Change language"
-          >
-            <Icon name="globe" size={16} />
-            {lang.toUpperCase()}
-          </button>
           {props.userName ? (
             <button
               className="account"
@@ -1560,6 +1540,28 @@ export default function CityExplorer(props: CityProps) {
           </button>
         ))}
       </nav>
+          <div className="drawer-settings">
+          <button
+            className="theme-toggle"
+            aria-label={
+              props.theme === "dark"
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+            }
+            title={props.theme === "dark" ? "Light mode" : "Dark mode"}
+            onClick={() => void props.onToggleTheme()}
+          >
+            {props.theme === "dark" ? "☀" : "☾"}<span>{props.theme === "dark" ? "Light mode" : "Dark mode"}</span>
+          </button>
+          <button
+            className="language"
+            onClick={() => setLang(lang === "ro" ? "en" : "ro")}
+            aria-label="Change language"
+          >
+            <Icon name="globe" size={16} />
+            {lang.toUpperCase()}
+          </button>
+          </div>
           {props.calendarPlatform === 'web' && <button className="drawer-download" onClick={() => { menu.current?.close(); void props.onExternalLink(window.location.origin + '/download'); }}>↓ {lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'}</button>}
           <p className="drawer-hint">{lang === 'ro' ? 'Orașul tău, la un pas.' : 'Your city, one tap away.'}</p>
         </div>
