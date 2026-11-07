@@ -13,7 +13,8 @@ function option(name, fallback) { const index = args.indexOf(name); return index
 const privateIp = value => /^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(value);
 const localIps = Object.values(networkInterfaces()).flat().filter(Boolean).map(entry => entry.address);
 const host = option('--host', localIps.find(privateIp));
-if (!host || !privateIp(host) || !localIps.includes(host)) throw Error('Choose this hosting laptop\'s private IPv4 address with --host.');
+const loopback = host === 'localhost' || host === '127.0.0.1';
+if (!host || !(loopback || (privateIp(host) && localIps.includes(host)))) throw Error('Choose localhost or this hosting laptop\'s private IPv4 address with --host.');
 const port = Number(option('--port', 8443));
 const webPort = Number(option('--web-port', 8083));
 const apiPort = Number(option('--api-port', 3001));
@@ -73,7 +74,7 @@ try {
   if (await healthy(`http://127.0.0.1:${webPort}/status`)) throw Error(`Web port ${webPort} is busy. Choose a free --web-port.`);
   child(['node_modules/expo/bin/cli', 'start', '--localhost', '--port', String(webPort), '--max-workers', '2'], { EXPO_PUBLIC_API_URL: '/api', EXPO_PACKAGER_PROXY_URL: publicOrigin });
   gateway = createLocalHttps({ cert: await readFile(certPath), key: await readFile(keyPath), publicOrigin, webOrigin: `http://127.0.0.1:${webPort}`, apiOrigin: `http://127.0.0.1:${apiPort}` });
-  await new Promise((resolve, reject) => { gateway.once('error', reject); gateway.listen(port, host, resolve); });
+  await new Promise((resolve, reject) => { gateway.once('error', reject); gateway.listen(port, host === 'localhost' ? '127.0.0.1' : host, resolve); });
   console.log(`\nMyArad local HTTPS: ${publicOrigin}/map`);
   console.log('The web app and API share this origin. Ctrl+C stops this HTTPS preview.');
 } catch (error) { console.error(error.message); cleanup(); process.exitCode = 1; }
