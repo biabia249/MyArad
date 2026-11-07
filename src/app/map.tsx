@@ -8,7 +8,7 @@ import CityExplorer from "@/features/city/city-explorer";
 import { authService } from "@/features/auth/auth-service";
 import type { CityProps } from "@/features/city/types";
 import { addToDeviceCalendar, shareCalendarFile } from "@/features/city/device-calendar";
-import { browserLocation } from '@/features/city/browser-location';
+import { browserLocation, locationFromCoordinates } from '@/features/city/browser-location';
 import { withLocationDeadline } from '@/features/city/location-deadline';
 import { enablePush } from '@/features/push';
 
@@ -36,10 +36,7 @@ export function CityScreen({
   const { theme, toggle } = useAppTheme();
   const [name, setName] = useState<string | null>(null);
   const [focused, setFocused] = useState(false);
-  const latestLocation = useRef<{ lat: number; lng: number } | null>(null);
-  const latestLocationTime = useRef(0);
-  const locationFailure = useRef('unavailable');
-  const locationRefresh = useRef<Promise<void> | null>(null);
+  const locationRefresh = useRef<ReturnType<CityProps["onLocate"]> | null>(null);
   useFocusEffect(useCallback(() => {
     setFocused(true);
     let active = true;
@@ -82,47 +79,16 @@ export function CityScreen({
       }
       if (!await Location.hasServicesEnabledAsync()) return { lat: 0, lng: 0, error: 'services-disabled' };
 
-      // iOS can take several seconds to acquire a brand-new high-accuracy fix.
-      // Use a recent cached fix immediately, then improve it in the background.
-      if (Date.now() - latestLocationTime.current > 120000) latestLocation.current = null;
-      if (!latestLocation.current) {
-        const lastKnown = await withLocationDeadline(Location.getLastKnownPositionAsync({
-          maxAge: 120_000,
-          requiredAccuracy: 500,
-        }), 2000).catch(() => null);
-        if (lastKnown) {
-          latestLocationTime.current = lastKnown.timestamp;
-          latestLocation.current = {
-            lat: lastKnown.coords.latitude,
-            lng: lastKnown.coords.longitude,
-          };
-        }
-      }
+      // Always await a fresh fix; stale coordinates can route from another town.
       if (!locationRefresh.current) {
         locationRefresh.current = withLocationDeadline(Location.getCurrentPositionAsync({
-          accuracy: Location.Accuracy.Balanced,
+          accuracy: Location.Accuracy.High,
         }), 20000)
-          .then((position) => {
-            latestLocationTime.current = position.timestamp;
-            latestLocation.current = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            };
-          })
-          .catch((error: unknown) => {
-            locationFailure.current = (error as { code?: string })?.code === 'E_LOCATION_TIMEOUT' ? 'timeout' : 'unavailable';
-            // A cached position remains useful when a fresh GPS fix is unavailable.
-          })
-          .finally(() => {
-            locationRefresh.current = null;
-          });
+          .then(position => locationFromCoordinates(position.coords))
+          .catch((error: unknown) => ({ lat: 0, lng: 0, error: (error as { code?: string })?.code === 'E_LOCATION_TIMEOUT' ? 'timeout' : 'unavailable' }))
+          .finally(() => { locationRefresh.current = null; });
       }
-      if (latestLocation.current) return latestLocation.current;
-
-      // There is no cached position yet, so wait once for the first usable fix.
-      await locationRefresh.current;
-      if (latestLocation.current) return latestLocation.current;
-      return { lat: 0, lng: 0, error: locationFailure.current };
+      return await locationRefresh.current;
     } catch {
       return { lat: 0, lng: 0, error: "unavailable" };
     }

@@ -89,7 +89,7 @@ export type CityProps = {
   onExternalLink: (url: string) => Promise<void>;
   onSignIn: () => Promise<void>;
   onSignOut: () => Promise<void>;
-  onLocate: () => Promise<{ lat: number; lng: number; error?: string }>;
+  onLocate: () => Promise<{ lat: number; lng: number; accuracy?: number; error?: string }>;
   onDirections: (
     lat: number,
     lng: number,

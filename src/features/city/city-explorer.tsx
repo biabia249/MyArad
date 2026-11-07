@@ -502,7 +502,8 @@ export default function CityExplorer(props: CityProps) {
     };
   }, [selected, api, mapReady]);
   useEffect(() => {
-    if (!mapReady || !lib.current || !map.current || !position) return;
+    if (!position) { locationMarker.current?.remove(); locationMarker.current = null; return; }
+    if (!mapReady || !lib.current || !map.current) return;
     if (locationMarker.current) locationMarker.current.setLatLng([position.lat, position.lng]);
     else locationMarker.current = lib.current.marker([position.lat, position.lng], {
       icon: lib.current.divIcon({ className: 'traveler-marker', html: travelerMarkup, iconSize: [48, 64], iconAnchor: [24, 58] }),
@@ -534,6 +535,7 @@ export default function CityExplorer(props: CityProps) {
     try {
       const p = await onLocate();
       if (p.error) {
+        setPosition(null);
         setNotice(locationErrorMessage(p.error, lang === 'ro'));
         setTracking(false);
         return;
@@ -555,7 +557,8 @@ export default function CityExplorer(props: CityProps) {
           .then((p) => {
             if (!p.error) setPosition(p);
             else {
-              setNotice(locationErrorMessage(p.error, lang === 'ro'));
+              setPosition(null);
+        setNotice(locationErrorMessage(p.error, lang === 'ro'));
               setTracking(false);
             }
           })
