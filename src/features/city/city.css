@@ -1996,6 +1996,10 @@ body,
 .profile-identity > .secondary {
   margin-left: auto;
 }
+.profile-identity > .profile-follow {
+  margin-left: auto;
+  min-width: 112px;
+}
 .profile-bio {
   max-width: 650px;
   white-space: pre-wrap;
@@ -2114,6 +2118,14 @@ body,
   }
   .profile-stats {
     gap: 25px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .profile-stats span {
+    flex-shrink: 0;
+  }
+  .profile-identity > .profile-follow {
+    margin-left: 87px;
   }
 }
 .theme-toggle {

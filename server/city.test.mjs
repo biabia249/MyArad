@@ -199,3 +199,40 @@ test('profile edits persist and stay private until the schedule is published',as
  await call('/city/schedule/visibility',{public:true},token);
  const publicProfile=(await call('/city/citizens/city_tester')).data;assert.equal(publicProfile.profile.interests,details.interests);assert.equal(publicProfile.email,undefined);
 });
+
+test("public profiles can be followed and expose social counts without private account data", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const other = await store.signUp({
+    fullName: "Profile Visitor",
+    username: "visitor",
+    email: "visitor@example.com",
+    password: "Testing-123!",
+  });
+  assert.equal(
+    (await call("/city/citizens/city_tester/follow", { following: true }, other.token)).status,
+    404,
+  );
+  await call("/city/schedule/visibility", { public: true }, token);
+  const followed = await call(
+    "/city/citizens/city_tester/follow",
+    { following: true },
+    other.token,
+  );
+  assert.equal(followed.status, 200);
+  const publicProfile = (await call("/city/citizens/city_tester", undefined, other.token)).data;
+  assert.equal(publicProfile.followers, 1);
+  assert.equal(publicProfile.following, 0);
+  assert.equal(publicProfile.isFollowing, true);
+  assert.equal(publicProfile.isOwnProfile, false);
+  assert.equal(publicProfile.email, undefined);
+  assert.equal(
+    (await call("/city/citizens/city_tester/follow", { following: true }, token)).status,
+    400,
+  );
+  await call(
+    "/city/citizens/city_tester/follow",
+    { following: false },
+    other.token,
+  );
+  assert.equal((await call("/city/citizens/city_tester")).data.followers, 0);
+});

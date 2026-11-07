@@ -12,6 +12,12 @@ export function ProfileCard({
   profile,
   plans,
   editable,
+  followers,
+  following,
+  isFollowing,
+  canFollow,
+  busy: actionBusy,
+  onFollow,
   lang,
   props,
   onSaved,
@@ -21,6 +27,12 @@ export function ProfileCard({
   profile: CitizenProfile;
   plans: { venue: string; starts_at: string }[];
   editable: boolean;
+  followers: number;
+  following: number;
+  isFollowing: boolean;
+  canFollow: boolean;
+  busy: boolean;
+  onFollow: (following: boolean) => Promise<void>;
   lang: Language;
   props: CityProps;
   onSaved: () => Promise<void>;
@@ -64,6 +76,21 @@ export function ProfileCard({
             {ro ? "Editează profilul" : "Edit profile"}
           </button>
         )}
+        {canFollow && (
+          <button
+            className={isFollowing ? "secondary profile-follow" : "primary profile-follow"}
+            disabled={actionBusy}
+            onClick={() => void onFollow(!isFollowing)}
+          >
+            {isFollowing
+              ? ro
+                ? "Urmărești"
+                : "Following"
+              : ro
+                ? "Urmărește"
+                : "Follow"}
+          </button>
+        )}
       </div>
       <p className="profile-bio">
         {profile.bio ||
@@ -92,6 +119,14 @@ export function ProfileCard({
         <span>
           <strong>{new Set(plans.map((p) => p.venue)).size}</strong>
           {ro ? "locuri" : "places"}
+        </span>
+        <span>
+          <strong>{followers}</strong>
+          {ro ? "urmăritori" : "followers"}
+        </span>
+        <span>
+          <strong>{following}</strong>
+          {ro ? "urmărește" : "following"}
         </span>
       </div>
       {editing && (

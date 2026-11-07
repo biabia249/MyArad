@@ -16,6 +16,10 @@ type Schedule = {
   username: string;
   fullName: string;
   public: boolean;
+  followers: number;
+  following: number;
+  isOwnProfile: boolean;
+  isFollowing: boolean;
   plans: Plan[];
 };
 const words = {
@@ -136,6 +140,17 @@ export function ScheduleView({
               profile={schedule.profile || {}}
               plans={schedule.plans}
               editable={!username}
+              followers={schedule.followers || 0}
+              following={schedule.following || 0}
+              isFollowing={!!schedule.isFollowing}
+              canFollow={!!username && !!props.userName && !schedule.isOwnProfile}
+              busy={busy}
+              onFollow={(following) =>
+                change(
+                  `/city/citizens/${encodeURIComponent(schedule.username)}/follow`,
+                  { following },
+                )
+              }
               lang={lang}
               props={props}
               onSaved={load}

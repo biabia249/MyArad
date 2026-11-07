@@ -23,6 +23,7 @@ export function createCity(store, config) {
   const db = store.db;
   db.exec(`CREATE TABLE IF NOT EXISTS city_bios(user_id TEXT PRIMARY KEY REFERENCES users(id),bio TEXT NOT NULL DEFAULT '',location TEXT NOT NULL DEFAULT '',interests TEXT NOT NULL DEFAULT '',photo TEXT NOT NULL DEFAULT '');
     CREATE TABLE IF NOT EXISTS city_profiles (user_id TEXT PRIMARY KEY REFERENCES users(id), public INTEGER NOT NULL DEFAULT 0);
+    CREATE TABLE IF NOT EXISTS city_follows (follower_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, followed_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, created_at TEXT NOT NULL, PRIMARY KEY(follower_id,followed_id), CHECK(follower_id<>followed_id));
     CREATE TABLE IF NOT EXISTS city_plans (id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id),place_id TEXT,event_id TEXT REFERENCES city_events(id) ON DELETE CASCADE,title TEXT NOT NULL,venue TEXT NOT NULL,lat REAL NOT NULL,lng REAL NOT NULL,starts_at TEXT NOT NULL,ends_at TEXT NOT NULL,created_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS city_events (
     id TEXT PRIMARY KEY, author_id TEXT NOT NULL REFERENCES users(id), title TEXT NOT NULL,
@@ -172,6 +173,14 @@ export function createCity(store, config) {
         public: !!db
           .prepare("SELECT public FROM city_profiles WHERE user_id=?")
           .get(user.id)?.public,
+        followers: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE followed_id=?")
+          .get(user.id).n,
+        following: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE follower_id=?")
+          .get(user.id).n,
+        isOwnProfile: true,
+        isFollowing: false,
         plans: db
           .prepare(
             "SELECT * FROM city_plans WHERE user_id=? ORDER BY starts_at",
@@ -246,6 +255,14 @@ export function createCity(store, config) {
         .get(username);
       if (!u)
         throw new HttpError(404, "This schedule is private or does not exist.");
+      let viewer = null;
+      if (req.headers.authorization) {
+        try {
+          viewer = author(req);
+        } catch {
+          /* Public profiles remain visible when a stored session expired. */
+        }
+      }
       return {
         username: u.username,
         fullName: u.full_name,
@@ -256,12 +273,49 @@ export function createCity(store, config) {
             )
             .get(u.id) || {},
         public: true,
+        followers: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE followed_id=?")
+          .get(u.id).n,
+        following: db
+          .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE follower_id=?")
+          .get(u.id).n,
+        isOwnProfile: viewer?.id === u.id,
+        isFollowing: !!viewer && !!db
+          .prepare("SELECT 1 FROM city_follows WHERE follower_id=? AND followed_id=?")
+          .get(viewer.id, u.id),
         plans: db
           .prepare(
             "SELECT id,title,venue,lat,lng,starts_at,ends_at FROM city_plans WHERE user_id=? ORDER BY starts_at",
           )
           .all(u.id),
       };
+    }
+    const followMatch = path.match(/^\/city\/citizens\/([^/]+)\/follow$/);
+    if (followMatch && req.method === "POST") {
+      const user = author(req),
+        username = decodeURIComponent(followMatch[1]),
+        target = db
+          .prepare(
+            "SELECT u.id FROM users u JOIN city_profiles p ON p.user_id=u.id AND p.public=1 WHERE u.username=? COLLATE NOCASE",
+          )
+          .get(username);
+      if (!target) throw new HttpError(404, "This profile is private or does not exist.");
+      if (target.id === user.id) throw new HttpError(400, "You cannot follow yourself.");
+      const d = await body(req);
+      if (typeof d.following !== "boolean")
+        throw new HttpError(400, "Invalid follow preference.");
+      if (d.following)
+        db.prepare("INSERT OR IGNORE INTO city_follows VALUES (?,?,?)").run(
+          user.id,
+          target.id,
+          new Date().toISOString(),
+        );
+      else
+        db.prepare("DELETE FROM city_follows WHERE follower_id=? AND followed_id=?").run(
+          user.id,
+          target.id,
+        );
+      return { ok: true };
     }
     const match = path.match(
       /^\/city\/events\/([a-f0-9-]+)(?:\/(attend|comments))?$/,
