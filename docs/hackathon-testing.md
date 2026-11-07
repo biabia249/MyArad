@@ -18,8 +18,10 @@ Public-transport route requests share the journey endpoints with the transport p
 
 Use Node 24+, install with `npm ci`, and copy environment examples without overwriting existing files.
 In one terminal run `npm run backend`; in another run `npx expo start --dev-client`.
-For browser testing run `npm run web`. The local backend allows localhost ports 8081/8082 in development.
-For another port, add that exact origin to the development allowlist in `server/index.mjs`.
+For browser testing run `npm run web`. For another laptop, run `npm run web:lan`.
+The backend allows localhost and its own private LAN interfaces on ports 8081/8082 in development.
+For another origin/port, set `WEB_ORIGIN` or the comma-separated `WEB_ORIGINS` in `server/.env`.
+See [LAN access and scoped firewall setup](./lan-access.md).
 Use `EVENT_POSTING=signed-in` in `server/.env` for the agreed prototype posting policy.
 Accounts are authenticated, but password signup does not verify email ownership.
 

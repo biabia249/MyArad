@@ -3,6 +3,7 @@ import * as Crypto from 'expo-crypto';
 import * as SecureStore from 'expo-secure-store';
 import * as WebBrowser from 'expo-web-browser';
 import { Platform } from 'react-native';
+import { resolveApiUrl } from './api-url';
 
 export type Profile = { fullName: string; username: string; email: string; hasPassword: boolean };
 type Session = { token: string; profile: Profile };
@@ -13,12 +14,7 @@ let exchange: Promise<Profile> | null = null;
 let completedGoogle: { code: string; profile: Profile } | null = null;
 
 function apiUrl() {
-  const configured = process.env.EXPO_PUBLIC_API_URL?.replace(/\/$/, '');
-  if (!configured) throw new Error('The server address is missing. Set EXPO_PUBLIC_API_URL and restart the app.');
-  const url = new URL(configured);
-  if (Platform.OS === 'web' && __DEV__ && url.hostname === '10.0.2.2') url.hostname = window.location.hostname;
-  if (url.protocol !== 'https:' && !(__DEV__ && url.protocol === 'http:')) throw new Error('The authentication server must use HTTPS.');
-  return url.toString().replace(/\/$/, '');
+  return resolveApiUrl(process.env.EXPO_PUBLIC_API_URL, __DEV__, Platform.OS === 'web' ? window.location.hostname : undefined);
 }
 class ApiError extends Error {
   constructor(public status: number, message: string) { super(message); }
@@ -27,7 +23,7 @@ async function request<T>(path: string, data?: object, token?: string): Promise<
   const base = apiUrl();
   let response: Response;
   try {
-    response = await fetch(`${base}${path}`, { method: data ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: data ? JSON.stringify(data) : undefined, signal: AbortSignal.timeout(path.startsWith('/city/event-news') ? 90000 : 20000) });
+    response = await fetch(`${base}${path}`, { method: data ? 'POST' : 'GET', headers: { ...(data ? { 'Content-Type': 'application/json' } : {}), ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: data ? JSON.stringify(data) : undefined, signal: AbortSignal.timeout(path.startsWith('/city/event-news') ? 90000 : 20000) });
   } catch { throw new Error('Cannot reach the server. Check your connection and try again.'); }
   const result = await response.json().catch(() => ({}));
   if (!response.ok) throw new ApiError(response.status, result.error || 'Unable to complete your request.');

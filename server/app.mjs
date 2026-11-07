@@ -60,7 +60,7 @@ export function createApp(config, dependencies = {}) {
   const publicUrl = new URL(config.publicUrl || "http://localhost:3001").origin;
   if (config.production && !publicUrl.startsWith("https://"))
     throw new Error("Production PUBLIC_BASE_URL must use HTTPS.");
-  const allowedOrigins = new Set(config.webOrigins || [config.webOrigin]);
+  const allowedOrigins = new Set([...(config.webOrigins || []), config.webOrigin].filter(Boolean));
   const callback = `${publicUrl}/auth/google/callback`;
   const appCallback = "myarad://auth/callback";
   const google =
@@ -90,6 +90,7 @@ export function createApp(config, dependencies = {}) {
     if (config.production)
       res.setHeader("Strict-Transport-Security", "max-age=31536000");
     const origin = req.headers.origin;
+    res.setHeader('Vary', 'Origin');
     if (origin && allowedOrigins.has(origin)) {
       res.setHeader("Access-Control-Allow-Origin", origin);
       res.setHeader(
@@ -100,6 +101,12 @@ export function createApp(config, dependencies = {}) {
       res.setHeader("Vary", "Origin");
     }
     if (req.method === "OPTIONS") {
+      const method = req.headers['access-control-request-method'];
+      const headers = String(req.headers['access-control-request-headers'] || '').split(',').map(value => value.trim().toLowerCase()).filter(Boolean);
+      if ((origin && !allowedOrigins.has(origin)) || (method && !['GET', 'POST'].includes(method)) || headers.some(header => !['content-type', 'authorization'].includes(header))) {
+        json(res, 403, { error: 'Origin, method or headers are not allowed.' });
+        return;
+      }
       res.writeHead(204);
       res.end();
       return;
