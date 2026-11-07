@@ -13,12 +13,7 @@ export function ProfileCard({
   profile,
   plans,
   editable,
-  followers,
-  following,
-  isFollowing,
-  canFollow,
-  busy: actionBusy,
-  onFollow,
+  friends,
   lang,
   props,
   onSaved,
@@ -28,12 +23,7 @@ export function ProfileCard({
   profile: CitizenProfile;
   plans: { venue: string; starts_at: string }[];
   editable: boolean;
-  followers: number;
-  following: number;
-  isFollowing: boolean;
-  canFollow: boolean;
-  busy: boolean;
-  onFollow: (following: boolean) => Promise<void>;
+  friends: number;
   lang: Language;
   props: CityProps;
   onSaved: () => Promise<void>;
@@ -77,21 +67,7 @@ export function ProfileCard({
             {ro ? "Editează profilul" : "Edit profile"}
           </button>
         )}
-        {canFollow && (
-          <button
-            className={isFollowing ? "secondary profile-follow" : "primary profile-follow"}
-            disabled={actionBusy}
-            onClick={() => void onFollow(!isFollowing)}
-          >
-            {isFollowing
-              ? ro
-                ? "Urmărești"
-                : "Following"
-              : ro
-                ? "Urmărește"
-                : "Follow"}
-          </button>
-        )}
+
       </div>
       <p className="profile-bio">
         {profile.bio ||
@@ -122,7 +98,7 @@ export function ProfileCard({
           {ro ? "locuri" : "places"}
         </span>
       </div>
-      <ProfileConnections key={`${username}-${followers}-${following}`} username={username} followers={followers} following={following} props={props} lang={lang} />
+      <ProfileConnections key={`${username}-${friends}`} username={username} friends={friends} props={props} lang={lang} />
       {editing && (
         <form
           className="profile-editor"

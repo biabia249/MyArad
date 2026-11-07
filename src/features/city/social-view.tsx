@@ -176,7 +176,7 @@ export function SocialView({
   if (!signedIn)
     return (
       <section className="social-page">
-        <h1>{ro ? "Oamenii din Arad" : "People in Arad"}</h1>
+        <h1>{ro ? "Utilizatori" : "Users"}</h1>
         <p>
           {ro
             ? "Intră în cont pentru a găsi prieteni și a vorbi cu ei."
@@ -268,10 +268,10 @@ export function SocialView({
   return (
     <section className={`social-page ${selected ? 'chat-open' : ''}`}>
       <div className="eyebrow">MYARAD · {ro ? "COMUNITATE" : "COMMUNITY"}</div>
-      <h1>{ro ? "Ne vedem în oraș." : "See you around town."}</h1>
+      <h1>{ro ? "Utilizatori" : "Users"}</h1>
       <p>
         {ro
-          ? "Găsește oameni, faceți planuri și păstrați legătura."
+          ? "Găsește persoane, faceți planuri și păstrați legătura."
           : "Find people, make plans and stay in touch."}
       </p>
       {error && (

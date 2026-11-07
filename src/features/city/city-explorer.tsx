@@ -33,6 +33,7 @@ import { decodePath, type Itinerary } from "./transit-types";
 import { ScheduleView, AddPlan } from "./schedule-view";
 import coatOfArms from "./coat-of-arms.json";
 import { copy } from "./i18n";
+import "./ui-system.css";
 import type {
   Bootstrap,
   CityEvent,

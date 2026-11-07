@@ -80,11 +80,30 @@
 }
 /* Use the event palette consistently across every content surface. */
 .city-app[data-theme="dark"] { --paper:#111f3d; --surface:#1b2b50; --line:#3f5580; --ink:#f1f3ff; --muted:#c1cde8; }
-.city-app :is(.event-news,.discovery,.detail-panel,.schedule-page,.social-page,.vasile-page,.favorites-page,.notification-popover) { background:var(--paper); color:var(--ink); border-color:var(--line); }
-.city-app :is(.news-card,.place-row,.plan-card,.social-chat,.social-contacts,.citizen-profile,.news-schedule,.event-participation,.notification-popover li) { background:var(--surface); color:var(--ink); border-color:var(--line); }
-.city-app :is(.place-row small,.place-kind,.news-kicker,.news-date,.favorites-storage-note) { color:var(--muted); }
+.city-app[data-theme] :is(.event-news,.discovery,.detail-panel,.schedule-page,.social-page,.vasile-page,.favorites-page,.notification-popover) { background:var(--paper); color:var(--ink); border-color:var(--line); }
+.city-app[data-theme] :is(.news-card,.place-row,.plan-card,.social-chat,.social-contacts,.citizen-profile,.news-schedule,.event-participation,.notification-popover li) { background:var(--surface); color:var(--ink); border-color:var(--line); }
+.city-app[data-theme] :is(.place-row small,.place-kind,.news-kicker,.news-date,.favorites-storage-note) { color:var(--muted); }
 .city-app .favorites-page { flex:1; width:100%; max-width:none; max-height:none; border:0; border-radius:0; box-shadow:none; padding:24px max(20px,calc((100% - 760px)/2)); overflow:auto; }
 .city-app .favorites-page header { align-items:center; }
 /* Secondary appearance control stays in the drawer footer. */
 .city-app .drawer-settings .theme-toggle { width:44px; min-width:44px; height:44px; min-height:44px; padding:10px; border:0; border-radius:10px; background:transparent; color:var(--muted); box-shadow:none; }
 .city-app .drawer-settings .theme-toggle:hover { background:var(--surface); color:var(--ink); }
+/* Events and community use the same semantic palette in both appearance modes. */
+.city-app .event-news { --news-surface:var(--surface); background:var(--paper); color:var(--ink); border-color:var(--line); }
+.city-app[data-theme] :is(.news-search,.news-schedule,.news-calendar-form input,.news-card,.event-participation,.connection-list,.profile-interests span) { background:var(--surface); color:var(--ink); border-color:var(--line); }
+.city-app[data-theme] :is(.news-body,.news-card h3,.event-participation p,.news-date-range legend,.news-date-range label,.news-discovery-filters label,.profile-identity h2,.profile-stats strong,.connection-buttons strong) { color:var(--ink); }
+.city-app[data-theme] :is(.news-kicker,.news-heading p,.news-date,.news-card p,.news-card-bottom,.news-footer p,.news-refresh,.news-create-event p,.calendar-help,.news-schedule p,.profile-bio,.profile-location,.profile-handle,.profile-stats span,.connection-list small) { color:var(--muted); }
+.city-app[data-theme] :is(.news-categories button,.news-date-range,.profile-stats,.profile-editor,.profile-connections,.connection-buttons button,.connection-list) { border-color:var(--line); }
+.city-app .news-categories button { color:var(--ink); }
+.city-app .news-discovery-filters select,.city-app .news-date-range input { background:var(--surface)!important; color:var(--ink)!important; border-color:var(--line); }
+.city-app[data-theme] :is(.news-section-title h2,.news-heading h1 span,.event-participation>strong,.news-attendance-count) { color:var(--ink); }
+.city-app .news-search input { color:var(--ink); }
+.city-app input::placeholder,.city-app textarea::placeholder { color:var(--muted); opacity:1; }
+
+/* Route content grows naturally; the outer detail sheet owns scrolling/resizing. */
+.city-app .detail-body .journey { display:block; height:auto; min-height:0; overflow:visible; }
+.city-app .detail-body .journey-results-panel { height:auto; min-height:0; max-height:none; overflow:visible; }
+.city-app .detail-body .journey-filter-panel { max-height:none; overflow:visible; }
+@media (max-width:700px) { .city-app .city-workspace>.detail-panel { max-height:98%; } }
+.city-app .journey-unavailable { color:var(--muted); font-size:12px; line-height:1.5; }
+.city-app .journey-unavailable p { margin:8px 0; }

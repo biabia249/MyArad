@@ -1,0 +1,31 @@
+/* Shared panel typography and control roles. Kept last to replace legacy page styles. */
+.city-app[data-theme] {
+  --ui-font-body:'DM Sans',system-ui,sans-serif;
+  --ui-font-heading:'Manrope',system-ui,sans-serif;
+  --ui-action:#8E93CB;
+  --ui-action-ink:#10182e;
+  --ui-selection:#c5c9ec;
+  --ui-radius:12px;
+  font-family:var(--ui-font-body);
+  font-size:14px;
+  line-height:1.5;
+}
+.city-app[data-theme] :is(button,input,select,textarea) { font-family:var(--ui-font-body); font-size:14px; line-height:1.4; }
+.city-app[data-theme] :is(h1,h2,h3,.news-heading h1,.discovery h1,.profile-identity h2,.vasile-heading h1,.favorites-page h1) { font-family:var(--ui-font-heading); font-weight:700; line-height:1.2; letter-spacing:-.02em; color:var(--ink); }
+.city-app[data-theme] :is(h1,.news-heading h1,.discovery h1,.vasile-heading h1,.favorites-page h1) { font-size:26px; }
+.city-app[data-theme] :is(h2,.detail-panel h2,.profile-identity h2,.news-section-title h2,.vasile-welcome h2) { font-size:22px; }
+.city-app[data-theme] :is(h3,.journey h3,.news-card h3) { font-size:18px; }
+.city-app[data-theme] :is(label,.journey-filter-panel>label,.social-search,.profile-editor label) { font-family:var(--ui-font-body); font-size:12px; line-height:1.5; }
+.city-app[data-theme] :is(.eyebrow,.news-kicker,.place-kind) { font-family:var(--ui-font-body); font-size:10px; line-height:1.4; letter-spacing:.1em; }
+.city-app[data-theme] :is(.profile-bio,.detail-description,.news-body,.social-page>p,.schedule-title>p) { font-family:var(--ui-font-body); font-size:14px; line-height:1.6; }
+.city-app[data-theme] :is(.event-news,.discovery,.detail-panel,.transport-sidebar,.schedule-page,.social-page,.vasile-page,.favorites-page,.drawer-content,.city-header,.notification-popover) { background:var(--paper); color:var(--ink); border-color:var(--line); }
+.city-app[data-theme] :is(.plan-card,.citizen-profile,.social-person,.social-chat,.connection-list,.news-card,.news-search,.journey,.route-box,.schedule-privacy,.event-participation) { background:var(--surface); color:var(--ink); border-color:var(--line); border-radius:var(--ui-radius); }
+.city-app[data-theme] :is(.primary,.secondary,.map-button,.chip,.publish-button,.journey-options button,.connection-buttons button,.drawer-links button,.social-person-actions button,.news-categories button,.news-date-range button) { font-family:var(--ui-font-body); font-size:14px; line-height:1.4; font-weight:600; min-height:44px; border-radius:var(--ui-radius); }
+/* Legacy per-page action colors are superseded here by one primary-action token. */
+.city-app[data-theme] :is(.primary,.attendance,.add-top,.publish-button,.social-compose button) { background:var(--ui-action)!important; color:var(--ui-action-ink)!important; border:1px solid var(--ui-action)!important; box-shadow:0 2px 8px #10182e18; }
+.city-app[data-theme] :is(.secondary,.map-button,.chip,.connection-buttons button,.journey-options button,.social-person-actions button:not(.primary),.news-categories button,.news-date-range button) { background:var(--surface); color:var(--ink); border:1px solid var(--line); box-shadow:none; }
+.city-app[data-theme] :is(.journey-options button.chosen,.news-categories button.active,.chip.active,.drawer-links button.active,.social-tabs button.active) { background:var(--ui-selection)!important; color:var(--ui-action-ink)!important; border-color:var(--ui-action)!important; }
+.city-app[data-theme] :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { border-radius:var(--ui-radius); border-color:var(--line); background:var(--surface); color:var(--ink); }
+.city-app[data-theme] :is(.news-card-bottom,.profile-location,.profile-handle,.schedule-privacy p,.journey-note,.connection-list small) { color:var(--muted); font-family:var(--ui-font-body); font-size:12px; line-height:1.5; }
+@media(min-width:701px) { .city-app[data-theme] :is(h1,.news-heading h1,.discovery h1,.vasile-heading h1,.favorites-page h1) { font-size:30px; } }
+@media(max-width:700px) { .city-app[data-theme] :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { font-size:16px; } }

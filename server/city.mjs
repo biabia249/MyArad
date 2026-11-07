@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { createSocial } from './social.mjs';
+import { createSocial, friendshipSummary } from './social.mjs';
 import { readFileSync } from "node:fs";
 import { HttpError } from "./store.mjs";
 import { createEventNews } from "./event-news.mjs";
@@ -263,6 +263,7 @@ export function createCity(store, config) {
         public: !!db
           .prepare("SELECT public FROM city_profiles WHERE user_id=?")
           .get(user.id)?.public,
+        ...friendshipSummary(db, user.id, user.id),
         followers: db
           .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE followed_id=?")
           .get(user.id).n,
@@ -339,11 +340,12 @@ export function createCity(store, config) {
       if (!removed) throw new HttpError(404, "Plan not found.");
       return { ok: true };
     }
-    const connections = path.match(/^\/city\/citizens\/([a-zA-Z0-9_]+)\/(followers|following)$/);
+    const connections = path.match(/^\/city\/citizens\/([a-zA-Z0-9_]+)\/(followers|following|friends)$/);
     if (connections && req.method === 'GET') {
       const viewer = author(req);
       const owner = db.prepare('SELECT u.id,COALESCE(p.public,0) AS public FROM users u LEFT JOIN city_profiles p ON p.user_id=u.id WHERE u.username=? COLLATE NOCASE').get(connections[1]);
       if (!owner || (owner.id !== viewer.id && !owner.public)) throw new HttpError(404, 'This profile is private or does not exist.');
+      if (connections[2] === 'friends') return { users: db.prepare("SELECT u.username,u.full_name AS fullName,COALESCE(p.public,0) AS public FROM city_friends f JOIN users u ON u.id=CASE WHEN f.sender=? THEN f.recipient ELSE f.sender END LEFT JOIN city_profiles p ON p.user_id=u.id WHERE f.status='accepted' AND (f.sender=? OR f.recipient=?) ORDER BY u.full_name,u.username").all(owner.id,owner.id,owner.id) };
       const followers = connections[2] === 'followers';
       return { users: db.prepare(`SELECT u.username,u.full_name AS fullName,COALESCE(p.public,0) AS public FROM city_follows f JOIN users u ON u.id=f.${followers ? 'follower_id' : 'followed_id'} LEFT JOIN city_profiles p ON p.user_id=u.id WHERE f.${followers ? 'followed_id' : 'follower_id'}=? ORDER BY u.full_name,u.username`).all(owner.id) };
     }
@@ -374,6 +376,7 @@ export function createCity(store, config) {
             )
             .get(u.id) || {},
         public: true,
+        ...friendshipSummary(db, u.id, viewer?.id),
         followers: db
           .prepare("SELECT COUNT(*) AS n FROM city_follows WHERE followed_id=?")
           .get(u.id).n,

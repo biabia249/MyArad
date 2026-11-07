@@ -319,3 +319,22 @@ test("public profiles can be followed and expose social counts without private a
   assert.equal((await call("/city/citizens/city_tester")).data.followers, 0);
   assert.deepEqual((await call('/city/citizens/city_tester/followers', undefined, token)).data.users, []);
 });
+
+test('profile friends include accepted friendships only and keep private profiles protected', async t => {
+  const {call, token, store} = await fixture(t);
+  const friend = await store.signUp({fullName:'Accepted Friend',username:'accepted_friend',email:'friend-list@example.com',password:'Testing-123!'});
+  const pending = await store.signUp({fullName:'Pending Friend',username:'pending_friend',email:'pending-list@example.com',password:'Testing-123!'});
+  assert.equal((await call('/city/schedule/visibility', {public:true}, token)).status,200);
+  await call('/city/social/friend/accepted_friend', {action:'request'}, token);
+  await call('/city/social/friend/city_tester', {action:'accept'}, friend.token);
+  await call('/city/social/friend/pending_friend', {action:'request'}, token);
+  assert.equal((await call('/city/schedule', undefined, token)).data.friends, 1);
+  assert.equal((await call('/city/citizens/city_tester')).data.friends, 1);
+  const list=await call('/city/citizens/city_tester/friends', undefined, friend.token);
+  assert.equal(list.status,200);
+  assert.deepEqual(list.data.users,[{username:'accepted_friend',fullName:'Accepted Friend',public:0}]);
+  assert.equal((await call('/city/citizens/city_tester/friends')).status,401);
+  assert.equal((await call('/city/citizens/pending_friend/friends',undefined,friend.token)).status,404);
+  await call('/city/social/friend/accepted_friend',{action:'remove'},token);
+  assert.equal((await call('/city/citizens/city_tester')).data.friends,0);
+});

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { smartSearchScore } from "./smart-search";
+import { itineraryLabel, itineraryBreakdown, routeModeName, pickModeItinerary, travelModeName, type TravelMode } from './route-presentation';
 import { ResultsSplitter } from './results-splitter';
 import { locationErrorMessage } from './location-errors';
 import type { CityProps, Language, Place } from "./types";
@@ -27,8 +28,7 @@ export function Journey({
 }) {
   const ro = lang === "ro";
   const { onRequest, onLocate } = props;
-  const [mode, setMode] = useState("walking"),
-    [origin, setOrigin] = useState(""),
+  const [origin, setOrigin] = useState(""),
     [to, setTo] = useState(""),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
@@ -36,6 +36,8 @@ export function Journey({
     [active, setActive] = useState(0),
     [network, setNetwork] = useState<TransitNetwork | null>(null);
   const [useGps, setUseGps] = useState(true);
+  const [unavailable, setUnavailable] = useState<{mode: TravelMode; failed: boolean}[]>([]);
+  const [requestedAt, setRequestedAt] = useState(0);
   const handledRequest = useRef(0);
   const planVersion = useRef(0);
   useEffect(() => () => { planVersion.current++; }, []);
@@ -79,8 +81,10 @@ export function Journey({
   const plan = useCallback(async (forceGps = false) => {
     const version = ++planVersion.current;
     setBusy(true);
+    setRequestedAt(Date.now());
     setError("");
     setResults([]);
+    setUnavailable([]);
     onRoute(null);
     try {
       const gps = forceGps || useGps;
@@ -102,27 +106,25 @@ export function Journey({
             ? "Alege plecarea și destinația."
             : "Choose a start and destination.",
         );
-      const r = await onRequest(
-        "/city/transit/plan",
-        JSON.stringify({
-          from: { lat: from.lat, lng: from.lng },
-          to: { lat: dest.lat, lng: dest.lng },
-          mode,
-        }),
-      );
+      const modes: TravelMode[] = ['walking', 'driving', 'bicycling', 'transit'];
+      const responses = await Promise.allSettled(modes.map(async travelMode => {
+        const r = await onRequest('/city/transit/plan', JSON.stringify({ from: {lat:from.lat,lng:from.lng}, to: {lat:dest.lat,lng:dest.lng}, mode:travelMode }));
+        if (!r.ok) throw new Error(r.error);
+        const j=JSON.parse(r.data);
+        if (!Array.isArray(j.itineraries)) throw new Error('Invalid route service response.');
+        return pickModeItinerary(j.itineraries,travelMode);
+      }));
       if (version !== planVersion.current) return;
-      if (!r.ok) throw new Error(r.error);
-      const j = JSON.parse(r.data);
-      if (!Array.isArray(j.itineraries)) throw new Error(ro ? 'Răspunsul serviciului de rute este invalid.' : 'Invalid route service response.');
-      setResults(j.itineraries);
-      setActive(0);
-      if (!j.itineraries.length)
-        throw new Error(
-          ro
-            ? "Nu există un traseu disponibil pentru această călătorie. Verifică planificatorul oficial."
-            : "No route is available for this journey. Check the official planner.",
-        );
-      onRoute(j.itineraries[0]);
+      const available: Itinerary[] = [];
+      const missing: {mode:TravelMode;failed:boolean}[] = [];
+      responses.forEach((result,index) => {
+        if (result.status === 'fulfilled' && result.value) available.push(result.value);
+        else missing.push({mode:modes[index],failed:result.status === 'rejected'});
+      });
+      available.sort((a,b)=>a.endTime-b.endTime);
+      setResults(available); setUnavailable(missing); setActive(0);
+      if (!available.length) throw new Error(ro ? 'Nu am găsit un traseu disponibil. Reîncearcă sau verifică planificatorul oficial.' : 'No route found. Retry or check the official planner.');
+      onRoute(available[0]);
     } catch (e) {
       if (version !== planVersion.current) return;
       const message = (e as Error).message;
@@ -134,7 +136,7 @@ export function Journey({
     } finally {
       if (version === planVersion.current) setBusy(false);
     }
-  }, [useGps, position, locateOption, origin, destination, to, onLocate, onRequest, onPosition, onRoute, mode, ro]);
+  }, [useGps, position, locateOption, origin, destination, to, onLocate, onRequest, onPosition, onRoute, ro]);
   useEffect(() => {
     if (!routeRequest || handledRequest.current === routeRequest) return;
     handledRequest.current = routeRequest;
@@ -166,22 +168,6 @@ export function Journey({
           MYARAD / {ro ? "RUTA TA" : "YOUR ROUTE"}
         </span>
         <h3>{ro ? "Cum ajung?" : "How do I get there?"}</h3>
-      </div>
-      <div className="travel-modes">
-        {[
-          ["transit", ro ? "Tramvai / autobuz" : "Tram / bus"],
-          ["walking", ro ? "Pe jos" : "Walk"],
-          ["bicycling", ro ? "Bicicletă" : "Cycle"],
-          ["driving", ro ? "Mașină" : "Drive"],
-        ].map(([m, label]) => (
-          <button
-            className={mode === m ? "mode-active" : ""}
-            key={m}
-            onClick={() => setMode(m)}
-          >
-            {label}
-          </button>
-        ))}
       </div>
       <label className="gps-choice">
         <input
@@ -252,10 +238,7 @@ export function Journey({
             >
               <strong>{minutes(i.duration)} min</strong>
               <span>
-                {i.legs
-                  .filter((l) => l.mode !== "WALK")
-                  .map((l) => l.route)
-                  .join(" → ") || (ro ? "Pe jos" : "Walk")}
+                {itineraryLabel(i,ro)}
               </span>
               <small>
                 {time(i.startTime)}–{time(i.endTime)}
@@ -264,14 +247,14 @@ export function Journey({
           ))}
         </div>
       )}
+      {unavailable.length > 0 && <div className="journey-unavailable" role="status">{unavailable.map(item => <p key={item.mode}><strong>{travelModeName(item.mode,ro)}:</strong> {item.failed ? (ro ? 'serviciul nu răspunde momentan.' : 'service currently unavailable.') : (ro ? 'nicio variantă pentru această plecare în rezultatele serviciului.' : 'no matching journey returned for this departure.')}</p>)}</div>}
+      {results[active] && results[active].startTime * 1000 > requestedAt + 60000 && <p className="journey-note">{ro ? 'Plecare disponibilă la' : 'Available departure at'} {time(results[active].startTime)}.</p>}
       {results[active] && (
         <>
           <div className="journey-summary">
-            <span>🚶 {minutes(results[active].walkTime)} min</span>
-            <span>▣ {minutes(results[active].transitTime)} min</span>
-            <span>
-              {results[active].transfers} {ro ? "schimbări" : "changes"}
-            </span>
+            {itineraryBreakdown(results[active]).map(part => <span key={part.mode}>{routeModeName(part.mode,ro)}: {minutes(part.duration)} min</span>)}
+            {results[active].waitingTime > 0 && <span>{ro ? 'Așteptare' : 'Waiting'}: {minutes(results[active].waitingTime)} min</span>}
+            {results[active].transfers > 0 && <span>{results[active].transfers} {ro ? 'schimbări' : 'changes'}</span>}
           </div>
           <ol className="journey-steps">
             {results[active].legs.map((l, index) => (
