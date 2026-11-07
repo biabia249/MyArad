@@ -14,7 +14,7 @@ export function serveDownload(req, res, pathname, { apkFile = apk, pageFile = pa
     res.writeHead(503, { 'Content-Type': 'text/plain; charset=utf-8', 'Retry-After': '60' });
     res.end('APK-ul se pregătește. Reîncearcă în câteva minute.'); return true;
   }
-  const headers = { 'Content-Type': 'application/vnd.android.package-archive', 'Content-Disposition': 'attachment; filename="MyArad-1.1.0.apk"', 'Accept-Ranges': 'bytes', 'Cache-Control': 'no-store' };
+  const headers = { 'Content-Type': 'application/vnd.android.package-archive', 'Content-Disposition': 'attachment; filename="MyArad.apk"', 'Accept-Ranges': 'bytes', 'Cache-Control': 'no-store' };
   let start = 0, end = size - 1, status = 200;
   if (req.headers.range) {
     const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range);

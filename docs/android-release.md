@@ -35,3 +35,11 @@ host/domain before building the final APK.
 In-app notifications/chat work with the backend. Closed-app push requires a
 Firebase Android configuration and matching FCM credentials for Expo; these are
 not configured for this release. Do not claim closed-app push is verified.
+
+## Launcher artwork
+
+The supplied artwork is preserved in `assets/images/app-logo-source.png`.
+`app-icon.png` contains the full image resized to 900px, centered on a transparent
+1024px canvas. `app-icon-adaptive.png` uses a 640px image on the same canvas to
+keep the whole logo inside Android's adaptive-icon safe area. Neither asset is
+cropped. Regenerate native resources through Expo prebuild after changing icons.
