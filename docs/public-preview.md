@@ -8,7 +8,7 @@ On the Linux development laptop, run:
 
 The home-folder wrapper runs `scripts/start-public-preview.sh` in this checkout.
 Each run stops this launcher's old services and existing MyArad development servers,
-builds the production web app with `EXPO_PUBLIC_API_URL=/api`, starts the API and
+builds the production web app with `EXPO_PUBLIC_API_URL=/api`, starts Vasile, the API and
 production web server, then prints a public HTTPS Cloudflare Quick Tunnel URL.
 Use that URL on the laptop, phones, and computers on other networks. No local CA
 installation or inbound router/firewall port forwarding is needed.
@@ -36,3 +36,5 @@ Node 24+, npm, curl, flock, setsid and ss. The wrapper expects this checkout at
 `~/Projects/MyArad`.
 
 Reference: https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/
+
+Vasile requires a server-side `GROQ_API_KEY` in `server/.env`; see `vasile.md`.

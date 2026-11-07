@@ -1,5 +1,6 @@
 "use dom";
 
+import { VasileView } from "./vasile-view";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useFonts } from 'expo-font';
 import { DMSans_400Regular } from '@expo-google-fonts/dm-sans/400Regular';
@@ -152,7 +153,7 @@ export default function CityExplorer(props: CityProps) {
     setTransportDestination({ lat: place.lat, lng: place.lng, name: place.name });
     setRouteRequest(value => value + 1);
     setSelected(null);
-  }, []);
+  }, [setSelected, setTransportDestination, setRouteRequest]);
   const journeyLayer = useRef<Leaflet.LayerGroup | null>(null);
   const [satellite, setSatellite] = useState(props.initialPage !== 'transport'),
     [mapReady, setMapReady] = useState<Leaflet.Map | null>(null),
@@ -495,7 +496,7 @@ export default function CityExplorer(props: CityProps) {
     return () => {
       cancelled = true;
     };
-  }, [selected, api]);
+  }, [selected, api, mapReady]);
   useEffect(() => {
     if (!mapReady || !lib.current || !map.current || !position) return;
     if (locationMarker.current) locationMarker.current.setLatLng([position.lat, position.lng]);
@@ -510,7 +511,7 @@ export default function CityExplorer(props: CityProps) {
   const updateRoutePosition = useCallback((point: { lat: number; lng: number }) => {
     setPosition(point);
     setTracking(true);
-  }, []);
+  }, [setPosition, setTracking]);
   useEffect(() => {
     pinMarker.current?.remove();
     if (pin && lib.current && map.current)
@@ -627,6 +628,16 @@ export default function CityExplorer(props: CityProps) {
     lang === "ro"
       ? p.description_ro || p.description
       : p.description_en || p.description;
+  useEffect(() => {
+    if (!props.initialPlaceId || loading) return;
+    let active = true;
+    void Promise.resolve().then(() => {
+      if(!active) return;
+      const place=data.places.find(p=>p.id===props.initialPlaceId || p.alias_ids?.includes(props.initialPlaceId!));
+      if(place) {setSelected(place);setMobileList(false);}
+    });
+    return () => {active=false;};
+  }, [props.initialPlaceId, loading, data.places]);
   const selectedEvent = selected && isEvent(selected) ? selected : null;
   const selectedPlace = selected && !isEvent(selected) ? selected : null;
   const label = (key: string) => (t as Record<string, string>)[key] || key;
@@ -656,6 +667,7 @@ export default function CityExplorer(props: CityProps) {
     journeyLayer.current?.remove();
     journeyLayer.current = null;
   };
+  const vasilePage = props.initialPage === "vasile";
   const schedulePage = props.initialPage === "schedule";
   const socialPage = props.initialPage === 'people';
   const transportPage = props.initialPage === "transport";
@@ -697,6 +709,7 @@ export default function CityExplorer(props: CityProps) {
             ["/map", t.explore],
             ["/transport", lang === "ro" ? "Cum ajung?" : "Get there"],
             ["/events", t.events],
+            ["/vasile", "Vasile"],
             ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
             ["/schools", lang === "ro" ? "Școli & UAV" : "Schools & UAV"],
             ["/schedule", lang === "ro" ? "Programul meu" : "My schedule"],
@@ -755,6 +768,7 @@ export default function CityExplorer(props: CityProps) {
           </button>
         </div>
       </header>
+      {vasilePage && <VasileView key={props.userName || "guest"} api={api} lang={lang} signedIn={!!props.userName} onSignIn={() => void props.onSignIn()} onPlace={id => void action(() => props.onNavigate("/map?place=" + encodeURIComponent(id)))} />}
       {socialPage && <SocialView active={props.isFocused !== false} api={api} lang={lang} signedIn={!!props.userName} onSignIn={() => void props.onSignIn()} onProfile={username => void props.onNavigate('/citizen/' + username)} />}
       {schedulePage && (
         <ScheduleView
@@ -765,7 +779,7 @@ export default function CityExplorer(props: CityProps) {
       )}
       <div
         className="city-workspace"
-        style={schedulePage || socialPage ? { display: "none" } : undefined}
+        style={schedulePage || socialPage || vasilePage ? { display: "none" } : undefined}
       >
         <PanelResizers onResize={() => map.current?.invalidateSize({ pan: false })} />
         <button className="mobile-map-toggle" aria-expanded={!mapOnly} onClick={event => {
@@ -1528,6 +1542,7 @@ export default function CityExplorer(props: CityProps) {
           ["/map", t.street],
           ["/transport", lang === "ro" ? "Cum ajung?" : "Directions"],
           ["/events", t.events],
+            ["/vasile", "Vasile"],
           ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
           ["/schools", lang === "ro" ? "Școli" : "Schools"],
           ["/schedule", lang === "ro" ? "Program" : "Schedule"],

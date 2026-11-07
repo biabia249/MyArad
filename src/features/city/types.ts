@@ -1,6 +1,7 @@
 export type Language = "ro" | "en";
 export type Place = {
   id: string;
+  alias_ids?: string[];
   name: string;
   name_en?: string;
   description_en?: string;
@@ -82,6 +83,7 @@ export type CityProps = {
   onToggleTheme: () => Promise<void>;
   initialPage?: string;
   publicUsername?: string;
+  initialPlaceId?: string;
   onNavigate: (path: string) => Promise<void>;
   onRequest: (path: string, data: string | null) => Promise<ApiResult>;
   onExternalLink: (url: string) => Promise<void>;

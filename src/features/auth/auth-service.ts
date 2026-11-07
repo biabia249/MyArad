@@ -24,7 +24,7 @@ async function request<T>(path: string, data?: object, token?: string): Promise<
   const base = apiUrl();
   let response: Response;
   try {
-    response = await fetch(`${base}${path}`, { method: data ? 'POST' : 'GET', headers: { ...(data ? { 'Content-Type': 'application/json' } : {}), ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: data ? JSON.stringify(data) : undefined, signal: AbortSignal.timeout(path.startsWith('/city/event-news') ? 90000 : 20000) });
+    response = await fetch(`${base}${path}`, { method: data ? 'POST' : 'GET', headers: { ...(data ? { 'Content-Type': 'application/json' } : {}), ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: data ? JSON.stringify(data) : undefined, signal: AbortSignal.timeout(path.startsWith('/city/event-news') || path.startsWith('/city/vasile/chat') ? 90000 : 20000) });
   } catch { throw new Error('Cannot reach the server. Check your connection and try again.'); }
   const result = await response.json().catch(() => ({}));
   if (!response.ok) throw new ApiError(response.status, result.error || 'Unable to complete your request.');

@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { Alert, Linking, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { router, useFocusEffect, type Href } from "expo-router";
+import { router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
 import * as Location from "expo-location";
 import { useAppTheme } from "@/features/app-theme";
 import CityExplorer from "@/features/city/city-explorer";
@@ -27,9 +27,11 @@ async function safely(action: () => Promise<void>) {
 export function CityScreen({
   initialPage = "map",
   publicUsername,
+  initialPlaceId,
 }: {
   initialPage?: string;
   publicUsername?: string;
+  initialPlaceId?: string;
 }) {
   const { theme, toggle } = useAppTheme();
   const [name, setName] = useState<string | null>(null);
@@ -155,13 +157,10 @@ export function CityScreen({
         }}
         initialPage={initialPage}
         publicUsername={publicUsername}
+        initialPlaceId={initialPlaceId}
         onNavigate={async (path) => {
-          if (
-            !/^\/(map|events|people|schedule|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(
-              path,
-            )
-          )
-            throw new Error("Invalid page.");
+          const target=new URL(path,"https://myarad.local");
+          if(!path.startsWith("/") || target.origin!=="https://myarad.local" || !/^\/(map|events|people|vasile|schedule|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(target.pathname)) throw new Error("Invalid page.");
           router.navigate(path as Href);
         }}
         theme={theme}
@@ -192,5 +191,6 @@ export function CityScreen({
 }
 
 export default function MapScreen() {
-  return <CityScreen />;
+  const {place}=useLocalSearchParams<{place?:string}>();
+  return <CityScreen initialPlaceId={typeof place === "string" ? place.slice(0,200) : undefined} />;
 }

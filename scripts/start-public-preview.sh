@@ -28,11 +28,11 @@ stop_legacy() {
     [[ "$cwd" == "$ROOT" ]] || continue
     command="$(tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null || true)"
     case "$command" in
-      *'server/index.mjs'*|*'scripts/https-dev.mjs'*|*'node_modules/.bin/expo start'*|*'node_modules/expo/bin/cli start'*) kill -TERM "$pid" 2>/dev/null || true;;
+      *'server/vasile/start.mjs'*|*'uvicorn server.vasile.agent:app'*|*'server/index.mjs'*|*'scripts/https-dev.mjs'*|*'node_modules/.bin/expo start'*|*'node_modules/expo/bin/cli start'*) kill -TERM "$pid" 2>/dev/null || true;;
     esac
-  done < <(ss -ltnpH 2>/dev/null | awk '$4 ~ /:(3001|8080|8081|8082|8083|8443)$/ {while(match($0,/pid=[0-9]+/)){print substr($0,RSTART+4,RLENGTH-4);$0=substr($0,RSTART+RLENGTH)}}' | sort -u)
+  done < <(ss -ltnpH 2>/dev/null | awk '$4 ~ /:(3001|8000|8080|8081|8082|8083|8443)$/ {while(match($0,/pid=[0-9]+/)){print substr($0,RSTART+4,RLENGTH-4);$0=substr($0,RSTART+RLENGTH)}}' | sort -u)
 }
-if [[ "${1:-}" == --status ]]; then cat "$STATE/public-url.txt" 2>/dev/null || true; ss -ltnpH | awk '$4 ~ /:(3001|8080|8082)$/'; exit 0; fi
+if [[ "${1:-}" == --status ]]; then cat "$STATE/public-url.txt" 2>/dev/null || true; ss -ltnpH | awk '$4 ~ /:(3001|8000|8080|8082)$/'; exit 0; fi
 stop_managed
 stop_legacy
 if [[ "${1:-}" == --stop ]]; then echo 'MyArad stopped.'; exit 0; fi
@@ -42,12 +42,17 @@ trap 'if [[ "$success" != 1 ]]; then stop_managed; echo "Startup failed. See log
 trap 'exit 130' INT
 trap 'exit 143' TERM
 for attempt in {1..40}; do
- if ! ss -ltnH | awk '$4 ~ /:(3001|8080|8082)$/' | grep -q .; then break; fi
+ if ! ss -ltnH | awk '$4 ~ /:(3001|8000|8080|8082)$/' | grep -q .; then break; fi
  sleep .25
 done
-if ss -ltnH | awk '$4 ~ /:(3001|8080|8082)$/' | grep -q .; then echo 'A required port is held by another process; it was not killed.' >&2; exit 1; fi
+if ss -ltnH | awk '$4 ~ /:(3001|8000|8080|8082)$/' | grep -q .; then echo 'A required port is held by another process; it was not killed.' >&2; exit 1; fi
 if [[ ! -x "$CLOUDFLARED" ]]; then "$NODE" --use-system-ca scripts/download-cloudflared.mjs "$CLOUDFLARED"; fi
 [[ -d node_modules ]] || npm ci
+if [[ ! -x "$ROOT/.cache/vasile-venv/bin/python" ]]; then python3 -m venv "$ROOT/.cache/vasile-venv"; fi
+if ! cmp -s server/vasile/requirements.txt "$ROOT/.cache/vasile-venv/installed-requirements.txt"; then
+ "$ROOT/.cache/vasile-venv/bin/pip" install -r server/vasile/requirements.txt > "$STATE/vasile-install.log" 2>&1 || { tail -15 "$STATE/vasile-install.log"; exit 1; }
+ cp server/vasile/requirements.txt "$ROOT/.cache/vasile-venv/installed-requirements.txt"
+fi
 printf '\nBuilding MyArad with a same-origin HTTPS API…\n'
 EXPO_PUBLIC_API_URL=/api "$NODE" --use-system-ca node_modules/expo/bin/cli export --platform web --output-dir dist --max-workers 2 --clear > "$STATE/build.log" 2>&1 || { tail -30 "$STATE/build.log"; exit 1; }
 launch() {
@@ -56,6 +61,7 @@ launch() {
  local pid=$!
  printf '%s %s\n' "$pid" "$(awk '{print $22}' "/proc/$pid/stat")" > "$STATE/$name.pid"
 }
+launch vasile "$NODE" --use-system-ca --env-file-if-exists=server/.env server/vasile/start.mjs
 launch web env EXPO_PUBLIC_API_URL=/api "$NODE" --use-system-ca node_modules/expo/bin/cli serve --port 8082
 launch gateway env MYARAD_PUBLIC_URL_FILE="$STATE/public-url.txt" "$NODE" server/public-preview.mjs
 launch tunnel "$CLOUDFLARED" tunnel --url http://127.0.0.1:8080 --protocol http2 --no-autoupdate
@@ -69,7 +75,7 @@ printf '%s\n' "$url" > "$STATE/public-url.txt"
 launch api env NODE_ENV=production PUBLIC_BASE_URL="$url" WEB_ORIGIN="$url" WEB_ORIGINS="$url" PORT=3001 "$NODE" --use-system-ca --env-file-if-exists=server/.env server/index.mjs
 ready=0
 for attempt in {1..120}; do
- if curl --silent --fail --max-time 3 http://127.0.0.1:8080/api/health > /dev/null && curl --silent --fail --max-time 3 http://127.0.0.1:8080/map > /dev/null; then ready=1; break; fi
+ if curl --silent --fail --max-time 3 http://127.0.0.1:8000/health > /dev/null && curl --silent --fail --max-time 3 http://127.0.0.1:8080/api/health > /dev/null && curl --silent --fail --max-time 3 http://127.0.0.1:8080/map > /dev/null; then ready=1; break; fi
  sleep 1
 done
 [[ "$ready" == 1 ]] || { tail -15 "$STATE/api.log" "$STATE/web.log"; exit 1; }
