@@ -11,7 +11,7 @@ export default function GoogleCallbackScreen() {
   const providerError = typeof params.error === 'string' ? params.error : null;
   useEffect(() => {
     let mounted = true;
-    authService.completeGoogleRedirect(code, providerError).then(() => { if (mounted) router.replace('/signin'); }).catch(reason => { if (mounted) setError(reason instanceof Error ? reason.message : 'Sign-in failed.'); });
+    authService.completeGoogleRedirect(code, providerError).then(() => { if (mounted) router.replace('/map'); }).catch(reason => { if (mounted) setError(reason instanceof Error ? reason.message : 'Sign-in failed.'); });
     return () => { mounted = false; };
   }, [code, providerError]);
   return <AuthShell><Title>Google sign in</Title>{error ? <><Text accessibilityRole="alert" style={ui.error}>{error}</Text><Link href="/signin" replace style={ui.link}>Back to Sign In</Link></> : <ActivityIndicator accessibilityLabel="Completing Google sign-in" color="#ff8085" />}</AuthShell>;

@@ -47,6 +47,14 @@
           "recordAudioAndroid": false,
           "enableBackgroundPlayback": false
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "MyArad uses your location while you explore, to show where you are and find directions.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false
+        }
       ]
     ],
     "experiments": {

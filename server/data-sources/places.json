@@ -1,0 +1,4271 @@
+[
+  {
+    "id": "wikipedia/33963495",
+    "name": "Biserica Sârbească din Arad",
+    "lat": 46.166823,
+    "lng": 21.311583,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Church_of_Saints_Peter_and_Paul,_Arad",
+    "wikipedia": "en:Church of Saints Peter and Paul, Arad",
+    "description": "The Church of Saints Peter and Paul (Serbian: Црква светих апостола Петра и Павла, romanized: Crkva svetih apostola Petra i Pavla), also known as the Serbian Church (Romanian: Biserica Sârbească), is an Eastern Orthodox church located in the Serbian Square (Romanian: Piata Sârbească), Arad, Romania. It is  under jurisdiction of the Eparchy of Temišvar of the Serbian Orthodox Church.\nIt was built between 1698 and 1702, by the Serb community of the city, and represents one of the oldest buildings in Arad.",
+    "description_en": "The Church of Saints Peter and Paul (Serbian: Црква светих апостола Петра и Павла, romanized: Crkva svetih apostola Petra i Pavla), also known as the Serbian Church (Romanian: Biserica Sârbească), is an Eastern Orthodox church located in the Serbian Square (Romanian: Piata Sârbească), Arad, Romania. It is  under jurisdiction of the Eparchy of Temišvar of the Serbian Orthodox Church.\nIt was built between 1698 and 1702, by the Serb community of the city, and represents one of the oldest buildings in Arad.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Biserica_s%C3%A2rbeasc%C4%83.jpg/960px-Biserica_s%C3%A2rbeasc%C4%83.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Church_of_Saints_Peter_and_Paul,_Arad",
+    "wiki_source": "https://en.wikipedia.org/wiki/Church_of_Saints_Peter_and_Paul,_Arad",
+    "name_en": "Church of Saints Peter and Paul, Arad",
+    "description_ro": "Biserica Sârbească, cu hramul Sfinților Petru și Pavel, este un lăcaș de cult din municipiul Arad. A fost ridicat între anii 1698-1702. Față de forma sa inițială, biserica a suferit transformări mai ales în perioada 1790-1822, când a primit notele actualului stil baroc pe care îl reprezintă.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Biserica_S%C3%A2rbeasc%C4%83_din_Arad"
+  },
+  {
+    "id": "wikipedia/71525235",
+    "name": "Biserica „Sfântul Anton de Padova” din Arad",
+    "lat": 46.1725117,
+    "lng": 21.31566397,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/St._Anthony_of_Padua_Church_(Arad,_Romania)",
+    "wikipedia": "en:St. Anthony of Padua Church (Arad, Romania)",
+    "description": "",
+    "description_en": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Arad%2C_biserica_Sf_Anton_de_Padova.jpg/960px-Arad%2C_biserica_Sf_Anton_de_Padova.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/St._Anthony_of_Padua_Church_(Arad,_Romania)",
+    "wiki_source": "https://en.wikipedia.org/wiki/St._Anthony_of_Padua_Church_(Arad,_Romania)",
+    "name_en": "St. Anthony of Padua Church (Arad, Romania)",
+    "description_ro": "Biserica romano-catolică „Sfântul Anton de Padova” este un lăcaș de cult din orașul Arad. A fost ridicat între anii 1902-1904 de către arhitectul arădean Milan Tabacovici. A fost sfințită în anul 1911.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Biserica_%E2%80%9ESf%C3%A2ntul_Anton_de_Padova%E2%80%9D_din_Arad"
+  },
+  {
+    "id": "wikipedia/65503822",
+    "name": "Catedrala Nașterea Sfântului Ioan Botezătorul din Arad",
+    "lat": 46.17048,
+    "lng": 21.31186,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Church_of_the_Nativity_of_Saint_John_the_Baptist_(Arad,_Romania)",
+    "wikipedia": "en:Church of the Nativity of Saint John the Baptist (Arad, Romania)",
+    "description": "",
+    "description_en": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Catedrala_Nasterea_St_Ioan_Botezatorul_Arad.jpg/960px-Catedrala_Nasterea_St_Ioan_Botezatorul_Arad.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Church_of_the_Nativity_of_Saint_John_the_Baptist_(Arad,_Romania)",
+    "wiki_source": "https://en.wikipedia.org/wiki/Church_of_the_Nativity_of_Saint_John_the_Baptist_(Arad,_Romania)",
+    "name_en": "Church of the Nativity of Saint John the Baptist (Arad, Romania)",
+    "description_ro": "Catedrala „Nașterea Sf. Ioan Botezătorul” este un monument de arhitectură barocă din municipiul Arad. Edificiul a fost construit între anii 1862-1865 sub conducerea arhitectului Anton Ziegler, la inițiativa episcopului Procopie Ivașcovici.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Catedrala_Na%C8%99terea_Sf%C3%A2ntului_Ioan_Botez%C4%83torul_din_Arad"
+  },
+  {
+    "id": "wikipedia/47346224",
+    "name": "Catedrala „Sfânta Treime” din Arad",
+    "lat": 46.18359444,
+    "lng": 21.32472222,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Holy_Trinity_Cathedral,_Arad",
+    "wikipedia": "en:Holy Trinity Cathedral, Arad",
+    "description": "",
+    "description_en": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Arad_2023_-_Catedrala_Sf%C3%A2nta_Treime_din_Arad_04.jpg/960px-Arad_2023_-_Catedrala_Sf%C3%A2nta_Treime_din_Arad_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Holy_Trinity_Cathedral,_Arad",
+    "wiki_source": "https://en.wikipedia.org/wiki/Holy_Trinity_Cathedral,_Arad",
+    "name_en": "Holy Trinity Cathedral, Arad",
+    "description_ro": "",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Catedrala_%E2%80%9ESf%C3%A2nta_Treime%E2%80%9D_din_Arad"
+  },
+  {
+    "id": "wikipedia/32545083",
+    "name": "Cetatea Aradului",
+    "lat": 46.17111111,
+    "lng": 21.33194444,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Fortress_of_Arad",
+    "wikipedia": "en:Fortress of Arad",
+    "description": "The Fortress of Arad is a fortification system built in the city of Arad (today Romania) in Kingdom of Hungary, on the left bank of the Mureș River in the 18th century at the direct order of the Habsburg Queen Maria Theresa. The fortress today lies in the city's Subcetate neighbourhood, on the former military border between the Habsburg Empire and the Ottoman Empire. Over the course of its existence, it has been used as a military garrison and a military prison.",
+    "description_en": "The Fortress of Arad is a fortification system built in the city of Arad (today Romania) in Kingdom of Hungary, on the left bank of the Mureș River in the 18th century at the direct order of the Habsburg Queen Maria Theresa. The fortress today lies in the city's Subcetate neighbourhood, on the former military border between the Habsburg Empire and the Ottoman Empire. Over the course of its existence, it has been used as a military garrison and a military prison.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Cetatea_Aradului.png/960px-Cetatea_Aradului.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Fortress_of_Arad",
+    "wiki_source": "https://en.wikipedia.org/wiki/Fortress_of_Arad",
+    "name_en": "Fortress of Arad",
+    "description_ro": "Cetatea Aradului a fost construită pe malul stâng al Mureșului, fiind ridicată pe vremea împărătesei Maria Tereza. Cetatea a fost construită după planurile generalului Ferdinand Philipp Harsch, în stil Vauban-Tenaille, iar construcția s-a realizat între anii 1762-1783. A fost proiectată sub forma de stea cu șase colțuri și a fost prevăzută cu trei rânduri de cazemate subterane și mai multe rânduri de șanțuri, care puteau fi la nevoie ușor inundate, având în vedere că a fost plasată pe o insulă, iar un braț al Mureșului o înconjura.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Cetatea_Aradului"
+  },
+  {
+    "id": "wikipedia/33185300",
+    "name": "Gara Arad",
+    "lat": 46.189591,
+    "lng": 21.324871,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Arad_railway_station",
+    "wikipedia": "en:Arad railway station",
+    "description": "Arad railway station (Romanian: Gara Arad) is the largest railway station in the city of Arad, and the largest in Arad County. It is the second largest railway station in the western region of Romania, immediately after Timișoara Nord railway station.",
+    "description_en": "Arad railway station (Romanian: Gara Arad) is the largest railway station in the city of Arad, and the largest in Arad County. It is the second largest railway station in the western region of Romania, immediately after Timișoara Nord railway station.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Arad_Bahnhof_3929-33.jpg/960px-Arad_Bahnhof_3929-33.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Arad_railway_station",
+    "wiki_source": "https://en.wikipedia.org/wiki/Arad_railway_station",
+    "name_en": "Arad railway station",
+    "description_ro": "Gara Arad (sau Gara Mare) este cea mai mare gară din municipiul și județul Arad, dar și una dintre cele mai tranzitate din Regiunea de Vest a României. Din gara Arad pleacă și sosesc zilnic peste 100 trenuri de călători către majoritatea localităților din România, spre Budapest Keleti pu., Viena Hbf., cât și trenuri de marfă.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Gara_Arad"
+  },
+  {
+    "id": "wikipedia/39490143",
+    "name": "Palatul Administrativ din Arad",
+    "lat": 46.17554746,
+    "lng": 21.31913394,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Arad_Administrative_Palace",
+    "wikipedia": "en:Arad Administrative Palace",
+    "description": "The Arad Administrative Palace is an historic building located at 75 Revoluției Boulevard, Arad, Romania. It houses the city hall and the prefecture of Arad County.",
+    "description_en": "The Arad Administrative Palace is an historic building located at 75 Revoluției Boulevard, Arad, Romania. It houses the city hall and the prefecture of Arad County.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Arad%2C_Romania_-_Administrative_Palace_%282023%29.jpg/960px-Arad%2C_Romania_-_Administrative_Palace_%282023%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Arad_Administrative_Palace",
+    "wiki_source": "https://en.wikipedia.org/wiki/Arad_Administrative_Palace",
+    "name_en": "Arad Administrative Palace",
+    "description_ro": "Palatul Administrativ din Arad este o clădire construită între anii 1872-1875, care astăzi adăpostește Primăria Municipiului Arad. Clădirea reprezintă una dintre operele semnificative ale arhitecturii eclectice din Arad. Fațadele regulate sunt ritmate și decorate de elemente clasiciste, iar rezalitul central al fațadei principale are bogate referințe neorenascentiste [1] Arhivat în 5 octombrie 2013, la Wayback Machine..",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Palatul_Administrativ_din_Arad"
+  },
+  {
+    "id": "wikipedia/39490179",
+    "name": "Palatul Neumann din Arad",
+    "lat": 46.1753,
+    "lng": 21.3174,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Neumann_Palace",
+    "wikipedia": "en:Neumann Palace",
+    "description": "The Neumann Palace is an eclectic building located in Arad. It is a historical monument. It was built in 1891–1892 by the wealthy family of Neumann, according to the plans by local architect Milan Tabaković.",
+    "description_en": "The Neumann Palace is an eclectic building located in Arad. It is a historical monument. It was built in 1891–1892 by the wealthy family of Neumann, according to the plans by local architect Milan Tabaković.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Arad_-_Palatul_Neumann_%282023%29_-_img_05.jpg/960px-Arad_-_Palatul_Neumann_%282023%29_-_img_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Neumann_Palace",
+    "wiki_source": "https://en.wikipedia.org/wiki/Neumann_Palace",
+    "name_en": "Neumann Palace",
+    "description_ro": "Palatul Neuman este un edificiu situat pe bulevardul Revoluției, în municipiul Arad. A fost construit între anii 1891-1892 la comanda familiei de industriași Neuman. \nClădirea eclectică cu două etaje are trei porți spre trei străzi, mai multe case ale scărilor cu o bogată ornamentație de fier forjat.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Palatul_Neumann_din_Arad"
+  },
+  {
+    "id": "wikipedia/59833460",
+    "name": "Stadionul Francisc Neuman",
+    "lat": 46.1925,
+    "lng": 21.31194444,
+    "category": "landmark",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Francisc_von_Neuman_Stadium",
+    "wikipedia": "en:Francisc von Neuman Stadium",
+    "description": "",
+    "description_en": "",
+    "image": "",
+    "image_source": "https://en.wikipedia.org/wiki/Francisc_von_Neuman_Stadium",
+    "wiki_source": "https://en.wikipedia.org/wiki/Francisc_von_Neuman_Stadium",
+    "name_en": "Francisc von Neuman Stadium",
+    "description_ro": "Stadionul Francisc Neuman, cunoscut și ca Stadionul UTA, este un stadion de fotbal din Arad, România. A fost deschis pe 28 august 2020 și servește în prezent drept stadionul de acasă al clubului de fotbal UTA Arad din SuperLiga României. Este construit pe locul fostului stadion Francisc von Neuman.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Stadionul_Francisc_Neuman"
+  },
+  {
+    "id": "wikipedia/42352218",
+    "name": "Colegiul Național „Moise Nicoară” din Arad",
+    "lat": 46.17111111,
+    "lng": 21.31916667,
+    "category": "education",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction",
+      "educatie",
+      "school",
+      "university",
+      "scoala"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Moise_Nicoar%C4%83_National_College",
+    "wikipedia": "en:Moise Nicoară National College",
+    "description": "Moise Nicoară National College (Romanian: Colegiul Național \"Moise Nicoară\") is a public day high school in Arad, Romania.",
+    "description_en": "Moise Nicoară National College (Romanian: Colegiul Național \"Moise Nicoară\") is a public day high school in Arad, Romania.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Moise_Nicoara_National_College_-_facade.JPG/960px-Moise_Nicoara_National_College_-_facade.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_source": "https://en.wikipedia.org/wiki/Moise_Nicoar%C4%83_National_College",
+    "wiki_source": "https://en.wikipedia.org/wiki/Moise_Nicoar%C4%83_National_College",
+    "name_en": "Moise Nicoară National College",
+    "description_ro": "",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Colegiul_Na%C8%9Bional_%E2%80%9EMoise_Nicoar%C4%83%E2%80%9D_din_Arad"
+  },
+  {
+    "id": "way/34130031",
+    "name": "Teatrul Clasic Ioan Slavici",
+    "lat": 46.1711198,
+    "lng": 21.3157936,
+    "category": "culture",
+    "address": "",
+    "description": "The Ioan Slavici Classical Theatre is a theatre in the city of Arad, in the western side of Romania.\nThe theatre was built in 1874, and displays a neoclassical architecture style. It was designed around 1862 by the architect Anton Czigler (or possibly his son, Győző Czigler), but the construction started only in 1869, under the supervision of architect Antal Szkalnitzky.",
+    "phone": "",
+    "website": "https://teatrulclasic.ro",
+    "hours": "",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Arad_-_Teatrul_%E2%80%9EIoan_Slavici%E2%80%9D_%282023%29_-_img_01.jpg/960px-Arad_-_Teatrul_%E2%80%9EIoan_Slavici%E2%80%9D_%282023%29_-_img_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "wikipedia": "ro:Teatrul Clasic „Ioan Slavici” din Arad",
+    "source": "https://www.openstreetmap.org/way/34130031",
+    "tags": [
+      "theatre"
+    ],
+    "description_en": "The Ioan Slavici Classical Theatre is a theatre in the city of Arad, in the western side of Romania.\nThe theatre was built in 1874, and displays a neoclassical architecture style. It was designed around 1862 by the architect Anton Czigler (or possibly his son, Győző Czigler), but the construction started only in 1869, under the supervision of architect Antal Szkalnitzky.",
+    "image_source": "https://en.wikipedia.org/wiki/Ioan_Slavici_Classical_Theatre",
+    "wiki_source": "https://en.wikipedia.org/wiki/Ioan_Slavici_Classical_Theatre",
+    "name_en": "Ioan Slavici Classical Theatre"
+  },
+  {
+    "id": "node/8647648217",
+    "name": "Biblioteca Jud. A.D. Xenopol filiala Aurel Vlaicu",
+    "lat": 46.1948587,
+    "lng": 21.3021771,
+    "category": "culture",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8647648217",
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "node/2305063647",
+    "name": "Biblioteca Județeană Arad - Filiala Aradul Nou",
+    "lat": 46.1515091,
+    "lng": 21.3211141,
+    "category": "culture",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/2305063647",
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "way/34219353",
+    "name": "Biblioteca Județeană Arad A.D. Xenopol Sediul Central",
+    "lat": 46.1769449,
+    "lng": 21.3158842,
+    "category": "culture",
+    "address": "Strada 9 Mai 2-4",
+    "description": "",
+    "phone": "+40 0257 256 510",
+    "website": "https://bibliotecaarad.ro/",
+    "hours": "Mo-Fr 09:00-17:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/34219353",
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "node/390341924",
+    "name": "Cinema Arta",
+    "lat": 46.174549,
+    "lng": 21.316064,
+    "category": "culture",
+    "address": "Strada Vasile Alecsandri 2",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/390341924",
+    "tags": [
+      "cinema"
+    ]
+  },
+  {
+    "id": "node/11218068039",
+    "name": "Cinema City",
+    "lat": 46.1909849,
+    "lng": 21.3204136,
+    "category": "culture",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11218068039",
+    "tags": [
+      "cinema"
+    ]
+  },
+  {
+    "id": "way/945392090",
+    "name": "Cinema Solidaritatea",
+    "lat": 46.2043649,
+    "lng": 21.2841798,
+    "category": "culture",
+    "address": "Strada Codrului 2",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/945392090",
+    "tags": [
+      "cinema"
+    ]
+  },
+  {
+    "id": "node/13270020755",
+    "name": "Filarmonica de Stat",
+    "lat": 46.174218,
+    "lng": 21.320589,
+    "category": "culture",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Su 09:00-17:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13270020755",
+    "tags": [
+      "theatre"
+    ]
+  },
+  {
+    "id": "node/8672195817",
+    "name": "Grădiște",
+    "lat": 46.1940856,
+    "lng": 21.3327278,
+    "category": "culture",
+    "address": "Strada Petru Rareș 25",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8672195817",
+    "tags": [
+      "cinema"
+    ]
+  },
+  {
+    "id": "node/13118881104",
+    "name": "HappyCinema",
+    "lat": 46.2003653,
+    "lng": 21.2872552,
+    "category": "culture",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13118881104",
+    "tags": [
+      "cinema"
+    ]
+  },
+  {
+    "id": "node/11296585769",
+    "name": "la biserica baptista",
+    "lat": 46.2126431,
+    "lng": 21.2762912,
+    "category": "culture",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11296585769",
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "node/3704026315",
+    "name": "Libraria LOGOS",
+    "lat": 46.1758991,
+    "lng": 21.3172724,
+    "category": "culture",
+    "address": "Strada Horia 2",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "L-V 9:00-18:00; S 9:00-13:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3704026315",
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "node/599197438",
+    "name": "Takacs Gallery",
+    "lat": 46.1723396,
+    "lng": 21.3148522,
+    "category": "culture",
+    "address": "Strada Lucian Blaga",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/599197438",
+    "tags": [
+      "arts_centre"
+    ]
+  },
+  {
+    "id": "way/305826900",
+    "name": "Teatrul de Marionete",
+    "lat": 46.1750163,
+    "lng": 21.3139425,
+    "category": "culture",
+    "address": "Strada Episcopiei 15",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/305826900",
+    "tags": [
+      "theatre"
+    ]
+  },
+  {
+    "id": "wikipedia/24886329",
+    "name": "Universitatea „Aurel Vlaicu” din Arad",
+    "lat": 46.17363889,
+    "lng": 21.31713889,
+    "category": "education",
+    "address": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "tags": [
+      "attraction",
+      "educatie",
+      "school",
+      "university",
+      "uav"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Aurel_Vlaicu_University_of_Arad",
+    "wikipedia": "en:Aurel Vlaicu University of Arad",
+    "description": "Aurel Vlaicu University of Arad is a public university founded in 1990 in Arad, Romania. It was named in honor of the  Romanian engineer and aviation pioneer Aurel Vlaicu.",
+    "description_en": "Aurel Vlaicu University of Arad is a public university founded in 1990 in Arad, Romania. It was named in honor of the  Romanian engineer and aviation pioneer Aurel Vlaicu.",
+    "image": "",
+    "image_source": "https://en.wikipedia.org/wiki/Aurel_Vlaicu_University_of_Arad",
+    "wiki_source": "https://en.wikipedia.org/wiki/Aurel_Vlaicu_University_of_Arad",
+    "name_en": "Aurel Vlaicu University of Arad",
+    "description_ro": "Universitatea „Aurel Vlaicu” din Arad (UAV) este o universitate de stat acreditată în 1991. Calificativul acordat de către ARACIS pentru UAV este „grad de încredere”.",
+    "wiki_source_ro": "https://ro.wikipedia.org/wiki/Universitatea_%E2%80%9EAurel_Vlaicu%E2%80%9D_din_Arad"
+  },
+  {
+    "id": "way/1079693121",
+    "name": "VAMA VECHE",
+    "lat": 46.159412,
+    "lng": 21.3216507,
+    "category": "nightlife",
+    "address": "Strada Banatului",
+    "description": "Clădirea de la capul podului Traian a fost ridicată la începutul secolului al XX-lea. Acolo, timp de două decenii, funcționa vama municipalității.\n\nProducătorii și negustorii sosiți la Arad din parțile Banatului au fost obligați să plătească vamă pentru p",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arad%2C_Vama_veche.jpg",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1079693121",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/11119845323",
+    "name": "5 to go",
+    "lat": 46.1705705,
+    "lng": 21.316627,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 07:00-18:00; Sa 09:00-16:00; Su off",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11119845323",
+    "tags": [
+      "coffee_shop",
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/13270297564",
+    "name": "Armin Pariuri Sportive",
+    "lat": 46.1814849,
+    "lng": 21.3199062,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 10:00-21:00; Sa 10:00-21:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13270297564",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/6104245793",
+    "name": "Arrest (pariuri sportive)",
+    "lat": 46.165381,
+    "lng": 21.2949635,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/6104245793",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4338388694",
+    "name": "Art Cafe",
+    "lat": 46.169377,
+    "lng": 21.3162763,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 08:30-23:00; Sa-Su 09:00-24:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4338388694",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/258660850",
+    "name": "Asia Wok",
+    "lat": 46.1681309,
+    "lng": 21.3163063,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258660850",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/258669780",
+    "name": "Atlantic",
+    "lat": 46.1708806,
+    "lng": 21.3152264,
+    "category": "nightlife",
+    "address": "Piața Avram Iancu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258669780",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "way/1455413054",
+    "name": "Balnkan Fresh",
+    "lat": 46.1958164,
+    "lng": 21.3344432,
+    "category": "food",
+    "address": "Strada Petru Rareș 55",
+    "description": "",
+    "phone": "+40 770 223 355",
+    "website": "",
+    "hours": "Mo-Fr 10:00-20:00; Sa 11:00-20:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1455413054",
+    "tags": [
+      "barbecue",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8582798817",
+    "name": "Bamboo",
+    "lat": 46.1966587,
+    "lng": 21.3002831,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8582798817",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4451138394",
+    "name": "Bar",
+    "lat": 46.1702757,
+    "lng": 21.3105524,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4451138394",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4451149593",
+    "name": "Bar",
+    "lat": 46.1701936,
+    "lng": 21.3105489,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4451149593",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4609327889",
+    "name": "Bar Eclipse",
+    "lat": 46.1916973,
+    "lng": 21.3084281,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4609327889",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4681076090",
+    "name": "Bar Loja",
+    "lat": 46.1685296,
+    "lng": 21.3178441,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4681076090",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4609270598",
+    "name": "Bar Metropolis",
+    "lat": 46.1917054,
+    "lng": 21.3083743,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4609270598",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4345987391",
+    "name": "Bar Roza",
+    "lat": 46.1970598,
+    "lng": 21.3202618,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4345987391",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/513794978",
+    "name": "Beijing",
+    "lat": 46.1950796,
+    "lng": 21.3096955,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/513794978",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/3645195713",
+    "name": "Biliard & Bar",
+    "lat": 46.1915455,
+    "lng": 21.3092903,
+    "category": "nightlife",
+    "address": "Piața UTA 45-55",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3645195713",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4346087589",
+    "name": "Boccaccio",
+    "lat": 46.1680859,
+    "lng": 21.3539457,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4346087589",
+    "tags": [
+      "pizza",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/3108940316",
+    "name": "Boeme Cafe",
+    "lat": 46.17477,
+    "lng": 21.312537,
+    "category": "cafe",
+    "address": "Strada Episcopiei 19-21",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Su 09:00-23:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3108940316",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/4325330595",
+    "name": "briliant cafee",
+    "lat": 46.191722,
+    "lng": 21.307331,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4325330595",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4325369397",
+    "name": "Briliant Cafee",
+    "lat": 46.1918053,
+    "lng": 21.3073505,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4325369397",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/257607247",
+    "name": "Cabana Lac",
+    "lat": 46.1612034,
+    "lng": 21.2638508,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/257607247",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8655712317",
+    "name": "CafeBar Kensu",
+    "lat": 46.1982203,
+    "lng": 21.2963593,
+    "category": "cafe",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8655712317",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/268985820",
+    "name": "Cafenea Orizont Vest",
+    "lat": 46.1901199,
+    "lng": 21.3297703,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/268985820",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/4786940728",
+    "name": "Caffe Anonymous",
+    "lat": 46.1622127,
+    "lng": 21.293666,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4786940728",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/258660859",
+    "name": "cairo",
+    "lat": 46.1674053,
+    "lng": 21.3199319,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258660859",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/305378299",
+    "name": "Carolina",
+    "lat": 46.1826721,
+    "lng": 21.3174217,
+    "category": "food",
+    "address": "Strada Andrei Mureșanu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/305378299",
+    "tags": [
+      "regional",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/332151330",
+    "name": "Carys",
+    "lat": 46.1787034,
+    "lng": 21.3520879,
+    "category": "nightlife",
+    "address": "Calea Radnei 139",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/332151330",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "way/131607840",
+    "name": "Casa Bulzan",
+    "lat": 46.1668324,
+    "lng": 21.3196117,
+    "category": "food",
+    "address": "Strada Mucius Scaevola 2-6",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/131607840",
+    "tags": [
+      "regional",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/306585506",
+    "name": "Casa Jelen Haz",
+    "lat": 46.171619,
+    "lng": 21.307317,
+    "category": "food",
+    "address": "Strada Mihai Eminescu 55-57",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/306585506",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4609315392",
+    "name": "Casa Neamtiu",
+    "lat": 46.1788623,
+    "lng": 21.3065242,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4609315392",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/312352291",
+    "name": "Casa Românească",
+    "lat": 46.1899401,
+    "lng": 21.3106215,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/312352291",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13657180812",
+    "name": "Casa Schnitzel Arad",
+    "lat": 46.196951,
+    "lng": 21.3364062,
+    "category": "food",
+    "address": "Strada Petru Rareș 76",
+    "description": "",
+    "phone": "+40 773 855 805",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13657180812",
+    "tags": [
+      "schnitzel",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4340674189",
+    "name": "Casino 777",
+    "lat": 46.1807612,
+    "lng": 21.3211686,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4340674189",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/4353584396",
+    "name": "Casino 777",
+    "lat": 46.1726452,
+    "lng": 21.3471195,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4353584396",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4355523605",
+    "name": "Chic center",
+    "lat": 46.1832788,
+    "lng": 21.3208199,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4355523605",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/10848143168",
+    "name": "Cine Citta",
+    "lat": 46.1733058,
+    "lng": 21.3175338,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/10848143168",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4451149494",
+    "name": "City Night Line",
+    "lat": 46.169691,
+    "lng": 21.311647,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4451149494",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/258660851",
+    "name": "Coandi Mic",
+    "lat": 46.1691336,
+    "lng": 21.3160318,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258660851",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13270425695",
+    "name": "Cocoșul de Aur",
+    "lat": 46.1885126,
+    "lng": 21.3108322,
+    "category": "food",
+    "address": "Calea Victoriei 64",
+    "description": "",
+    "phone": "+40 724 687 401",
+    "website": "https://www.cocosuldeaurarad.ro/",
+    "hours": "Mo-Fr 10:00-19:00; Sa 11:00-17:00; Su off",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13270425695",
+    "tags": [
+      "romanian",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/258652101",
+    "name": "Cofetăria Libelula",
+    "lat": 46.1785459,
+    "lng": 21.3209367,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Sa 08:00-21:00; Su 09:00-21:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258652101",
+    "tags": [
+      "cake",
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/258652106",
+    "name": "Corso",
+    "lat": 46.1776409,
+    "lng": 21.3188562,
+    "category": "cafe",
+    "address": "Strada Cloșca 1",
+    "description": "",
+    "phone": "+40 731 881 199",
+    "website": "",
+    "hours": "Mo-Th 08:00-23:00; Fr 08:00-00:00; Sa 09:00-00:00; Su 09:00-23:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258652106",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/8647745718",
+    "name": "Dacris si Cartel Impex",
+    "lat": 46.2002916,
+    "lng": 21.2938484,
+    "category": "food",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8647745718",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/1520218998",
+    "name": "Dom Caffe II",
+    "lat": 46.1942447,
+    "lng": 21.3037862,
+    "category": "cafe",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/1520218998",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/261768079",
+    "name": "Elisa Best Cafe",
+    "lat": 46.1659861,
+    "lng": 21.2915041,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/261768079",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/3178707096",
+    "name": "Ema Del Mar",
+    "lat": 46.175399,
+    "lng": 21.314968,
+    "category": "food",
+    "address": "Strada Episcopiei 9",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Sa 18:00-22:00; Su off",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3178707096",
+    "tags": [
+      "seafood",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/2301130513",
+    "name": "Errea",
+    "lat": 46.1693355,
+    "lng": 21.3227006,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/2301130513",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/4609269602",
+    "name": "Euphoria Biergarten Arad",
+    "lat": 46.173326,
+    "lng": 21.318217,
+    "category": "food",
+    "address": "Strada 1 Decembrie 1918",
+    "description": "",
+    "phone": "+40 0745 393 333",
+    "website": "https://euphoria.ro/restaurant-arad/",
+    "hours": "Mo-Su 09:00-00:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4609269602",
+    "tags": [
+      "german;pizza;regional;burger;italian",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13672312701",
+    "name": "Falezza",
+    "lat": 46.1796816,
+    "lng": 21.332692,
+    "category": "food",
+    "address": "Aleea Răsăritului Bl. 23",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 10:00-20:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13672312701",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/312357269",
+    "name": "Flex",
+    "lat": 46.171515,
+    "lng": 21.31745,
+    "category": "nightlife",
+    "address": "Strada Unirii",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/312357269",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/269249616",
+    "name": "Fostă Han",
+    "lat": 46.2080648,
+    "lng": 21.2870426,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/269249616",
+    "tags": [
+      "soup",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13269843694",
+    "name": "Gano Excel",
+    "lat": 46.1704492,
+    "lng": 21.317838,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 10:00-18:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13269843694",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/317992364",
+    "name": "Gelateria Coandi",
+    "lat": 46.170252,
+    "lng": 21.3173478,
+    "category": "cafe",
+    "address": "Strada Nicolae Bălcescu Gelateria Coandi",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/317992364",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/263899847",
+    "name": "Georges",
+    "lat": 46.1895781,
+    "lng": 21.3293759,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/263899847",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/10705973684",
+    "name": "Grenier Braserie",
+    "lat": 46.1655118,
+    "lng": 21.322261,
+    "category": "food",
+    "address": "Calea Romanilor 15",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/10705973684",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/317992338",
+    "name": "Hazard",
+    "lat": 46.1809373,
+    "lng": 21.3223751,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/317992338",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "way/316365342",
+    "name": "Hong Kong",
+    "lat": 46.2027126,
+    "lng": 21.2765873,
+    "category": "food",
+    "address": "Strada Faurilor Nr.8 Restaurant Chinezesc Hong Kong",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/316365342",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/11186368325",
+    "name": "Il Classico",
+    "lat": 46.1695139,
+    "lng": 21.3518442,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11186368325",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4655251889",
+    "name": "Imperial Ballroom",
+    "lat": 46.1625745,
+    "lng": 21.3208207,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4655251889",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/3172505608",
+    "name": "Ire Di Napoli",
+    "lat": 46.1771295,
+    "lng": 21.2955239,
+    "category": "food",
+    "address": "Strada Pădurii 63",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3172505608",
+    "tags": [
+      "italian",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/2300834199",
+    "name": "Jad Café",
+    "lat": 46.1752753,
+    "lng": 21.3175836,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/2300834199",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/11306727984",
+    "name": "Jay Bubble Tea",
+    "lat": 46.192194,
+    "lng": 21.3173849,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11306727984",
+    "tags": [
+      "bubble_tea",
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/2617152683",
+    "name": "Jazz Garden",
+    "lat": 46.1803529,
+    "lng": 21.2983387,
+    "category": "food",
+    "address": "Strada Griviței",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/2617152683",
+    "tags": [
+      "regional",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/258669774",
+    "name": "Joy's",
+    "lat": 46.169702,
+    "lng": 21.3170788,
+    "category": "nightlife",
+    "address": "Strada Gheorghe Lazăr 1",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 15:00-02:00; Sa-Su 17:00-02:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258669774",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/12142217701",
+    "name": "Just Blvck Coffee",
+    "lat": 46.181773,
+    "lng": 21.3232167,
+    "category": "cafe",
+    "address": "Bulevardul Revoluției 29",
+    "description": "",
+    "phone": "",
+    "website": "https://just.blvck-coffee.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/12142217701",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/9277576327",
+    "name": "Kaffeine",
+    "lat": 46.172143,
+    "lng": 21.311526,
+    "category": "cafe",
+    "address": "Strada Ștefan Cicio Pop 12-14",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/9277576327",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "way/308835554",
+    "name": "Kardesler",
+    "lat": 46.1773754,
+    "lng": 21.3694694,
+    "category": "food",
+    "address": "Strada Șiriei 19",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/308835554",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/3112613927",
+    "name": "KF",
+    "lat": 46.1692088,
+    "lng": 21.3158502,
+    "category": "cafe",
+    "address": "Piața Avram Iancu 11",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3112613927",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/6069369130",
+    "name": "KHARMA",
+    "lat": 46.1733123,
+    "lng": 21.3171586,
+    "category": "food",
+    "address": "Strada 9 Mai 83",
+    "description": "",
+    "phone": "+40357410095",
+    "website": "",
+    "hours": "Mo-Su 11:00-24:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/6069369130",
+    "tags": [
+      "steak_house;burger;italian;chicken;seafood",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/267173570",
+    "name": "Kmikze Rap",
+    "lat": 46.2187775,
+    "lng": 21.2823299,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/267173570",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "way/1056656398",
+    "name": "Kulinarium Bistro",
+    "lat": 46.1747528,
+    "lng": 21.3679346,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1056656398",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/9755513241",
+    "name": "La Bottega",
+    "lat": 46.1767804,
+    "lng": 21.3229527,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/9755513241",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/9755510305",
+    "name": "La Casa di San Marco",
+    "lat": 46.1494435,
+    "lng": 21.3221297,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "+40 742916514",
+    "website": "",
+    "hours": "Mo-Sa 10:00-23:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/9755510305",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/272013039",
+    "name": "La Dan 3 Insule",
+    "lat": 46.1473187,
+    "lng": 21.2501236,
+    "category": "food",
+    "address": "Padurea Ceala Zori de Zi Zona 3 Insule 4",
+    "description": "",
+    "phone": "+40745559597",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/272013039",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/513794991",
+    "name": "La Dolce Vita",
+    "lat": 46.1961238,
+    "lng": 21.3103972,
+    "category": "food",
+    "address": "Strada Câmpul Liniștei Parcul Industrial UTA",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/513794991",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8579723517",
+    "name": "La Hassan pizza and more",
+    "lat": 46.1927723,
+    "lng": 21.3077484,
+    "category": "food",
+    "address": "Strada Bumbacului 1",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 09:00-22:00; Sa 10:00-23:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8579723517",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4373196294",
+    "name": "La Ponton",
+    "lat": 46.1696266,
+    "lng": 21.322375,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4373196294",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/12145536645",
+    "name": "La Strada",
+    "lat": 46.1817092,
+    "lng": 21.3231615,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/12145536645",
+    "tags": [
+      "italian",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13173336406",
+    "name": "Le Petit café",
+    "lat": 46.1722168,
+    "lng": 21.3118495,
+    "category": "cafe",
+    "address": "Strada Mihai Eminescu 26",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13173336406",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/8647745917",
+    "name": "Let's Pizza",
+    "lat": 46.1991915,
+    "lng": 21.295867,
+    "category": "food",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "24/7",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8647745917",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/306588398",
+    "name": "Lido",
+    "lat": 46.1722719,
+    "lng": 21.3106961,
+    "category": "food",
+    "address": "Strada Mihai Eminescu 32",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/306588398",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/266697229",
+    "name": "Lido CFR",
+    "lat": 46.155549,
+    "lng": 21.3221917,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/266697229",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/3111988073",
+    "name": "Loja Bistro",
+    "lat": 46.1685837,
+    "lng": 21.3179009,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3111988073",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/258669790",
+    "name": "Lost",
+    "lat": 46.1707407,
+    "lng": 21.316543,
+    "category": "nightlife",
+    "address": "Piața Avram Iancu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258669790",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/317992347",
+    "name": "Luci Bar",
+    "lat": 46.1763003,
+    "lng": 21.3191874,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/317992347",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/4724684691",
+    "name": "Makor Specialty Coffee",
+    "lat": 46.1709838,
+    "lng": 21.315213,
+    "category": "cafe",
+    "address": "Bulevardul Revoluției",
+    "description": "",
+    "phone": "",
+    "website": "https://www.instagram.com/makor_specialty_coffee/",
+    "hours": "Mo-Fr 08:30-17:30, Sa 12:30-18:30",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4724684691",
+    "tags": [
+      "coffee_shop",
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/8582868637",
+    "name": "Mancare ca la mama acasa",
+    "lat": 46.2001166,
+    "lng": 21.2960139,
+    "category": "food",
+    "address": "Strada Pictor Ștefan Luchian 12A",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8582868637",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/10848129789",
+    "name": "Mantua",
+    "lat": 46.1733087,
+    "lng": 21.318003,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "0730626882",
+    "website": "https://www.facebook.com/mantuarestaurantlounge",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/10848129789",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13055092035",
+    "name": "Maria's Coffee",
+    "lat": 46.1673752,
+    "lng": 21.3885511,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-We,Fr,Sa 08:30-20:30; Th 08:30-21:00; Su 10:00-19:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13055092035",
+    "tags": [
+      "coffee_shop",
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/9755524223",
+    "name": "Marin & Friends",
+    "lat": 46.1545733,
+    "lng": 21.3215127,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/9755524223",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4335681193",
+    "name": "Maxim cafe",
+    "lat": 46.177145,
+    "lng": 21.311046,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4335681193",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/4609270602",
+    "name": "Metropolis",
+    "lat": 46.1917079,
+    "lng": 21.3083465,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4609270602",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "way/316349189",
+    "name": "Milenium Garden",
+    "lat": 46.1690503,
+    "lng": 21.2980173,
+    "category": "food",
+    "address": "Strada Dorobanților Nr.37-41 Restaurant Milenium Garden",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/316349189",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/308626310",
+    "name": "Mis Amigos",
+    "lat": 46.1968597,
+    "lng": 21.3034527,
+    "category": "nightlife",
+    "address": "Strada Poetului 33",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/308626310",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "way/306053433",
+    "name": "MONDOPIZZA",
+    "lat": 46.1782961,
+    "lng": 21.3172693,
+    "category": "food",
+    "address": "Strada Cloșca 12",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "10:00-22:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/306053433",
+    "tags": [
+      "pizza,paste,salate",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4454053838",
+    "name": "Noi",
+    "lat": 46.1937849,
+    "lng": 21.3108397,
+    "category": "food",
+    "address": "Strada Poetului 1 C",
+    "description": "",
+    "phone": "+40 0770 675 505",
+    "website": "https://www.noi-restaurant.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4454053838",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/308626713",
+    "name": "Old Lady's Pub",
+    "lat": 46.1946576,
+    "lng": 21.3071075,
+    "category": "nightlife",
+    "address": "Strada Poetului Nr.5 Old Lady's Pub",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/308626713",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/6314037737",
+    "name": "One More Beer",
+    "lat": 46.172342,
+    "lng": 21.31165,
+    "category": "nightlife",
+    "address": "Strada Ștefan Cicio Pop 12",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/6314037737",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/270328651",
+    "name": "Paradis",
+    "lat": 46.1443242,
+    "lng": 21.3179221,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/270328651",
+    "tags": [
+      "hotel",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/268989950",
+    "name": "Pelican",
+    "lat": 46.1926259,
+    "lng": 21.3311194,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/268989950",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/3160865741",
+    "name": "Piccolo",
+    "lat": 46.1792929,
+    "lng": 21.3179597,
+    "category": "food",
+    "address": "Strada Crișan 12",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Su 09:00-21:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3160865741",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/304620785",
+    "name": "Pisica Albastră",
+    "lat": 46.1860952,
+    "lng": 21.3245622,
+    "category": "cafe",
+    "address": "Strada Nelu Aristide Dragomir 2-4",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/304620785",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/4982214921",
+    "name": "Pit Stop Bistro",
+    "lat": 46.1830452,
+    "lng": 21.3099885,
+    "category": "food",
+    "address": "Piața Spitalului 1",
+    "description": "",
+    "phone": "0721842846",
+    "website": "https://www.facebook.com/pages/Pit-Stop/416277711772023",
+    "hours": "Mo-Fr 07:00-20:00; Sa 07:00-07:00, 16:00-16:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4982214921",
+    "tags": [
+      "regional",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13415713545",
+    "name": "Pizza 5 Colțuri",
+    "lat": 46.1699111,
+    "lng": 21.3460578,
+    "category": "food",
+    "address": "Bulevardul Nicolae Titulescu 3",
+    "description": "",
+    "phone": "+40 257 273 273",
+    "website": "https://www.pizza5colturi.ro/",
+    "hours": "Mo 12:00-23:00, Tu 09:00-23:00 ,We 10:00-23:00 ,Th-Sa 10:00-24:00, Su 10:00-23:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13415713545",
+    "tags": [
+      "pizza",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/599200873",
+    "name": "Pizza Drive",
+    "lat": 46.170315,
+    "lng": 21.3132483,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/599200873",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/10132283641",
+    "name": "Pizza Ruby",
+    "lat": 46.1707408,
+    "lng": 21.3095653,
+    "category": "food",
+    "address": "Strada Ecaterina Teodoroiu 3",
+    "description": "",
+    "phone": "0747761646",
+    "website": "https://pizzaruby.ro/",
+    "hours": "Mo-Sa 11:00-22:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/10132283641",
+    "tags": [
+      "pizza",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/317992362",
+    "name": "Pizzeria Don",
+    "lat": 46.1704383,
+    "lng": 21.3171538,
+    "category": "food",
+    "address": "Strada Nicolae Bălcescu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/317992362",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/6310779059",
+    "name": "Pizzeria La Strada",
+    "lat": 46.1694535,
+    "lng": 21.2996788,
+    "category": "food",
+    "address": "Strada Dorobanților 26",
+    "description": "",
+    "phone": "+40 770 959 315",
+    "website": "",
+    "hours": "Fr-Su 10:00-03:00; Mo-Th 10:00-00:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/6310779059",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13729085001",
+    "name": "Pizzeria Milano",
+    "lat": 46.1733013,
+    "lng": 21.317331,
+    "category": "food",
+    "address": "Bulevardul Revoluției 83",
+    "description": "",
+    "phone": "0742 900 530",
+    "website": "https://pizzeriamilano.ro/",
+    "hours": "Mo-Su 08:00-23:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13729085001",
+    "tags": [
+      "italian",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/1188054435",
+    "name": "Pizzeria Ornella",
+    "lat": 46.1928278,
+    "lng": 21.3067683,
+    "category": "food",
+    "address": "Calea Aurel Vlaicu Pizzeria Ornella Bloc Z22 Sc.C",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/1188054435",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8655684318",
+    "name": "Platinium",
+    "lat": 46.1986558,
+    "lng": 21.2956688,
+    "category": "cafe",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8655684318",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/266678997",
+    "name": "Port Arthur",
+    "lat": 46.159476,
+    "lng": 21.307028,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/266678997",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "way/308270066",
+    "name": "Première Salon de Evenimente",
+    "lat": 46.2001966,
+    "lng": 21.2469874,
+    "category": "food",
+    "address": "Calea Aurel Vlaicu 296/6-7",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/308270066",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/265334345",
+    "name": "Queen Matinal",
+    "lat": 46.1539675,
+    "lng": 21.3224358,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/265334345",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8647635018",
+    "name": "Raiff caffe",
+    "lat": 46.1944634,
+    "lng": 21.3036148,
+    "category": "cafe",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8647635018",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/257422374",
+    "name": "Ratio Beach",
+    "lat": 46.1742771,
+    "lng": 21.3236797,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/257422374",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4338389423",
+    "name": "Rațio",
+    "lat": 46.169358,
+    "lng": 21.316185,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "+40 0755 800 600",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4338389423",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/390341118",
+    "name": "Renessance",
+    "lat": 46.1715212,
+    "lng": 21.3193134,
+    "category": "nightlife",
+    "address": "Strada Unirii",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/390341118",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/13055092037",
+    "name": "Restaurant 3F",
+    "lat": 46.1672002,
+    "lng": 21.3888392,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13055092037",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/9755524782",
+    "name": "Restaurant Belvedere",
+    "lat": 46.1750978,
+    "lng": 21.3217087,
+    "category": "food",
+    "address": "Malul Muresului",
+    "description": "",
+    "phone": "+40 744 280 777",
+    "website": "",
+    "hours": "Mo-Su 10:00-22:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/9755524782",
+    "tags": [
+      "pizza;regional;chicken",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/13611751325",
+    "name": "Restaurant Bucegi",
+    "lat": 46.187306,
+    "lng": 21.3260603,
+    "category": "food",
+    "address": "Calea Aurel Vlaicu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13611751325",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/317992366",
+    "name": "Restaurant Coandi",
+    "lat": 46.1703949,
+    "lng": 21.3174459,
+    "category": "food",
+    "address": "Strada Nicolae Bălcescu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/317992366",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/304665575",
+    "name": "Restaurant Orhideea",
+    "lat": 46.1988299,
+    "lng": 21.2938464,
+    "category": "food",
+    "address": "Strada Dâmboviței 10",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/304665575",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4692531093",
+    "name": "Restaurant Picasso",
+    "lat": 46.170471,
+    "lng": 21.3185622,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Su 18:00-22:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4692531093",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4362451194",
+    "name": "Restaurant Romanesc",
+    "lat": 46.1668053,
+    "lng": 21.3196922,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4362451194",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/258669785",
+    "name": "Restaurant Transilvania",
+    "lat": 46.170206,
+    "lng": 21.316788,
+    "category": "food",
+    "address": "Strada Nicolae Bălcescu Transilvania",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258669785",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8753456917",
+    "name": "Ristorante pizzeria",
+    "lat": 46.1938687,
+    "lng": 21.3081026,
+    "category": "food",
+    "address": "Strada Bumbacului",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8753456917",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/317992354",
+    "name": "Sahara Caffe",
+    "lat": 46.1725608,
+    "lng": 21.3166499,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "10:00-22:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/317992354",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/4609327790",
+    "name": "Service Bar",
+    "lat": 46.1752775,
+    "lng": 21.3662271,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4609327790",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/1520219053",
+    "name": "Shock Kebab",
+    "lat": 46.1915983,
+    "lng": 21.307698,
+    "category": "food",
+    "address": "Piața UTA Bloc U5",
+    "description": "",
+    "phone": "0749941657",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/1520219053",
+    "tags": [
+      "kebab",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/258897698",
+    "name": "Sică",
+    "lat": 46.1710668,
+    "lng": 21.3537173,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258897698",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/393143428",
+    "name": "Sky",
+    "lat": 46.1737456,
+    "lng": 21.3164107,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/393143428",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/13028381646",
+    "name": "Snooze Coffee",
+    "lat": 46.173733,
+    "lng": 21.3164552,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13028381646",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/11306727994",
+    "name": "Starbucks",
+    "lat": 46.1915056,
+    "lng": 21.3168293,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11306727994",
+    "tags": [
+      "coffee_shop",
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/265334336",
+    "name": "Steaua",
+    "lat": 46.1520735,
+    "lng": 21.3220015,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/265334336",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/13854427715",
+    "name": "Sunrise Brunch",
+    "lat": 46.1686071,
+    "lng": 21.3163768,
+    "category": "food",
+    "address": "Strada Grigore Alexandrescu 7a-7b",
+    "description": "",
+    "phone": "+40773314791",
+    "website": "",
+    "hours": "Mo-Su 09:00-16:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13854427715",
+    "tags": [
+      "brunch;coffee_shop",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/8286645020",
+    "name": "Taverna Boierească",
+    "lat": 46.2005891,
+    "lng": 21.2993321,
+    "category": "food",
+    "address": "Strada Poetului 85",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8286645020",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/306588830",
+    "name": "Taverna Libaneză",
+    "lat": 46.1721565,
+    "lng": 21.3112787,
+    "category": "food",
+    "address": "Strada Mihai Eminescu 28",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/306588830",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/155229919",
+    "name": "The Eden",
+    "lat": 46.183925,
+    "lng": 21.3233697,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/155229919",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/4953373321",
+    "name": "Tic tac",
+    "lat": 46.2002004,
+    "lng": 21.2999383,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4953373321",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/11218045012",
+    "name": "Tucano Coffee",
+    "lat": 46.1901893,
+    "lng": 21.3198529,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11218045012",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/3160274908",
+    "name": "Unic",
+    "lat": 46.1820439,
+    "lng": 21.3235547,
+    "category": "nightlife",
+    "address": "Bulevardul Revoluției 25",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3160274908",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/13022506200",
+    "name": "Urban Café",
+    "lat": 46.1947874,
+    "lng": 21.3010704,
+    "category": "cafe",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13022506200",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/4373201892",
+    "name": "UTA",
+    "lat": 46.1695558,
+    "lng": 21.3225096,
+    "category": "nightlife",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4373201892",
+    "tags": [
+      "bar"
+    ]
+  },
+  {
+    "id": "node/3992704716",
+    "name": "Vegan Time",
+    "lat": 46.1704431,
+    "lng": 21.3179759,
+    "category": "food",
+    "address": "Strada Nicolae Bălcescu",
+    "description": "",
+    "phone": "+40 770 177672",
+    "website": "https://vegantime.ro",
+    "hours": "Mo-Fr 10:00-17:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3992704716",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "way/304527876",
+    "name": "Venezzia Pizza Express",
+    "lat": 46.180938,
+    "lng": 21.3263386,
+    "category": "food",
+    "address": "Strada Dimitrie Bolintineanu 12",
+    "description": "",
+    "phone": "0257220555",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/304527876",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/11618808903",
+    "name": "Veranda Restaurant",
+    "lat": 46.1583919,
+    "lng": 21.3219966,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/11618808903",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/3645191795",
+    "name": "Vintage Pub-Cafe",
+    "lat": 46.1915128,
+    "lng": 21.3094941,
+    "category": "cafe",
+    "address": "Piața UTA 45-55",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "08:00 - 02:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/3645191795",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "node/8714771919",
+    "name": "Visolux Coffee Shop",
+    "lat": 46.1841689,
+    "lng": 21.3348631,
+    "category": "cafe",
+    "address": "Strada Voievod Moga 5A",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "Mo-Fr 09:00-17:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8714771919",
+    "tags": [
+      "cafe"
+    ]
+  },
+  {
+    "id": "way/106229664",
+    "name": "WaterHouse",
+    "lat": 46.1692889,
+    "lng": 21.2889623,
+    "category": "food",
+    "address": "Strada Bodrogului 6",
+    "description": "",
+    "phone": "",
+    "website": "http://restaurant.waterhouse.ro",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/106229664",
+    "tags": [
+      "international",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "node/258669773",
+    "name": "Wings",
+    "lat": 46.1694228,
+    "lng": 21.3165519,
+    "category": "nightlife",
+    "address": "Piața Avram Iancu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/258669773",
+    "tags": [
+      "pub"
+    ]
+  },
+  {
+    "id": "node/272013043",
+    "name": "Zori de Zi",
+    "lat": 46.1479531,
+    "lng": 21.2502723,
+    "category": "food",
+    "address": "",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/272013043",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": "wiki-ro/1917227",
+    "name": "Școala normală de fete din Arad",
+    "lat": 46.172754,
+    "lng": 21.314554,
+    "category": "education",
+    "address": "",
+    "description": "",
+    "description_ro": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "ro:Școala normală de fete din Arad",
+    "source": "https://ro.wikipedia.org/wiki/%C8%98coala_normal%C4%83_de_fete_din_Arad",
+    "tags": [
+      "school",
+      "university",
+      "scoala",
+      "educatie"
+    ]
+  },
+  {
+    "id": "wiki-en/12152166",
+    "name": "Liceul Tehnologic de Construcții și Protecția Mediului",
+    "name_en": "Arad Technical High School for Constructions and Environmental Protection",
+    "lat": 46.18945,
+    "lng": 21.30174,
+    "category": "education",
+    "address": "",
+    "description": "The Arad Technical High School for Constructions and Environmental Protection (Romanian: Colegiul Tehnic de Construcții și Protecția Mediului Arad; TCCEP) is a high school located at 10C Ioan Fluieraș Street, Arad, Romania.\nThe school was founded in 1962 as the Medium Hidrotehnics and Meteorology School and has gone through several name changes. The current name was adopted in 1997 following a ministerial evaluation from the Arad County School Board which granted the title of College.",
+    "description_en": "The Arad Technical High School for Constructions and Environmental Protection (Romanian: Colegiul Tehnic de Construcții și Protecția Mediului Arad; TCCEP) is a high school located at 10C Ioan Fluieraș Street, Arad, Romania.\nThe school was founded in 1962 as the Medium Hidrotehnics and Meteorology School and has gone through several name changes. The current name was adopted in 1997 following a ministerial evaluation from the Arad County School Board which granted the title of College.",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "en:Arad Technical High School for Constructions and Environmental Protection",
+    "source": "https://en.wikipedia.org/wiki/Arad_Technical_High_School_for_Constructions_and_Environmental_Protection",
+    "tags": [
+      "school",
+      "liceu",
+      "scoala"
+    ]
+  },
+  {
+    "id": "node/13745160308",
+    "name": "Colegiul Economic Arad",
+    "lat": 46.174514,
+    "lng": 21.3197094,
+    "category": "education",
+    "address": "Piața George Enescu",
+    "description": "",
+    "phone": "+40 257 281 529",
+    "website": "https://colecoarad.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13745160308",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/390341459",
+    "name": "Palatul Copiilor",
+    "lat": 46.1766524,
+    "lng": 21.3194744,
+    "category": "education",
+    "address": "Bulevardul Revoluției",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/390341459",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/472292001",
+    "name": "Colegiul Național „Preparandia - Dimitrie Țichindeal”",
+    "lat": 46.1691058,
+    "lng": 21.320995,
+    "category": "education",
+    "address": "Strada General Ion Dragalina",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/472292001",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/305377693",
+    "name": "Școala Gimnazială nr. 4 Ioan Slavici",
+    "lat": 46.183097,
+    "lng": 21.3176566,
+    "category": "education",
+    "address": "Strada Ștefan Augustin Doinaș 33-37",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/305377693",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/391814406",
+    "name": "Grup Școlar Transporturi Auto „Henri Coadndă”",
+    "lat": 46.1779314,
+    "lng": 21.3109875,
+    "category": "education",
+    "address": "Strada Mărășești",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/391814406",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/599200871",
+    "name": "Școala populară de arte",
+    "lat": 46.1694457,
+    "lng": 21.3127172,
+    "category": "education",
+    "address": "Strada Gheorghe Barițiu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/599200871",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/305828799",
+    "name": "Școala Gimnazială 1 ”Mihai Eminescu”",
+    "lat": 46.174193,
+    "lng": 21.3103052,
+    "category": "education",
+    "address": "Strada Episcopiei 40-42",
+    "description": "",
+    "phone": "",
+    "website": "https://www.gimnazialamihaieminescuarad.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/305828799",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/310073728",
+    "name": "Liceul Baptist Alexa Popovici",
+    "lat": 46.1812362,
+    "lng": 21.3270143,
+    "category": "education",
+    "address": "Strada Doctor Ioan Suciu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/310073728",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/472291998",
+    "name": "Școala Gimnazială nr. 2",
+    "lat": 46.167576,
+    "lng": 21.314056,
+    "category": "education",
+    "address": "Strada Sava Tekelija",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/472291998",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/13743600801",
+    "name": "Colegiul de Arte ,,Sabin Drăgoi\"",
+    "lat": 46.1844938,
+    "lng": 21.324054,
+    "category": "education",
+    "address": "Bulevardul Revoluției",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13743600801",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/6579692687",
+    "name": "CASA CORPULUI DIDACTIC \"ALEXANDRU GAVRA\" ARAD",
+    "lat": 46.165022,
+    "lng": 21.318533,
+    "category": "education",
+    "address": "Strada Postavului",
+    "description": "",
+    "phone": "(+40) 257281077",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/6579692687",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/252246872",
+    "name": "Academia Teologică",
+    "lat": 46.1682169,
+    "lng": 21.3117087,
+    "category": "education",
+    "address": "Strada Academia Teologică",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/252246872",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/44043854",
+    "name": "Liceul Național de Informatică - Corp B",
+    "lat": 46.1835348,
+    "lng": 21.3278443,
+    "category": "education",
+    "address": "Strada Udrea 22",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/44043854",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1226996211",
+    "name": "Liceul Național de Informatică - Corp A",
+    "lat": 46.1824034,
+    "lng": 21.3293177,
+    "category": "education",
+    "address": "Calea Iuliu Maniu",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1226996211",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1317422660",
+    "name": "Școala Gimnazială Aron Cotruș",
+    "lat": 46.1865852,
+    "lng": 21.3299577,
+    "category": "education",
+    "address": "Strada Ardealului 8",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1317422660",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/906693433",
+    "name": "Grupul Școlar de Arte și Meserii Spiru Haret",
+    "lat": 46.1659264,
+    "lng": 21.3073671,
+    "category": "education",
+    "address": "Strada Hunedoarei",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/906693433",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/8714772217",
+    "name": "Octopus Kids after school",
+    "lat": 46.1848547,
+    "lng": 21.3325377,
+    "category": "education",
+    "address": "Strada Ardealului 39",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8714772217",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/6579692686",
+    "name": "Grădinița PP \"Toy Story\"",
+    "lat": 46.1569947,
+    "lng": 21.3216229,
+    "category": "education",
+    "address": "Calea Timișorii 6",
+    "description": "",
+    "phone": "(+40) 749146904",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/6579692686",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1150658554",
+    "name": "Școala Generală Nr. 2",
+    "lat": 46.1738129,
+    "lng": 21.3010479,
+    "category": "education",
+    "address": "Strada Oituz",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1150658554",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/8564444217",
+    "name": "Leisure garden",
+    "lat": 46.2047822,
+    "lng": 21.2695981,
+    "category": "education",
+    "address": "Strada Nouă 22",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8564444217",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/304171330",
+    "name": "Școala Generală Nr. 13 „Aron Cotruș”",
+    "lat": 46.1901787,
+    "lng": 21.3311701,
+    "category": "education",
+    "address": "Strada Petru Rareș Școala Generală Aron Cotruș",
+    "description": "",
+    "phone": "",
+    "website": "https://aroncotrus.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/304171330",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1486965443",
+    "name": "Liceul Teologic Penticostal",
+    "lat": 46.1925595,
+    "lng": 21.3306459,
+    "category": "education",
+    "address": "Strada Petru Rareș 7",
+    "description": "",
+    "phone": "+40 357 408 317",
+    "website": "https://liceulpenticostalarad.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1486965443",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1455510127",
+    "name": "Școala Generală ,,Aron Cotruș\"",
+    "lat": 46.1936913,
+    "lng": 21.3318233,
+    "category": "education",
+    "address": "Strada Petru Rareș 21",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1455510127",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/260664784",
+    "name": "Generală 8",
+    "lat": 46.1887229,
+    "lng": 21.2996592,
+    "category": "education",
+    "address": "Strada Felea Ilarion",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/260664784",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/262884691",
+    "name": "Generaă 8",
+    "lat": 46.1886278,
+    "lng": 21.2980627,
+    "category": "education",
+    "address": "Strada Felea Ilarion",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/262884691",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/270328143",
+    "name": "Generală nr. 20",
+    "lat": 46.1529096,
+    "lng": 21.307635,
+    "category": "education",
+    "address": "Strada Constituției",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/270328143",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/472289436",
+    "name": "Școala Gimnazială nr. 21 Aurel Vlaicu",
+    "lat": 46.1953927,
+    "lng": 21.3031649,
+    "category": "education",
+    "address": "Strada Toamnei",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/472289436",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/472291996",
+    "name": "Școala Gimnazială nr. 3 Iosif Moldovan",
+    "lat": 46.166408,
+    "lng": 21.2938091,
+    "category": "education",
+    "address": "Strada Condurașilor",
+    "description": "",
+    "phone": "",
+    "website": "https://scoalaiosifmoldovan.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/472291996",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1117719328",
+    "name": "Liceul Teologic Baptist „Alexa Popovici” Arad",
+    "lat": 46.1504678,
+    "lng": 21.3349322,
+    "category": "education",
+    "address": "Strada Pompei 25",
+    "description": "",
+    "phone": "+40 257 250 751",
+    "website": "https://ltb-arad.ro/",
+    "hours": "Mo-Fr 08:00-15:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1117719328",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/309215428",
+    "name": "Școala Gimnazială nr. 12 Regina Maria",
+    "lat": 46.1778631,
+    "lng": 21.3502082,
+    "category": "education",
+    "address": "Strada Milova",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/309215428",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "county-wiki/19998811",
+    "name": "Mănăstirea Hodoș-Bodrog",
+    "name_en": "Hodoș-Bodrog Monastery",
+    "lat": 46.133253,
+    "lng": 21.183798,
+    "category": "landmark",
+    "address": "",
+    "description": "The Hodoș-Bodrog Monastery (Romanian: Mănăstirea Hodoș-Bodrog) is one of the oldest monastic institutions in Romania. It was originally a Roman Catholic (Benedictine) monastery, built before 1177 and destroyed before 1293. The present monastery, which belongs to the Romanian Orthodox Church, was built near the ruins of the first monastery in the late 14th or early 15th century.",
+    "description_en": "The Hodoș-Bodrog Monastery (Romanian: Mănăstirea Hodoș-Bodrog) is one of the oldest monastic institutions in Romania. It was originally a Roman Catholic (Benedictine) monastery, built before 1177 and destroyed before 1293. The present monastery, which belongs to the Romanian Orthodox Church, was built near the ruins of the first monastery in the late 14th or early 15th century.",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "en:Hodoș-Bodrog Monastery",
+    "source": "https://en.wikipedia.org/wiki/Hodo%C8%99-Bodrog_Monastery",
+    "tags": [
+      "county",
+      "judet",
+      "Mures",
+      "attraction"
+    ],
+    "description_ro": "Mănăstirea Hodoș-Bodrog este cea mai veche mănăstire ortodoxă din România, cu viață monahală continuă. Este situată în comuna Zădăreni, județul Arad."
+  },
+  {
+    "id": "county-wiki/37283701",
+    "name": "Castelul din Macea",
+    "name_en": "Macea Castle",
+    "lat": 46.384374,
+    "lng": 21.310129,
+    "category": "landmark",
+    "address": "",
+    "description": "Macea Castle, also called Cernovici Castle or Csernovics Castle, is a castle located in Macea Commune, Arad County, Romania. It was built in the 18th and 19th centuries and belonged to two noble families, the Csernovics and Károlyi.",
+    "description_en": "Macea Castle, also called Cernovici Castle or Csernovics Castle, is a castle located in Macea Commune, Arad County, Romania. It was built in the 18th and 19th centuries and belonged to two noble families, the Csernovics and Károlyi.",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "en:Macea Castle",
+    "source": "https://en.wikipedia.org/wiki/Macea_Castle",
+    "tags": [
+      "county",
+      "judet",
+      "Mures",
+      "attraction"
+    ],
+    "description_ro": "Castelul Csernovics (sau Cernovici) este un monument istoric și arhitectonic, situat în localitatea Macea, județul Arad."
+  },
+  {
+    "id": "county-wiki/20082533",
+    "name": "Parcul Natural Lunca Mureșului",
+    "name_en": "Mureș Floodplain Natural Park",
+    "lat": 46.135,
+    "lng": 20.989,
+    "category": "park",
+    "address": "",
+    "description": "The Mureș Floodplain Natural Park, set aside by the Romanian government in 2005, is located in western Romania outside the city of Arad. The park covers 17,455 ha and follows the river Mureș westward from the city of Arad to the Hungarian border. The park is a typical ecosystem for wetlands, with running waters, lakes, swamps and floodplains, with forests, an important place for the passage and nesting of bird species and is subjected to periodical floods (a flood every three years).",
+    "description_en": "The Mureș Floodplain Natural Park, set aside by the Romanian government in 2005, is located in western Romania outside the city of Arad. The park covers 17,455 ha and follows the river Mureș westward from the city of Arad to the Hungarian border. The park is a typical ecosystem for wetlands, with running waters, lakes, swamps and floodplains, with forests, an important place for the passage and nesting of bird species and is subjected to periodical floods (a flood every three years).",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "en:Mureș Floodplain Natural Park",
+    "source": "https://en.wikipedia.org/wiki/Mure%C8%99_Floodplain_Natural_Park",
+    "tags": [
+      "county",
+      "judet",
+      "Mures",
+      "natura"
+    ],
+    "description_ro": "Parcul Natural Lunca Mureșului este o arie protejată constituită în România, în aval de municipiul Arad, până la granița cu Ungaria, de-a lungul râului Mureș, clasificată ca parc natural la nivel național și ca peisaj terestru protejat în taxonomia internațională a IUCN. Ea cuprinde incinta îndiguită a râului Mureș, respectiv zona inundabilă dintre digurile situate de o parte și de alta a râului și între terasele înalte ale aceluiași râu. Este o zonă cu inundații periodice, în care plantele și animalele din împrejurimi sunt adaptate la acest regim.\nParcul Natural Lunca Mureșului declarat arie protejată prin Hotărârea de Guvern nr."
+  },
+  {
+    "id": "county-ro/188630",
+    "name": "Cetatea Șiriei",
+    "lat": 46.27,
+    "lng": 21.65,
+    "category": "landmark",
+    "address": "",
+    "description": "Cetatea Șiria este o cetate monumente istoric (cod LMI AR-II-a-A-00650), datând din secolul al XIII-lea, zidită pe Dealul Cetății (496 m), de unde domină regiunea din jurul localității Șiria.",
+    "description_ro": "Cetatea Șiria este o cetate monumente istoric (cod LMI AR-II-a-A-00650), datând din secolul al XIII-lea, zidită pe Dealul Cetății (496 m), de unde domină regiunea din jurul localității Șiria.",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "ro:Cetatea Șiriei",
+    "source": "https://ro.wikipedia.org/wiki/Cetatea_%C8%98iriei",
+    "tags": [
+      "county",
+      "judet",
+      "cetate",
+      "fortress",
+      "attraction"
+    ]
+  },
+  {
+    "id": "county-ro/352185",
+    "name": "Cetatea Șoimoș",
+    "lat": 46.0963,
+    "lng": 21.6834,
+    "category": "landmark",
+    "address": "",
+    "description": "Cetatea Șoimoș se află pe malul drept al Mureșului, vizavi de Lipova, pe dealul Cioaca Tăutului. A fost construită după primele invazii ale tătarilor în zonă și este atestată documentar din anul 1278. Cetatea Șoimoș se află pe lista monumentelor istorice, cod LMI AR-II-a-A-00618.",
+    "description_ro": "Cetatea Șoimoș se află pe malul drept al Mureșului, vizavi de Lipova, pe dealul Cioaca Tăutului. A fost construită după primele invazii ale tătarilor în zonă și este atestată documentar din anul 1278. Cetatea Șoimoș se află pe lista monumentelor istorice, cod LMI AR-II-a-A-00618.",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "ro:Cetatea Șoimoș",
+    "source": "https://ro.wikipedia.org/wiki/Cetatea_%C8%98oimo%C8%99",
+    "tags": [
+      "county",
+      "judet",
+      "cetate",
+      "fortress",
+      "attraction"
+    ]
+  },
+  {
+    "id": "relation/20341248",
+    "name": "Colegiul Național ,,Elena Ghiba Birta\"",
+    "lat": 46.1737801,
+    "lng": 21.3197033,
+    "category": "education",
+    "address": "Strada 1 Decembrie 1918 6",
+    "description": "",
+    "phone": "",
+    "website": "https://ghibabirta.ro/",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/relation/20341248",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/472292000",
+    "name": "Grup Școlar Industrial Aurel Vlaicu",
+    "lat": 46.1687779,
+    "lng": 21.3199435,
+    "category": "education",
+    "address": "Strada General Ion Dragalina",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/472292000",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/252246615",
+    "name": "Grup Școlar „Francisc Neuman” Arad",
+    "lat": 46.1671496,
+    "lng": 21.3142404,
+    "category": "education",
+    "address": "Strada Sava Tekelija",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/252246615",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/13745154502",
+    "name": "Liceul Tehnologic de Electronică și Automatizări „Caius Iacob”",
+    "lat": 46.1841977,
+    "lng": 21.3255485,
+    "category": "education",
+    "address": "Piața Academician Caius Iacob 1",
+    "description": "",
+    "phone": "+40 257 212 383",
+    "website": "http://liceulcfrarad.ro",
+    "hours": "Mo-Fr 08:00-16:00",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/13745154502",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "way/1317422659",
+    "name": "Grădinița PP 12",
+    "lat": 46.1873546,
+    "lng": 21.3300993,
+    "category": "education",
+    "address": "Strada Ardealului 9-11",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/way/1317422659",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/8582812018",
+    "name": "ifptr",
+    "lat": 46.1955223,
+    "lng": 21.3021293,
+    "category": "education",
+    "address": "Strada Fulgerului",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/8582812018",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "liceu"
+    ]
+  },
+  {
+    "id": "node/4576290092",
+    "name": "Universitatea Aurel Vlaicu",
+    "lat": 46.1749859,
+    "lng": 21.3188875,
+    "category": "education",
+    "address": "Strada A. D. Xenopol",
+    "description": "",
+    "phone": "",
+    "website": "",
+    "hours": "",
+    "image": "",
+    "wikipedia": "",
+    "source": "https://www.openstreetmap.org/node/4576290092",
+    "tags": [
+      "school",
+      "educatie",
+      "scoala",
+      "universitate",
+      "UAV"
+    ]
+  }
+]

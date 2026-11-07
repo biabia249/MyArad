@@ -16,8 +16,9 @@ function apiUrl() {
   const configured = process.env.EXPO_PUBLIC_API_URL?.replace(/\/$/, '');
   if (!configured) throw new Error('The server address is missing. Set EXPO_PUBLIC_API_URL and restart the app.');
   const url = new URL(configured);
+  if (Platform.OS === 'web' && __DEV__ && url.hostname === '10.0.2.2') url.hostname = window.location.hostname;
   if (url.protocol !== 'https:' && !(__DEV__ && url.protocol === 'http:')) throw new Error('The authentication server must use HTTPS.');
-  return configured;
+  return url.toString().replace(/\/$/, '');
 }
 class ApiError extends Error {
   constructor(public status: number, message: string) { super(message); }
@@ -68,6 +69,11 @@ async function completeGoogleRedirect(code: string | null, error: string | null)
   finally { await clearVerifier(); exchange = null; }
 }
 export const authService = {
+  async cityRequest(path: string, data?: object) {
+    if (!path.startsWith('/city/')) throw new Error('Invalid city request.');
+    const token = await readToken();
+    return request<unknown>(path, data, token || undefined);
+  },
   async signUp(profile: Omit<Profile, 'hasPassword'>, password: string) {
     return saveSession(await request<Session>('/auth/signup', { ...profile, password }));
   },

@@ -1,56 +1,68 @@
-# Welcome to your Expo app 👋
+# MyArad
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A bilingual Arad city guide built with Expo SDK 58, React Native and TypeScript.
+Explore places on satellite, street and cycling maps; plan public-transport journeys;
+create community events; and keep a personal schedule that becomes public only by choice.
 
-## Get started
+## Run locally
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Requires Node.js 24+, npm, and an Android development client for native testing.
 
 ```bash
-npm run reset-project
+npm ci
+cp -n .env.example .env.local
+cp -n server/.env.example server/.env
+npm run backend
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+In another terminal:
 
-### Other setup steps
+```bash
+npm run web
+# or, with the installed development client:
+npx expo start --dev-client
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+The Android emulator reaches the API through `http://10.0.2.2:3001`.
+The browser uses its own hostname for this development address. Physical phones
+need your computer's LAN address in `.env.local` and a reachable development server.
 
-## Learn more
+To install or rebuild the Android development client, start an emulator, configure
+`JAVA_HOME` and `ANDROID_HOME`, and run `npm run android`. The native build requests
+CMake 3.31.1. Native iOS builds require the appropriate Apple build/signing environment.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Pages
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- **Explore:** places, events, source details, corrections, satellite/street/cycling layers.
+- **Get there:** in-app journey plans with walking/transit legs, route geometry, lines and stops.
+- **Events:** publish, attend, and ask questions.
+- **Schools & UAV:** education locations.
+- **My schedule:** save visits with dates/times; private by default.
+- **Public profile:** an opted-in schedule at `/citizen/USERNAME`.
 
-## Join the community
+Public transport uses the public service behind the official Transport Public Arad
+portal. Ticket purchase/validation stays in that official service. Availability and
+journey estimates depend on the operator; MyArad does not claim live vehicle tracking.
 
-Join our community of developers creating universal apps.
+## Checks
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run test:backend
+```
+
+Tests cover authentication, event validation, attendance, comments, private/public
+schedule access, plan ownership, and transit request validation/caching.
+
+## Documentation
+
+- [Prototype testing, data sources and limits](docs/hackathon-testing.md)
+- [Linux Android development](docs/android-development-linux.md)
+- [Authentication and provider credentials](AUTHENTICATION.md)
+- [Windows Android build tools](docs/android-development.md)
+
+SQLite data and local environment files are ignored by Git. The prototype permits
+any signed-in account to publish events when `EVENT_POSTING=signed-in`; password
+signup does not verify email ownership. Production requires an HTTPS backend,
+appropriate origins, deployment configuration, and physical-device testing.

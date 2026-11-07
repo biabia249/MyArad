@@ -1,0 +1,16 @@
+{
+  "source": "OpenStreetMap contributors, ODbL 1.0",
+  "url": "https://www.openstreetmap.org/copyright",
+  "retrievedAt": "2026-11-07T09:01:53.999423+00:00",
+  "bbox": [
+    46.13,
+    21.23,
+    46.23,
+    21.39
+  ],
+  "count": 221,
+  "enrichment": "English and Romanian Wikipedia extracts and Wikimedia Commons thumbnails via MediaWiki API; per-place source links included.",
+  "education": "OpenStreetMap Nominatim search bounded to Arad, plus Wikipedia coordinates; nearby duplicates merged.",
+  "county": "Arad County attractions added from Romanian and English Wikipedia; geographic coordinates and source links retained.",
+  "educationCount": 41
+}
