@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-export function PanelResizers({ onResize }: { onResize: () => void }) {
+export function PanelResizers({ onResize, onExploreExpand }: { onResize: () => void; onExploreExpand?: () => void }) {
   const layer = useRef<HTMLDivElement>(null);
   const notify = useRef(onResize);
+  const expand = useRef(onExploreExpand);
+  useEffect(() => { expand.current = onExploreExpand; }, [onExploreExpand]);
   useEffect(() => { notify.current = onResize; }, [onResize]);
   useEffect(() => {
     const host = layer.current, workspace = host?.parentElement;
@@ -51,6 +53,7 @@ export function PanelResizers({ onResize }: { onResize: () => void }) {
           if (mobile) panel.style.setProperty('--user-panel-height', `${size}px`);
           else { panel.style.width = `${size}px`; panel.style.maxWidth = 'none'; }
           saved[key] = size; schedule();
+          if (mobile && id === 'explore') expand.current?.();
         };
         if (mobile) panel.style.width = originalWidth;
         if (Number.isFinite(saved[key])) {
@@ -59,9 +62,9 @@ export function PanelResizers({ onResize }: { onResize: () => void }) {
           else { panel.style.width = `${size}px`; panel.style.maxWidth = 'none'; }
         }
         else if (!mobile) panel.style.width = originalWidth;
-        handle.hidden = !panel.getClientRects().length || getComputedStyle(panel).display === 'none' || (mobile && panel.classList.contains('discovery') && !panel.classList.contains('mobile-open'));
+        handle.hidden = !panel.getClientRects().length || getComputedStyle(panel).display === 'none';
         const rect = panel.getBoundingClientRect(), right = id === 'details';
-        Object.assign(handle.style, mobile ? { left: `${rect.left - bounds.left}px`, top: `${rect.top - bounds.top - 5}px`, width: `${rect.width}px`, height: '16px' } : { left: `${(right ? rect.left : rect.right) - bounds.left - 6}px`, top: `${rect.top - bounds.top}px`, width: '12px', height: `${rect.height}px` });
+        Object.assign(handle.style, mobile ? { left: `${rect.left - bounds.left}px`, top: `${Math.max(0, rect.top - bounds.top)}px`, width: `${rect.width}px`, height: '30px' } : { left: `${(right ? rect.left : rect.right) - bounds.left - 6}px`, top: `${rect.top - bounds.top}px`, width: '12px', height: `${rect.height}px` });
         heightHandle.hidden = mobile || handle.hidden || id === 'explore';
         Object.assign(heightHandle.style, { left: `${rect.left - bounds.left}px`, top: `${Math.min(bounds.height - 16, rect.bottom - bounds.top - 8)}px`, width: `${rect.width}px`, height: '16px' });
         heightHandle.setAttribute('aria-valuemin', String(Math.min(180, Math.round(bounds.height))));
@@ -92,14 +95,14 @@ export function PanelResizers({ onResize }: { onResize: () => void }) {
         handle.onpointerdown = (e) => {
           if (e.button !== 0) return;
           e.preventDefault(); handle.setPointerCapture(e.pointerId);
-          const start = mobile ? e.clientY : e.clientX, initial = mobile ? rect.height : rect.width;
+          const start = mobile ? e.clientY : e.clientX, initial = mobile ? Math.min(rect.height, bounds.bottom - rect.top) : rect.width;
           handle.onpointermove = (move) => apply(initial + ((mobile ? move.clientY : move.clientX) - start) * (mobile || right ? -1 : 1));
           const end = () => { handle.onpointermove = null; persist(); };
           handle.onpointerup = end; handle.onpointercancel = end; handle.onlostpointercapture = end;
         };
         handle.onkeydown = (e) => {
           const delta = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 24 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -24 : 0;
-          if (!delta) return; e.preventDefault(); apply((mobile ? rect.height : rect.width) + delta * (mobile || right ? -1 : 1)); persist();
+          if (!delta) return; e.preventDefault(); apply((mobile ? Math.min(rect.height, bounds.bottom - rect.top) : rect.width) + delta * (mobile || right ? -1 : 1)); persist();
         };
         handle.ondblclick = () => { apply(mobile ? bounds.height * .65 : id === 'news' ? 440 : 360); persist(); };
       }

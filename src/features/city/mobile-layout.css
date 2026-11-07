@@ -1,0 +1,48 @@
+/* Touch sheets: the visible grab area works before a query or selection exists. */
+.city-app .top-nav button { min-width:48px; }
+.city-app.route-active :is(.city-pin-wrapper,.city-cluster,.city-label) { display:none!important; }
+.city-app .android-download { background:#FFEB99; color:#3D0000; border-color:#FFEB99; font-weight:600; }
+.place-directions { margin-block:18px; border:1px solid var(--line); border-radius:16px; background:var(--surface); }
+.place-directions>summary { display:flex; align-items:center; gap:10px; padding:14px 16px; min-height:48px; cursor:pointer; font-weight:600; color:var(--ink); list-style:none; }
+.place-directions>summary::-webkit-details-marker { display:none; }
+.place-directions>summary:after { content:'+'; margin-left:auto; font-size:22px; color:var(--muted); }
+.place-directions[open]>summary:after { content:'−'; }
+.place-directions .journey { margin:0; }
+@media (max-width:700px) {
+  .city-app .city-header { height:64px; min-height:64px; padding:0 12px; gap:10px; }
+  .city-app .brand { font-size:20px; gap:8px; }
+  .city-app .brand img { width:32px; height:40px; }
+  .city-app .brand small { display:none; }
+  .city-app .header-actions { gap:4px; }
+  .city-app .header-actions .language { display:none; }
+  .city-app .header-actions button { min-height:40px; }
+  .city-app .android-download { padding:8px; font-size:11px; gap:4px; }
+  .city-app .mobile-page-nav { display:grid; grid-template-columns:repeat(4,1fr); min-height:56px; height:56px; padding:0; overflow:visible; }
+  .city-app .mobile-page-nav button { width:100%; min-width:0; height:56px; padding:10px; border-top:0; position:relative; color:var(--muted); }
+  .city-app .mobile-page-nav button.active { color:var(--ink); background:#8e93cb25; }
+  .city-app .mobile-page-nav button.active:after { content:""; position:absolute; bottom:4px; width:18px; height:3px; border-radius:4px; background:#8E93CB; }
+  .city-app .discovery { top:auto; bottom:0; height:180px; max-height:92%; transform:none; padding-top:24px; border-radius:22px 22px 0 0; transition:none; }
+  .city-app .discovery:before { display:none; }
+  .city-app .discovery.mobile-open { height:72%; border-radius:22px 22px 0 0; }
+  .city-app .discovery.mobile-open[style*="--user-panel-height"] { height:var(--user-panel-height); }
+  .city-app .discovery-heading { padding:0 16px 10px; }
+  .city-app .discovery-heading :is(.eyebrow,p) { display:none; }
+  .city-app .discovery h1 { font-size:23px; line-height:1.25; margin:0 0 10px; }
+  .city-app .discovery .search-box { margin:0 16px; min-height:44px; }
+  .city-app .discovery .filter-chips { gap:7px; padding:10px 16px; }
+  .city-app .discovery .chip { min-height:38px; padding:6px 11px; white-space:nowrap; }
+  .city-app .discovery:not(.mobile-open) .favorite-places-control { display:none; }
+  .city-app .discovery-controls { max-height:58%; }
+  .city-app .discovery:not(.mobile-open) .discovery-controls { max-height:none; overflow:hidden; }
+  .city-app .panel-resize-layer { z-index:590; }
+  .city-app .panel-resize-handle.horizontal { min-height:30px; touch-action:none; }
+  .city-app .panel-resize-handle.horizontal span { width:48px; height:5px; opacity:.65; }
+  .city-app .detail-panel { padding-top:24px; border-radius:22px 22px 0 0; }
+  .city-app .detail-panel .detail-close { top:30px; }
+  .city-app .map-area .locate-button { bottom:196px; min-width:44px; min-height:44px; padding:9px; font-size:0; }
+  .city-app .map-area .locate-button svg { width:21px; height:21px; }
+  .city-app .mobile-results { display:none!important; }
+  .city-app .mobile-add { display:none!important; }
+  .city-app .map-top-controls { top:12px; left:12px; right:12px; }
+  .city-app .detail-body .journey { margin-top:14px; }
+}

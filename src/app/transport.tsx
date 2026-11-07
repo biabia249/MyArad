@@ -1,4 +1,4 @@
-import { CityScreen } from "./map";
+import { Redirect } from 'expo-router';
 export default function Transport() {
-  return <CityScreen initialPage="transport" />;
+  return <Redirect href="/map" />;
 }

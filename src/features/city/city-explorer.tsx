@@ -13,6 +13,7 @@ import "./brand.css";
 import './route-interface.css';
 import './social-design.css';
 import './notifications.css';
+import './mobile-layout.css';
 import { Journey } from "./journey";
 import { FavoritePlaces, FavoritePlaceButton } from './place-favorites';
 import { SocialView } from './social-view';
@@ -716,25 +717,26 @@ export default function CityExplorer(props: CityProps) {
         </a>
         <nav className="top-nav">
           {[
-            ["/map", t.explore],
-            ["/transport", lang === "ro" ? "Cum ajung?" : "Get there"],
-            ["/events", t.events],
-            ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
-            ["/schedule", lang === "ro" ? "Programul meu" : "My schedule"],
-          ].map(([path, title]) => (
+            ["/map", t.explore, 'pin'],
+            ["/events", t.events, 'events'],
+            ['/people', lang === 'ro' ? 'Mesaje' : 'Messages', 'message'],
+            ["/schedule", lang === "ro" ? "Programul meu" : "My schedule", 'calendar'],
+          ].map(([path, title, icon]) => (
             <button
               key={path}
+              aria-label={title}
+              title={title}
               className={
                 "/" + (props.initialPage || "map") === path ? "nav-active" : ""
               }
               onClick={() => void props.onNavigate(path)}
             >
-              {title}
+              <Icon name={icon} size={22} />
             </button>
           ))}
         </nav>
         <div className="header-actions">
-          {props.calendarPlatform === 'web' && <button className="android-download" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span><span>APK</span></button>}
+          {props.calendarPlatform === 'web' && <button className="android-download" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span><span>{lang === "ro" ? "Descarcă APK" : "Download APK"}</span></button>}
           {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
           <button
             className="theme-toggle"
@@ -790,7 +792,7 @@ export default function CityExplorer(props: CityProps) {
         className="city-workspace"
         style={schedulePage || socialPage || vasilePage ? { display: "none" } : undefined}
       >
-        <PanelResizers onResize={() => map.current?.invalidateSize({ pan: false })} />
+        <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />
         <button className="mobile-map-toggle" aria-expanded={!mapOnly} onClick={event => {
           const showMap = !mapOnly;
           setMapOnly(showMap);
@@ -1285,6 +1287,8 @@ export default function CityExplorer(props: CityProps) {
                   )
                 }
               />
+              <details className="place-directions" key={`directions-${selected.id}`}>
+              <summary><Icon name="arrow" size={18} />{lang === 'ro' ? 'Direcții către acest loc' : 'Directions to this place'}</summary>
               <Journey
                 key={selected.id}
                 lang={lang}
@@ -1300,6 +1304,7 @@ export default function CityExplorer(props: CityProps) {
                 onPosition={updateRoutePosition}
                 onLine={drawLine}
               />
+              </details>
               {selectedPlace && (
                 <>
                   <a
@@ -1554,20 +1559,22 @@ export default function CityExplorer(props: CityProps) {
       {!vasilePage && !composer && <VasileLauncher label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"} onOpen={() => void action(() => props.onNavigate("/vasile"))} />}
       <nav className="mobile-page-nav">
         {[
-          ["/map", t.street],
-          ["/transport", lang === "ro" ? "Cum ajung?" : "Directions"],
-          ["/events", t.events],
-          ['/people', lang === 'ro' ? 'Mesaje' : 'Messages'],
-          ["/schedule", lang === "ro" ? "Program" : "Schedule"],
-        ].map(([path, title]) => (
+          ["/map", t.street, 'pin'],
+          ["/events", t.events, 'events'],
+          ['/people', lang === 'ro' ? 'Mesaje' : 'Messages', 'message'],
+          ["/schedule", lang === "ro" ? "Program" : "Schedule", 'calendar'],
+        ].map(([path, title, icon]) => (
           <button
             className={
               "/" + (props.initialPage || "map") === path ? "active" : ""
             }
             key={path}
+            aria-label={title}
+            title={title}
+            aria-current={'/' + (props.initialPage || 'map') === path ? 'page' : undefined}
             onClick={() => void props.onNavigate(path)}
           >
-            {title}
+            <Icon name={icon} size={23} />
           </button>
         ))}
       </nav>
