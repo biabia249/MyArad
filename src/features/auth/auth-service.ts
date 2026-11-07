@@ -34,17 +34,23 @@ async function request<T>(path: string, data?: object, token?: string): Promise<
   return result as T;
 }
 async function readToken() {
-  if (Platform.OS === 'web') return memoryToken;
+  if (Platform.OS === 'web') {
+    const stored = window.sessionStorage.getItem(tokenKey);
+    if (stored) memoryToken = stored;
+    return memoryToken;
+  }
   return SecureStore.getItemAsync(tokenKey);
 }
 async function saveSession(session: Session) {
-  if (Platform.OS !== 'web') await SecureStore.setItemAsync(tokenKey, session.token);
+  if (Platform.OS === 'web') window.sessionStorage.setItem(tokenKey, session.token);
+  else await SecureStore.setItemAsync(tokenKey, session.token);
   memoryToken = session.token;
   return session.profile;
 }
 async function removeToken() {
   memoryToken = null;
-  if (Platform.OS !== 'web') await SecureStore.deleteItemAsync(tokenKey);
+  if (Platform.OS === 'web') window.sessionStorage.removeItem(tokenKey);
+  else await SecureStore.deleteItemAsync(tokenKey);
 }
 async function getVerifier() {
   return Platform.OS === 'web' ? window.sessionStorage.getItem(verifierKey) : SecureStore.getItemAsync(verifierKey);
