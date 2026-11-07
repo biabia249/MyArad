@@ -1,0 +1,17 @@
+import { mkdir, writeFile, rename, chmod } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { dirname, resolve } from 'node:path';
+const output=resolve(process.argv[2]||'.cache/tools/cloudflared');
+const arch={x64:'amd64',arm64:'arm64'}[process.arch];
+if(process.platform!=='linux'||!arch)throw Error('This launcher supports Linux amd64/arm64.');
+const response=await fetch('https://api.github.com/repos/cloudflare/cloudflared/releases/latest',{headers:{'User-Agent':'MyArad-local-launcher'},signal:AbortSignal.timeout(30000)});
+if(!response.ok)throw Error('Cannot read the official cloudflared release: '+response.status);
+const release=await response.json(),asset=release.assets.find(a=>a.name===`cloudflared-linux-${arch}`);
+if(!asset?.digest?.startsWith('sha256:')||!asset.browser_download_url.startsWith('https://github.com/cloudflare/cloudflared/releases/download/'))throw Error('Official release is missing a verifiable SHA-256 digest.');
+const download=await fetch(asset.browser_download_url,{signal:AbortSignal.timeout(180000)});
+if(!download.ok)throw Error('Cannot download cloudflared: '+download.status);
+const bytes=Buffer.from(await download.arrayBuffer());
+if('sha256:'+createHash('sha256').update(bytes).digest('hex')!==asset.digest)throw Error('cloudflared checksum mismatch.');
+await mkdir(dirname(output),{recursive:true,mode:0o700});
+await writeFile(output+'.tmp',bytes,{mode:0o700});await rename(output+'.tmp',output);await chmod(output,0o700);
+console.log(`Installed official cloudflared ${release.tag_name}; SHA-256 verified.`);
