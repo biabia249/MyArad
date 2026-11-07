@@ -29,7 +29,8 @@ need your computer's LAN address in `.env.local` and a reachable development ser
 
 To install or rebuild the Android development client, start an emulator, configure
 `JAVA_HOME` and `ANDROID_HOME`, and run `npm run android`. The native build requests
-CMake 3.31.1. Native iOS builds require the appropriate Apple build/signing environment.
+CMake 3.31.1 only on Windows; Linux and EAS use the standard Expo Android toolchain.
+Native iOS builds require the appropriate Apple build/signing environment.
 
 ## Pages
 

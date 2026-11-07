@@ -2,6 +2,9 @@ const { withProjectBuildGradle } = require('expo/config-plugins');
 
 const marker = '// MyArad Windows native build tools';
 module.exports = function withAndroidCmake(config) {
+  // This override solves Windows path/toolchain issues. EAS and Linux builds
+  // must use the CMake version supplied by their Expo/Android build image.
+  if (process.platform !== 'win32') return config;
   return withProjectBuildGradle(config, (config) => {
     const block = `
 ${marker}

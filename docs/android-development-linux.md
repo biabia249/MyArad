@@ -15,7 +15,8 @@ Do not edit the generated `android/` directory for application UI changes.
 ## Prerequisites
 
 Use Node.js 24+, a compatible JDK, Android SDK, and a running Android virtual
-device. This checkout's native configuration requests CMake 3.31.1.
+device. The CMake 3.31.1 override is Windows-only; Linux uses Expo's standard
+Android toolchain.
 Set `JAVA_HOME` to your development JDK and `ANDROID_HOME` to your SDK:
 
 ```bash
@@ -30,6 +31,25 @@ npm ci
 cp -n .env.example .env.local
 cp -n server/.env.example server/.env
 ```
+
+Use a checkout containing the latest changes; cloning an older pushed commit
+does not include uncommitted work on another PC. Do not copy `node_modules/`
+from Windows. Install dependencies on Linux with `npm ci`.
+
+## Browser-only startup (no Android SDK required)
+
+Set `.env.local` to:
+
+```dotenv
+EXPO_PUBLIC_API_URL=http://localhost:3001
+```
+
+Run `npm run backend` in one terminal, then run
+`npx expo start --web --clear --port 8081` in another. Open
+http://localhost:8081. Add your own `TAVILY_API_KEY` to `server/.env` to enable
+external event discovery; keep server credentials out of frontend environment files.
+
+## Android API address
 
 For the Android emulator, `.env.local` should contain:
 

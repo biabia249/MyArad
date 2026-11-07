@@ -10,7 +10,11 @@
     },
     "preview": {
       "distribution": "internal",
-      "environment": "preview"
+      "environment": "preview",
+      "android": { "buildType": "apk" },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://experience-directive-manor-rugs.trycloudflare.com"
+      }
     },
     "simulator": {
       "extends": "development",

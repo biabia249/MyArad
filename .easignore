@@ -1,0 +1,60 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+.cache/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+server/backend*.log
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+.env
+server/.env
+server/data/
+
+# typescript
+*.tsbuildinfo
+
+example
+
+# generated native folders
+/ios
+/android
+
+# School import download intermediates (county JSON snapshots are tracked)
+server/data-sources/schools/*.xlsx
+server/data-sources/schools/*.pdf
+server/data-sources/schools/county-emergency.txt
+server/data-sources/schools/osm-overpass.*.json
+
+# Only mobile source is sent to EAS. Backend credentials and data stay local.
+/server/
+.env
+.env.*
+*.log
