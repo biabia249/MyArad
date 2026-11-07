@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { browserLocation } from '../src/features/city/browser-location.ts';
+import { withLocationDeadline } from '../src/features/city/location-deadline.ts';
 
 test('web location requests position directly without a Permissions API', async () => {
   let receivedOptions;
@@ -22,4 +23,9 @@ test('web location distinguishes insecure origin, unsupported API, denial, timeo
     const result = await browserLocation({ secure: true, geolocation: { getCurrentPosition(success, failure) { failure({ code }); } } });
     assert.equal(result.error, expected);
   }
+});
+
+test('native location deadlines release the UI and preserve successful results', async () => {
+  assert.deepEqual(await withLocationDeadline(Promise.resolve({ lat: 46.17, lng: 21.31 }), 100), { lat: 46.17, lng: 21.31 });
+  await assert.rejects(withLocationDeadline(new Promise(() => {}), 5), error => error.code === 'E_LOCATION_TIMEOUT');
 });

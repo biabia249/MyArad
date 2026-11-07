@@ -46,9 +46,11 @@
     "@types/react": "~19.3.0",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~58.0.4",
+    "patch-package": "^8.0.1",
     "typescript": "~6.0.3"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "backend": "node --use-system-ca --env-file-if-exists=server/.env server/index.mjs",
     "test:backend": "node --test server/*.test.mjs",
     "start": "expo start",

@@ -9,6 +9,7 @@ import { authService } from "@/features/auth/auth-service";
 import type { CityProps } from "@/features/city/types";
 import { addToDeviceCalendar, shareCalendarFile } from "@/features/city/device-calendar";
 import { browserLocation } from '@/features/city/browser-location';
+import { withLocationDeadline } from '@/features/city/location-deadline';
 
 function reportError(e: unknown) {
   const message = e instanceof Error ? e.message : String(e);
@@ -32,6 +33,8 @@ export function CityScreen({
   const { theme, toggle } = useAppTheme();
   const [name, setName] = useState<string | null>(null);
   const latestLocation = useRef<{ lat: number; lng: number } | null>(null);
+  const latestLocationTime = useRef(0);
+  const locationFailure = useRef('unavailable');
   const locationRefresh = useRef<Promise<void> | null>(null);
   useFocusEffect(useCallback(() => {
     let active = true;
@@ -76,28 +79,33 @@ export function CityScreen({
 
       // iOS can take several seconds to acquire a brand-new high-accuracy fix.
       // Use a recent cached fix immediately, then improve it in the background.
+      if (Date.now() - latestLocationTime.current > 120000) latestLocation.current = null;
       if (!latestLocation.current) {
-        const lastKnown = await Location.getLastKnownPositionAsync({
+        const lastKnown = await withLocationDeadline(Location.getLastKnownPositionAsync({
           maxAge: 120_000,
           requiredAccuracy: 500,
-        });
-        if (lastKnown)
+        }), 2000).catch(() => null);
+        if (lastKnown) {
+          latestLocationTime.current = lastKnown.timestamp;
           latestLocation.current = {
             lat: lastKnown.coords.latitude,
             lng: lastKnown.coords.longitude,
           };
+        }
       }
       if (!locationRefresh.current) {
-        locationRefresh.current = Location.getCurrentPositionAsync({
+        locationRefresh.current = withLocationDeadline(Location.getCurrentPositionAsync({
           accuracy: Location.Accuracy.Balanced,
-        })
+        }), 20000)
           .then((position) => {
+            latestLocationTime.current = position.timestamp;
             latestLocation.current = {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             };
           })
-          .catch(() => {
+          .catch((error: unknown) => {
+            locationFailure.current = (error as { code?: string })?.code === 'E_LOCATION_TIMEOUT' ? 'timeout' : 'unavailable';
             // A cached position remains useful when a fresh GPS fix is unavailable.
           })
           .finally(() => {
@@ -109,7 +117,7 @@ export function CityScreen({
       // There is no cached position yet, so wait once for the first usable fix.
       await locationRefresh.current;
       if (latestLocation.current) return latestLocation.current;
-      return { lat: 0, lng: 0, error: "unavailable" };
+      return { lat: 0, lng: 0, error: locationFailure.current };
     } catch {
       return { lat: 0, lng: 0, error: "unavailable" };
     }
@@ -137,10 +145,8 @@ export function CityScreen({
         dom={{
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
-          // Expo's native DomWebView can try to resolve an async DOM call after
-          // the view has already unmounted during navigation. The standard
-          // WebView keeps the bridge alive for the complete component lifecycle.
-          useExpoDOMWebView: false,
+          // SDK 58's DOM WebView injects the native bridge before page scripts.
+          useExpoDOMWebView: true,
         }}
         initialPage={initialPage}
         publicUsername={publicUsername}

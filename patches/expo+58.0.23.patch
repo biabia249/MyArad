@@ -1,0 +1,42 @@
+diff --git a/node_modules/expo/build/dom/webview-wrapper.js b/node_modules/expo/build/dom/webview-wrapper.js
+index 02f713b..4390901 100644
+--- a/node_modules/expo/build/dom/webview-wrapper.js
++++ b/node_modules/expo/build/dom/webview-wrapper.js
+@@ -49,7 +49,15 @@ const RawWebView = /*#__PURE__*/ React.forwardRef((props, ref)=>{
+     const [containerStyle, setContainerStyle] = React.useState(null);
+     const { debugZeroHeightStyle, debugOnLayout } = useDebugZeroHeight(dom);
+     const emit = React.useCallback((detail)=>{
+-        webviewRef.current?.injectJavaScript(getInjectEventScript(detail));
++        const view = webviewRef.current;
++        if (!view) return;
++        const pending = view.injectJavaScript(getInjectEventScript(detail));
++        if (pending && typeof pending.catch === 'function') {
++            void pending.catch((error)=>{
++                // A native view can disappear while an asynchronous bridge reply is in flight.
++                if (webviewRef.current === view) console.error('DOM bridge injection failed', error);
++            });
++        }
+     }, [
+         webviewRef
+     ]);
+diff --git a/node_modules/expo/src/dom/webview-wrapper.tsx b/node_modules/expo/src/dom/webview-wrapper.tsx
+index c9d79a4..97336d5 100644
+--- a/node_modules/expo/src/dom/webview-wrapper.tsx
++++ b/node_modules/expo/src/dom/webview-wrapper.tsx
+@@ -81,7 +81,15 @@ const RawWebView = React.forwardRef<object, Props>((props, ref) => {
+ 
+   const emit = React.useCallback(
+     (detail: BridgeMessage<any>) => {
+-      webviewRef.current?.injectJavaScript(getInjectEventScript(detail));
++      const view = webviewRef.current;
++      if (!view) return;
++      const pending = view.injectJavaScript(getInjectEventScript(detail)) as unknown;
++      if (pending && typeof (pending as Promise<void>).catch === 'function') {
++        void (pending as Promise<void>).catch((error) => {
++          // A native view can disappear while an asynchronous bridge reply is in flight.
++          if (webviewRef.current === view) console.error('DOM bridge injection failed', error);
++        });
++      }
+     },
+     [webviewRef]
+   );
