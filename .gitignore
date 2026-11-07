@@ -52,3 +52,6 @@ server/data-sources/schools/*.xlsx
 server/data-sources/schools/*.pdf
 server/data-sources/schools/county-emergency.txt
 server/data-sources/schools/osm-overpass.*.json
+
+# Python interpreter caches (Vasile)
+__pycache__/

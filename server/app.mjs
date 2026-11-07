@@ -1,3 +1,4 @@
+import { createVasile } from "./vasile.mjs";
 import { createTransit } from "./transit.mjs";
 import { createCity } from "./city.mjs";
 import { sendResetPage } from "./reset-page.mjs";
@@ -72,6 +73,7 @@ export function createApp(config, dependencies = {}) {
     );
   const sendRequest = dependencies.fetch || fetch;
   const city = createCity(store, config);
+  const vasile = createVasile(store, {aiFetch:dependencies.aiFetch || fetch});
   const transit = createTransit(dependencies.transitFetch || fetch);
   const limits = new Map();
   const cleanup = setInterval(() => {
@@ -130,6 +132,9 @@ export function createApp(config, dependencies = {}) {
         !(route === "POST /auth/password/confirm" && origin === publicUrl)
       )
         throw new HttpError(403, "Origin is not allowed.");
+      if (url.pathname.startsWith("/city/vasile/")) {
+        json(res, 200, await vasile(req,url,body));return;
+      }
       if (url.pathname.startsWith("/city/transit/")) {
         json(res, 200, await transit(req, url, body));
         return;
