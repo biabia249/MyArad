@@ -10,8 +10,10 @@ import "./city.css";
 import "./brand.css";
 import './route-interface.css';
 import './social-design.css';
+import './notifications.css';
 import { Journey } from "./journey";
 import { SocialView } from './social-view';
+import { Notifications } from './notifications';
 import { EventParticipants } from './event-participants';
 import { RouteSearch } from './route-search';
 import { routeBurgundy, travelerMarkup } from './map-traveler';
@@ -711,6 +713,7 @@ export default function CityExplorer(props: CityProps) {
           ))}
         </nav>
         <div className="header-actions">
+          {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
           <button
             className="theme-toggle"
             aria-label={
@@ -752,7 +755,7 @@ export default function CityExplorer(props: CityProps) {
           </button>
         </div>
       </header>
-      {socialPage && <SocialView api={api} lang={lang} signedIn={!!props.userName} onSignIn={() => void props.onSignIn()} onProfile={username => void props.onNavigate('/citizen/' + username)} />}
+      {socialPage && <SocialView active={props.isFocused !== false} api={api} lang={lang} signedIn={!!props.userName} onSignIn={() => void props.onSignIn()} onProfile={username => void props.onNavigate('/citizen/' + username)} />}
       {schedulePage && (
         <ScheduleView
           lang={lang}
@@ -839,6 +842,7 @@ export default function CityExplorer(props: CityProps) {
                 key={c}
                 className={category === c ? "chip selected-chip" : "chip"}
                 onClick={() => {
+                  if (c === 'events') { void props.onNavigate('/events'); return; }
                   setCategory(c);
                   setSelected(null);
                 }}

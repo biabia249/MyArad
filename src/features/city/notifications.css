@@ -1,0 +1,26 @@
+.notification-control { position: relative; flex-shrink: 0; }
+.city-app .notification-bell { position: relative; min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); color: var(--ink); }
+.notification-badge { position: absolute; top: -5px; right: -5px; display: grid; place-items: center; min-width: 20px; height: 20px; padding-inline: 5px; border-radius: 12px; border: 2px solid var(--paper); background: #800020; color: #FFEB99; font-size: 10px; font-weight: 600; }
+.notification-popover { position: fixed; top: 90px; right: 20px; width: min(360px,calc(100vw - 24px)); max-height: min(580px,calc(100dvh - 120px)); overflow-y: auto; overscroll-behavior: contain; padding: 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 16px 48px #10182e30; z-index: 900; }
+.notification-popover header { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 2px 2px 12px; }
+.notification-popover header strong { font-family: Manrope,sans-serif; font-size: 18px; }
+.city-app .notification-popover header button { width: 40px; height: 40px; border-radius: 12px; background: var(--paper); color: var(--ink); font-size: 24px; }
+.city-app .notification-popover>button { width: 100%; min-height: 44px; padding: 11px 12px; font-size: 12px; border-radius: 12px; margin-bottom: 8px; background: var(--paper); }
+.notification-popover p { margin: 12px 4px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.city-app .notification-popover .notification-item { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; text-align: left; border: 1px solid var(--line); background: var(--surface); }
+.city-app .notification-popover .notification-item.unread { background: #8e93cb22; border-left: 3px solid #8E93CB; }
+.notification-item strong { font-size: 13px; }
+.notification-item small { color: var(--muted); font-size: 10px; }
+.message-toast { position: fixed; right: 20px; bottom: 80px; width: min(350px,calc(100vw - 24px)); background: var(--surface); color: var(--ink); padding: 18px; border: 1px solid var(--line); border-left: 4px solid #8E93CB; border-radius: 18px; box-shadow: 0 12px 40px #10182e30; z-index: 950; animation: arad-panel-enter 180ms ease both; }
+.message-toast strong { display: block; padding-right: 20px; font-size: 14px; }
+.message-toast-preview { font-size: 13px; line-height: 1.7; margin: 10px 0; overflow-wrap: anywhere; }
+.city-app .message-toast button:first-of-type { min-height: 40px; border-radius: 12px; padding: 9px 12px; background: #FFEB99; color: #3D0000; font-size: 12px; }
+.city-app .message-toast button:last-of-type { position: absolute; top: 8px; right: 8px; min-width: 36px; min-height: 36px; font-size: 22px; }
+@media(max-width:700px) {
+  .city-app .header-actions { gap: 4px; }
+  .city-app .notification-bell { min-width: 38px; min-height: 40px; border-radius: 13px; }
+  .city-app .brand { font-size: 18px; gap: 7px; }
+  .city-app .brand small { font-size: 7px; letter-spacing: 1.3px; }
+  .notification-popover { top: 80px; right: 12px; }
+  .message-toast { right: 12px; bottom: 70px; }
+}

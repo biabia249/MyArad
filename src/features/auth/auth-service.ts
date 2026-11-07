@@ -94,6 +94,7 @@ export const authService = {
   async signOut() {
     const token = await readToken();
     if (token) {
+      await (await import('../push')).disablePush();
       try { await request('/auth/signout', {}, token); }
       catch (error) { if (!(error instanceof ApiError && error.status === 401)) throw error; }
     }

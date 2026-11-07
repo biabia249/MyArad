@@ -76,6 +76,8 @@ export type CityProps = {
   onShareCalendar: (entry: import('./calendar-export').CalendarEntry) => Promise<void>;
   dom?: import("expo/dom").DOMProps;
   userName: string | null;
+  isFocused?: boolean;
+  onEnablePush: () => Promise<void>;
   theme: "light" | "dark";
   onToggleTheme: () => Promise<void>;
   initialPage?: string;

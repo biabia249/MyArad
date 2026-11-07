@@ -10,6 +10,7 @@ import { Manrope_700Bold } from '@expo-google-fonts/manrope/700Bold';
 import { ActivityIndicator, View } from 'react-native';
 import { MotionProvider, useReducedMotion } from '@/components/motion-provider';
 import { palette } from '@/features/design-system';
+import { PushObserver } from '@/components/push-observer';
 function Layout() {
   const { theme } = useAppTheme();
   const reducedMotion = useReducedMotion();
@@ -25,6 +26,7 @@ function Layout() {
   }
   return (
     <ButtonSoundProvider>
+      <PushObserver />
       <StatusBar style={theme === "dark" ? "light" : "dark"} />
       <Stack
         screenOptions={{
