@@ -62,7 +62,11 @@ test("guests browse places; authenticated users create, attend, comment and sugg
   for (const place of initial.data.places) {
     assert.ok(place.description_ro?.trim(), `${place.name} needs a Romanian description`);
     assert.ok(place.description_en?.trim(), `${place.name} needs an English description`);
-    assert.ok(place.image?.startsWith("https://"), `${place.name} needs an image`);
+    assert.ok(
+      place.image?.startsWith("https://") ||
+        place.image?.startsWith("data:image/svg+xml;charset=UTF-8,"),
+      `${place.name} needs an image`,
+    );
     assert.ok(place.image_source?.startsWith("https://"), `${place.name} needs an image source`);
     assert.ok(place.image_credit?.trim(), `${place.name} needs an image credit`);
   }

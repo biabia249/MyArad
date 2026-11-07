@@ -317,16 +317,27 @@
     "lng": 21.3158842,
     "category": "culture",
     "address": "Strada 9 Mai 2-4",
-    "description": "",
+    "description": "Biblioteca Județeană „A.D. Xenopol” is a visitor destination in Arad, Arad County. It is listed at Gheorghe Popa de Teiuș, nr.2-4, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "+40 0257 256 510",
     "website": "https://bibliotecaarad.ro/",
     "hours": "Mo-Fr 09:00-17:00",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/48/biblioteca-judeteana-ad-xenopol-biblioteca-judeteana.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/way/34219353",
     "tags": [
       "library"
-    ]
+    ],
+    "description_ro": "Clădirea a fost construită în anul 1913, în stil secession. Fondul bibliotecii numără astăzi 500000 de titluri, din care 20000 de volume în colecția de carte veche.\nDin fondul de patrimoniu fac parte incunabule religioase și laice extrem de valoroase, realizate începând din zorii tiparului. Vizitatorii au ocazia să admire volume unicat în România, precum Vergilius, Opera ( Veneția, 1482), Biblia tipărită de eruditul tipograf german Anton Koberger ( Nurnberg, 1493), Dictys Cretensis, Historia Troiana ( Veneția, 1499), Joannes Duns Scotus, Quaestiones quodlibetales ( Veneția, 1481) sau predicile lui Johannes de Bromyard (Nürnberg, 1485).\nDintre lucrările corifeilor Școlii Ardelene găsim aici ”Biblia de la Blaj a lui Samuil Micu\" (1795), pentru mult timp cea mai bună traducere a Bibliei în limba română.\nSe remarcă și fondurile care formează ”Biblioteca Orczy-Kezdi-Vasarhely” ( secolele XVII-XIX), ”Biblioteca Alecsandru D. Xenopol” donată de văduva savantului, biblioteca lui Fabian Gabor, etc.",
+    "description_en": "Biblioteca Județeană „A.D. Xenopol” is a visitor destination in Arad, Arad County. It is listed at Gheorghe Popa de Teiuș, nr.2-4, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/48-biblioteca-judeteana-ad-xenopol",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/48-biblioteca-judeteana-ad-xenopol",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/48/biblioteca-judeteana-ad-xenopol-biblioteca-judeteana.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/390341924",
@@ -431,16 +442,27 @@
     "lng": 21.3327278,
     "category": "culture",
     "address": "Strada Petru Rareș 25",
-    "description": "",
+    "description": "Cinematograf Grădiște is a cultural attraction in Arad, Arad County. It is listed at strada Petru Rareș, Nr. 25, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/pages/category/Movie-Theater/Cinematograf-Gr%C4%83di%C8%99te-385340018637811/",
     "hours": "",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/154/cinematograf-gradiste-cinema-gradiste.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/8672195817",
     "tags": [
       "cinema"
-    ]
+    ],
+    "description_ro": "Construit în anii 1920-1930 cinematograful din cartierul Grădiște a fost cunoscut ca Cinematograful CFR, fiind închis în anul 1990 de RADEF România.\nClădirea cinematografului a fost preluată de Primăria Municipiului Arad în anul 2011, iar în 2017 în urma unui proiect de investiții, cinematograful a fost redeschis pentru public. Sala de cinema are 120 de locuri, toate la parter.",
+    "description_en": "Cinematograf Grădiște is a cultural attraction in Arad, Arad County. It is listed at strada Petru Rareș, Nr. 25, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/154-cinematograf-gradiste",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/154-cinematograf-gradiste",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/154/cinematograf-gradiste-cinema-gradiste.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/13118881104",
@@ -918,18 +940,31 @@
     "lat": 46.1680859,
     "lng": 21.3539457,
     "category": "food",
-    "address": "",
-    "description": "",
+    "address": "Strada Dreptății, nr. 21/23, Arad",
+    "description": "Pizzeria Boccaccio is a food and hospitality venue in Arad, Arad County. It is listed at Strada Dreptății, nr. 21/23, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "http://www.pizzeriaboccaccio.ro/",
     "hours": "",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-interior.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/4346087589",
     "tags": [
       "pizza",
       "restaurant"
-    ]
+    ],
+    "description_ro": "Pizzeria Boccaccio este un obiectiv din categoria „Pizzerie”, situat în Arad, județul Arad. Adresa înregistrată este Strada Dreptății, nr. 21/23, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Pizzeria Boccaccio is a food and hospitality venue in Arad, Arad County. It is listed at Strada Dreptății, nr. 21/23, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/247-pizzeria-boccaccio",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/247-pizzeria-boccaccio",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-interior.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-masa-3.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-sigla-2.png"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/3108940316",
@@ -1082,17 +1117,28 @@
     "lng": 21.3174217,
     "category": "food",
     "address": "Strada Andrei Mureșanu",
-    "description": "",
+    "description": "Restaurant Carolina is a food and hospitality venue in Arad, Arad County. It is listed at Bulevardul Ștefan Augustin Doinaș, nr 31, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/terasacarolina/",
     "hours": "",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/301/restaurant-carolina-carolina.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/way/305378299",
     "tags": [
       "regional",
       "restaurant"
-    ]
+    ],
+    "description_ro": "Restaurant Carolina este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Bulevardul Ștefan Augustin Doinaș, nr 31, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Restaurant Carolina is a food and hospitality venue in Arad, Arad County. It is listed at Bulevardul Ștefan Augustin Doinaș, nr 31, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/301-restaurant-carolina",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/301-restaurant-carolina",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/301/restaurant-carolina-carolina.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "way/332151330",
@@ -1138,16 +1184,27 @@
     "lng": 21.307317,
     "category": "food",
     "address": "Strada Mihai Eminescu 55-57",
-    "description": "",
+    "description": "Casa Jelen is a food and hospitality venue in Arad, Arad County. It is listed at Str. M.Eminescu, Nr. 55-57, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/casajelenhaz",
     "hours": "",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/242/casa-jelen-jelen-1.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/way/306585506",
     "tags": [
       "restaurant"
-    ]
+    ],
+    "description_ro": "Eleganță, bun gust, servire impecabilă, savoare gastronomică și rafinament este ceea ce dorim să vă oferim de fiecare dată când hotărâți să petreceți momente de neuitat în incinta Complexului Casa Jelen. Vă așteptăm la doi pași de centrul orașului, într-o cladire modernă, spațioasă și ușor accesibilă, atât dinspre strada Mihai Eminescu cât și dinspre Parcul Reconcilierii.",
+    "description_en": "Casa Jelen is a food and hospitality venue in Arad, Arad County. It is listed at Str. M.Eminescu, Nr. 55-57, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/242-casa-jelen",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/242-casa-jelen",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/242/casa-jelen-jelen-1.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/4609315392",
@@ -1458,17 +1515,33 @@
     "lng": 21.314968,
     "category": "food",
     "address": "Strada Episcopiei 9",
-    "description": "",
+    "description": "Restaurant Ema del Mar is a food and hospitality venue in Arad, Arad County. It is listed at Strada Episcopiei, nr. 9, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://emadelmar.com/",
     "hours": "Mo-Sa 18:00-22:00; Su off",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-1.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/3178707096",
     "tags": [
       "seafood",
       "restaurant"
-    ]
+    ],
+    "description_ro": "Restaurant Ema del Mar este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Strada Episcopiei, nr. 9, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Restaurant Ema del Mar is a food and hospitality venue in Arad, Arad County. It is listed at Strada Episcopiei, nr. 9, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/294-restaurant-ema-del-mar",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/294-restaurant-ema-del-mar",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-1.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-2.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-3.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-4.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-5.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-de-sus.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/2301130513",
@@ -1495,17 +1568,28 @@
     "lng": 21.318217,
     "category": "food",
     "address": "Strada 1 Decembrie 1918",
-    "description": "",
+    "description": "Euphoria Biergarten is a food and hospitality venue in Arad, Arad County. It is listed at Strada 1 Decembrie 1918, nr. 6, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "+40 0745 393 333",
     "website": "https://euphoria.ro/restaurant-arad/",
     "hours": "Mo-Su 09:00-00:00",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/81/euphoria-biergarten-euphoria-2.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/4609269602",
     "tags": [
       "german;pizza;regional;burger;italian",
       "restaurant"
-    ]
+    ],
+    "description_ro": "Euphoria Biergarten este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Strada 1 Decembrie 1918, nr. 6, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Euphoria Biergarten is a food and hospitality venue in Arad, Arad County. It is listed at Strada 1 Decembrie 1918, nr. 6, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/81-euphoria-biergarten",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/81-euphoria-biergarten",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/81/euphoria-biergarten-euphoria-2.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/13672312701",
@@ -1788,16 +1872,27 @@
     "lng": 21.3170788,
     "category": "nightlife",
     "address": "Strada Gheorghe Lazăr 1",
-    "description": "",
+    "description": "Joy's Pub is a leisure venue in Arad, Arad County. It is listed at Strada Gheorghe Lazăr, nr. 1, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/cafeneauajoys/?rf=196744323698225",
     "hours": "Mo-Fr 15:00-02:00; Sa-Su 17:00-02:00",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/98/joys-pub-83325465-768200293685172-2753813161952935936-n.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/258669774",
     "tags": [
       "pub"
-    ]
+    ],
+    "description_ro": "Joy's Pub este un obiectiv din categoria „Pub”, situat în Arad, județul Arad. Adresa înregistrată este Strada Gheorghe Lazăr, nr. 1, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Joy's Pub is a leisure venue in Arad, Arad County. It is listed at Strada Gheorghe Lazăr, nr. 1, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/98-joys-pub",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/98-joys-pub",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/98/joys-pub-83325465-768200293685172-2753813161952935936-n.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/12142217701",
@@ -1978,17 +2073,30 @@
     "lat": 46.1767804,
     "lng": 21.3229527,
     "category": "food",
-    "address": "",
-    "description": "",
+    "address": "Malul Mureșului, FN, Arad",
+    "description": "La Bottega Beer&Grill is a food and hospitality venue in Arad, Arad County. It is listed at Malul Mureșului, FN, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/labottega.arad",
     "hours": "",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-2022-01-23.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/9755513241",
     "tags": [
       "restaurant"
-    ]
+    ],
+    "description_ro": "La Bottega Beer&Grill este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Malul Mureșului, FN, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "La Bottega Beer&Grill is a food and hospitality venue in Arad, Arad County. It is listed at Malul Mureșului, FN, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/373-la-bottega-beergrill",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/373-la-bottega-beergrill",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-2022-01-23.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-dsc02680.jpg",
+      "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-geo1153.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/9755510305",
@@ -2506,16 +2614,27 @@
     "lng": 21.3179597,
     "category": "food",
     "address": "Strada Crișan 12",
-    "description": "",
+    "description": "Piccolo Bistro is a food and hospitality venue in Arad, Arad County. It is listed at Strada Crișan, nr. 12, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
     "website": "",
     "hours": "Mo-Su 09:00-21:00",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/158/piccolo-bistro-piccolo-arad.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/3160865741",
     "tags": [
       "restaurant"
-    ]
+    ],
+    "description_ro": "Piccolo Bistro este un obiectiv din categoria „Fast food”, situat în Arad, județul Arad. Adresa înregistrată este Strada Crișan, nr. 12, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Piccolo Bistro is a food and hospitality venue in Arad, Arad County. It is listed at Strada Crișan, nr. 12, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/158-piccolo-bistro",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/158-piccolo-bistro",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/158/piccolo-bistro-piccolo-arad.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "way/304620785",
@@ -2880,17 +2999,28 @@
     "lat": 46.169358,
     "lng": 21.316185,
     "category": "food",
-    "address": "",
-    "description": "",
+    "address": "Piața Avram Iancu 10, Arad",
+    "description": "Restaurant Rațio is a food and hospitality venue in Arad, Arad County. It is listed at Piața Avram Iancu 10, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "+40 0755 800 600",
-    "website": "",
+    "website": "https://www.facebook.com/restaurantratio/",
     "hours": "",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/86/restaurant-ratio-dsc-0440-1.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/4338389423",
     "tags": [
       "restaurant"
-    ]
+    ],
+    "description_ro": "Restaurant Rațio este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Piața Avram Iancu 10, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Restaurant Rațio is a food and hospitality venue in Arad, Arad County. It is listed at Piața Avram Iancu 10, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/86-restaurant-ratio",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/86-restaurant-ratio",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/86/restaurant-ratio-dsc-0440-1.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/390341118",
@@ -3487,16 +3617,27 @@
     "lng": 21.3094941,
     "category": "cafe",
     "address": "Piața UTA 45-55",
-    "description": "",
+    "description": "Vintage Pub-Caffe is a leisure venue in Arad, Arad County. It is listed at Piata UTA, nr. 45-55, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
     "phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/Vintage-Pub-Caffe-654987381197674",
     "hours": "08:00 - 02:00",
-    "image": "",
+    "image": "https://www.visitarad.ro/storage/locations/000/000/300/vintage-pub-caffe-vintage-pub-1.jpg",
     "wikipedia": "",
     "source": "https://www.openstreetmap.org/node/3645191795",
     "tags": [
       "cafe"
-    ]
+    ],
+    "description_ro": "Vintage Pub-Caffe este un obiectiv din categoria „Pub”, situat în Arad, județul Arad. Adresa înregistrată este Piata UTA, nr. 45-55, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
+    "description_en": "Vintage Pub-Caffe is a leisure venue in Arad, Arad County. It is listed at Piata UTA, nr. 45-55, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
+    "image_source": "https://www.visitarad.ro/ro/harta-locatie/300-vintage-pub-caffe",
+    "image_credit": "CNIPT Arad / visitarad.ro",
+    "image_license": "Drepturile aparțin proprietarului imaginii",
+    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/300-vintage-pub-caffe",
+    "cnipt_photos": [
+      "https://www.visitarad.ro/storage/locations/000/000/300/vintage-pub-caffe-vintage-pub-1.jpg"
+    ],
+    "locality": "Arad",
+    "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
     "id": "node/8714771919",
@@ -5747,37 +5888,6 @@
     "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
-    "id": "cnipt/48",
-    "name": "Biblioteca Județeană „A.D. Xenopol”",
-    "name_en": "Biblioteca Județeană „A.D. Xenopol”",
-    "lat": 46.1770363,
-    "lng": 21.3159803,
-    "category": "landmark",
-    "address": "Gheorghe Popa de Teiuș, nr.2-4, Arad",
-    "phone": "",
-    "website": "https://bibliotecaarad.ro/",
-    "hours": "",
-    "tags": [
-      "Obiective turistice",
-      "Clădiri reprezentative",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/48-biblioteca-judeteana-ad-xenopol",
-    "description": "Biblioteca Județeană „A.D. Xenopol” is a visitor destination in Arad, Arad County. It is listed at Gheorghe Popa de Teiuș, nr.2-4, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Clădirea a fost construită în anul 1913, în stil secession. Fondul bibliotecii numără astăzi 500000 de titluri, din care 20000 de volume în colecția de carte veche.\nDin fondul de patrimoniu fac parte incunabule religioase și laice extrem de valoroase, realizate începând din zorii tiparului. Vizitatorii au ocazia să admire volume unicat în România, precum Vergilius, Opera ( Veneția, 1482), Biblia tipărită de eruditul tipograf german Anton Koberger ( Nurnberg, 1493), Dictys Cretensis, Historia Troiana ( Veneția, 1499), Joannes Duns Scotus, Quaestiones quodlibetales ( Veneția, 1481) sau predicile lui Johannes de Bromyard (Nürnberg, 1485).\nDintre lucrările corifeilor Școlii Ardelene găsim aici ”Biblia de la Blaj a lui Samuil Micu\" (1795), pentru mult timp cea mai bună traducere a Bibliei în limba română.\nSe remarcă și fondurile care formează ”Biblioteca Orczy-Kezdi-Vasarhely” ( secolele XVII-XIX), ”Biblioteca Alecsandru D. Xenopol” donată de văduva savantului, biblioteca lui Fabian Gabor, etc.",
-    "description_en": "Biblioteca Județeană „A.D. Xenopol” is a visitor destination in Arad, Arad County. It is listed at Gheorghe Popa de Teiuș, nr.2-4, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/48/biblioteca-judeteana-ad-xenopol-biblioteca-judeteana.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/48-biblioteca-judeteana-ad-xenopol",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/48-biblioteca-judeteana-ad-xenopol",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/48/biblioteca-judeteana-ad-xenopol-biblioteca-judeteana.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
     "id": "cnipt/49",
     "name": "Casa Beller",
     "name_en": "Casa Beller",
@@ -6659,68 +6769,6 @@
     "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
-    "id": "cnipt/81",
-    "name": "Euphoria Biergarten",
-    "name_en": "Euphoria Biergarten",
-    "lat": 46.1732845,
-    "lng": 21.3179115,
-    "category": "food",
-    "address": "Strada 1 Decembrie 1918, nr. 6, Arad",
-    "phone": "",
-    "website": "https://euphoriabiergartenarad.ro/",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Restaurant",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/81-euphoria-biergarten",
-    "description": "Euphoria Biergarten is a food and hospitality venue in Arad, Arad County. It is listed at Strada 1 Decembrie 1918, nr. 6, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Euphoria Biergarten este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Strada 1 Decembrie 1918, nr. 6, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Euphoria Biergarten is a food and hospitality venue in Arad, Arad County. It is listed at Strada 1 Decembrie 1918, nr. 6, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/81/euphoria-biergarten-euphoria-2.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/81-euphoria-biergarten",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/81-euphoria-biergarten",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/81/euphoria-biergarten-euphoria-2.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/86",
-    "name": "Restaurant Rațio",
-    "name_en": "Restaurant Rațio",
-    "lat": 46.1693468,
-    "lng": 21.3161412,
-    "category": "food",
-    "address": "Piața Avram Iancu 10, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/restaurantratio/",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Restaurant",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/86-restaurant-ratio",
-    "description": "Restaurant Rațio is a food and hospitality venue in Arad, Arad County. It is listed at Piața Avram Iancu 10, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Restaurant Rațio este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Piața Avram Iancu 10, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Restaurant Rațio is a food and hospitality venue in Arad, Arad County. It is listed at Piața Avram Iancu 10, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/86/restaurant-ratio-dsc-0440-1.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/86-restaurant-ratio",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/86-restaurant-ratio",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/86/restaurant-ratio-dsc-0440-1.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
     "id": "cnipt/89",
     "name": "Restaurantul „Bucătarul meseriaș”",
     "name_en": "Restaurantul „Bucătarul meseriaș”",
@@ -6748,37 +6796,6 @@
     "cnipt_photos": [
       "https://www.visitarad.ro/storage/locations/000/000/89/restaurantul-bucatarul-meserias-dsc-0868-1.jpg",
       "https://www.visitarad.ro/storage/locations/000/000/89/restaurantul-bucatarul-meserias-dsc-0868.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/98",
-    "name": "Joy's Pub",
-    "name_en": "Joy's Pub",
-    "lat": 46.1697554,
-    "lng": 21.3171498,
-    "category": "nightlife",
-    "address": "Strada Gheorghe Lazăr, nr. 1, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/cafeneauajoys/?rf=196744323698225",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Pub",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/98-joys-pub",
-    "description": "Joy's Pub is a leisure venue in Arad, Arad County. It is listed at Strada Gheorghe Lazăr, nr. 1, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Joy's Pub este un obiectiv din categoria „Pub”, situat în Arad, județul Arad. Adresa înregistrată este Strada Gheorghe Lazăr, nr. 1, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Joy's Pub is a leisure venue in Arad, Arad County. It is listed at Strada Gheorghe Lazăr, nr. 1, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/98/joys-pub-83325465-768200293685172-2753813161952935936-n.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/98-joys-pub",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/98-joys-pub",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/98/joys-pub-83325465-768200293685172-2753813161952935936-n.jpg"
     ],
     "locality": "Arad",
     "retrieved_at": "2026-11-03T09:57:22Z"
@@ -7510,37 +7527,6 @@
     "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
-    "id": "cnipt/154",
-    "name": "Cinematograf Grădiște",
-    "name_en": "Cinematograf Grădiște",
-    "lat": 46.1942688,
-    "lng": 21.3327388,
-    "category": "culture",
-    "address": "strada Petru Rareș, Nr. 25, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/pages/category/Movie-Theater/Cinematograf-Gr%C4%83di%C8%99te-385340018637811/",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Cinema",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/154-cinematograf-gradiste",
-    "description": "Cinematograf Grădiște is a cultural attraction in Arad, Arad County. It is listed at strada Petru Rareș, Nr. 25, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Construit în anii 1920-1930 cinematograful din cartierul Grădiște a fost cunoscut ca Cinematograful CFR, fiind închis în anul 1990 de RADEF România.\nClădirea cinematografului a fost preluată de Primăria Municipiului Arad în anul 2011, iar în 2017 în urma unui proiect de investiții, cinematograful a fost redeschis pentru public. Sala de cinema are 120 de locuri, toate la parter.",
-    "description_en": "Cinematograf Grădiște is a cultural attraction in Arad, Arad County. It is listed at strada Petru Rareș, Nr. 25, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/154/cinematograf-gradiste-cinema-gradiste.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/154-cinematograf-gradiste",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/154-cinematograf-gradiste",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/154/cinematograf-gradiste-cinema-gradiste.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
     "id": "cnipt/156",
     "name": "Hotel Coandi",
     "name_en": "Hotel Coandi",
@@ -7598,37 +7584,6 @@
     "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/157-cuibul-cocorilor",
     "cnipt_photos": [
       "https://www.visitarad.ro/storage/locations/000/000/157/cuibul-cocorilor-cuibul-cocorilor.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/158",
-    "name": "Piccolo Bistro",
-    "name_en": "Piccolo Bistro",
-    "lat": 46.1792055,
-    "lng": 21.3185767,
-    "category": "food",
-    "address": "Strada Crișan, nr. 12, Arad",
-    "phone": "",
-    "website": "",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Fast food",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/158-piccolo-bistro",
-    "description": "Piccolo Bistro is a food and hospitality venue in Arad, Arad County. It is listed at Strada Crișan, nr. 12, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Piccolo Bistro este un obiectiv din categoria „Fast food”, situat în Arad, județul Arad. Adresa înregistrată este Strada Crișan, nr. 12, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Piccolo Bistro is a food and hospitality venue in Arad, Arad County. It is listed at Strada Crișan, nr. 12, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/158/piccolo-bistro-piccolo-arad.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/158-piccolo-bistro",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/158-piccolo-bistro",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/158/piccolo-bistro-piccolo-arad.jpg"
     ],
     "locality": "Arad",
     "retrieved_at": "2026-11-03T09:57:22Z"
@@ -9526,37 +9481,6 @@
     "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
-    "id": "cnipt/242",
-    "name": "Casa Jelen",
-    "name_en": "Casa Jelen",
-    "lat": 46.1716946,
-    "lng": 21.3074026,
-    "category": "food",
-    "address": "Str. M.Eminescu, Nr. 55-57, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/casajelenhaz",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Restaurant",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/242-casa-jelen",
-    "description": "Casa Jelen is a food and hospitality venue in Arad, Arad County. It is listed at Str. M.Eminescu, Nr. 55-57, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Eleganță, bun gust, servire impecabilă, savoare gastronomică și rafinament este ceea ce dorim să vă oferim de fiecare dată când hotărâți să petreceți momente de neuitat în incinta Complexului Casa Jelen. Vă așteptăm la doi pași de centrul orașului, într-o cladire modernă, spațioasă și ușor accesibilă, atât dinspre strada Mihai Eminescu cât și dinspre Parcul Reconcilierii.",
-    "description_en": "Casa Jelen is a food and hospitality venue in Arad, Arad County. It is listed at Str. M.Eminescu, Nr. 55-57, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/242/casa-jelen-jelen-1.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/242-casa-jelen",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/242-casa-jelen",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/242/casa-jelen-jelen-1.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
     "id": "cnipt/243",
     "name": "SEP Hotel",
     "name_en": "SEP Hotel",
@@ -9649,39 +9573,6 @@
     "cnipt_photos": [
       "https://www.visitarad.ro/storage/locations/000/000/246/restaurant-orizont-restaurant-orizont-interior.jpg",
       "https://www.visitarad.ro/storage/locations/000/000/246/restaurant-orizont-restaurant-orizont.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/247",
-    "name": "Pizzeria Boccaccio",
-    "name_en": "Pizzeria Boccaccio",
-    "lat": 46.1681115,
-    "lng": 21.3539819,
-    "category": "food",
-    "address": "Strada Dreptății, nr. 21/23, Arad",
-    "phone": "",
-    "website": "http://www.pizzeriaboccaccio.ro/",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Pizzerie",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/247-pizzeria-boccaccio",
-    "description": "Pizzeria Boccaccio is a food and hospitality venue in Arad, Arad County. It is listed at Strada Dreptății, nr. 21/23, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Pizzeria Boccaccio este un obiectiv din categoria „Pizzerie”, situat în Arad, județul Arad. Adresa înregistrată este Strada Dreptății, nr. 21/23, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Pizzeria Boccaccio is a food and hospitality venue in Arad, Arad County. It is listed at Strada Dreptății, nr. 21/23, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-interior.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/247-pizzeria-boccaccio",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/247-pizzeria-boccaccio",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-interior.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-masa-3.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/247/pizzeria-boccaccio-boccaccio-sigla-2.png"
     ],
     "locality": "Arad",
     "retrieved_at": "2026-11-03T09:57:22Z"
@@ -10580,42 +10471,6 @@
     "retrieved_at": "2026-11-03T09:57:22Z"
   },
   {
-    "id": "cnipt/294",
-    "name": "Restaurant Ema del Mar",
-    "name_en": "Restaurant Ema del Mar",
-    "lat": 46.1753202,
-    "lng": 21.3147358,
-    "category": "food",
-    "address": "Strada Episcopiei, nr. 9, Arad",
-    "phone": "",
-    "website": "https://emadelmar.com/",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Restaurant",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/294-restaurant-ema-del-mar",
-    "description": "Restaurant Ema del Mar is a food and hospitality venue in Arad, Arad County. It is listed at Strada Episcopiei, nr. 9, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Restaurant Ema del Mar este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Strada Episcopiei, nr. 9, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Restaurant Ema del Mar is a food and hospitality venue in Arad, Arad County. It is listed at Strada Episcopiei, nr. 9, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-1.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/294-restaurant-ema-del-mar",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/294-restaurant-ema-del-mar",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-1.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-2.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-3.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-4.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-5.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/294/restaurant-ema-del-mar-ema-del-mar-de-sus.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
     "id": "cnipt/296",
     "name": "Hotel Miky",
     "name_en": "Hotel Miky",
@@ -10712,68 +10567,6 @@
       "https://www.visitarad.ro/storage/locations/000/000/299/pensiunea-nimbus-54008541.jpg",
       "https://www.visitarad.ro/storage/locations/000/000/299/pensiunea-nimbus-camera-3.jpg",
       "https://www.visitarad.ro/storage/locations/000/000/299/pensiunea-nimbus-image1.jpeg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/300",
-    "name": "Vintage Pub-Caffe",
-    "name_en": "Vintage Pub-Caffe",
-    "lat": 46.1919109,
-    "lng": 21.3098863,
-    "category": "nightlife",
-    "address": "Piata UTA, nr. 45-55, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/Vintage-Pub-Caffe-654987381197674",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Pub",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/300-vintage-pub-caffe",
-    "description": "Vintage Pub-Caffe is a leisure venue in Arad, Arad County. It is listed at Piata UTA, nr. 45-55, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Vintage Pub-Caffe este un obiectiv din categoria „Pub”, situat în Arad, județul Arad. Adresa înregistrată este Piata UTA, nr. 45-55, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Vintage Pub-Caffe is a leisure venue in Arad, Arad County. It is listed at Piata UTA, nr. 45-55, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/300/vintage-pub-caffe-vintage-pub-1.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/300-vintage-pub-caffe",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/300-vintage-pub-caffe",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/300/vintage-pub-caffe-vintage-pub-1.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/301",
-    "name": "Restaurant Carolina",
-    "name_en": "Restaurant Carolina",
-    "lat": 46.1825632,
-    "lng": 21.3176969,
-    "category": "food",
-    "address": "Bulevardul Ștefan Augustin Doinaș, nr 31, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/terasacarolina/",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Restaurant",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/301-restaurant-carolina",
-    "description": "Restaurant Carolina is a food and hospitality venue in Arad, Arad County. It is listed at Bulevardul Ștefan Augustin Doinaș, nr 31, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "Restaurant Carolina este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Bulevardul Ștefan Augustin Doinaș, nr 31, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "Restaurant Carolina is a food and hospitality venue in Arad, Arad County. It is listed at Bulevardul Ștefan Augustin Doinaș, nr 31, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/301/restaurant-carolina-carolina.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/301-restaurant-carolina",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/301-restaurant-carolina",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/301/restaurant-carolina-carolina.jpg"
     ],
     "locality": "Arad",
     "retrieved_at": "2026-11-03T09:57:22Z"
@@ -12218,39 +12011,6 @@
       "https://www.visitarad.ro/storage/locations/000/000/372/bontalenti-img-20220506-wa0001.jpg",
       "https://www.visitarad.ro/storage/locations/000/000/372/bontalenti-img-20220522-wa0012.jpg",
       "https://www.visitarad.ro/storage/locations/000/000/372/bontalenti-screenshot-20220830-160319-gallery.jpg"
-    ],
-    "locality": "Arad",
-    "retrieved_at": "2026-11-03T09:57:22Z"
-  },
-  {
-    "id": "cnipt/373",
-    "name": "La Bottega Beer&Grill",
-    "name_en": "La Bottega Beer&Grill",
-    "lat": 46.1769694,
-    "lng": 21.3220207,
-    "category": "food",
-    "address": "Malul Mureșului, FN, Arad",
-    "phone": "",
-    "website": "https://www.facebook.com/labottega.arad",
-    "hours": "",
-    "tags": [
-      "Timp liber și agrement",
-      "Restaurant",
-      "Arad"
-    ],
-    "source": "https://www.visitarad.ro/ro/harta-locatie/373-la-bottega-beergrill",
-    "description": "La Bottega Beer&Grill is a food and hospitality venue in Arad, Arad County. It is listed at Malul Mureșului, FN, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "description_ro": "La Bottega Beer&Grill este un obiectiv din categoria „Restaurant”, situat în Arad, județul Arad. Adresa înregistrată este Malul Mureșului, FN, Arad. Datele sunt furnizate de CNIPT Arad / visitarad.ro.",
-    "description_en": "La Bottega Beer&Grill is a food and hospitality venue in Arad, Arad County. It is listed at Malul Mureșului, FN, Arad. The location data is provided by CNIPT Arad / visitarad.ro; consult the original listing for current visitor information.",
-    "image": "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-2022-01-23.jpg",
-    "image_source": "https://www.visitarad.ro/ro/harta-locatie/373-la-bottega-beergrill",
-    "image_credit": "CNIPT Arad / visitarad.ro",
-    "image_license": "Drepturile aparțin proprietarului imaginii",
-    "cnipt_source": "https://www.visitarad.ro/ro/harta-locatie/373-la-bottega-beergrill",
-    "cnipt_photos": [
-      "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-2022-01-23.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-dsc02680.jpg",
-      "https://www.visitarad.ro/storage/locations/000/000/373/la-bottega-beergrill-geo1153.jpg"
     ],
     "locality": "Arad",
     "retrieved_at": "2026-11-03T09:57:22Z"

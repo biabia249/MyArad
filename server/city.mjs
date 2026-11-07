@@ -13,39 +13,55 @@ const placeDefaults = {
   landmark: {
     ro: "obiectiv arhitectural și punct de interes",
     en: "architectural landmark and point of interest",
-    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=82",
   },
   education: {
     ro: "instituție de educație și reper al comunității locale",
     en: "educational institution and local community landmark",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=82",
   },
   culture: {
     ro: "spațiu cultural și loc de întâlnire pentru comunitate",
     en: "cultural venue and community meeting place",
-    image: "https://images.unsplash.com/photo-1488841714725-bb4c32d1ac94?auto=format&fit=crop&w=1200&q=82",
   },
   nightlife: {
     ro: "local de socializare și petrecere a timpului liber",
     en: "social and leisure venue",
-    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=82",
   },
   cafe: {
     ro: "cafenea din oferta locală a orașului",
     en: "café in the city's local hospitality scene",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=82",
   },
   food: {
     ro: "restaurant sau punct gastronomic local",
     en: "local restaurant or food venue",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=82",
   },
   park: {
     ro: "zonă naturală și destinație pentru recreere în aer liber",
     en: "natural area and outdoor recreation destination",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=82",
   },
 };
+const coverColors = [
+  ["#173d5d", "#4e8f8b"],
+  ["#503b66", "#b26a78"],
+  ["#544a2d", "#b28b4a"],
+  ["#214c42", "#75a16c"],
+  ["#4d3540", "#ad6d55"],
+];
+const xml = (value) =>
+  String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+function placeCover(place) {
+  const seed = [...`${place.id}:${place.name}`].reduce(
+    (sum, char) => (sum * 31 + char.codePointAt(0)) >>> 0,
+    7,
+  );
+  const [from, to] = coverColors[seed % coverColors.length];
+  const name = place.name.length > 42 ? `${place.name.slice(0, 39)}…` : place.name;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><metadata>${xml(place.id)}</metadata><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs><rect width="1200" height="760" fill="url(#g)"/><circle cx="1000" cy="90" r="260" fill="#fff" opacity=".08"/><path d="M120 530h960M210 530V330l180-125 180 125v200m70 0V270h290v260" fill="none" stroke="#fff" stroke-width="22" opacity=".32"/><text x="90" y="105" fill="#fff" opacity=".75" font-family="Arial,sans-serif" font-size="28" letter-spacing="7">MYARAD · ${xml(place.category.toUpperCase())}</text><text x="90" y="650" fill="#fff" font-family="Arial,sans-serif" font-size="54" font-weight="700">${xml(name)}</text><text x="90" y="704" fill="#fff" opacity=".72" font-family="Arial,sans-serif" font-size="24">Ilustrație · fotografie verificată indisponibilă</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
 function completePlace(place) {
   const fallback = placeDefaults[place.category] || placeDefaults.landmark;
   const addressRo = place.address
@@ -64,14 +80,14 @@ function completePlace(place) {
       place.description_en?.trim() || place.description?.trim() || descriptionEn,
     description:
       place.description?.trim() || place.description_en?.trim() || descriptionEn,
-    image: hasImage ? place.image : fallback.image,
+    image: hasImage ? place.image : placeCover(place),
     image_source: hasImage
       ? place.image_source || place.wiki_source || place.source
-      : "https://unsplash.com/",
+      : place.source,
     image_credit: hasImage
       ? place.image_credit || "Fotografie documentară · sursa indicată"
-      : "Imagine reprezentativă · Unsplash",
-    image_license: hasImage ? place.image_license || "" : "Unsplash License",
+      : "Ilustrație MyArad · fotografie verificată indisponibilă",
+    image_license: hasImage ? place.image_license || "" : "",
   };
 }
 const text = (data, key, max, required = true) => {

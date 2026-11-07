@@ -97,6 +97,10 @@ function validUrl(s: string) {
     return undefined;
   }
 }
+function validImageUrl(s: string) {
+  if (s.startsWith("data:image/svg+xml;charset=UTF-8,")) return s;
+  return validUrl(s);
+}
 function isEvent(p: Place | CityEvent): p is CityEvent {
   return "starts_at" in p;
 }
@@ -820,9 +824,9 @@ export default function CityExplorer(props: CityProps) {
                     }}
                   >
                     <span className={`place-thumb ${item.category}`}>
-                      {!ev && validUrl(item.image) ? (
+                      {!ev && validImageUrl(item.image) ? (
                         <img
-                          src={validUrl(item.image)}
+                          src={validImageUrl(item.image)}
                           alt=""
                           loading="lazy"
                           onError={(e) => {
@@ -979,9 +983,9 @@ export default function CityExplorer(props: CityProps) {
               <Icon name="close" />
             </button>
             <div className={`detail-hero ${selected.category}`}>
-              {selectedPlace && validUrl(selectedPlace.image) ? (
+              {selectedPlace && validImageUrl(selectedPlace.image) ? (
                 <img
-                  src={validUrl(selectedPlace.image)}
+                  src={validImageUrl(selectedPlace.image)}
                   alt={selectedPlace.name}
                   onError={(e) => {
                     e.currentTarget.style.display = "none";

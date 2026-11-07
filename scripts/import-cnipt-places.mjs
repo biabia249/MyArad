@@ -12,6 +12,24 @@ const normalize = (value) =>
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
+// Confirmed aliases only: same venue, verified by both name and coordinates.
+const confirmedAliases = new Map(
+  [
+    ["Biblioteca Județeană „A.D. Xenopol”", "Biblioteca Județeană Arad A.D. Xenopol Sediul Central"],
+    ["Cinematograf Grădiște", "Grădiște"],
+    ["Pizzeria Boccaccio", "Boccaccio"],
+    ["Restaurant Carolina", "Carolina"],
+    ["Casa Jelen", "Casa Jelen Haz"],
+    ["Restaurant Ema del Mar", "Ema Del Mar"],
+    ["Euphoria Biergarten", "Euphoria Biergarten Arad"],
+    ["Joy's Pub", "Joy's"],
+    ["La Bottega Beer&Grill", "La Bottega"],
+    ["Piccolo Bistro", "Piccolo"],
+    ["Restaurant Rațio", "Rațio"],
+    ["Vintage Pub-Caffe", "Vintage Pub-Cafe"],
+  ].map(([source, existing]) => [normalize(source), normalize(existing)]),
+);
+
 function categoryFor(place) {
   const category = normalize(place.category);
   if (/restaurant|pizzerie|fast food|bistro/.test(category)) return "food";
@@ -84,7 +102,8 @@ for (const sourcePlace of incoming) {
   )
     continue;
   const place = convert(sourcePlace);
-  const index = byName.get(normalize(place.name));
+  const sourceName = normalize(place.name);
+  const index = byName.get(confirmedAliases.get(sourceName) || sourceName);
   if (index === undefined || claimedExisting.has(index)) {
     existing.push(place);
   } else {
