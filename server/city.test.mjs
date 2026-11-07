@@ -59,6 +59,13 @@ test("guests browse places; authenticated users create, attend, comment and sugg
   const initial = await call("/city/bootstrap");
   assert.equal(initial.status, 200);
   assert.ok(initial.data.places.length > 100);
+  for (const place of initial.data.places) {
+    assert.ok(place.description_ro?.trim(), `${place.name} needs a Romanian description`);
+    assert.ok(place.description_en?.trim(), `${place.name} needs an English description`);
+    assert.ok(place.image?.startsWith("https://"), `${place.name} needs an image`);
+    assert.ok(place.image_source?.startsWith("https://"), `${place.name} needs an image source`);
+    assert.ok(place.image_credit?.trim(), `${place.name} needs an image credit`);
+  }
   assert.equal(initial.data.canPost, false);
   assert.deepEqual(initial.data.events, []);
   assert.equal((await call("/city/events", event())).status, 401);

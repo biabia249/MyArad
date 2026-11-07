@@ -9,6 +9,71 @@ export const inArad = (lat, lng) =>
   lat <= 46.23 &&
   lng >= 21.23 &&
   lng <= 21.39;
+const placeDefaults = {
+  landmark: {
+    ro: "obiectiv arhitectural și punct de interes",
+    en: "architectural landmark and point of interest",
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=82",
+  },
+  education: {
+    ro: "instituție de educație și reper al comunității locale",
+    en: "educational institution and local community landmark",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=82",
+  },
+  culture: {
+    ro: "spațiu cultural și loc de întâlnire pentru comunitate",
+    en: "cultural venue and community meeting place",
+    image: "https://images.unsplash.com/photo-1488841714725-bb4c32d1ac94?auto=format&fit=crop&w=1200&q=82",
+  },
+  nightlife: {
+    ro: "local de socializare și petrecere a timpului liber",
+    en: "social and leisure venue",
+    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=82",
+  },
+  cafe: {
+    ro: "cafenea din oferta locală a orașului",
+    en: "café in the city's local hospitality scene",
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=82",
+  },
+  food: {
+    ro: "restaurant sau punct gastronomic local",
+    en: "local restaurant or food venue",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=82",
+  },
+  park: {
+    ro: "zonă naturală și destinație pentru recreere în aer liber",
+    en: "natural area and outdoor recreation destination",
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=82",
+  },
+};
+function completePlace(place) {
+  const fallback = placeDefaults[place.category] || placeDefaults.landmark;
+  const addressRo = place.address
+    ? ` Se află la adresa ${place.address}, iar poziția din hartă te ajută să o găsești și să planifici traseul.`
+    : " Poziția marcată în hartă te ajută să o găsești și să planifici traseul.";
+  const addressEn = place.address
+    ? ` It is located at ${place.address}; use its mapped position to find it and plan a route.`
+    : " Use its mapped position to find it and plan a route.";
+  const descriptionRo = `${place.name} este ${fallback.ro} din Arad.${addressRo} Informațiile de localizare sunt furnizate de comunitatea OpenStreetMap și pot fi actualizate pe măsură ce locul se schimbă.`;
+  const descriptionEn = `${place.name_en || place.name} is a local ${fallback.en} in Arad.${addressEn} Location information is provided by the OpenStreetMap community and may be updated as the place changes.`;
+  const hasImage = typeof place.image === "string" && place.image.trim();
+  return {
+    ...place,
+    description_ro: place.description_ro?.trim() || descriptionRo,
+    description_en:
+      place.description_en?.trim() || place.description?.trim() || descriptionEn,
+    description:
+      place.description?.trim() || place.description_en?.trim() || descriptionEn,
+    image: hasImage ? place.image : fallback.image,
+    image_source: hasImage
+      ? place.image_source || place.wiki_source || place.source
+      : "https://unsplash.com/",
+    image_credit: hasImage
+      ? place.image_credit || "Fotografie documentară · sursa indicată"
+      : "Imagine reprezentativă · Unsplash",
+    image_license: hasImage ? place.image_license || "" : "Unsplash License",
+  };
+}
 const text = (data, key, max, required = true) => {
   const value = data[key];
   if (
@@ -39,7 +104,7 @@ export function createCity(store, config) {
         new URL("./data-sources/places.json", import.meta.url),
         "utf8",
       ),
-    );
+    ).map(completePlace);
   } catch {
     /* Empty until data import finishes. */
   }
