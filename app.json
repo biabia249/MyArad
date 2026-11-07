@@ -14,13 +14,14 @@
     "android": {
       "package": "com.myarad.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/images/myarad-launcher.png",
+        "backgroundColor": "#000000"
       },
       "predictiveBackGestureEnabled": false,
-      "permissions": ["android.permission.MODIFY_AUDIO_SETTINGS"]
+      "permissions": [
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "icon": "./assets/images/myarad-launcher.png"
     },
     "web": {
       "output": "server",
@@ -56,7 +57,14 @@
       ],
       "expo-notifications",
       "expo-asset",
-      ["expo-calendar", { "writeOnlyAccess": true, "writeOnlyCalendarPermission": "MyArad adaugă în calendar evenimentele pe care le alegi.", "calendarPermission": "MyArad folosește calendarul ales pentru a adăuga evenimentele tale." }]
+      [
+        "expo-calendar",
+        {
+          "writeOnlyAccess": true,
+          "writeOnlyCalendarPermission": "MyArad adaug\u0103 \u00een calendar evenimentele pe care le alegi.",
+          "calendarPermission": "MyArad folose\u0219te calendarul ales pentru a ad\u0103uga evenimentele tale."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
