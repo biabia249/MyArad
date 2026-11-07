@@ -339,6 +339,14 @@ export function createCity(store, config) {
       if (!removed) throw new HttpError(404, "Plan not found.");
       return { ok: true };
     }
+    const connections = path.match(/^\/city\/citizens\/([a-zA-Z0-9_]+)\/(followers|following)$/);
+    if (connections && req.method === 'GET') {
+      const viewer = author(req);
+      const owner = db.prepare('SELECT u.id,COALESCE(p.public,0) AS public FROM users u LEFT JOIN city_profiles p ON p.user_id=u.id WHERE u.username=? COLLATE NOCASE').get(connections[1]);
+      if (!owner || (owner.id !== viewer.id && !owner.public)) throw new HttpError(404, 'This profile is private or does not exist.');
+      const followers = connections[2] === 'followers';
+      return { users: db.prepare(`SELECT u.username,u.full_name AS fullName,COALESCE(p.public,0) AS public FROM city_follows f JOIN users u ON u.id=f.${followers ? 'follower_id' : 'followed_id'} LEFT JOIN city_profiles p ON p.user_id=u.id WHERE f.${followers ? 'followed_id' : 'follower_id'}=? ORDER BY u.full_name,u.username`).all(owner.id) };
+    }
     if (path.startsWith("/city/citizens/") && req.method === "GET") {
       const username = decodeURIComponent(path.split("/").at(-1));
       const u = db

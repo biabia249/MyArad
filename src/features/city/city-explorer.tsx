@@ -90,6 +90,7 @@ function Icon({ name, size = 20 }: { name: string; size?: number }) {
       "M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 M3 12h18 M12 3c-5 5-5 13 0 18 5-5 5-13 0-18",
     phone: "m5 3 4 4-2 3c2 3 4 5 7 7l3-2 4 4c-5 7-21-9-16-16Z",
     message: "M21 3H3v14h5l4 4v-4h9Z",
+    vasile: 'M5 5h14v12H5Z M9 21h6 M12 17v4 M9 9h.01 M15 9h.01 M9 13h6 M12 2v3',
   };
   return (
     <svg
@@ -1556,10 +1557,11 @@ export default function CityExplorer(props: CityProps) {
           </aside>
         )}
       </div>
-      {!vasilePage && !composer && <VasileLauncher label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"} onOpen={() => void action(() => props.onNavigate("/vasile"))} />}
-      <nav className="mobile-page-nav">
+      {props.calendarPlatform === 'web' && !vasilePage && !composer && <VasileLauncher label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"} onOpen={() => void action(() => props.onNavigate("/vasile"))} />}
+      <nav className={`mobile-page-nav ${props.calendarPlatform !== 'web' ? 'native-five-tabs' : ''}`}>
         {[
           ["/map", t.street, 'pin'],
+          ...(props.calendarPlatform !== 'web' ? [["/vasile", "Vasile", "vasile"]] : []),
           ["/events", t.events, 'events'],
           ['/people', lang === 'ro' ? 'Mesaje' : 'Messages', 'message'],
           ["/schedule", lang === "ro" ? "Program" : "Schedule", 'calendar'],

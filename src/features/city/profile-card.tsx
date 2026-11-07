@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { CityProps, Language } from "./types";
+import { ProfileConnections } from './profile-connections';
 export type CitizenProfile = {
   bio?: string;
   location?: string;
@@ -120,15 +121,8 @@ export function ProfileCard({
           <strong>{new Set(plans.map((p) => p.venue)).size}</strong>
           {ro ? "locuri" : "places"}
         </span>
-        <span>
-          <strong>{followers}</strong>
-          {ro ? "urmăritori" : "followers"}
-        </span>
-        <span>
-          <strong>{following}</strong>
-          {ro ? "urmărește" : "following"}
-        </span>
       </div>
+      <ProfileConnections key={`${username}-${followers}-${following}`} username={username} followers={followers} following={following} props={props} lang={lang} />
       {editing && (
         <form
           className="profile-editor"

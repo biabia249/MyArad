@@ -301,6 +301,12 @@ test("public profiles can be followed and expose social counts without private a
   assert.equal(publicProfile.isFollowing, true);
   assert.equal(publicProfile.isOwnProfile, false);
   assert.equal(publicProfile.email, undefined);
+  const followers = await call('/city/citizens/city_tester/followers', undefined, token);
+  assert.deepEqual(followers.data.users, [{ username: 'visitor', fullName: 'Profile Visitor', public: 0 }]);
+  const following = await call('/city/citizens/visitor/following', undefined, other.token);
+  assert.deepEqual(following.data.users, [{ username: 'city_tester', fullName: 'City Tester', public: 1 }]);
+  assert.equal((await call('/city/citizens/visitor/following', undefined, token)).status, 404);
+  assert.equal((await call('/city/citizens/city_tester/followers')).status, 401);
   assert.equal(
     (await call("/city/citizens/city_tester/follow", { following: true }, token)).status,
     400,
@@ -311,4 +317,5 @@ test("public profiles can be followed and expose social counts without private a
     other.token,
   );
   assert.equal((await call("/city/citizens/city_tester")).data.followers, 0);
+  assert.deepEqual((await call('/city/citizens/city_tester/followers', undefined, token)).data.users, []);
 });

@@ -8,6 +8,17 @@
 .place-directions>summary:after { content:'+'; margin-left:auto; font-size:22px; color:var(--muted); }
 .place-directions[open]>summary:after { content:'−'; }
 .place-directions .journey { margin:0; }
+.connection-buttons { display:flex; gap:10px; margin:12px 0; }
+.city-app .connection-buttons button { flex:1; min-height:48px; gap:8px; padding:12px; border:1px solid var(--line); border-radius:14px; background:var(--surface); color:var(--ink); font-size:13px; }
+.connection-buttons strong { color:var(--accent); font-size:18px; }
+.connection-list { padding:12px 16px; border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+.connection-list h3 { font-size:15px; margin-top:0; }
+.connection-list ul { list-style:none; margin:0; padding:0; max-height:240px; overflow:auto; }
+.connection-list li { display:flex; align-items:center; gap:12px; padding:10px 0; border-top:1px solid var(--line); }
+.connection-list li>span { flex:1; min-width:0; }
+.connection-list strong,.connection-list small { display:block; overflow-wrap:anywhere; }
+.connection-list small,.connection-list p { color:var(--muted); font-size:12px; }
+.city-app .connection-list button { min-width:44px; min-height:44px; border-radius:12px; background:#8e93cb22; }
 @media (max-width:700px) {
   .city-app .city-header { height:64px; min-height:64px; padding:0 12px; gap:10px; }
   .city-app .brand { font-size:20px; gap:8px; }
@@ -18,6 +29,7 @@
   .city-app .header-actions button { min-height:40px; }
   .city-app .android-download { padding:8px; font-size:11px; gap:4px; }
   .city-app .mobile-page-nav { display:grid; grid-template-columns:repeat(4,1fr); min-height:56px; height:56px; padding:0; overflow:visible; }
+  .city-app .mobile-page-nav.native-five-tabs { grid-template-columns:repeat(5,1fr); }
   .city-app .mobile-page-nav button { width:100%; min-width:0; height:56px; padding:10px; border-top:0; position:relative; color:var(--muted); }
   .city-app .mobile-page-nav button.active { color:var(--ink); background:#8e93cb25; }
   .city-app .mobile-page-nav button.active:after { content:""; position:absolute; bottom:4px; width:18px; height:3px; border-radius:4px; background:#8E93CB; }
