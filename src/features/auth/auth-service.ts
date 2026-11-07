@@ -14,7 +14,8 @@ let exchange: Promise<Profile> | null = null;
 let completedGoogle: { code: string; profile: Profile } | null = null;
 
 function apiUrl() {
-  return resolveApiUrl(process.env.EXPO_PUBLIC_API_URL, __DEV__, Platform.OS === 'web' ? window.location.hostname : undefined);
+  const browser = Platform.OS === 'web' && typeof window !== 'undefined' ? window.location : undefined;
+  return resolveApiUrl(process.env.EXPO_PUBLIC_API_URL, __DEV__, browser?.hostname, browser?.origin);
 }
 class ApiError extends Error {
   constructor(public status: number, message: string) { super(message); }

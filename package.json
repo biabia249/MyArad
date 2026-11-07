@@ -61,6 +61,7 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "web:lan": "expo start --web --lan --port 8081",
+    "web:https": "node --use-system-ca scripts/https-dev.mjs",
     "lint": "expo lint"
   },
   "private": true
