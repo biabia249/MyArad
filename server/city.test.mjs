@@ -162,6 +162,36 @@ test('friend chat restores private conversations and enforces accepted friendshi
   assert.equal((await call(`/city/events/${id}`)).data.participants.length, 1);
 });
 
+test('notifications track friend requests and message reads without exposing another inbox', async t => {
+  const { call, token, store } = await fixture(t);
+  const other = await store.signUp({ fullName: 'Notify Friend', username: 'notify_friend', email: 'notify@example.com', password: 'Testing-123!' });
+  await call('/city/social/friend/notify_friend', { action: 'request' }, token);
+  let inbox = (await call('/city/social/notifications', undefined, other.token)).data;
+  assert.equal(inbox.unread, 1);
+  assert.equal(inbox.items[0].kind, 'request');
+  await call('/city/social/friend/city_tester', { action: 'accept' }, other.token);
+  assert.equal((await call('/city/social/notifications', undefined, token)).data.items[0].kind, 'accepted');
+  await call('/city/social/messages/notify_friend', { body: 'Private notification preview' }, token);
+  inbox = (await call('/city/social/notifications', undefined, other.token)).data;
+  const message = inbox.items.find(item => item.kind === 'message');
+  assert.equal(inbox.unread, 2);
+  assert.equal(message.preview, 'Private notification preview');
+  await call('/city/social/notifications', { ids: [message.id] }, token);
+  assert.equal((await call('/city/social/notifications', undefined, other.token)).data.unread, 2);
+  const messages = (await call('/city/social/messages/city_tester', undefined, other.token)).data.messages;
+  await call('/city/social/read/city_tester', { ids: [messages[0].id] }, other.token);
+  assert.equal((await call('/city/social/notifications', undefined, other.token)).data.unread, 1);
+  await call('/city/social/notifications', { ids: inbox.items.map(item => item.id) }, other.token);
+  assert.equal((await call('/city/social/notifications', undefined, other.token)).data.unread, 0);
+  assert.equal((await call('/city/social/notifications')).status, 401);
+  const pushToken = 'ExpoPushToken[notification-fixture-12345]';
+  await call('/city/social/push', { token: pushToken, enabled: true }, other.token);
+  await call('/city/social/push', { token: pushToken, enabled: false }, token);
+  assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM city_push_tokens').get().n, 1);
+  await call('/city/social/push', { token: pushToken, enabled: false }, other.token);
+  assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM city_push_tokens').get().n, 0);
+});
+
 test("event validation rejects out-of-city coordinates, invalid times, oversized and empty content", async (t) => {
   const { call, token } = await fixture(t);
   for (const patch of [

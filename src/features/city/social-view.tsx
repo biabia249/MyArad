@@ -27,12 +27,14 @@ export function SocialView({
   signedIn,
   onSignIn,
   onProfile,
+  active: pageActive = true,
 }: {
   api: Api;
   lang: string;
   signedIn: boolean;
   onSignIn: () => void;
   onProfile: (username: string) => void;
+  active?: boolean;
 }) {
   const ro = lang === "ro";
   const [query, setQuery] = useState(""),
@@ -48,7 +50,7 @@ export function SocialView({
     setFriends(r.users);
   }, [api]);
   useEffect(() => {
-    if (!signedIn) return;
+    if (!signedIn || !pageActive) return;
     const controller = { active: true };
     const timer = setTimeout(() => {
       void Promise.all([
@@ -72,7 +74,7 @@ export function SocialView({
       controller.active = false;
       clearTimeout(timer);
     };
-  }, [api, query, signedIn]);
+  }, [api, query, signedIn, pageActive]);
   const peer = selected?.username;
   const messagePane = useRef<HTMLDivElement>(null);
   const pinnedToBottom = useRef(true);
@@ -98,7 +100,7 @@ export function SocialView({
     return () => resize.disconnect();
   }, [peer]);
   useEffect(() => {
-    if (!signedIn) return;
+    if (!signedIn || !pageActive) return;
     let active = true;
     const timer = setInterval(() => {
       void refresh().catch((e) => {
@@ -109,9 +111,9 @@ export function SocialView({
       active = false;
       clearInterval(timer);
     };
-  }, [signedIn, refresh]);
+  }, [signedIn, refresh, pageActive]);
   useEffect(() => {
-    if (!peer) return;
+    if (!peer || !pageActive) return;
     let active = true;
     const load = () => {
       void api<{ messages: Message[] }>("/city/social/messages/" + peer)
@@ -128,10 +130,10 @@ export function SocialView({
       active = false;
       clearInterval(timer);
     };
-  }, [peer, api]);
+  }, [peer, api, pageActive]);
   const readMessages = useRef(new Set<string>());
   useEffect(() => {
-    if (!peer) return;
+    if (!peer || !pageActive) return;
     let active = true;
     const markRead = () => {
       if (document.visibilityState !== "visible") return;
@@ -157,7 +159,7 @@ export function SocialView({
       document.removeEventListener("visibilitychange", markRead);
       window.removeEventListener("focus", markRead);
     };
-  }, [peer, messages, api]);
+  }, [peer, messages, api, pageActive]);
   async function act(person: Person, action: string) {
     setBusy(true);
     setError("");

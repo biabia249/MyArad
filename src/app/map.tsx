@@ -10,6 +10,7 @@ import type { CityProps } from "@/features/city/types";
 import { addToDeviceCalendar, shareCalendarFile } from "@/features/city/device-calendar";
 import { browserLocation } from '@/features/city/browser-location';
 import { withLocationDeadline } from '@/features/city/location-deadline';
+import { enablePush } from '@/features/push';
 
 function reportError(e: unknown) {
   const message = e instanceof Error ? e.message : String(e);
@@ -32,17 +33,19 @@ export function CityScreen({
 }) {
   const { theme, toggle } = useAppTheme();
   const [name, setName] = useState<string | null>(null);
+  const [focused, setFocused] = useState(false);
   const latestLocation = useRef<{ lat: number; lng: number } | null>(null);
   const latestLocationTime = useRef(0);
   const locationFailure = useRef('unavailable');
   const locationRefresh = useRef<Promise<void> | null>(null);
   useFocusEffect(useCallback(() => {
+    setFocused(true);
     let active = true;
     void authService
       .getProfile()
       .then((p) => { if (active) setName(p?.fullName || null); })
       .catch(() => {});
-    return () => { active = false; };
+    return () => { active = false; setFocused(false); };
   }, []));
   const request = useCallback<CityProps["onRequest"]>(async (path, data) => {
     try {
@@ -139,6 +142,8 @@ export function CityScreen({
       }}
     >
       <CityExplorer
+        isFocused={focused}
+        onEnablePush={enablePush}
         calendarPlatform={Platform.OS === 'ios' ? 'ios' : Platform.OS === 'android' ? 'android' : 'web'}
         onAddToCalendar={addToDeviceCalendar}
         onShareCalendar={shareCalendarFile}
