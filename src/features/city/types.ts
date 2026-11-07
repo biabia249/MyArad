@@ -20,6 +20,7 @@ export type Place = {
   cnipt_area?: string;
   cnipt_data_source?: string;
   locality?: string;
+  municipality?: string;
   facebook?: string;
   retrieved_at?: string;
   lat: number;
@@ -70,6 +71,8 @@ export type Bootstrap = {
 };
 export type ApiResult = { ok: boolean; data: string; error?: string };
 export type CityProps = {
+  calendarPlatform?: 'ios' | 'android' | 'web';
+  onAddToCalendar: (entry: import('./calendar-export').CalendarEntry) => Promise<string>;
   dom?: import("expo/dom").DOMProps;
   userName: string | null;
   theme: "light" | "dark";

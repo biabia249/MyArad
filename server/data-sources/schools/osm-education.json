@@ -1,0 +1,3598 @@
+{
+  "source": "https://download.geofabrik.de/europe/romania.html",
+  "elements": [
+    {
+      "type": "node",
+      "id": 252246615,
+      "lat": 46.1671496,
+      "lon": 21.3142404,
+      "tags": {
+        "amenity": "school",
+        "name": "Grup Școlar „Francisc Neuman” Arad"
+      }
+    },
+    {
+      "type": "node",
+      "id": 252246828,
+      "lat": 46.1640737,
+      "lon": 21.3138373,
+      "tags": {
+        "amenity": "school",
+        "created_by": "Potlatch 0.7b"
+      }
+    },
+    {
+      "type": "node",
+      "id": 252246872,
+      "lat": 46.1682169,
+      "lon": 21.3117087,
+      "tags": {
+        "amenity": "school",
+        "created_by": "Potlatch 0.7b",
+        "name": "Academia Teologică"
+      }
+    },
+    {
+      "type": "node",
+      "id": 258676138,
+      "lat": 46.172892,
+      "lon": 21.3168771,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "91-93",
+        "addr:postcode": "310414",
+        "addr:street": "Bulevardul Revoluției",
+        "amenity": "university",
+        "education": "university",
+        "name": "Facultatea de Științe ale Naturii, Inginerie și Informatică a Universității \"Vasile Goldiș\"",
+        "name:en": "Computer Science Faculty of Vasile Goldiș Western University of Arad",
+        "name:ro": "Facultatea de Științe ale Naturii, Inginerie și Informatică a Universității \"Vasile Goldiș\"",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 258684740,
+      "lat": 46.173254,
+      "lon": 21.3161732,
+      "tags": {
+        "amenity": "university",
+        "building": "school",
+        "education": "university",
+        "name": "Vasile Goldiș: Facultatea de Științe Juridice"
+      }
+    },
+    {
+      "type": "node",
+      "id": 258897243,
+      "lat": 46.169903,
+      "lon": 21.350382,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Strada Sighișoara",
+        "building": "school",
+        "building:levels": "3",
+        "name": "Școala Generală Nr. 22 „Caius Iacob”"
+      }
+    },
+    {
+      "type": "node",
+      "id": 260664784,
+      "lat": 46.1887229,
+      "lon": 21.2996592,
+      "tags": {
+        "amenity": "school",
+        "created_by": "Potlatch 0.9",
+        "name": "Generală 8"
+      }
+    },
+    {
+      "type": "node",
+      "id": 261768091,
+      "lat": 46.1664297,
+      "lon": 21.3000443,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 262884691,
+      "lat": 46.1886278,
+      "lon": 21.2980627,
+      "tags": {
+        "amenity": "school",
+        "created_by": "Potlatch 0.9",
+        "name": "Generaă 8"
+      }
+    },
+    {
+      "type": "node",
+      "id": 265268897,
+      "lat": 46.1405356,
+      "lon": 21.3438314,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 267173226,
+      "lat": 46.2130323,
+      "lon": 21.2712315,
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "Grădinița cu program prelungit nr. 8"
+      }
+    },
+    {
+      "type": "node",
+      "id": 267174842,
+      "lat": 46.2062445,
+      "lon": 21.2939736,
+      "tags": {
+        "amenity": "kindergarten",
+        "created_by": "JOSM"
+      }
+    },
+    {
+      "type": "node",
+      "id": 268339333,
+      "lat": 46.1763325,
+      "lon": 21.3605208,
+      "tags": {
+        "amenity": "school",
+        "created_by": "JOSM"
+      }
+    },
+    {
+      "type": "node",
+      "id": 269253772,
+      "lat": 46.2039131,
+      "lon": 21.2834614,
+      "tags": {
+        "amenity": "kindergarten",
+        "created_by": "JOSM",
+        "name": "Grădinița cu program normal Nr. 7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 269253773,
+      "lat": 46.2036886,
+      "lon": 21.2826941,
+      "tags": {
+        "amenity": "school",
+        "created_by": "JOSM",
+        "name": "Școala Generală Frații Neumann"
+      }
+    },
+    {
+      "type": "node",
+      "id": 270328143,
+      "lat": 46.1529096,
+      "lon": 21.307635,
+      "tags": {
+        "amenity": "school",
+        "name": "Generală nr. 20"
+      }
+    },
+    {
+      "type": "node",
+      "id": 271628236,
+      "lat": 46.1917564,
+      "lon": 21.3116718,
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "Grădinița cu program săptămânal Nr. 2"
+      }
+    },
+    {
+      "type": "node",
+      "id": 271628238,
+      "lat": 46.1968515,
+      "lon": 21.3198075,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 279908646,
+      "lat": 46.1551226,
+      "lon": 21.3999219,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 344315526,
+      "lat": 46.1801897,
+      "lon": 21.3429382,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "120",
+        "addr:postcode": "310267",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Radnei",
+        "amenity": "kindergarten",
+        "name": "Grădinița PN 18"
+      }
+    },
+    {
+      "type": "node",
+      "id": 390341459,
+      "lat": 46.1766524,
+      "lon": 21.3194744,
+      "tags": {
+        "amenity": "school",
+        "name": "Palatul Copiilor"
+      }
+    },
+    {
+      "type": "node",
+      "id": 391814406,
+      "lat": 46.1779314,
+      "lon": 21.3109875,
+      "tags": {
+        "addr:city": "Arad",
+        "amenity": "school",
+        "name": "Grup Școlar Transporturi Auto „Henri Coadndă”",
+        "name:ro": "Grup Școlar Transporturi Auto „Henri Coadndă”",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 449876341,
+      "lat": 46.3844298,
+      "lon": 21.3102064,
+      "tags": {
+        "addr:city": "Macea",
+        "addr:housename": "Castelul Cernovici",
+        "addr:postcode": "317210",
+        "alt_name": "Castelul Csernovics",
+        "amenity": "university",
+        "historic": "castle",
+        "name": "Castelul Cernovici - Universitatea de Vest „Vasile Goldiș”",
+        "wikidata": "Q12723617"
+      }
+    },
+    {
+      "type": "node",
+      "id": 472379247,
+      "lat": 46.3405572,
+      "lon": 21.3073359,
+      "tags": {
+        "addr:city": "Curtici",
+        "addr:country": "RO",
+        "addr:street": "Strada Revoluției",
+        "amenity": "school",
+        "name": "Grupul Școlar „Ion Creangă” - clădirea 1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 591581826,
+      "lat": 46.3713931,
+      "lon": 22.1276586,
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "Grup Școlar Sebiș"
+      }
+    },
+    {
+      "type": "node",
+      "id": 599200871,
+      "lat": 46.1694457,
+      "lon": 21.3127172,
+      "tags": {
+        "addr:street": "Strada Gheorghe Barițiu",
+        "amenity": "school",
+        "education": "school",
+        "name": "Școala populară de arte"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1590368248,
+      "lat": 46.0875436,
+      "lon": 21.6925107,
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "Grădinița cu program normal nr. 2"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1731181823,
+      "lat": 46.0925456,
+      "lon": 21.6932179,
+      "tags": {
+        "amenity": "school",
+        "name": "Atanasie Marienescu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1769846305,
+      "lat": 46.0930011,
+      "lon": 21.6983671,
+      "tags": {
+        "amenity": "school",
+        "name": "Grupul Școlar Atanasie Marienescu clasele I-IV"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1769846309,
+      "lat": 46.0932101,
+      "lon": 21.6945466,
+      "tags": {
+        "amenity": "school",
+        "name": "Grupul Școlar Sever Bocu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2305508156,
+      "lat": 46.1679241,
+      "lon": 21.3117068,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Strada Academia Teologică",
+        "building": "school",
+        "building:levels": "2",
+        "name": "Facultatea de Teologie Ilarion V. Felea"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2949733722,
+      "lat": 46.5223475,
+      "lon": 21.5186874,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "Strada Oituz",
+        "amenity": "school",
+        "check_date": "2023-08-15",
+        "name": "Liceul Teoretic \"Mihai Veliciu\"",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2949733726,
+      "lat": 46.5156735,
+      "lon": 21.5107856,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2949733727,
+      "lat": 46.5219784,
+      "lon": 21.5120677,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2949733730,
+      "lat": 46.5216831,
+      "lon": 21.5272383,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4191310390,
+      "lat": 46.0705769,
+      "lon": 21.5549525,
+      "tags": {
+        "addr:housenumber": "518",
+        "addr:street": "Strada Principală",
+        "amenity": "school",
+        "email": "iontekus",
+        "internet_access": "wlan",
+        "name": "Școala Zăbrani"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4573224443,
+      "lat": 46.3058934,
+      "lon": 22.524428,
+      "tags": {
+        "amenity": "school",
+        "name": "Școala din Vârfurile",
+        "name:ro": "Școala din Vârfurile"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4576290092,
+      "lat": 46.1749859,
+      "lon": 21.3188875,
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Universitatea Aurel Vlaicu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5475655441,
+      "lat": 46.0061961,
+      "lon": 22.1572516,
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Primară Vărădia de Mureș"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5475655442,
+      "lat": 46.0022313,
+      "lon": 22.1617103,
+      "tags": {
+        "amenity": "school",
+        "name": "Centrul Școlar din Vărădia de Mureș"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6104313745,
+      "lat": 46.1573805,
+      "lon": 21.3215664,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Calea Timișorii",
+        "amenity": "kindergarten",
+        "name": "Gradinita",
+        "opening_hours": "Mo-Fr 08:00-16:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6408530503,
+      "lat": 46.6224576,
+      "lon": 21.7762607,
+      "tags": {
+        "addr:city": "Apateu",
+        "addr:postcode": "317010",
+        "amenity": "school",
+        "name": "Școala Generală „Gheorghe Popovici” Apateu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410993892,
+      "lat": 46.4723096,
+      "lon": 22.0805168,
+      "tags": {
+        "addr:city": "Nermiș",
+        "addr:postcode": "317018",
+        "addr:street": "Strada Principală Nermiș",
+        "amenity": "school",
+        "name": "Școala Generală Nermiș"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6579692686,
+      "lat": 46.1569947,
+      "lon": 21.3216229,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Calea Timișorii",
+        "amenity": "school",
+        "email": "nuare@nuare.ro",
+        "fax": "(+40) 749146904",
+        "name": "Grădinița PP \"Toy Story\"",
+        "phone": "(+40) 749146904",
+        "reviewed": "no",
+        "school_type": "Unitate de învăţământ"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6579692687,
+      "lat": 46.165022,
+      "lon": 21.318533,
+      "tags": {
+        "addr:street": "MUCIUS SCAEVOLA NR. 9",
+        "amenity": "school",
+        "email": "ccd_arad@yahoo.com",
+        "fax": "(+40) 257281077",
+        "name": "CASA CORPULUI DIDACTIC \"ALEXANDRU GAVRA\" ARAD",
+        "phone": "(+40) 257281077",
+        "reviewed": "no",
+        "school_type": "Casa corpului didactic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6579694792,
+      "lat": 46.1999437,
+      "lon": 21.2911827,
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:postcode": "310377",
+        "addr:street": "Predeal",
+        "amenity": "school",
+        "email": "gradinita_pp16@yahoo.com",
+        "fax": "(+40) 357425100",
+        "name": "Grădinița PP \"Grădinița Prieteniei\"",
+        "phone": "(+40) 257349939",
+        "reviewed": "no",
+        "school_type": "Unitate de învăţământ"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6579694794,
+      "lat": 46.2665704,
+      "lon": 22.5944711,
+      "tags": {
+        "addr:postcode": "317160",
+        "addr:street": "PRIMĂRIEI NR. 8",
+        "amenity": "school",
+        "email": "scoala.halmagiu@yahoo.com",
+        "fax": "(+40) 257319259",
+        "name": "LICEUL TEHNOLOGIC \"MOGA VOIEVOD\" HĂLMAGIU",
+        "phone": "(+40) 257319109",
+        "reviewed": "no",
+        "school_type": "Unitate de învăţământ"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6579694795,
+      "lat": 46.202396,
+      "lon": 21.2978789,
+      "tags": {
+        "addr:housenumber": "89A",
+        "addr:street": "Strada Poetului",
+        "amenity": "school",
+        "email": "scoalnr11_nbalcescu@yahoo.com",
+        "fax": "(+40) 257349404",
+        "name": "Școala Gimnazială \"Nicolae Bălcescu\"",
+        "phone": "(+40) 257349404",
+        "reviewed": "no",
+        "school_type": "Unitate de învăţământ"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8564269717,
+      "lat": 46.2035945,
+      "lon": 21.2837197,
+      "tags": {
+        "addr:street": "Strada Codrului",
+        "amenity": "school",
+        "name": "Liceul cu program sportiv"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8564444217,
+      "lat": 46.2047822,
+      "lon": 21.2695981,
+      "tags": {
+        "addr:housenumber": "22",
+        "addr:street": "Strada Nouă",
+        "amenity": "school",
+        "name": "Leisure garden"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8582812018,
+      "lat": 46.1955223,
+      "lon": 21.3021293,
+      "tags": {
+        "amenity": "school",
+        "name": "ifptr"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8659075317,
+      "lat": 46.1917979,
+      "lon": 21.3061878,
+      "tags": {
+        "addr:housenumber": "9",
+        "addr:street": "Strada Constantin Brâncoveanu",
+        "amenity": "kindergarten",
+        "name": "Licurici"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8714772217,
+      "lat": 46.1848547,
+      "lon": 21.3325377,
+      "tags": {
+        "addr:housenumber": "39",
+        "addr:street": "Strada Ardealului",
+        "amenity": "school",
+        "name": "Octopus Kids after school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8942686974,
+      "lat": 46.2547545,
+      "lon": 21.3839234,
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Primară Zimandcuz"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8942686975,
+      "lat": 46.2548194,
+      "lon": 21.3834795,
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Primară Zimandcuz"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10860221912,
+      "lat": 46.2080095,
+      "lon": 21.4615832,
+      "tags": {
+        "amenity": "kindergarten",
+        "check_date": "2023-05-01",
+        "name": "Gradinita Horia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11116189159,
+      "lat": 46.4459504,
+      "lon": 21.5618865,
+      "tags": {
+        "amenity": "kindergarten",
+        "check_date": "2023-08-15"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11116189160,
+      "lat": 46.4462031,
+      "lon": 21.5624353,
+      "tags": {
+        "amenity": "school",
+        "check_date": "2023-08-15"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11603127884,
+      "lat": 46.3753992,
+      "lon": 21.3131942,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11603127885,
+      "lat": 46.3805437,
+      "lon": 21.3141021,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13343115739,
+      "lat": 46.2325063,
+      "lon": 20.9071352,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13690883684,
+      "lat": 46.1925389,
+      "lon": 21.2846547,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "3",
+        "addr:street": "Strada Independenței",
+        "amenity": "school",
+        "education": "school",
+        "name": "Scoala Gimnaziala Nr. 9",
+        "phone": "+40 257 244 372"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13690883695,
+      "lat": 46.192416,
+      "lon": 21.2857923,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "3",
+        "addr:postcode": "310465",
+        "addr:street": "Strada Independenței",
+        "amenity": "school",
+        "education": "school",
+        "grades": "9-12",
+        "name": "Liceul cu Program Sportiv Arad",
+        "website": "https://www.lpsarad.ro/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13743600801,
+      "lat": 46.1844938,
+      "lon": 21.324054,
+      "tags": {
+        "amenity": "school",
+        "check_date": "2026-04-20",
+        "education": "school",
+        "name": "Colegiul de Arte ,,Sabin Drăgoi\""
+      }
+    },
+    {
+      "type": "node",
+      "id": 13745154502,
+      "lat": 46.1841977,
+      "lon": 21.3255485,
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:postcode": "310317",
+        "addr:street": "Piața Academician Caius Iacob",
+        "amenity": "school",
+        "check_date": "2026-04-20",
+        "check_date:opening_hours": "2026-04-20",
+        "education": "school",
+        "name": "Liceul Tehnologic de Electronică și Automatizări „Caius Iacob”",
+        "opening_hours": "Mo-Fr 08:00-16:00",
+        "phone": "+40 257 212 383",
+        "website": "http://liceulcfrarad.ro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13745160308,
+      "lat": 46.174514,
+      "lon": 21.3197094,
+      "tags": {
+        "addr:street": "Piața George Enescu",
+        "amenity": "school",
+        "check_date": "2026-04-20",
+        "education": "school",
+        "name": "Colegiul Economic Arad",
+        "phone": "+40 257 281 529",
+        "website": "https://colecoarad.ro/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14244642707,
+      "lat": 46.1808666,
+      "lon": 21.3197217,
+      "tags": {
+        "addr:city": "Arad",
+        "addr:postcode": "310009",
+        "addr:street": "Strada Mircea Stănescu",
+        "amenity": "kindergarten",
+        "education": "kindergarten",
+        "mobile": "+40 0792 489 694",
+        "name": "Kinder Club Arad"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14283173095,
+      "lat": 46.0937398,
+      "lon": 21.6849789,
+      "tags": {
+        "addr:city": "Lipova",
+        "addr:housenumber": "23",
+        "addr:postcode": "315400",
+        "addr:street": "Detașamentul Păuliș",
+        "amenity": "school",
+        "education": "school",
+        "grades": "5-8",
+        "name": "Școala Gimnazială Radna",
+        "website": "https://www.lamlipova.ro/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14283173108,
+      "lat": 46.0930752,
+      "lon": 21.6845563,
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "grades": "1-4",
+        "name": "Școala Primară Radna",
+        "website": "https://www.lamlipova.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 34218714,
+      "center": {
+        "lat": 46.17363201578947,
+        "lon": 21.319667663157897
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 44043854,
+      "center": {
+        "lat": 46.18350950000001,
+        "lon": 21.328010021428575
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "22",
+        "addr:postcode": "310171",
+        "addr:street": "Strada Udrea",
+        "amenity": "school",
+        "check_date": "2026-04-20",
+        "education": "school",
+        "name": "Liceul Național de Informatică - Corp B",
+        "old_name": "Școala Gimnazială Nr. 5",
+        "operator": "Inspectoratul Școlar Judeean Arad",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "way",
+      "id": 44298456,
+      "center": {
+        "lat": 46.18230058666666,
+        "lon": 21.329480859999997
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "39-41",
+        "addr:postcode": "310169",
+        "addr:street": "Calea Iuliu Maniu",
+        "building": "school",
+        "building:levels": "3",
+        "name": "Corp A"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93513275,
+      "center": {
+        "lat": 46.1689503,
+        "lon": 21.321001661538464
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93513285,
+      "center": {
+        "lat": 46.169000328571435,
+        "lon": 21.321220371428574
+      },
+      "tags": {
+        "building": "school",
+        "sport": "gymnastics"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100119279,
+      "center": {
+        "lat": 46.183394220000004,
+        "lon": 21.327163759999998
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100119281,
+      "center": {
+        "lat": 46.1834004923077,
+        "lon": 21.327980476923077
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "3",
+        "name": "Corp B"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100119289,
+      "center": {
+        "lat": 46.18354426,
+        "lon": 21.32835632
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 106237676,
+      "center": {
+        "lat": 46.1841802,
+        "lon": 21.323909379999996
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 106237678,
+      "center": {
+        "lat": 46.18456545714286,
+        "lon": 21.3239747
+      },
+      "tags": {
+        "building": "school",
+        "name": "Liceul de Artă Sabin Drăgoi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 131607820,
+      "center": {
+        "lat": 46.163869848,
+        "lon": 21.321576968000002
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2-4",
+        "addr:postcode": "310106",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Patria",
+        "building": "kindergarten",
+        "name": "Grădiniț cu program prelungit nr. 14"
+      }
+    },
+    {
+      "type": "way",
+      "id": 161883851,
+      "center": {
+        "lat": 46.22546705714286,
+        "lon": 21.387324685714283
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 171222664,
+      "center": {
+        "lat": 46.17644754545454,
+        "lon": 21.34354445909091
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Strada Elena Drăgoi",
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 200647335,
+      "center": {
+        "lat": 46.17647284444444,
+        "lon": 21.35985627777778
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "Nr.248 Grădinița PP 18 Căsuța Piticilor",
+        "addr:postcode": "310267",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Radnei",
+        "building": "kindergarten",
+        "name": "Grădinița PP 18 Căsuța Piticilor"
+      }
+    },
+    {
+      "type": "way",
+      "id": 218778066,
+      "center": {
+        "lat": 46.15494939999999,
+        "lon": 21.31748487272727
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "Nr.19 Liceul Teoretic Adam Müller Guttenbrunn",
+        "addr:postcode": "310245",
+        "addr:postcode:source": "Date%20de%20la%20Po%C8%99ta%20Rom%C3%A2n%C4%83,%20publicate%20sub%20Licen%C8%9Ba%20pentru%20Guvernare%20Deschis%C4%83%20v1.0%20la%20http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Posada",
+        "building": "school",
+        "building:levels": "2",
+        "name": "Liceul Teoretic Adam Müller Guttenbrunn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 219736269,
+      "center": {
+        "lat": 45.974578539999996,
+        "lon": 22.220711846666667
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "yes",
+        "name": "școala căpălnaș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 219825696,
+      "center": {
+        "lat": 45.96513945454546,
+        "lon": 22.1669404
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "yes",
+        "name": "Școala Generală"
+      }
+    },
+    {
+      "type": "way",
+      "id": 219901968,
+      "center": {
+        "lat": 46.01678772857143,
+        "lon": 22.038574
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "yes",
+        "name": "școala bata"
+      }
+    },
+    {
+      "type": "way",
+      "id": 220433833,
+      "center": {
+        "lat": 46.14053182857142,
+        "lon": 21.343550999999998
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 220433836,
+      "center": {
+        "lat": 46.14048604,
+        "lon": 21.344022440000003
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 221471091,
+      "center": {
+        "lat": 46.17774639,
+        "lon": 21.324271760000002
+      },
+      "tags": {
+        "building": "school",
+        "name": "Universitatea de Vest Vasile Goldiș - Facultatea de Educație Fizică și Sport"
+      }
+    },
+    {
+      "type": "way",
+      "id": 231001405,
+      "center": {
+        "lat": 46.00987387777778,
+        "lon": 22.23340143333333
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 278769149,
+      "center": {
+        "lat": 46.38054227692308,
+        "lon": 21.314041046153843
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala Privată Speranța"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290714340,
+      "center": {
+        "lat": 46.20337920000001,
+        "lon": 22.30508872
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "school",
+        "name": "Școala Mădrigești"
+      }
+    },
+    {
+      "type": "way",
+      "id": 296591694,
+      "center": {
+        "lat": 46.181183781818184,
+        "lon": 21.32696656363636
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housename": "Liceul Baptist Alexa Popovici",
+        "addr:housenumber": "3-19",
+        "addr:postcode": "310177",
+        "addr:street": "Strada Doctor Ioan Suciu",
+        "building": "school",
+        "building:levels": "3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 302395332,
+      "center": {
+        "lat": 46.46386825454545,
+        "lon": 21.703619518181814
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 303428219,
+      "center": {
+        "lat": 46.17781672222222,
+        "lon": 21.34982623333333
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:postcode": "310459",
+        "addr:street": "Strada Mioriței",
+        "building": "school",
+        "building:levels": "3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 303437316,
+      "center": {
+        "lat": 46.17873101111112,
+        "lon": 21.352624655555555
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "143",
+        "addr:postcode": "310291",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Radnei",
+        "building": "kindergarten",
+        "name": "Grădinița PP 7 „Căsuța Piticilor”"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304037192,
+      "center": {
+        "lat": 46.19543045384615,
+        "lon": 21.302934692307687
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2-4",
+        "addr:postcode": "310346",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Fulgerului",
+        "building": "school",
+        "building:levels": "2",
+        "layer": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304171330,
+      "center": {
+        "lat": 46.19012086874999,
+        "lon": 21.3312405
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "Școala Generală Aron Cotruș",
+        "addr:postcode": "310210",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Petru Rareș",
+        "amenity": "school",
+        "education": "school",
+        "landuse": "education",
+        "name": "Școala Generală Nr. 13 „Aron Cotruș”",
+        "website": "https://aroncotrus.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304171344,
+      "center": {
+        "lat": 46.19002550526316,
+        "lon": 21.33111912631579
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304171474,
+      "center": {
+        "lat": 46.19378687916668,
+        "lon": 21.331722137499998
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304172884,
+      "center": {
+        "lat": 46.18737264736842,
+        "lon": 21.330054584210522
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304518556,
+      "center": {
+        "lat": 46.17677937142856,
+        "lon": 21.34355376428572
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universitatea Aurel Vlaicu din Arad",
+        "name:en": "University Aurel Vlaicu of Arad",
+        "name:hu": "Aurel Vlaicu Aradi Egyetem",
+        "name:ro": "Universitatea Aurel Vlaicu din Arad",
+        "phone": "+40 257 283 010",
+        "short_name": "UAV Arad",
+        "website": "https://uav.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304647609,
+      "center": {
+        "lat": 46.18103411111112,
+        "lon": 21.2953838
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "86",
+        "addr:postcode": "310045",
+        "addr:street": "Strada Liviu Rebreanu",
+        "building": "university",
+        "name": "U.V. Vasile Goldiș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304647902,
+      "center": {
+        "lat": 46.18078492307692,
+        "lon": 21.296193523076926
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "86",
+        "addr:postcode": "310045",
+        "addr:street": "Strada Liviu Rebreanu",
+        "building": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304691987,
+      "center": {
+        "lat": 46.20247998181818,
+        "lon": 21.297312699999996
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "89A",
+        "addr:postcode": "310368",
+        "addr:street": "Strada Poetului",
+        "building": "school",
+        "building:levels": "1",
+        "layer": "1",
+        "name": "Școala Gimnazială Nicolae Bălcescu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304692158,
+      "center": {
+        "lat": 46.20228673333333,
+        "lon": 21.2972725
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "89A",
+        "addr:postcode": "310368",
+        "addr:street": "Strada Poetului",
+        "amenity": "school",
+        "layer": "1",
+        "name": "Școala Gimnazială nr. 11 Nicolae Bălcescu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304692674,
+      "center": {
+        "lat": 46.201913773076924,
+        "lon": 21.29653335384615
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Aleea Saturn",
+        "building": "kindergarten",
+        "building:levels": "1",
+        "name": "Grădinița cu program prelungit nr. 17 Palatul Copiilor"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304702007,
+      "center": {
+        "lat": 46.19951744,
+        "lon": 21.30150398
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universitatea Aurel Vlaicu Cămine Studențești"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304950926,
+      "center": {
+        "lat": 46.19209427692307,
+        "lon": 21.304153253846152
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2B",
+        "addr:postcode": "310422",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Vasile Conta",
+        "building": "school",
+        "name": "Școala Generală 18 ”Avram Iancu”"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304950928,
+      "center": {
+        "lat": 46.19220940000001,
+        "lon": 21.304897639999997
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2B",
+        "addr:postcode": "310422",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Vasile Conta",
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304950939,
+      "center": {
+        "lat": 46.192282476923076,
+        "lon": 21.30425852307692
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2B",
+        "addr:postcode": "310422",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Vasile Conta",
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304950952,
+      "center": {
+        "lat": 46.191900399999994,
+        "lon": 21.30401926
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2B",
+        "addr:postcode": "310422",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Vasile Conta",
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304960879,
+      "center": {
+        "lat": 46.19759308695653,
+        "lon": 21.295195882608695
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "3",
+        "addr:postcode": "310382",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Hațeg",
+        "building": "school",
+        "building:levels": "2",
+        "name": "Școala Gimnazială nr. 6"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304987780,
+      "center": {
+        "lat": 46.18033051578947,
+        "lon": 21.29999087894737
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "18-22",
+        "addr:postcode": "310040",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Episcop Roman Ciorogariu",
+        "building": "school",
+        "name": "Școala Gimnazială „Iosif Moldovan”"
+      }
+    },
+    {
+      "type": "way",
+      "id": 304987819,
+      "center": {
+        "lat": 46.16628985333333,
+        "lon": 21.293614979999997
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "48-50",
+        "addr:postcode": "310058",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Condurașilor",
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305094886,
+      "center": {
+        "lat": 46.18467452,
+        "lon": 21.309025480000003
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "1-3",
+        "addr:postcode": "310158",
+        "addr:street": "Calea Victoriei",
+        "building": "school",
+        "name": "Colegiul Național Vasile Goldiș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305094998,
+      "center": {
+        "lat": 46.185276344444446,
+        "lon": 21.3083446
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "1-3",
+        "addr:postcode": "310158",
+        "addr:street": "Calea Victoriei",
+        "building": "school",
+        "building:levels": "3",
+        "name": "Școala Postliceală Sanitară"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305095212,
+      "center": {
+        "lat": 46.18527745555556,
+        "lon": 21.307789777777774
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "1",
+        "addr:postcode": "310396",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Feleacului",
+        "building": "school",
+        "building:levels": "2",
+        "name": "Liceul Teoretic Vasile Goldiș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305095238,
+      "center": {
+        "lat": 46.18476270000001,
+        "lon": 21.307603045454545
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "1",
+        "addr:postcode": "310396",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Feleacului",
+        "building": "university",
+        "building:levels": "3",
+        "name": "Facultatea de Medicină, Farmacie și Medicină Dentară V. Goldiș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305095258,
+      "center": {
+        "lat": 46.18474356666667,
+        "lon": 21.307161388888893
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "1",
+        "addr:postcode": "310396",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Feleacului",
+        "building": "university",
+        "building:levels": "3",
+        "name": "Facultatea de Medicină, Farmacie și Medicină Dentară V. Goldiș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305095302,
+      "center": {
+        "lat": 46.18489926923076,
+        "lon": 21.308731607692305
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "1-3",
+        "addr:postcode": "310158",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Victoriei",
+        "building": "school",
+        "building:levels": "3",
+        "name": "Liceul Teoretic Vasile Goldiș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305308161,
+      "center": {
+        "lat": 46.19415763999999,
+        "lon": 21.298561319999997
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Aleea Tomis",
+        "building": "kindergarten",
+        "building:levels": "2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305309152,
+      "center": {
+        "lat": 46.19408455714286,
+        "lon": 21.298614385714284
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Aleea Tomis",
+        "amenity": "kindergarten",
+        "name": "Grădinița cu program prelungit nr. 10 Furnicuța"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305372557,
+      "center": {
+        "lat": 46.19983446,
+        "lon": 21.2922699
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305372692,
+      "center": {
+        "lat": 46.20043966000001,
+        "lon": 21.292581419999998
+      },
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305377426,
+      "center": {
+        "lat": 46.183073945454545,
+        "lon": 21.317886836363634
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "33-37",
+        "addr:postcode": "310004",
+        "addr:street": "Strada Ștefan Augustin Doinaș",
+        "building": "school",
+        "building:levels": "2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305377693,
+      "center": {
+        "lat": 46.183110462500004,
+        "lon": 21.317942962500002
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "33-37",
+        "addr:postcode": "310004",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Ștefan Augustin Doinaș",
+        "amenity": "school",
+        "name": "Școala Gimnazială nr. 4 Ioan Slavici"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305828704,
+      "center": {
+        "lat": 46.1741652,
+        "lon": 21.310472174999997
+      },
+      "tags": {
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305828769,
+      "center": {
+        "lat": 46.174385060000006,
+        "lon": 21.310103899999998
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305828799,
+      "center": {
+        "lat": 46.174195045454546,
+        "lon": 21.31028603636363
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "40-42",
+        "addr:postcode": "310084",
+        "addr:street": "Strada Episcopiei",
+        "amenity": "school",
+        "email": "scoalagenerala_mihaieminescu@yahoo.com",
+        "grades": "0-8",
+        "name": "Școala Gimnazială 1 ”Mihai Eminescu”",
+        "website": "https://www.gimnazialamihaieminescuarad.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 306093949,
+      "center": {
+        "lat": 46.17276642857143,
+        "lon": 21.37058717142857
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "288A",
+        "addr:postcode": "310318",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Radnei",
+        "building": "kindergarten",
+        "name": "Paradisul Copiilor"
+      }
+    },
+    {
+      "type": "way",
+      "id": 306489849,
+      "center": {
+        "lat": 46.17182841666667,
+        "lon": 21.312386016666665
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "15",
+        "addr:postcode": "310086",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Mihai Eminescu",
+        "building": "university",
+        "building:levels": "4",
+        "name": "UVVG Facultatea de Științe Economice"
+      }
+    },
+    {
+      "type": "way",
+      "id": 306604125,
+      "center": {
+        "lat": 46.17376071818182,
+        "lon": 21.313430927272726
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "Nr.15 Colegiul Tehnologic de Industrie Alimentară",
+        "addr:postcode": "310023",
+        "addr:street": "Strada Lucian Blaga",
+        "building": "college",
+        "building:levels": "2",
+        "name": "Colegiul Tehnologic de Industrie Alimentară",
+        "operator": "Ministerul Educației"
+      }
+    },
+    {
+      "type": "way",
+      "id": 308841813,
+      "center": {
+        "lat": 46.203824299999994,
+        "lon": 21.344495619999996
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "8",
+        "addr:postcode": "310216",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Zimandului",
+        "building": "university",
+        "building:levels": "2",
+        "name": "UAV Facultatea de Design"
+      }
+    },
+    {
+      "type": "way",
+      "id": 308841919,
+      "center": {
+        "lat": 46.203852659999995,
+        "lon": 21.34426724
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "8",
+        "addr:postcode": "310216",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Zimandului",
+        "amenity": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 309215428,
+      "center": {
+        "lat": 46.17782396249999,
+        "lon": 21.350029325
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "amenity": "school",
+        "name": "Școala Gimnazială nr. 12 Regina Maria"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310073728,
+      "center": {
+        "lat": 46.18129569,
+        "lon": 21.32705231
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Strada Doctor Ioan Suciu",
+        "amenity": "school",
+        "isced:level": "3",
+        "name": "Liceul Baptist Alexa Popovici",
+        "operator:type": "religious"
+      }
+    },
+    {
+      "type": "way",
+      "id": 311442007,
+      "center": {
+        "lat": 46.168863188,
+        "lon": 21.319986251999993
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "31A",
+        "addr:postcode": "310124",
+        "addr:street": "Bulevardul Decebal",
+        "building": "school",
+        "building:levels": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 311576775,
+      "center": {
+        "lat": 46.18007864,
+        "lon": 21.295171040000003
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "U.V.V.G Facultatea de Științe ale Naturii Inginerie și Informatică 91-93",
+        "addr:postcode": "310414",
+        "addr:street": "Strada Liviu Rebreanu",
+        "building": "university",
+        "name": "U.V.V.G Facultatea de Științe ale Naturii Inginerie și Informatică"
+      }
+    },
+    {
+      "type": "way",
+      "id": 312562572,
+      "center": {
+        "lat": 46.17644891818182,
+        "lon": 21.359755381818186
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Calea Radnei",
+        "amenity": "kindergarten",
+        "check_date": "2025-08-28",
+        "name": "Grădinița Căsuța Piticilor"
+      }
+    },
+    {
+      "type": "way",
+      "id": 312565510,
+      "center": {
+        "lat": 46.180195281818186,
+        "lon": 21.34299260909091
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "Nr.120 Grădinița PN 18 corp A",
+        "addr:postcode": "310267",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Calea Radnei",
+        "building": "kindergarten",
+        "name": "Grădinița PN 18 corp A"
+      }
+    },
+    {
+      "type": "way",
+      "id": 316348208,
+      "center": {
+        "lat": 46.169053,
+        "lon": 21.300362625
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "Nr.21-25 Liceul Baptist Cl. I-VIII",
+        "addr:street": "Strada Dorobanților",
+        "building": "school",
+        "building:levels": "1",
+        "name": "Liceul Baptist Cl. I-VIII"
+      }
+    },
+    {
+      "type": "way",
+      "id": 323626057,
+      "center": {
+        "lat": 46.196803472,
+        "lon": 21.319516296000003
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:street": "Strada Rarău",
+        "building": "kindergarten",
+        "building:levels": "1",
+        "name": "Grădinița PS Nr.2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 329492560,
+      "center": {
+        "lat": 46.27571052857143,
+        "lon": 21.170771914285712
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 329492572,
+      "center": {
+        "lat": 46.27579704285715,
+        "lon": 21.170721714285715
+      },
+      "tags": {
+        "addr:city": "Variașu Mare",
+        "addr:postcode": "317201",
+        "amenity": "school",
+        "name": "Școala Variașu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 329685856,
+      "center": {
+        "lat": 46.340868,
+        "lon": 21.305509557142862
+      },
+      "tags": {
+        "addr:city": "Curtici",
+        "addr:postcode": "315200",
+        "building": "kindergarten",
+        "name": "Grădinița Veseliei"
+      }
+    },
+    {
+      "type": "way",
+      "id": 329685862,
+      "center": {
+        "lat": 46.340566800000005,
+        "lon": 21.307130405263155
+      },
+      "tags": {
+        "addr:city": "Curtici",
+        "addr:housenumber": "37",
+        "addr:postcode": "315200",
+        "addr:street": "Strada Revoluției",
+        "building": "school",
+        "name": "Liceul Tehnologic \"Ion Creangă\" Curtici"
+      }
+    },
+    {
+      "type": "way",
+      "id": 329685864,
+      "center": {
+        "lat": 46.34097581578948,
+        "lon": 21.306406057894737
+      },
+      "tags": {
+        "addr:city": "Curtici",
+        "addr:housenumber": "37",
+        "addr:postcode": "315200",
+        "addr:street": "Strada Revoluției",
+        "amenity": "school",
+        "name": "Liceul Tehnologic \"Ion Creangă\" Curtici"
+      }
+    },
+    {
+      "type": "way",
+      "id": 330890339,
+      "center": {
+        "lat": 46.18093449333333,
+        "lon": 21.346122226666658
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "8",
+        "addr:postcode": "310270",
+        "addr:street": "Strada Fabius",
+        "amenity": "kindergarten",
+        "building": "kindergarten",
+        "name": "Grădinița PN 18 corp B"
+      }
+    },
+    {
+      "type": "way",
+      "id": 331367797,
+      "center": {
+        "lat": 46.4135213,
+        "lon": 21.603273180000002
+      },
+      "tags": {
+        "addr:city": "Sintea Mică",
+        "addr:housenumber": "85A",
+        "addr:postcode": "317226",
+        "building": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 331881280,
+      "center": {
+        "lat": 46.313081485714285,
+        "lon": 21.209904114285717
+      },
+      "tags": {
+        "addr:city": "Iratoșu",
+        "addr:housenumber": "414",
+        "addr:postcode": "317200",
+        "building": "kindergarten",
+        "name": "Gradinita Iratoșu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 331897242,
+      "center": {
+        "lat": 46.3130322,
+        "lon": 21.210115899999998
+      },
+      "tags": {
+        "addr:city": "Iratoșu",
+        "addr:housenumber": "414",
+        "addr:postcode": "317200",
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 331897243,
+      "center": {
+        "lat": 46.31344425714286,
+        "lon": 21.20979737142857
+      },
+      "tags": {
+        "addr:city": "Iratoșu",
+        "addr:housenumber": "415",
+        "addr:postcode": "317200",
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 332166922,
+      "center": {
+        "lat": 46.17890195714285,
+        "lon": 21.352821799999997
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 332463425,
+      "center": {
+        "lat": 46.31918742222223,
+        "lon": 21.20645341111111
+      },
+      "tags": {
+        "addr:city": "Iratoșu",
+        "addr:housenumber": "547",
+        "addr:postcode": "317200",
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 343210348,
+      "center": {
+        "lat": 46.171317650000006,
+        "lon": 21.306630825000003
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "22",
+        "addr:postcode": "310085",
+        "addr:street": "Strada Vârful cu dor",
+        "building": "school",
+        "building:levels": "2",
+        "name": "Liceul Csiky Gergely"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436952157,
+      "center": {
+        "lat": 46.22170095714285,
+        "lon": 21.386421728571428
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala Generală Livada clasele I - IV"
+      }
+    },
+    {
+      "type": "way",
+      "id": 463541036,
+      "center": {
+        "lat": 46.14617391428572,
+        "lon": 21.479965999999997
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469658104,
+      "center": {
+        "lat": 46.42530252222222,
+        "lon": 21.83424758888889
+      },
+      "tags": {
+        "addr:city": "Ineu",
+        "addr:street": "Calea Republicii",
+        "amenity": "school",
+        "name": "Școala Generală"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472284151,
+      "center": {
+        "lat": 46.18502225714286,
+        "lon": 21.308195842857145
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472289436,
+      "center": {
+        "lat": 46.195495031250005,
+        "lon": 21.30312599375
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Gimnazială nr. 21 Aurel Vlaicu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472291996,
+      "center": {
+        "lat": 46.16641305625,
+        "lon": 21.293807700000002
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:postcode": "310046",
+        "amenity": "school",
+        "email": "generala_3_arad@yahoo.com",
+        "name": "Școala Gimnazială nr. 3 Iosif Moldovan",
+        "website": "https://scoalaiosifmoldovan.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472291997,
+      "center": {
+        "lat": 46.166121079999996,
+        "lon": 21.307052300000002
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472291998,
+      "center": {
+        "lat": 46.16761148,
+        "lon": 21.313973899999997
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Gimnazială nr. 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472291999,
+      "center": {
+        "lat": 46.16758286666666,
+        "lon": 21.314280866666667
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472292000,
+      "center": {
+        "lat": 46.168941825000005,
+        "lon": 21.320058187500003
+      },
+      "tags": {
+        "amenity": "school",
+        "check_date": "2026-02-06",
+        "name": "Grup Școlar Industrial Aurel Vlaicu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 472292001,
+      "center": {
+        "lat": 46.169170779999995,
+        "lon": 21.321235050000002
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Colegiul Național „Preparandia - Dimitrie Țichindeal”",
+        "name:hu": "Aradi tanítóképző"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477150572,
+      "center": {
+        "lat": 46.16684737142857,
+        "lon": 21.594098499999998
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "2",
+        "name": "Școala Primară Cuvin"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477150573,
+      "center": {
+        "lat": 46.16675789999999,
+        "lon": 21.594181444444448
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Primară Cuvin"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477150575,
+      "center": {
+        "lat": 46.16706476,
+        "lon": 21.59361586
+      },
+      "tags": {
+        "building": "kindergarten",
+        "building:levels": "1",
+        "name": "Gradinita Cuvin"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477150577,
+      "center": {
+        "lat": 46.1570188625,
+        "lon": 21.5940970125
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477150578,
+      "center": {
+        "lat": 46.15682656,
+        "lon": 21.59455944
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477150579,
+      "center": {
+        "lat": 46.15721857894737,
+        "lon": 21.594255363157895
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Generală Ghioroc"
+      }
+    },
+    {
+      "type": "way",
+      "id": 479431874,
+      "center": {
+        "lat": 46.180430547619046,
+        "lon": 21.29913495238095
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "17",
+        "addr:street": "Strada Griviței",
+        "building": "kindergarten",
+        "name": "Gradinita PP19 Piticot"
+      }
+    },
+    {
+      "type": "way",
+      "id": 516980558,
+      "center": {
+        "lat": 46.406194899999996,
+        "lon": 22.245037621428573
+      },
+      "tags": {
+        "addr:city": "Dezna",
+        "addr:housenumber": "64",
+        "addr:postcode": "317110",
+        "addr:street": "Bulevardul Avram Iancu",
+        "amenity": "school",
+        "building": "yes",
+        "building:levels": "1",
+        "education": "school",
+        "isced:level": "2-3",
+        "name": "Școala gimnazială Dezna",
+        "operator": "Ministerul Educației Naționale"
+      }
+    },
+    {
+      "type": "way",
+      "id": 537252157,
+      "center": {
+        "lat": 46.319191020000005,
+        "lon": 21.206263420000003
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 548436401,
+      "center": {
+        "lat": 46.349316876923076,
+        "lon": 21.24189489230769
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 548436403,
+      "center": {
+        "lat": 46.349397357142855,
+        "lon": 21.241862757142858
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Iskola"
+      }
+    },
+    {
+      "type": "way",
+      "id": 684072813,
+      "center": {
+        "lat": 46.28447621428571,
+        "lon": 22.23450454285714
+      },
+      "tags": {
+        "amenity": "school",
+        "education": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 801397621,
+      "center": {
+        "lat": 46.2679407875,
+        "lon": 22.347280225000002
+      },
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "fixme": "might be a sports centre!"
+      }
+    },
+    {
+      "type": "way",
+      "id": 818153911,
+      "center": {
+        "lat": 46.16925992222222,
+        "lon": 20.752678666666668
+      },
+      "tags": {
+        "addr:city": "Nadlac",
+        "addr:housenumber": "2",
+        "addr:postcode": "315500",
+        "addr:street": "Piața Unirii",
+        "building": "school",
+        "building:levels": "2",
+        "name": "Liceul Teoretic „Jozef Gregor Tajovsky\"",
+        "name:sk": "Teoretické lýceum Jozefa Gregora Tajovského"
+      }
+    },
+    {
+      "type": "way",
+      "id": 906693433,
+      "center": {
+        "lat": 46.16593977777778,
+        "lon": 21.307566899999998
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "amenity": "school",
+        "name": "Grupul Școlar de Arte și Meserii Spiru Haret"
+      }
+    },
+    {
+      "type": "way",
+      "id": 947812032,
+      "center": {
+        "lat": 46.027438014285714,
+        "lon": 21.391703699999997
+      },
+      "tags": {
+        "building": "school",
+        "image": "https://lh3.googleusercontent.com/xQEWUUX71OTnajjsg4Yb2X5zu4xw9E8ag-Gf8aSOKsimI1AAGTLw3ghewOD2R1Ts5K9m-1UkxtqGUq21kch38N7z6TX1U4-InRatOP27XYDUOJQP=w1280"
+      }
+    },
+    {
+      "type": "way",
+      "id": 947812033,
+      "center": {
+        "lat": 46.02763357142857,
+        "lon": 21.392457557142855
+      },
+      "tags": {
+        "addr:city": "Fiscut",
+        "addr:postcode": "317313",
+        "building": "school",
+        "image": "https://lh5.googleusercontent.com/YApN0CIChNFI3PZ1QtOvqKR59GOx0U-ysz4BkAmKfZD73VA8w-L6BNSuQc8XAGH9eQoqxV9VWxnHNzSm5rejmWSUfATpUBIKlroDM0UuKt2hddsA=w1280",
+        "name": "Scoala Generală Fiscut"
+      }
+    },
+    {
+      "type": "way",
+      "id": 947886532,
+      "center": {
+        "lat": 46.15484640588235,
+        "lon": 21.322802499999998
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "building": "school",
+        "name": "Liceul Teoretic Adam Muller Guttenbrunn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 947886533,
+      "center": {
+        "lat": 46.155173500000004,
+        "lon": 21.322426963636364
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "29-31",
+        "addr:postcode": "310245",
+        "addr:street": "Calea Timișorii",
+        "building": "school",
+        "image": "https://www.google.com/maps/place/Technology+High+School+%22Iuliu+Moldovan%22/@46.1550593,21.3223339,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipP7N-iNKX_XTNokkw03uZsMog80fvhsx2Xc4aVg!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP7N-iNKX_XTNokkw",
+        "name": "Liceul Tehnologic „Iuliu Moldovan”"
+      }
+    },
+    {
+      "type": "way",
+      "id": 961147990,
+      "center": {
+        "lat": 46.17270975555555,
+        "lon": 21.314545833333334
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "9",
+        "addr:postcode": "310023",
+        "addr:street": "Strada Lucian Blaga",
+        "building": "school",
+        "name": "Colegiul Național ''Preparandia - Dimitrie Țichindeal'' Arad Școală de Aplicație"
+      }
+    },
+    {
+      "type": "way",
+      "id": 965907416,
+      "center": {
+        "lat": 46.254834759999994,
+        "lon": 21.383464980000003
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978216205,
+      "center": {
+        "lat": 46.22544758,
+        "lon": 21.38787874
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 978772583,
+      "center": {
+        "lat": 46.22539571428571,
+        "lon": 21.387467385714285
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1006362430,
+      "center": {
+        "lat": 46.14762906,
+        "lon": 21.465791720000002
+      },
+      "tags": {
+        "building": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1027332630,
+      "center": {
+        "lat": 46.1402731,
+        "lon": 21.5243824
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Generală Sâmbăteni"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1117719328,
+      "center": {
+        "lat": 46.15046763684211,
+        "lon": 21.33520147894737
+      },
+      "tags": {
+        "addr:housenumber": "25",
+        "addr:postcode": "310258",
+        "addr:street": "Strada Pompei",
+        "amenity": "school",
+        "contact:facebook": "LiceulTeologicBaptistArad",
+        "contact:instagram": "p/DCw3jFDtuuJ",
+        "email": "secretariat@ltb-arad.ro",
+        "internet_access": "wlan",
+        "name": "Liceul Teologic Baptist „Alexa Popovici” Arad",
+        "opening_hours": "Mo-Fr 08:00-15:00",
+        "phone": "+40 257 250 751",
+        "website": "https://ltb-arad.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1146834671,
+      "center": {
+        "lat": 46.158347500000005,
+        "lon": 21.32238298888889
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "2",
+        "addr:street": "Strada Memorandumului",
+        "building": "kindergarten",
+        "name": "Grădinița cu program normal Nr. 26"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1150658554,
+      "center": {
+        "lat": 46.17383808,
+        "lon": 21.301168060000002
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Generală Nr. 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1154822223,
+      "center": {
+        "lat": 46.47477371428572,
+        "lon": 21.632047
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1189850148,
+      "center": {
+        "lat": 46.2807619625,
+        "lon": 21.38853141875
+      },
+      "tags": {
+        "building": "kindergarten",
+        "name": "Grădinița Andrei Șaguna"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1225199876,
+      "center": {
+        "lat": 46.29848695454546,
+        "lon": 22.422724645454544
+      },
+      "tags": {
+        "addr:city": "Pleșcuța",
+        "addr:housenumber": "14",
+        "addr:postcode": "317260",
+        "addr:street": "Strada Școlii",
+        "amenity": "school",
+        "building": "school",
+        "building:levels": "2",
+        "grades": "1-8"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1225200150,
+      "center": {
+        "lat": 46.29854944,
+        "lon": 22.42207576
+      },
+      "tags": {
+        "addr:city": "Pleșcuța",
+        "addr:housenumber": "16",
+        "addr:postcode": "317260",
+        "addr:street": "Strada Școlii",
+        "amenity": "kindergarten",
+        "building": "school",
+        "building:levels": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1225207405,
+      "center": {
+        "lat": 46.292666357142856,
+        "lon": 22.401771671428573
+      },
+      "tags": {
+        "addr:city": "Gura Văii",
+        "addr:housenumber": "1",
+        "addr:postcode": "317264",
+        "addr:street": "Strada Școlii",
+        "building": "school",
+        "building:levels": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1225210250,
+      "center": {
+        "lat": 46.28060478888889,
+        "lon": 22.477865177777772
+      },
+      "tags": {
+        "addr:city": "Tălagiu",
+        "addr:housenumber": "96",
+        "addr:postcode": "317267",
+        "addr:street": "Strada Principală",
+        "amenity": "school",
+        "building": "yes",
+        "grades": "1-4"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1225212427,
+      "center": {
+        "lat": 46.25933499999999,
+        "lon": 22.444332511111114
+      },
+      "tags": {
+        "addr:city": "Budești",
+        "addr:housenumber": "4",
+        "addr:postcode": "317262",
+        "addr:street": "Strada Ghioceilor",
+        "amenity": "school",
+        "grades": "1-4"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1226996211,
+      "center": {
+        "lat": 46.18243252222222,
+        "lon": 21.329464
+      },
+      "tags": {
+        "amenity": "school",
+        "check_date": "2026-04-20",
+        "name": "Liceul Național de Informatică - Corp A",
+        "old_name": "Liceul Tehnologic Iuliu Maniu",
+        "operator": "Inspectoratul Școlar Judeean Arad",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1246148868,
+      "center": {
+        "lat": 46.42418803636363,
+        "lon": 21.449638572727274
+      },
+      "tags": {
+        "building": "school",
+        "grades": "1-4",
+        "internet_access": "yes",
+        "name": "Scoala Gimnazială Șimand",
+        "name:en": "Șimand Primary School"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1246148869,
+      "center": {
+        "lat": 46.42931364444444,
+        "lon": 21.453687466666665
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "school",
+        "grades": "5-8",
+        "name": "Școala Generală Șimand",
+        "name:en": "Șimand Secondary School"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1246148884,
+      "center": {
+        "lat": 46.420453859999995,
+        "lon": 21.450108919999998
+      },
+      "tags": {
+        "amenity": "childcare",
+        "building": "kindergarten",
+        "name": "Grădinița Șimand"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1246148887,
+      "center": {
+        "lat": 46.43102595294118,
+        "lon": 21.45824401764706
+      },
+      "tags": {
+        "amenity": "childcare",
+        "building": "kindergarten",
+        "name": "Grădinița Șimand"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1247660284,
+      "center": {
+        "lat": 46.385123709090905,
+        "lon": 21.312408327272728
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "school",
+        "grades": "1-8",
+        "name": "Școala Generală Pavel Covaci Macea"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248245857,
+      "center": {
+        "lat": 46.41712843333333,
+        "lon": 21.346007126666667
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "2",
+        "name": "Școala Generală \"Pavel Covaci\" Macea - Sânmartin"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248245900,
+      "center": {
+        "lat": 46.4156589,
+        "lon": 21.34599114
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248245951,
+      "center": {
+        "lat": 46.375345130769226,
+        "lon": 21.313198276923075
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala Generală \"Pavel Covaci\" Macea"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248251771,
+      "center": {
+        "lat": 46.3852033625,
+        "lon": 21.312645625000002
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Gimnazială \"Pavel Covaci\" Macea"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248251772,
+      "center": {
+        "lat": 46.38050182,
+        "lon": 21.31413268
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248251774,
+      "center": {
+        "lat": 46.375146220000005,
+        "lon": 21.31326324
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248251776,
+      "center": {
+        "lat": 46.41729931428572,
+        "lon": 21.3461676
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248251777,
+      "center": {
+        "lat": 46.4242318,
+        "lon": 21.449329538461537
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1248251778,
+      "center": {
+        "lat": 46.42946965263158,
+        "lon": 21.453384357894734
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1256340000,
+      "center": {
+        "lat": 46.34028165,
+        "lon": 21.3087535625
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Grupul Școlar „Ion Creangă” - Clădirea 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1256340001,
+      "center": {
+        "lat": 46.3403074,
+        "lon": 21.308670366666668
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1256349954,
+      "center": {
+        "lat": 46.343863414285714,
+        "lon": 21.326665957142858
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala Generală Nr. 2 Curtici"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1256349955,
+      "center": {
+        "lat": 46.343866,
+        "lon": 21.32667042857143
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1257573612,
+      "center": {
+        "lat": 46.20859022222223,
+        "lon": 21.46063077777778
+      },
+      "tags": {
+        "addr:city": "Horia",
+        "addr:housenumber": "75",
+        "addr:street": "Strada Ferdinand I",
+        "amenity": "school",
+        "denomination": "romanian_orthodox",
+        "grades": "0-8",
+        "name": "Școala Gimnazială Horia",
+        "religion": "christian"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1258157582,
+      "center": {
+        "lat": 46.18864776,
+        "lon": 21.29980038
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1269115731,
+      "center": {
+        "lat": 46.420526457142856,
+        "lon": 21.45010877142857
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1269115732,
+      "center": {
+        "lat": 46.43089254,
+        "lon": 21.45836242
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1317422659,
+      "center": {
+        "lat": 46.18741026,
+        "lon": 21.330137119999996
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "9-11",
+        "addr:postcode": "310188",
+        "addr:postcode:source": "Date de la Poșta Română, publicate sub Licența pentru Guvernare Deschisă v1.0 la http://date.gov.ro/organization/posta-romana",
+        "addr:street": "Strada Ardealului",
+        "amenity": "school",
+        "name": "Grădinița PP 12"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1317422660,
+      "center": {
+        "lat": 46.186248379999995,
+        "lon": 21.329898039999996
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "8",
+        "addr:street": "Strada Ardealului",
+        "amenity": "school",
+        "education": "school",
+        "name": "Școala Gimnazială Aron Cotruș"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1364227269,
+      "center": {
+        "lat": 46.178033238888894,
+        "lon": 21.32443991111111
+      },
+      "tags": {
+        "amenity": "university",
+        "leisure": "sports_centre",
+        "name": "Universitatea de Vest Vasile Goldiș - Facultatea de Educație Fizică și Sport"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1368707629,
+      "center": {
+        "lat": 46.158909890000004,
+        "lon": 21.325708749999997
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1378571296,
+      "center": {
+        "lat": 46.264742828571435,
+        "lon": 21.635532657142853
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala gimnazială Ioan Slavici"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1378571297,
+      "center": {
+        "lat": 46.26445381111111,
+        "lon": 21.635238288888885
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1454973892,
+      "center": {
+        "lat": 46.24622857999999,
+        "lon": 20.948781320000002
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Școala Primară Peregu Mic"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1454973918,
+      "center": {
+        "lat": 46.23223608,
+        "lon": 20.907237300000002
+      },
+      "tags": {
+        "addr:city": "Peregu Mare",
+        "addr:housenumber": "234",
+        "addr:street": "Strada Principală",
+        "amenity": "school",
+        "name": "Școala Gimnazială Peregu Mare"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455506175,
+      "center": {
+        "lat": 46.19124966,
+        "lon": 21.3306058
+      },
+      "tags": {
+        "building": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455506176,
+      "center": {
+        "lat": 46.19131924,
+        "lon": 21.33060024
+      },
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455510127,
+      "center": {
+        "lat": 46.19371669333334,
+        "lon": 21.33184527333333
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "21",
+        "addr:street": "Strada Petru Rareș",
+        "amenity": "school",
+        "check_date": "2026-04-19",
+        "education": "school",
+        "name": "Școala Generală ,,Aron Cotruș\""
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486965440,
+      "center": {
+        "lat": 46.189367049999994,
+        "lon": 21.334403624999997
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "44",
+        "addr:postcode": "310187",
+        "addr:street": "Strada Crasna",
+        "amenity": "kindergarten",
+        "education": "kindergarten",
+        "name": "Grădinița PP 11",
+        "phone": "+40 357 428 490",
+        "preschool": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486965441,
+      "center": {
+        "lat": 46.18926456666666,
+        "lon": 21.334334000000002
+      },
+      "tags": {
+        "building": "kindergarten",
+        "building:levels": "2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486965443,
+      "center": {
+        "lat": 46.192560025000006,
+        "lon": 21.330655125
+      },
+      "tags": {
+        "addr:city": "Arad",
+        "addr:housenumber": "7",
+        "addr:street": "Strada Petru Rareș",
+        "amenity": "school",
+        "education": "school",
+        "name": "Liceul Teologic Penticostal",
+        "phone": "+40 357 408 317",
+        "website": "https://liceulpenticostalarad.ro/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486965444,
+      "center": {
+        "lat": 46.1925114625,
+        "lon": 21.3306246125
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488816461,
+      "center": {
+        "lat": 46.08649841666667,
+        "lon": 20.982276816666666
+      },
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488816463,
+      "center": {
+        "lat": 46.08759453333333,
+        "lon": 20.983812777777775
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1489704723,
+      "center": {
+        "lat": 46.17390087,
+        "lon": 21.319680979999998
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1489959660,
+      "center": {
+        "lat": 46.38593034,
+        "lon": 21.31156146
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1489959661,
+      "center": {
+        "lat": 46.38595269,
+        "lon": 21.311297619999998
+      },
+      "tags": {
+        "amenity": "school",
+        "building": "school",
+        "education": "school",
+        "grades": "0-4",
+        "name": "Grădinița PN Macea"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1493875238,
+      "center": {
+        "lat": 46.493214280000004,
+        "lon": 21.36565606
+      },
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "Școala Primară și Grădinița Șiclău"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1493875239,
+      "center": {
+        "lat": 46.49322626153845,
+        "lon": 21.36567528461538
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1493875240,
+      "center": {
+        "lat": 46.493088820000004,
+        "lon": 21.36543266
+      },
+      "tags": {
+        "building": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1494225498,
+      "center": {
+        "lat": 46.192411775000004,
+        "lon": 21.285925666666664
+      },
+      "tags": {
+        "building": "school",
+        "building:levels": "3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1495775251,
+      "center": {
+        "lat": 46.07216824,
+        "lon": 22.2410082
+      },
+      "tags": {
+        "addr:city": "Pârnești",
+        "building": "school",
+        "name": "Școala Primară Pârnești"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1495775265,
+      "center": {
+        "lat": 46.01022702,
+        "lon": 22.23290872
+      },
+      "tags": {
+        "addr:city": "Săvârșin",
+        "amenity": "school",
+        "education": "school",
+        "name": "Liceul Tehnologic „Regele Mihai I”"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1497618210,
+      "center": {
+        "lat": 46.291228319999995,
+        "lon": 21.39045158
+      },
+      "tags": {
+        "building": "school",
+        "name": "Şcoala Gimnazială ,,Andrei Şaguna”"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1501952108,
+      "center": {
+        "lat": 46.008508962499995,
+        "lon": 21.200474662499996
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1501952109,
+      "center": {
+        "lat": 46.008885,
+        "lon": 21.199609733333332
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1507535262,
+      "center": {
+        "lat": 46.2840894,
+        "lon": 21.3941841
+      },
+      "tags": {
+        "building": "kindergarten",
+        "building:levels": "1",
+        "name": "Vechea Grădiniță Zimandul Nou"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1508201997,
+      "center": {
+        "lat": 46.15032773164556,
+        "lon": 21.3350721886076
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1510746249,
+      "center": {
+        "lat": 46.071037244444454,
+        "lon": 21.814060311111106
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala gimnazială Ususău"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1533170512,
+      "center": {
+        "lat": 46.17043698461539,
+        "lon": 21.408127084615383
+      },
+      "tags": {
+        "addr:city": "Vladimirescu",
+        "addr:housenumber": "59",
+        "addr:street": "Strada Gării",
+        "building": "school",
+        "name": "Școala Gimnazială Vladimirescu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1533170513,
+      "center": {
+        "lat": 46.17047368,
+        "lon": 21.40759036
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1533170514,
+      "center": {
+        "lat": 46.17063934,
+        "lon": 21.4070967
+      },
+      "tags": {
+        "addr:city": "Vladimirescu",
+        "addr:housenumber": "59",
+        "addr:street": "Strada Gării",
+        "building": "kindergarten",
+        "name": "Grădinița PP Vladimirescu"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1533170515,
+      "center": {
+        "lat": 46.17069751111111,
+        "lon": 21.407954744444442
+      },
+      "tags": {
+        "amenity": "school",
+        "education": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1544907154,
+      "center": {
+        "lat": 46.34414922352942,
+        "lon": 21.508694647058825
+      },
+      "tags": {
+        "addr:city": "Sântana",
+        "amenity": "school",
+        "building": "school",
+        "education": "school",
+        "name": "Școala Gimnazială Sfânta Ana"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1568212021,
+      "center": {
+        "lat": 46.093684017647064,
+        "lon": 21.684713564705884
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1568212022,
+      "center": {
+        "lat": 46.09391861111111,
+        "lon": 21.68479365555556
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1568212023,
+      "center": {
+        "lat": 46.09308976153846,
+        "lon": 21.684547215384615
+      },
+      "tags": {
+        "building": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1568519575,
+      "center": {
+        "lat": 46.167905257142856,
+        "lon": 20.750375314285716
+      },
+      "tags": {
+        "addr:city": "Nădlac",
+        "addr:housenumber": "49",
+        "addr:postcode": "315500",
+        "addr:street": "Strada Victoriei",
+        "building": "school",
+        "name": "Liceul Teoretic „Jozef Gregor Tajovsky\"",
+        "name:sk": "Teoretické lýceum Jozefa Gregora Tajovského"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1569764222,
+      "center": {
+        "lat": 46.09550548,
+        "lon": 21.6901785
+      },
+      "tags": {
+        "amenity": "kindergarten",
+        "education": "kindergarten",
+        "name": "Grădinița Radna"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1572221977,
+      "center": {
+        "lat": 46.10576667142857,
+        "lon": 21.802055214285712
+      },
+      "tags": {
+        "building": "school",
+        "name": "Școala Milova"
+      }
+    }
+  ]
+}

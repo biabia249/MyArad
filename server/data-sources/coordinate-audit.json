@@ -1,0 +1,217 @@
+{
+  "checkedFootprints": 219,
+  "correctedOutsidePoints": 15,
+  "changes": [
+    {
+      "id": "way/316365342",
+      "name": "Hong Kong",
+      "from": [
+        46.2027126,
+        21.2765873
+      ],
+      "to": [
+        46.2027763,
+        21.276551408000334
+      ],
+      "metres": 7.6,
+      "source": "https://www.openstreetmap.org/way/316365342"
+    },
+    {
+      "id": "way/310581449",
+      "name": "Centrul Medical Mediar",
+      "from": [
+        46.1828142,
+        21.3214919
+      ],
+      "to": [
+        46.18264715,
+        21.321616750344667
+      ],
+      "metres": 20.9,
+      "source": "https://www.openstreetmap.org/way/310581449"
+    },
+    {
+      "id": "way/171042409",
+      "name": "Laser System Hospital",
+      "from": [
+        46.1667081,
+        21.3858867
+      ],
+      "to": [
+        46.166633950000005,
+        21.385815146597153
+      ],
+      "metres": 9.9,
+      "source": "https://www.openstreetmap.org/way/171042409"
+    },
+    {
+      "id": "way/1564571975",
+      "name": "Spital de Recuperare Medicală Laser System",
+      "from": [
+        46.1809423,
+        21.3082594
+      ],
+      "to": [
+        46.181037149999995,
+        21.30809680010926
+      ],
+      "metres": 16.4,
+      "source": "https://www.openstreetmap.org/way/1564571975"
+    },
+    {
+      "id": "way/88366992",
+      "name": "Fosta fabrică de cărămidă",
+      "from": [
+        46.1619836,
+        21.2825142
+      ],
+      "to": [
+        46.16276875,
+        21.281796780023825
+      ],
+      "metres": 103.2,
+      "source": "https://www.openstreetmap.org/way/88366992"
+    },
+    {
+      "id": "way/20857974",
+      "name": "Parcul Pădurice",
+      "from": [
+        46.1843099,
+        21.3228029
+      ],
+      "to": [
+        46.1837122,
+        21.322039491010095
+      ],
+      "metres": 88.6,
+      "source": "https://www.openstreetmap.org/way/20857974"
+    },
+    {
+      "id": "node/6579694795",
+      "name": "Școala Gimnazială \"Nicolae Bălcescu\"",
+      "from": [
+        46.202396,
+        21.2978789
+      ],
+      "to": [
+        46.20210085,
+        21.29758071396394
+      ],
+      "metres": 40.0,
+      "source": "https://www.openstreetmap.org/way/304692158"
+    },
+    {
+      "id": "way/219736269",
+      "name": "școala căpălnaș",
+      "from": [
+        45.974578539999996,
+        22.220711846666667
+      ],
+      "to": [
+        45.9748411,
+        22.220505240266654
+      ],
+      "metres": 33.2,
+      "source": "https://www.openstreetmap.org/way/219736269"
+    },
+    {
+      "id": "way/219825696",
+      "name": "Școala Generală",
+      "from": [
+        45.96513945454546,
+        22.1669404
+      ],
+      "to": [
+        45.964925199999996,
+        22.166872330782645
+      ],
+      "metres": 24.4,
+      "source": "https://www.openstreetmap.org/way/219825696"
+    },
+    {
+      "id": "way/219901968",
+      "name": "școala bata",
+      "from": [
+        46.01678772857143,
+        22.038574
+      ],
+      "to": [
+        46.0168511,
+        22.038551889105914
+      ],
+      "metres": 7.2,
+      "source": "https://www.openstreetmap.org/way/219901968"
+    },
+    {
+      "id": "way/477150572",
+      "name": "Școala Primară Cuvin",
+      "from": [
+        46.16684737142857,
+        21.594098499999998
+      ],
+      "to": [
+        46.1666764,
+        21.59424169990004
+      ],
+      "metres": 21.9,
+      "source": "https://www.openstreetmap.org/way/477150573"
+    },
+    {
+      "id": "way/1257573612",
+      "name": "Școala Gimnazială Horia",
+      "from": [
+        46.20859022222223,
+        21.46063077777778
+      ],
+      "to": [
+        46.2084891,
+        21.46072516717296
+      ],
+      "metres": 13.4,
+      "source": "https://www.openstreetmap.org/way/1257573612"
+    },
+    {
+      "id": "way/1544907154",
+      "name": "Școala Gimnazială Sfânta Ana",
+      "from": [
+        46.34414922352942,
+        21.508694647058825
+      ],
+      "to": [
+        46.3440229,
+        21.508603048431702
+      ],
+      "metres": 15.7,
+      "source": "https://www.openstreetmap.org/way/1544907154"
+    },
+    {
+      "id": "way/304950939",
+      "name": "Școală — Arad (nume neprecizat în OSM)",
+      "from": [
+        46.192282476923076,
+        21.30425852307692
+      ],
+      "to": [
+        46.192461,
+        21.304223465440224
+      ],
+      "metres": 20.0,
+      "source": "https://www.openstreetmap.org/way/304950939"
+    },
+    {
+      "id": "way/978772583",
+      "name": "Școală — Livada (nume neprecizat în OSM)",
+      "from": [
+        46.22539571428571,
+        21.387467385714285
+      ],
+      "to": [
+        46.22543145,
+        21.387479956596668
+      ],
+      "metres": 4.1,
+      "source": "https://www.openstreetmap.org/way/978772583"
+    }
+  ],
+  "limitations": "OSM footprint checks, not survey/entrance verification. Points without an identifiable footprint remain unchanged. Campus boundaries may include open space."
+}

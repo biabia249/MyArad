@@ -1,4 +1,5 @@
 import { ProfileCard, type CitizenProfile } from "./profile-card";
+import { CalendarChoices } from "./calendar-choices";
 import { useCallback, useEffect, useState } from "react";
 import type { CityProps, Language, Place, CityEvent } from "./types";
 
@@ -308,10 +309,6 @@ export function AddPlan({
       <button
         className="secondary"
         onClick={() => {
-          if (!props.userName) {
-            void props.onSignIn();
-            return;
-          }
           setOpen(!open);
         }}
       >
@@ -321,7 +318,13 @@ export function AddPlan({
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            if (!props.userName) { void props.onSignIn(); return; }
             const f = new FormData(e.currentTarget);
+            const start = new Date(String(f.get("start"))), end = new Date(String(f.get("end")));
+            if (!Number.isFinite(+start) || !Number.isFinite(+end) || end <= start) {
+              setError(lang === "ro" ? "Ora de încheiere trebuie să fie după început." : "End must be after start.");
+              return;
+            }
             setBusy(true);
             void props
               .onRequest(
@@ -373,11 +376,12 @@ export function AddPlan({
           </label>
           {error && <p role="alert">{error}</p>}
           <button className="primary" disabled={busy}>
-            {t.save}
+            {props.userName ? t.save : t.login}
           </button>
           <button type="button" onClick={() => setOpen(false)}>
             {t.cancel}
           </button>
+          <CalendarChoices item={item} props={props} lang={lang} />
         </form>
       )}
     </section>

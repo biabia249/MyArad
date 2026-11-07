@@ -8,6 +8,7 @@ import { useAppTheme } from "@/features/app-theme";
 import CityExplorer from "@/features/city/city-explorer";
 import { authService } from "@/features/auth/auth-service";
 import type { CityProps } from "@/features/city/types";
+import { addToDeviceCalendar } from "@/features/city/device-calendar";
 
 function reportError(e: unknown) {
   const message = e instanceof Error ? e.message : String(e);
@@ -122,6 +123,8 @@ export function CityScreen({
       }}
     >
       <CityExplorer
+        calendarPlatform={Platform.OS === 'ios' ? 'ios' : Platform.OS === 'android' ? 'android' : 'web'}
+        onAddToCalendar={addToDeviceCalendar}
         dom={{
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
