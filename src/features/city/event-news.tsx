@@ -24,7 +24,8 @@ function phaseOf(article: Article) {
   return Number.isFinite(end) && end > start ? end > Date.now() ? 'now' : 'past' : 'unconfirmed';
 }
 const fmt = (value?: string | null) => value && Number.isFinite(Date.parse(value)) ? new Date(value).toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
-export function EventNews({ request, events, onSelect, onCloseMap, onPublish, calendarProps, onEventsChanged, publishedEvent }: {
+export function EventNews({ request, events, onSelect, onCloseMap, onPublish, calendarProps, onEventsChanged, publishedEvent, onArticleOpen }: {
+  onArticleOpen?: () => void;
   publishedEvent?: CityEvent | null;
   onEventsChanged: () => Promise<void>;
   calendarProps: CityProps;
@@ -58,6 +59,7 @@ export function EventNews({ request, events, onSelect, onCloseMap, onPublish, ca
   const articles = categorized.filter((a) => !rangeError && inEventRange(a, dateFrom, dateTo) && (category === 'all' || a.category === category) && (phase === 'all' ? phaseOf(a) !== 'past' : phaseOf(a) === phase) && (sourceFilter === 'all' || a.source_kind === sourceFilter) && (smartSearchScore(query, a.title, `${a.description} ${a.location?.name || ''}`) > 0 || (!!a.discovery_lane && searchedQuery === query))).sort(compareEvents);
   function choose(article: Article) {
     setSelected(article);
+    onArticleOpen?.();
     const location = article.location;
     onSelect(location ? { id: `news-${article.id}`, name: location.name, lat: location.lat, lng: location.lng, address: location.address, category: 'culture', description: article.description, source: article.url, tags: [], phone: '', website: article.url, hours: '', image: article.image, wikipedia: '' } : null);
   }

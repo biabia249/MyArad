@@ -148,6 +148,7 @@ export default function CityExplorer(props: CityProps) {
   const [mapZoom, setMapZoom] = useState(14);
   const [newsMap, setNewsMap] = useState(false);
   const [mapOnly, setMapOnly] = useState(false);
+  const [sheetSize, setSheetSize] = useState('compact');
   const [publishedEvent, setPublishedEvent] = useState<CityEvent | null>(null);
   const [cycling, setCycling] = useState(false);
   const [journey, setJourney] = useState<Itinerary | null>(null);
@@ -687,6 +688,8 @@ export default function CityExplorer(props: CityProps) {
   return (
     <main
       data-theme={props.theme}
+      data-native={props.calendarPlatform !== 'web' ? 'true' : 'false'}
+      data-sheet-size={sheetSize}
       className={`city-app ${mapOnly ? 'map-only' : ''} ${transportPage ? 'transport-page' : ''} ${journey ? "route-active" : ""} ${eventsPage ? "events-page" : ""} ${newsMap ? "news-map-open" : ""} ${composer ? "event-composing" : ""}`}
       onClick={(e) => {
         const a = (e.target as Element).closest("a");
@@ -793,7 +796,18 @@ export default function CityExplorer(props: CityProps) {
         className="city-workspace"
         style={schedulePage || socialPage || vasilePage ? { display: "none" } : undefined}
       >
-        <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />
+        {props.calendarPlatform === 'web' && <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />}
+        {props.calendarPlatform !== 'web' && <nav className="native-sheet-buttons" aria-label={lang === 'ro' ? 'Afișarea panoului' : 'Panel display'}>{[
+          ['map', lang === 'ro' ? 'Hartă' : 'Map'],
+          ['compact', lang === 'ro' ? 'Compact' : 'Compact'],
+          ['expanded', lang === 'ro' ? 'Extins' : 'Expanded'],
+          ['full', lang === 'ro' ? 'Complet' : 'Full'],
+        ].map(([size, label]) => <button key={size} aria-pressed={size === 'map' ? mapOnly : !mapOnly && sheetSize === size} onClick={() => {
+          setMapOnly(size === 'map'); setNewsMap(size === 'map');
+          if (size !== 'map') { setSheetSize(size); setMobileList(true); }
+          setMapOptionsOpen(false);
+          requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
+        }}>{label}</button>)}</nav>}
         <button className="mobile-map-toggle" aria-expanded={!mapOnly} onClick={event => {
           const showMap = !mapOnly;
           setMapOnly(showMap);
@@ -805,7 +819,7 @@ export default function CityExplorer(props: CityProps) {
           }
           requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
         }}><Icon name={mapOnly ? 'search' : 'layers'} size={18} />{mapOnly ? (lang === 'ro' ? 'Deschide panoul' : 'Open panel') : (lang === 'ro' ? 'Doar harta' : 'Map only')}</button>
-        {eventsPage && <EventNews publishedEvent={publishedEvent} onEventsChanged={load} calendarProps={props} request={api} events={data.events} onSelect={(place) => { setSelected(place); setNewsMap(false); setMapOnly(false); }} onCloseMap={() => { setNewsMap(true); setMapOnly(true); setTimeout(() => { map.current?.invalidateSize(); if (selected) map.current?.setView([selected.lat, selected.lng], 16); }, 50); }} onPublish={openComposer} />}
+        {eventsPage && <EventNews onArticleOpen={() => { setMapOnly(false); setNewsMap(false); setSheetSize('full'); }} publishedEvent={selected && isEvent(selected) ? selected : publishedEvent} onEventsChanged={load} calendarProps={props} request={api} events={data.events} onSelect={(place) => { setSelected(place); setNewsMap(false); setMapOnly(false); }} onCloseMap={() => { setNewsMap(true); setMapOnly(true); setTimeout(() => { map.current?.invalidateSize(); if (selected) map.current?.setView([selected.lat, selected.lng], 16); }, 50); }} onPublish={openComposer} />}
         {transportPage && (
           <aside className="transport-sidebar">
             <div className="transport-title">
