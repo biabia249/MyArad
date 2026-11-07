@@ -126,7 +126,7 @@ export function CityScreen({
         initialPlaceId={initialPlaceId}
         onNavigate={async (path) => {
           const target=new URL(path,"https://myarad.local");
-          if(!path.startsWith("/") || target.origin!=="https://myarad.local" || !/^\/(map|events|people|vasile|schedule|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(target.pathname)) throw new Error("Invalid page.");
+          if(!path.startsWith("/") || target.origin!=="https://myarad.local" || !/^\/(map|events|people|vasile|schedule|favorites|schools|transport|citizen\/[a-zA-Z0-9_]+)$/.test(target.pathname)) throw new Error("Invalid page.");
           router.navigate(path as Href);
         }}
         theme={theme}
