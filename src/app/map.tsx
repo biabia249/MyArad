@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Alert, Linking, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router, type Href } from "expo-router";
@@ -29,6 +29,8 @@ export function CityScreen({
 }) {
   const { theme, toggle } = useAppTheme();
   const [name, setName] = useState<string | null>(null);
+  const latestLocation = useRef<{ lat: number; lng: number } | null>(null);
+  const locationRefresh = useRef<Promise<void> | null>(null);
   useEffect(() => {
     authService
       .getProfile()
@@ -59,10 +61,43 @@ export function CityScreen({
       const permission = await Location.requestForegroundPermissionsAsync();
       if (permission.status !== "granted")
         return { lat: 0, lng: 0, error: "permission" };
-      const position = await Location.getCurrentPositionAsync({
-        accuracy: Location.Accuracy.High,
-      });
-      return { lat: position.coords.latitude, lng: position.coords.longitude };
+
+      // iOS can take several seconds to acquire a brand-new high-accuracy fix.
+      // Use a recent cached fix immediately, then improve it in the background.
+      if (!latestLocation.current) {
+        const lastKnown = await Location.getLastKnownPositionAsync({
+          maxAge: 120_000,
+          requiredAccuracy: 500,
+        });
+        if (lastKnown)
+          latestLocation.current = {
+            lat: lastKnown.coords.latitude,
+            lng: lastKnown.coords.longitude,
+          };
+      }
+      if (!locationRefresh.current) {
+        locationRefresh.current = Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.Balanced,
+        })
+          .then((position) => {
+            latestLocation.current = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+          })
+          .catch(() => {
+            // A cached position remains useful when a fresh GPS fix is unavailable.
+          })
+          .finally(() => {
+            locationRefresh.current = null;
+          });
+      }
+      if (latestLocation.current) return latestLocation.current;
+
+      // There is no cached position yet, so wait once for the first usable fix.
+      await locationRefresh.current;
+      if (latestLocation.current) return latestLocation.current;
+      return { lat: 0, lng: 0, error: "unavailable" };
     } catch {
       return { lat: 0, lng: 0, error: "unavailable" };
     }
@@ -85,7 +120,6 @@ export function CityScreen({
     >
       <CityExplorer
         dom={{
-          useExpoDOMWebView: false,
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
         }}
