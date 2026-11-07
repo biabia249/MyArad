@@ -8,11 +8,11 @@
     46.23,
     21.39
   ],
-  "count": 610,
+  "count": 656,
   "enrichment": "English and Romanian Wikipedia extracts and Wikimedia Commons thumbnails via MediaWiki API; per-place source links included.",
   "education": "OpenStreetMap Nominatim search bounded to Arad, plus Wikipedia coordinates; nearby duplicates merged.",
   "county": "Arad County attractions added from Romanian and English Wikipedia; geographic coordinates and source links retained.",
-  "educationCount": 154,
+  "educationCount": 200,
   "cnipt": {
     "source": "CNIPT Arad / visitarad.ro",
     "dataset": "https://github.com/baditaflorin/hack4arad-turism-arad",

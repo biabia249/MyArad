@@ -11,13 +11,16 @@ const places = (await read('places.json')).filter((p) => !p.id.startsWith('siiir
 const byId = new Map(places.map((p) => [p.id, p]));
 let added = 0;
 for (const feature of osm) {
-  const tags = feature.tags, name = tags.name || tags['name:ro'];
-  if (!name || !['school', 'kindergarten', 'college', 'university'].includes(tags.amenity) && !/scoal|școal|şcoal|lice|colegi|univers|gradini|grădini/i.test(name)) continue;
+  const tags = feature.tags;
+  let name = tags.name || tags['name:ro'];
+  if (!['school', 'kindergarten', 'college', 'university'].includes(tags.amenity) && (!name || !/scoal|școal|şcoal|lice|colegi|univers|gradini|grădini/i.test(name))) continue;
   const id = `${feature.type}/${feature.id}`;
   const point = { lat: feature.lat ?? feature.center?.lat, lng: feature.lon ?? feature.center?.lon };
   if (!Number.isFinite(point.lat) || !Number.isFinite(point.lng)) continue;
   const nearest = towns.toSorted((a, b) => distance(a, point) - distance(b, point))[0];
   const locality = tags['addr:city'] || nearest?.name || '';
+  const unnamed = !name;
+  name ||= `${tags.amenity === 'kindergarten' ? 'Grădiniță' : tags.amenity === 'university' ? 'Universitate' : 'Școală'} — ${locality} (nume neprecizat în OSM)`;
   const address = [tags['addr:street'], tags['addr:housenumber'], locality].filter(Boolean).join(', ');
   const existing = byId.get(id);
   if (existing) {
@@ -26,12 +29,12 @@ for (const feature of osm) {
     continue;
   }
   // A node and a building polygon can describe the same campus.
-  const duplicate = places.find((p) => p.category === 'education' && normalize(p.name) === normalize(name) && distance(p, point) < .08);
+  const duplicate = !unnamed && places.find((p) => p.category === 'education' && normalize(p.name) === normalize(name) && distance(p, point) < .08);
   if (duplicate) {
     duplicate.alias_ids = [...new Set([...(duplicate.alias_ids || []), id])];
     continue;
   }
-  const place = { id, name, ...point, category: 'education', locality, address, description: '', phone: tags.phone || tags['contact:phone'] || '', website: tags.website || tags['contact:website'] || '', hours: '', image: '', wikipedia: '', source: `https://www.openstreetmap.org/${id}`, tags: [tags.amenity || tags.building, locality, 'școală', 'educație'].filter(Boolean), education_source: 'OSM / Geofabrik Romania' };
+  const place = { id, name, ...point, category: 'education', locality, address, description: '', ...(unnamed ? { description_ro: 'Punct educațional cartografiat în OpenStreetMap. Denumirea instituției și funcționarea curentă nu sunt confirmate; consultă registrul școlar oficial pentru unitățile din localitate.', unnamed_education: true } : {}), phone: tags.phone || tags['contact:phone'] || '', website: tags.website || tags['contact:website'] || '', hours: '', image: '', wikipedia: '', source: `https://www.openstreetmap.org/${id}`, tags: [tags.amenity || tags.building, locality, 'școală', 'educație'].filter(Boolean), education_source: 'OSM / Geofabrik Romania' };
   places.push(place); byId.set(id, place); added++;
 }
 const catalog = records.map((r) => ({ id: r.L, name: r.N, short_name: r.M, locality: r.H, parent_id: r.F, parent_name: r.G, status: r.P, type: r.O, ownership: r.T, school_year: r.A, address: [r.U?.trim(), r.V?.trim(), r.H].filter(Boolean).join(', '), street: r.U?.trim(), number: r.V?.trim(), phone: r.X, email: r.Z, source }));
@@ -40,7 +43,7 @@ const educational = places.filter((p) => p.category === 'education');
 const claimed = new Set();
 for (const school of catalog) {
   const local = normalize(school.locality), name = normalize(school.name), significant = name.split(' ').filter((w) => !['scoala', 'gimnaziala', 'liceul', 'colegiul', 'national', 'tehnologic', 'gradinita', 'cu', 'program', 'prelungit', 'normal', ...local.split(' ')].includes(w));
-  const matches = educational.filter((p) => !claimed.has(p.id) && normalize(p.locality) === local).map((p) => {
+  const matches = educational.filter((p) => !p.unnamed_education && !claimed.has(p.id) && normalize(p.locality) === local).map((p) => {
     const pName = normalize(p.name);
     let score = pName === name ? 100 : 0;
     if (significant.length && significant.every((w) => pName.split(' ').includes(w))) score = Math.max(score, 90);
@@ -70,6 +73,13 @@ if (balcescu && !balcescu.mapped_place_id) {
 if (balcescu?.mapped_place_id) {
   const place = places.find((p) => p.id === balcescu.mapped_place_id);
   place.tags = [...new Set([...place.tags, 'gimnaziala 11', 'generala 11', 'scoala 11'])];
+  for (let i = places.length - 1; i >= 0; i--) {
+    const candidate = places[i];
+    if (candidate.id === place.id || candidate.category !== 'education' || !normalize(candidate.name).includes('nicolae balcescu') || distance(candidate, place) > .15) continue;
+    place.alias_ids = [...new Set([...(place.alias_ids || []), candidate.id, ...(candidate.alias_ids || [])])];
+    place.tags = [...new Set([...place.tags, ...candidate.tags, candidate.name])];
+    places.splice(i, 1);
+  }
 }
 const mapped = catalog.filter((s) => s.mapped_place_id).length;
 await writeFile(new URL('places.json', root), JSON.stringify(places, null, 2) + '\n');

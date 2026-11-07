@@ -5,6 +5,7 @@ import type * as Leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./city.css";
 import { Journey } from "./journey";
+import { emptyBootstrap, parseBootstrap, safeBootstrap } from "./bootstrap-data";
 import { SchoolDirectory } from "./school-directory";
 import { ResultsSplitter } from "./results-splitter";
 import { smartSearchScore } from "./smart-search";
@@ -108,12 +109,9 @@ function isEvent(p: Place | CityEvent): p is CityEvent {
 export default function CityExplorer(props: CityProps) {
   const [lang, setLang] = useState<Language>("ro");
   const t = copy[lang];
-  const [data, setData] = useState<Bootstrap>({
-    places: [],
-    events: [],
-    canPost: false,
-    postingPolicy: "signed-in",
-  });
+  const [loadedData, setData] = useState<Bootstrap>(emptyBootstrap);
+  // Fast Refresh can preserve stale state; never spread unvalidated payloads.
+  const data = safeBootstrap(loadedData);
   const [loading, setLoading] = useState(true),
     [error, setError] = useState(""),
     [notice, setNotice] = useState("");
@@ -173,13 +171,13 @@ export default function CityExplorer(props: CityProps) {
     setLoading(true);
     setError("");
     try {
-      setData(await api<Bootstrap>("/city/bootstrap"));
+      setData(parseBootstrap(await api<unknown>("/city/bootstrap")));
     } catch (e) {
       setError(String((e as Error).message));
     } finally {
       setLoading(false);
     }
-  }, [api]);
+  }, [api, setLoading, setError, setData]);
   useEffect(() => {
     void Promise.resolve().then(load);
   }, [load, props.userName]);
