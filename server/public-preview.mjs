@@ -1,3 +1,4 @@
+import { serveDownload } from './downloads.mjs';
 import { createServer, request } from 'node:http';
 import { readFileSync } from 'node:fs';
 export function createPublicPreview({apiPort=3001,webPort=8082,publicUrlFile}) {
@@ -12,6 +13,7 @@ export function createPublicPreview({apiPort=3001,webPort=8082,publicUrlFile}) {
   const url=new URL(req.url,'http://localhost');
   // Publicly serve production web output, never the Metro debugger or repo files.
   if(/^\/(?:inspector|debugger|_expo\/debugger|\.git|\.env)(?:\/|$)/.test(url.pathname)){res.writeHead(404);res.end();return;}
+  if(serveDownload(req,res,url.pathname))return;
   const api=/^\/api(?:\/|$)/.test(url.pathname)||/^\/auth\//.test(url.pathname)||url.pathname==='/health';
   const rawPath=api&&url.pathname.startsWith('/api')?req.url.slice(4)||'/':req.url;
   const path=rawPath.startsWith('?')?'/'+rawPath:rawPath;

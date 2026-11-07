@@ -53,8 +53,10 @@ if ! cmp -s server/vasile/requirements.txt "$ROOT/.cache/vasile-venv/installed-r
  "$ROOT/.cache/vasile-venv/bin/pip" install -r server/vasile/requirements.txt > "$STATE/vasile-install.log" 2>&1 || { tail -15 "$STATE/vasile-install.log"; exit 1; }
  cp server/vasile/requirements.txt "$ROOT/.cache/vasile-venv/installed-requirements.txt"
 fi
+if [[ "${1:-}" != --reuse-build || ! -f dist/server/_expo/routes.json ]]; then
 printf '\nBuilding MyArad with a same-origin HTTPS API…\n'
 EXPO_PUBLIC_API_URL=/api "$NODE" --use-system-ca node_modules/expo/bin/cli export --platform web --output-dir dist --max-workers 2 --clear > "$STATE/build.log" 2>&1 || { tail -30 "$STATE/build.log"; exit 1; }
+fi
 launch() {
  local name="$1"; shift
  nohup setsid "$@" < /dev/null > "$STATE/$name.log" 2>&1 9>&- &
@@ -80,7 +82,7 @@ for attempt in {1..120}; do
 done
 [[ "$ready" == 1 ]] || { tail -15 "$STATE/api.log" "$STATE/web.log"; exit 1; }
 public_ready=0
-for attempt in {1..30}; do
+for attempt in {1..90}; do
  if [[ "$(curl --silent --max-time 5 "$url/api/health" || true)" == '{"ok":true}' ]]; then public_ready=1; break; fi
  sleep 1
 done

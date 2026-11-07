@@ -2,7 +2,7 @@
   "expo": {
     "name": "MyArad",
     "slug": "MyArad",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/app-icon.png",
     "scheme": "myarad",
@@ -21,7 +21,8 @@
       "predictiveBackGestureEnabled": false,
       "permissions": [
         "android.permission.MODIFY_AUDIO_SETTINGS"
-      ]
+      ],
+      "versionCode": 2
     },
     "web": {
       "output": "server",
@@ -29,6 +30,7 @@
     },
     "plugins": [
       "./plugins/with-android-cmake",
+      "./plugins/with-release-signing",
       "expo-router",
       [
         "expo-splash-screen",
@@ -61,8 +63,8 @@
         "expo-calendar",
         {
           "writeOnlyAccess": true,
-          "writeOnlyCalendarPermission": "MyArad adaugă în calendar evenimentele pe care le alegi.",
-          "calendarPermission": "MyArad folosește calendarul ales pentru a adăuga evenimentele tale."
+          "writeOnlyCalendarPermission": "MyArad adaug\u0103 \u00een calendar evenimentele pe care le alegi.",
+          "calendarPermission": "MyArad folose\u0219te calendarul ales pentru a ad\u0103uga evenimentele tale."
         }
       ],
       "expo-sharing"

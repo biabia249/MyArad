@@ -28,7 +28,9 @@ export async function enablePush() {
     permission = await Notifications.requestPermissionsAsync();
   if (permission.status !== "granted")
     throw new Error("Permite notificările în setările telefonului.");
-  const token = (await Notifications.getExpoPushTokenAsync({ projectId })).data;
+  let token: string;
+  try { token = (await Notifications.getExpoPushTokenAsync({ projectId })).data; }
+  catch { throw new Error('Notificările push necesită configurarea Firebase pentru acest build. Mesajele și notificările din aplicație rămân disponibile.'); }
   await authService.cityRequest("/city/social/push", { token, enabled: true });
   registeredToken = token;
   await SecureStore.setItemAsync("myarad.pushToken", token);

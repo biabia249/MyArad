@@ -732,6 +732,7 @@ export default function CityExplorer(props: CityProps) {
           ))}
         </nav>
         <div className="header-actions">
+          {props.calendarPlatform === 'web' && <button className="theme-toggle" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span></button>}
           {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
           <button
             className="theme-toggle"
