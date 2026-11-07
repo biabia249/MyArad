@@ -1016,6 +1016,28 @@ export default function CityExplorer(props: CityProps) {
                   ? placeDescription(selectedPlace)
                   : selected.description) || t.noDescription}
               </p>
+              {selectedPlace?.cnipt_photos &&
+                selectedPlace.cnipt_photos.filter(validUrl).length > 1 && (
+                  <div className="place-gallery" aria-label={t.photoSource}>
+                    {selectedPlace.cnipt_photos
+                      .filter(validUrl)
+                      .slice(1, 7)
+                      .map((photo, index) => (
+                        <a
+                          href={photo}
+                          target="_blank"
+                          rel="noreferrer"
+                          key={`${photo}-${index}`}
+                        >
+                          <img
+                            src={photo}
+                            alt={`${placeName(selectedPlace)} ${index + 2}`}
+                            loading="lazy"
+                          />
+                        </a>
+                      ))}
+                  </div>
+                )}
               {selectedEvent ? (
                 <>
                   <div className="info-row">
@@ -1133,7 +1155,11 @@ export default function CityExplorer(props: CityProps) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {selectedPlace.wiki_source ? "Wikipedia" : t.source} ↗
+                    {selectedPlace.wiki_source
+                      ? "Wikipedia"
+                      : selectedPlace.cnipt_source
+                        ? "CNIPT Arad / visitarad.ro"
+                        : t.source} ↗
                   </a>
                   {selectedPlace.image && (
                     <a

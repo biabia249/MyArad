@@ -9,6 +9,9 @@ export type Place = {
   image_source?: string;
   image_credit?: string;
   image_license?: string;
+  cnipt_source?: string;
+  cnipt_photos?: string[];
+  locality?: string;
   lat: number;
   lng: number;
   category: string;

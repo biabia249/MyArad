@@ -606,6 +606,28 @@
   color: #7b8173;
   white-space: pre-line;
 }
+.place-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin: 16px 0 20px;
+}
+.place-gallery a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #edf0e9;
+}
+.place-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+.place-gallery a:hover img {
+  transform: scale(1.035);
+}
 .place-info {
   margin: 22px 0;
   border-top: 1px solid var(--line);
