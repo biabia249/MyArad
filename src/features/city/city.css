@@ -606,6 +606,26 @@
   color: #7b8173;
   white-space: pre-line;
 }
+.cnipt-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+.cnipt-metadata span {
+  border: 1px solid #dce2d7;
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: #66745f;
+  background: #f4f6f1;
+  font-size: 9px;
+}
+.data-freshness {
+  display: block;
+  margin-top: 8px;
+  color: #8e9684;
+  font-size: 8px;
+}
 .place-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

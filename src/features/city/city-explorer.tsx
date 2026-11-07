@@ -1020,6 +1020,16 @@ export default function CityExplorer(props: CityProps) {
                   ? placeDescription(selectedPlace)
                   : selected.description) || t.noDescription}
               </p>
+              {selectedPlace?.cnipt_source && (
+                <div className="cnipt-metadata">
+                  {selectedPlace.cnipt_type && <span>{selectedPlace.cnipt_type}</span>}
+                  {selectedPlace.cnipt_category && (
+                    <span>{selectedPlace.cnipt_category}</span>
+                  )}
+                  {selectedPlace.locality && <span>{selectedPlace.locality}</span>}
+                  {selectedPlace.cnipt_area && <span>{selectedPlace.cnipt_area}</span>}
+                </div>
+              )}
               {selectedPlace?.cnipt_photos &&
                 selectedPlace.cnipt_photos.filter(validUrl).length > 1 && (
                   <div className="place-gallery" aria-label={t.photoSource}>
@@ -1095,17 +1105,19 @@ export default function CityExplorer(props: CityProps) {
                     ["pin", "address", selectedPlace?.address],
                     ["clock", "hours", selectedPlace?.hours],
                     ["phone", "phone", selectedPlace?.phone],
-                  ].map(([icon, key, value]) => (
+                  ]
+                    .filter(([, , value]) => String(value || "").trim())
+                    .map(([icon, key, value]) => (
                     <div className="info-row" key={key}>
                       <Icon name={icon || "pin"} size={19} />
                       <div>
                         <small>{label(key || "")}</small>
-                        {key === "phone" && value ? (
-                          <a href={`tel:${value.replace(/[^+\d;]/g, "")}`}>
+                        {key === "phone" ? (
+                          <a href={`tel:${String(value).replace(/[^+\d;]/g, "")}`}>
                             {value}
                           </a>
                         ) : (
-                          <strong>{value || t.missing}</strong>
+                          <strong>{value}</strong>
                         )}
                       </div>
                     </div>
@@ -1120,6 +1132,31 @@ export default function CityExplorer(props: CityProps) {
                       >
                         <Icon name="globe" size={17} />
                         {t.website}
+                        <Icon name="arrow" size={17} />
+                      </a>
+                    )}
+                  {selectedPlace?.facebook && validUrl(selectedPlace.facebook) && (
+                    <a
+                      className="website-link"
+                      href={validUrl(selectedPlace.facebook)}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Icon name="globe" size={17} />
+                      Facebook
+                      <Icon name="arrow" size={17} />
+                    </a>
+                  )}
+                  {selectedPlace?.cnipt_category_url &&
+                    validUrl(selectedPlace.cnipt_category_url) && (
+                      <a
+                        className="website-link"
+                        href={validUrl(selectedPlace.cnipt_category_url)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Icon name="globe" size={17} />
+                        {selectedPlace.cnipt_category}
                         <Icon name="arrow" size={17} />
                       </a>
                     )}
@@ -1182,6 +1219,14 @@ export default function CityExplorer(props: CityProps) {
                         : ""}{" "}
                       ↗
                     </a>
+                  )}
+                  {selectedPlace.retrieved_at && (
+                    <small className="data-freshness">
+                      {lang === "ro" ? "Date colectate" : "Data collected"}: {" "}
+                      {new Date(selectedPlace.retrieved_at).toLocaleDateString(
+                        lang === "ro" ? "ro-RO" : "en-GB",
+                      )}
+                    </small>
                   )}
                   <button
                     className="correction-link"
