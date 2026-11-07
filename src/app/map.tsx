@@ -118,8 +118,8 @@ export function CityScreen({
         dom={{
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
-          // SDK 58's DOM WebView injects the native bridge before page scripts.
-          useExpoDOMWebView: true,
+          // Use the supported RN WebView bridge; Expo DOM view lookup fails in Android release.
+          useExpoDOMWebView: false,
         }}
         initialPage={initialPage}
         publicUsername={publicUsername}

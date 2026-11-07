@@ -11,9 +11,11 @@
     "preview": {
       "distribution": "internal",
       "environment": "preview",
-      "android": { "buildType": "apk" },
+      "android": {
+        "buildType": "apk"
+      },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://experience-directive-manor-rugs.trycloudflare.com"
+        "EXPO_PUBLIC_API_URL": "https://lion-prostores-hamburg-builders.trycloudflare.com/api"
       }
     },
     "simulator": {

@@ -1,16 +1,16 @@
 import { createReadStream, statSync, readFileSync } from 'node:fs';
 const apk = new URL('../.cache/releases/MyArad.apk', import.meta.url);
 const page = new URL('../public/download/index.html', import.meta.url);
-export function serveDownload(req, res, pathname) {
+export function serveDownload(req, res, pathname, { apkFile = apk, pageFile = page } = {}) {
   if (!['/download', '/download/', '/device-test', '/device-test/', '/device-test/index.html', '/downloads/MyArad.apk'].includes(pathname)) return false;
   if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405, { Allow: 'GET, HEAD' }); res.end(); return true; }
   if (!pathname.endsWith('.apk')) {
-    const html = readFileSync(page);
+    const html = readFileSync(pageFile);
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': html.length, 'Cache-Control': 'no-cache' });
     res.end(req.method === 'HEAD' ? undefined : html); return true;
   }
   let size;
-  try { size = statSync(apk).size; } catch {
+  try { size = statSync(apkFile).size; } catch {
     res.writeHead(503, { 'Content-Type': 'text/plain; charset=utf-8', 'Retry-After': '60' });
     res.end('APK-ul se pregătește. Reîncearcă în câteva minute.'); return true;
   }
@@ -30,6 +30,6 @@ export function serveDownload(req, res, pathname) {
   headers['Content-Length'] = end - start + 1;
   res.writeHead(status, headers);
   if (req.method === 'HEAD') res.end();
-  else { const stream = createReadStream(apk, { start, end }); stream.on('error', () => res.destroy()); res.on('close', () => stream.destroy()); stream.pipe(res); }
+  else { const stream = createReadStream(apkFile, { start, end }); stream.on('error', () => res.destroy()); res.on('close', () => stream.destroy()); stream.pipe(res); }
   return true;
 }
