@@ -74,25 +74,3 @@
   .city-app .map-top-controls { top:12px; left:12px; right:12px; }
   .city-app .detail-body .journey { margin-top:14px; }
 }
-/* Native uses discrete panel positions; saved desktop drag sizes never affect it. */
-.native-sheet-buttons { display:none; }
-.city-app[data-native="true"] .native-sheet-buttons { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); z-index:610; display:flex; gap:4px; padding:4px; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:0 4px 18px #10182e20; white-space:nowrap; }
-.city-app[data-native="true"] .native-sheet-buttons button { min-height:40px; padding:8px 10px; border-radius:11px; font-size:11px; color:var(--ink); }
-.city-app[data-native="true"] .native-sheet-buttons button[aria-pressed="true"] { background:#8E93CB; color:#3D0000; }
-.city-app[data-native="true"] { --fixed-sheet-height:34%; }
-.city-app[data-native="true"][data-sheet-size="expanded"] { --fixed-sheet-height:62%; }
-.city-app[data-native="true"][data-sheet-size="full"] { --fixed-sheet-height:100%; }
-.city-app[data-native="true"] :is(.panel-resize-layer,.results-splitter,.mobile-map-toggle) { display:none!important; }
-.city-app[data-native="true"] .city-workspace>aside:not([style*="display: none"]) { height:var(--fixed-sheet-height)!important; max-height:100%!important; top:auto!important; bottom:0!important; transform:none!important; padding-top:16px; padding-bottom:60px; }
-.city-app[data-native="true"].map-only .city-workspace>aside { display:none!important; }
-.city-app[data-native="true"] :is(.discovery-controls,.news-filter-panel,.journey-filter-panel,.schedule-controls) { height:auto!important; max-height:52%!important; min-height:0; }
-.city-app[data-native="true"] .discovery:not(.mobile-open) .discovery-controls { max-height:100%!important; }
-.city-app[data-native="true"] .discovery.mobile-open .discovery-controls { max-height:45%!important; }
-.city-app[data-native="true"] :is(.news-article-top,.detail-hero) { height:100px!important; max-height:100px!important; }
-.city-app[data-native="true"] .news-article-top .news-cover { height:100px; }
-.city-app[data-native="true"] .news-heading { padding:10px 16px; }
-.city-app[data-native="true"] .news-heading h1 { font-size:25px; margin:6px 0; }
-.city-app[data-native="true"] :is(.news-heading p,.news-create-event p) { display:none; }
-.city-app[data-native="true"] .map-area .leaflet-bottom.leaflet-right { bottom:0!important; z-index:420; }
-.city-app[data-native="true"] .leaflet-control-attribution { margin:0!important; font-size:9px; max-width:100%; white-space:normal; }
-.city-app[data-native="true"].map-only .native-sheet-buttons { bottom:30px; }

@@ -1,0 +1,76 @@
+/* One navigation drawer and one content panel. No permanent navigation rail. */
+.city-app .city-header { gap:12px; }
+.city-app .menu-trigger { min-width:44px; min-height:44px; border:1px solid var(--line); border-radius:14px; font-size:22px; flex-shrink:0; }
+.city-app .brand { margin-right:auto; }
+.city-app .panel-toggle { min-height:44px; padding:8px 12px; border:1px solid var(--line); border-radius:14px; background:var(--surface,var(--paper)); font-size:12px; }
+.city-app .app-drawer { padding:0; border:0; margin:0; width:min(280px,85vw); max-width:none; height:100dvh; max-height:100dvh; background:transparent; color:var(--ink); overflow:visible; }
+.city-app .app-drawer::backdrop { background:#10182e80; backdrop-filter:blur(3px); }
+.drawer-content { height:100%; padding:24px 16px; background:var(--paper); border-right:1px solid var(--line); display:flex; flex-direction:column; overflow:auto; box-shadow:12px 0 40px #10182e30; }
+.drawer-heading { display:flex; align-items:center; justify-content:space-between; padding:0 8px 24px; }
+.drawer-heading strong { font-size:24px; letter-spacing:-1px; }
+.city-app .drawer-heading button { min-width:44px; min-height:44px; border-radius:12px; background:var(--surface); }
+.drawer-links { display:grid; gap:8px; }
+.city-app .drawer-links button { justify-content:flex-start; gap:14px; padding:14px 16px; min-height:52px; border-radius:14px; font-size:14px; color:var(--muted); text-align:left; }
+.city-app .drawer-links button.active { background:#8E93CB; color:#3D0000; font-weight:600; }
+.drawer-hint { margin-top:auto; padding:24px 12px 0; font-size:12px; color:var(--muted); }
+.city-app .city-workspace:has(>.detail-panel)>.discovery { display:none!important; }
+.city-app.map-only .city-workspace>:is(aside,.panel-resize-layer) { display:none!important; }
+.city-app .city-workspace>.detail-panel { position:relative; inset:auto; order:-1; max-width:none; flex-shrink:0; }
+.city-app .city-workspace>.discovery { overflow-y:auto; display:block; }
+.city-app :is(.discovery-controls,.news-filter-panel,.journey-filter-panel,.schedule-controls) { height:auto!important; max-height:none!important; overflow:visible; }
+.city-app :is(.results-list,.news-results-panel,.journey-results-panel) { overflow:visible; flex:none; }
+.city-app .event-news:has(.news-filter-panel) { display:block; overflow-y:auto; }
+.city-app .transport-sidebar { display:block; overflow-y:auto; }
+.city-app .transport-sidebar .journey { display:block; overflow:visible; }
+.city-app .schedule-page { overflow-y:auto; display:block; }
+.city-app .schedule-page>.schedule-list { overflow:visible; }
+.city-app .event-filter-options { margin-top:12px; border:1px solid var(--line); border-radius:12px; }
+.city-app .event-filter-options>summary { cursor:pointer; padding:12px; min-height:44px; font-size:12px; font-weight:600; }
+.city-app .event-filter-options[open] { padding:0 10px 10px; }
+.city-app .event-filter-options .news-date-range { margin-top:0; }
+.city-app .event-filter-options .news-categories { flex-wrap:wrap; }
+.city-app .news-create-event { padding-bottom:12px; }
+.city-app .news-featured .news-cover { height:140px; }
+.city-app .news-section-title h2 { font-size:18px; }
+.city-app .mobile-results,.city-app .mobile-close-list { display:none!important; }
+@media (prefers-reduced-motion:no-preference) {
+  .app-drawer[open] .drawer-content { animation:drawer-enter 160ms ease-out; }
+  @keyframes drawer-enter { from { transform:translateX(-100%); } to { transform:translateX(0); } }
+}
+@media (max-width:700px) {
+  .city-app .city-header { min-height:56px; height:56px; padding:0 10px; gap:8px; }
+  .city-app .brand { font-size:19px; gap:6px; }
+  .city-app .brand img { width:25px; height:32px; }
+  .city-app .header-actions { gap:4px; }
+  .city-app .header-actions .account { min-width:36px; padding:6px; }
+  .city-app .header-actions .theme-toggle { min-width:36px; width:36px; padding:6px; }
+  .city-app .header-actions .android-download { display:none; }
+  .city-app .panel-toggle { min-width:44px; padding:8px; }
+  .city-app .panel-toggle span { display:none; }
+  .city-app .city-workspace>aside:not([style*="display: none"]) { position:absolute!important; left:0!important; right:0!important; top:auto!important; bottom:0!important; width:100%!important; max-width:100%!important; height:var(--user-panel-height,62%); max-height:98%; transform:none!important; border-radius:20px 20px 0 0; padding-top:26px; padding-bottom:16px; box-shadow:0 -8px 28px #10182e20; }
+  .city-app .discovery:not(.mobile-open) .discovery-controls { overflow:visible; }
+  .city-app .discovery .results-heading:not([style*="display: none"]),.city-app .discovery .results-list:not([style*="display: none"]) { display:block!important; }
+  .city-app .discovery-heading { padding:0 16px 4px; }
+  .city-app .discovery h1 { font-size:22px; margin-bottom:8px; }
+  .city-app .discovery .filter-chips { flex-wrap:nowrap; overflow-x:auto; padding:10px 16px; }
+  .city-app .discovery .chip { flex-shrink:0; font-size:12px; }
+  .city-app .discovery .favorite-places-control { display:block!important; }
+  .city-app .results-heading { font-size:12px; padding:12px 16px; }
+  .city-app .panel-resize-layer { z-index:590; }
+  .city-app .panel-resize-handle.horizontal { min-height:30px; }
+  .city-app .panel-resize-handle.horizontal span { width:48px; height:5px; opacity:.7; }
+  .city-app .map-area .locate-button { top:64px; bottom:auto; left:12px; }
+  .city-app .map-area .leaflet-bottom.leaflet-right { bottom:0!important; }
+  .city-app .leaflet-control-attribution { font-size:9px; margin:0; }
+  .city-app .news-heading { padding:0 16px 10px; }
+  .city-app .news-heading h1 { font-size:25px; margin:4px 0; }
+  .city-app :is(.news-heading .news-kicker,.news-heading p,.news-create-event p) { display:none; }
+  .city-app :is(.news-controls,.news-create-event,.news-stories,.news-footer) { padding-left:16px; padding-right:16px; }
+  .city-app .news-article-top { height:auto; max-height:none; overflow:visible; }
+  .city-app .news-article-top .news-cover { height:100px; }
+  .city-app .news-article-body { padding:16px; min-height:100px; }
+  .city-app .detail-panel .detail-close { top:30px; }
+  .city-app .detail-hero { height:120px; }
+  .city-app .social-page,.city-app .schedule-page,.city-app .vasile-page { padding-bottom:16px; }
+  .city-app .social-page.chat-open { padding-bottom:0; }
+}

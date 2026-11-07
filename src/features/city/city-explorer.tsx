@@ -14,6 +14,7 @@ import './route-interface.css';
 import './social-design.css';
 import './notifications.css';
 import './mobile-layout.css';
+import './compact-layout.css';
 import { Journey } from "./journey";
 import { FavoritePlaces, FavoritePlaceButton } from './place-favorites';
 import { SocialView } from './social-view';
@@ -148,7 +149,7 @@ export default function CityExplorer(props: CityProps) {
   const [mapZoom, setMapZoom] = useState(14);
   const [newsMap, setNewsMap] = useState(false);
   const [mapOnly, setMapOnly] = useState(false);
-  const [sheetSize, setSheetSize] = useState('compact');
+  const menu = useRef<HTMLDialogElement>(null);
   const [publishedEvent, setPublishedEvent] = useState<CityEvent | null>(null);
   const [cycling, setCycling] = useState(false);
   const [journey, setJourney] = useState<Itinerary | null>(null);
@@ -689,7 +690,6 @@ export default function CityExplorer(props: CityProps) {
     <main
       data-theme={props.theme}
       data-native={props.calendarPlatform !== 'web' ? 'true' : 'false'}
-      data-sheet-size={sheetSize}
       className={`city-app ${mapOnly ? 'map-only' : ''} ${transportPage ? 'transport-page' : ''} ${journey ? "route-active" : ""} ${eventsPage ? "events-page" : ""} ${newsMap ? "news-map-open" : ""} ${composer ? "event-composing" : ""}`}
       onClick={(e) => {
         const a = (e.target as Element).closest("a");
@@ -700,6 +700,7 @@ export default function CityExplorer(props: CityProps) {
       }}
     >
       <header className="city-header">
+        <button className="menu-trigger" aria-label={lang === 'ro' ? 'Deschide meniul' : 'Open menu'} onClick={() => menu.current?.showModal()}><span aria-hidden="true">☰</span></button>
         <a
           className="brand"
           href="#"
@@ -719,27 +720,11 @@ export default function CityExplorer(props: CityProps) {
             <small>{t.about}</small>
           </span>
         </a>
-        <nav className="top-nav">
-          {[
-            ["/map", t.explore, 'pin'],
-            ["/events", t.events, 'events'],
-            ['/people', lang === 'ro' ? 'Mesaje' : 'Messages', 'message'],
-            ["/schedule", lang === "ro" ? "Programul meu" : "My schedule", 'calendar'],
-          ].map(([path, title, icon]) => (
-            <button
-              key={path}
-              aria-label={title}
-              title={title}
-              className={
-                "/" + (props.initialPage || "map") === path ? "nav-active" : ""
-              }
-              onClick={() => void props.onNavigate(path)}
-            >
-              <Icon name={icon} size={22} />
-            </button>
-          ))}
-        </nav>
         <div className="header-actions">
+          {!socialPage && !schedulePage && !vasilePage && <button className="panel-toggle" aria-pressed={mapOnly} onClick={() => {
+            setMapOnly(!mapOnly); setNewsMap(!mapOnly); setMobileList(true); setMapOptionsOpen(false);
+            requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
+          }}><Icon name={mapOnly ? 'search' : 'layers'} size={18} /><span>{mapOnly ? (lang === 'ro' ? 'Panou' : 'Panel') : (lang === 'ro' ? 'Hartă' : 'Map')}</span></button>}
           {props.calendarPlatform === 'web' && <button className="android-download" title={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} aria-label={lang === 'ro' ? 'Descarcă aplicația Android' : 'Download Android app'} onClick={() => void props.onExternalLink(window.location.origin + '/download')}><span aria-hidden="true">↓</span><span>{lang === "ro" ? "Descarcă APK" : "Download APK"}</span></button>}
           {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
           <button
@@ -796,30 +781,8 @@ export default function CityExplorer(props: CityProps) {
         className="city-workspace"
         style={schedulePage || socialPage || vasilePage ? { display: "none" } : undefined}
       >
-        {props.calendarPlatform === 'web' && <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />}
-        {props.calendarPlatform !== 'web' && <nav className="native-sheet-buttons" aria-label={lang === 'ro' ? 'Afișarea panoului' : 'Panel display'}>{[
-          ['map', lang === 'ro' ? 'Hartă' : 'Map'],
-          ['compact', lang === 'ro' ? 'Compact' : 'Compact'],
-          ['expanded', lang === 'ro' ? 'Extins' : 'Expanded'],
-          ['full', lang === 'ro' ? 'Complet' : 'Full'],
-        ].map(([size, label]) => <button key={size} aria-pressed={size === 'map' ? mapOnly : !mapOnly && sheetSize === size} onClick={() => {
-          setMapOnly(size === 'map'); setNewsMap(size === 'map');
-          if (size !== 'map') { setSheetSize(size); setMobileList(true); }
-          setMapOptionsOpen(false);
-          requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
-        }}>{label}</button>)}</nav>}
-        <button className="mobile-map-toggle" aria-expanded={!mapOnly} onClick={event => {
-          const showMap = !mapOnly;
-          setMapOnly(showMap);
-          setMobileList(!showMap);
-          setNewsMap(showMap);
-          if (showMap) {
-            event.currentTarget.closest('.city-workspace')?.querySelectorAll('details[open]').forEach(menu => menu.removeAttribute('open'));
-            if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
-          }
-          requestAnimationFrame(() => map.current?.invalidateSize({ pan: false }));
-        }}><Icon name={mapOnly ? 'search' : 'layers'} size={18} />{mapOnly ? (lang === 'ro' ? 'Deschide panoul' : 'Open panel') : (lang === 'ro' ? 'Doar harta' : 'Map only')}</button>
-        {eventsPage && <EventNews onArticleOpen={() => { setMapOnly(false); setNewsMap(false); setSheetSize('full'); }} publishedEvent={selected && isEvent(selected) ? selected : publishedEvent} onEventsChanged={load} calendarProps={props} request={api} events={data.events} onSelect={(place) => { setSelected(place); setNewsMap(false); setMapOnly(false); }} onCloseMap={() => { setNewsMap(true); setMapOnly(true); setTimeout(() => { map.current?.invalidateSize(); if (selected) map.current?.setView([selected.lat, selected.lng], 16); }, 50); }} onPublish={openComposer} />}
+        <PanelResizers onExploreExpand={() => setMobileList(true)} onResize={() => map.current?.invalidateSize({ pan: false })} />
+        {eventsPage && <EventNews onArticleOpen={() => { setMapOnly(false); setNewsMap(false); setMobileList(true); }} publishedEvent={selected && isEvent(selected) ? selected : publishedEvent} onEventsChanged={load} calendarProps={props} request={api} events={data.events} onSelect={(place) => { setSelected(place); setNewsMap(false); setMapOnly(false); }} onCloseMap={() => { setNewsMap(true); setMapOnly(true); setTimeout(() => { map.current?.invalidateSize(); if (selected) map.current?.setView([selected.lat, selected.lng], 16); }, 50); }} onPublish={openComposer} />}
         {transportPage && (
           <aside className="transport-sidebar">
             <div className="transport-title">
@@ -1572,7 +1535,10 @@ export default function CityExplorer(props: CityProps) {
         )}
       </div>
       {props.calendarPlatform === 'web' && !vasilePage && !composer && <VasileLauncher label={lang === "ro" ? "Vorbește cu Vasile" : "Chat with Vasile"} onOpen={() => void action(() => props.onNavigate("/vasile"))} />}
-      <nav className={`mobile-page-nav ${props.calendarPlatform !== 'web' ? 'native-five-tabs' : ''}`}>
+      <dialog ref={menu} className="app-drawer" aria-labelledby="drawer-title" onClick={event => { if (event.target === event.currentTarget) menu.current?.close(); }}>
+        <div className="drawer-content">
+          <div className="drawer-heading"><strong id="drawer-title">MyArad</strong><button aria-label={lang === 'ro' ? '?nchide meniul' : 'Close menu'} onClick={() => menu.current?.close()}><Icon name="close" size={20} /></button></div>
+      <nav className="drawer-links" aria-label={lang === 'ro' ? 'Pagini' : 'Pages'}>
         {[
           ["/map", t.street, 'pin'],
           ...(props.calendarPlatform !== 'web' ? [["/vasile", "Vasile", "vasile"]] : []),
@@ -1588,12 +1554,15 @@ export default function CityExplorer(props: CityProps) {
             aria-label={title}
             title={title}
             aria-current={'/' + (props.initialPage || 'map') === path ? 'page' : undefined}
-            onClick={() => void props.onNavigate(path)}
+            onClick={() => { menu.current?.close(); setMapOnly(false); setNewsMap(false); void props.onNavigate(path); }}
           >
-            <Icon name={icon} size={23} />
+            <Icon name={icon} size={23} /><span>{title}</span>
           </button>
         ))}
       </nav>
+          <p className="drawer-hint">{lang === 'ro' ? 'Ora?ul t?u, la un pas.' : 'Your city, one tap away.'}</p>
+        </div>
+      </dialog>
       {(error || notice) && (
         <div
           className={`toast ${error ? "error-toast" : ""}`}

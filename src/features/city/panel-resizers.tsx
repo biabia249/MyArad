@@ -11,12 +11,12 @@ export function PanelResizers({ onResize, onExploreExpand }: { onResize: () => v
     if (!host || !workspace) return;
     let saved: Record<string, number> = {};
     try {
-      const stored = JSON.parse(localStorage.getItem('myarad.panel-sizes.v1') || '{}');
+      const stored = JSON.parse(localStorage.getItem('myarad.panel-sizes.v2') || '{}');
       if (stored && typeof stored === 'object' && !Array.isArray(stored)) saved = stored;
     } catch {}
     const controls = new Map<HTMLElement, { handle: HTMLDivElement; heightHandle: HTMLDivElement; originalWidth: string }>();
     let frame = 0;
-    const persist = () => { try { localStorage.setItem('myarad.panel-sizes.v1', JSON.stringify(saved)); } catch {} };
+    const persist = () => { try { localStorage.setItem('myarad.panel-sizes.v2', JSON.stringify(saved)); } catch {} };
     const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); };
     const observer = new ResizeObserver(schedule);
     function measure() {
@@ -46,7 +46,7 @@ export function PanelResizers({ onResize, onExploreExpand }: { onResize: () => v
         else panel.style.removeProperty('--user-desktop-panel-height');
         const key = `${id}.${mobile ? 'height' : 'width'}`;
         const otherWidth = [...workspace.querySelectorAll<HTMLElement>(':scope > aside')].filter((other) => other !== panel && getComputedStyle(other).display !== 'none' && getComputedStyle(other).position !== 'absolute').reduce((sum, other) => sum + other.getBoundingClientRect().width, 0);
-        const max = mobile ? bounds.height * .92 : Math.max(180, Math.min(800, bounds.width * .65, bounds.width - otherWidth - 180));
+        const max = mobile ? bounds.height * .98 : Math.max(180, Math.min(800, bounds.width * .65, bounds.width - otherWidth - 180));
         const min = Math.min(mobile ? 200 : 260, max);
         const apply = (value: number) => {
           const size = Math.round(Math.max(min, Math.min(max, value)));
@@ -63,9 +63,9 @@ export function PanelResizers({ onResize, onExploreExpand }: { onResize: () => v
         }
         else if (!mobile) panel.style.width = originalWidth;
         handle.hidden = !panel.getClientRects().length || getComputedStyle(panel).display === 'none';
-        const rect = panel.getBoundingClientRect(), right = id === 'details';
+        const rect = panel.getBoundingClientRect(), right = false;
         Object.assign(handle.style, mobile ? { left: `${rect.left - bounds.left}px`, top: `${Math.max(0, rect.top - bounds.top)}px`, width: `${rect.width}px`, height: '30px' } : { left: `${(right ? rect.left : rect.right) - bounds.left - 6}px`, top: `${rect.top - bounds.top}px`, width: '12px', height: `${rect.height}px` });
-        heightHandle.hidden = mobile || handle.hidden || id === 'explore';
+        heightHandle.hidden = mobile || handle.hidden;
         Object.assign(heightHandle.style, { left: `${rect.left - bounds.left}px`, top: `${Math.min(bounds.height - 16, rect.bottom - bounds.top - 8)}px`, width: `${rect.width}px`, height: '16px' });
         heightHandle.setAttribute('aria-valuemin', String(Math.min(180, Math.round(bounds.height))));
         heightHandle.setAttribute('aria-valuemax', String(Math.round(bounds.height)));
