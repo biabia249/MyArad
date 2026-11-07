@@ -1,0 +1,28 @@
+.city-app .favorite-place-button { min-height:44px; gap:10px; padding:11px 16px; border:1px solid var(--line); border-radius:14px; background:var(--surface); color:var(--ink); font-weight:600; }
+.favorite-place-button>span { font-size:22px; color:#800020; }
+.city-app .favorite-place-button.is-favorite { background:#FFEB99; color:#3D0000; border-color:#FFEB99; }
+.favorite-place-action { margin-block:16px; }
+.favorite-place-action p { font-size:12px; }
+.favorite-places-control { margin:0 20px 14px; }
+.city-app .favorites-open-button { gap:8px; border:1px solid var(--line); }
+.favorites-open-button>span:first-child { color:#800020; }
+.favorites-count { border-radius:20px; padding:2px 7px; background:#c5c9ec; color:#3D0000; font-size:11px; }
+.favorites-backdrop { position:fixed; inset:0; z-index:1200; background:#10182e70; display:flex; align-items:center; justify-content:center; padding:20px; }
+.favorites-dialog { width:min(540px,100%); max-height:80dvh; overflow-y:auto; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:24px; padding:24px; box-shadow:0 20px 70px #10182e40; }
+.favorites-dialog header { display:flex; align-items:flex-start; gap:16px; justify-content:space-between; }
+.favorites-dialog h2 { font-size:24px; line-height:1.4; margin:8px 0; }
+.city-app .favorites-dialog header>button { min-width:44px; min-height:44px; background:var(--paper); border-radius:14px; font-size:25px; }
+.favorites-storage-note { font-size:12px; color:var(--muted); line-height:1.7; }
+.favorites-dialog ul { padding:0; list-style:none; }
+.favorites-dialog li { display:flex; align-items:center; gap:8px; border-top:1px solid var(--line); padding-block:12px; }
+.city-app .favorite-place-link { flex:1; min-width:0; text-align:left; justify-content:flex-start; gap:12px; }
+.favorite-place-link>span:nth-child(2) { flex:1; min-width:0; }
+.favorite-place-link strong,.favorite-place-link small { display:block; overflow-wrap:anywhere; }
+.favorite-place-link strong { font-size:14px; line-height:1.5; }
+.favorite-place-link small { font-size:12px; color:var(--muted); margin-top:4px; }
+.favorite-place-symbol { display:grid; place-items:center; width:40px; height:40px; flex-shrink:0; border-radius:14px; background:#c5c9ec; color:#800020; }
+.city-app .favorite-remove { min-width:44px; min-height:44px; color:#800020; font-size:22px; border-radius:12px; background:#ffeb9950; }
+.favorites-empty { padding:30px 8px; text-align:center; }
+.favorites-empty>span { color:#8E93CB; font-size:56px; }
+.favorites-empty p { color:var(--muted); font-size:14px; line-height:1.7; }
+@media(max-width:700px) { .favorites-backdrop { align-items:flex-end; padding:12px; } .favorites-dialog { padding:20px; max-height:85dvh; } .favorites-dialog h2 { font-size:21px; } }
