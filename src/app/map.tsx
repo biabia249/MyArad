@@ -122,6 +122,10 @@ export function CityScreen({
         dom={{
           style: { flex: 1, width: "100%" },
           webviewDebuggingEnabled: __DEV__,
+          // Expo's native DomWebView can try to resolve an async DOM call after
+          // the view has already unmounted during navigation. The standard
+          // WebView keeps the bridge alive for the complete component lifecycle.
+          useExpoDOMWebView: false,
         }}
         initialPage={initialPage}
         publicUsername={publicUsername}
