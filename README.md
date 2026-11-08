@@ -73,3 +73,5 @@ appropriate origins, deployment configuration, and physical-device testing.
 See [deploy/debian/README.md](deploy/debian/README.md) for a fresh Debian LXC setup with systemd, Caddy HTTPS, SQLite migration and stable-domain APK instructions. Read [WhatWeLearnt.md](WhatWeLearnt.md) and [deployment context](deploy/debian/STATE.md) before continuing development.
 
 Create the source package from the committed revision with `bash scripts/package-debian.sh ~/Downloads`. Add `--private` as the second argument only when creating the separate confidential migration backup; this contains real accounts and keys and must not be uploaded to GitHub.
+
+For another coding agent, begin with [AGENT-HANDOFF.md](AGENT-HANDOFF.md). The current development branch in the personal fork is `bia`.
