@@ -76,3 +76,8 @@ main.city-app[data-theme] .social-search input { box-sizing:border-box; width:10
 main.city-app[data-theme] .social-person-info>.friend-profile-button { box-sizing:border-box; max-width:100%; }
 main.city-app[data-theme] .connection-list { padding:16px; border-radius:20px; box-sizing:border-box; }
 @media(max-width:400px) { main.city-app[data-theme] .social-contacts { padding:12px; } }
+
+@media(max-width:700px) { .city-app .panel-resize-handle.horizontal[aria-label^="Ajustează înălțimea"] { display:none !important; } }
+
+/* Map-only mode must never retain floating panel controls. */
+.city-app.map-only :is(.panel-resize-layer,.panel-resize-handle,.results-splitter) { display:none !important; pointer-events:none !important; }

@@ -302,6 +302,7 @@ export default function CityExplorer(props: CityProps) {
   useEffect(() => {
     if (!mapReady || !map.current || !lib.current) return;
     tiles.current?.remove();
+    map.current.setMaxZoom(satellite && !cycling ? 16 : 19);
     tiles.current = lib.current
       .tileLayer(
         cycling
@@ -311,6 +312,8 @@ export default function CityExplorer(props: CityProps) {
             : "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
           maxZoom: 19,
+          // Enlarge available imagery rather than requesting unsupported close-up tiles.
+          maxNativeZoom: satellite && !cycling ? 16 : 19,
           attribution: cycling
             ? "© CyclOSM · OpenStreetMap contributors · OSM France"
             : satellite
@@ -987,14 +990,6 @@ export default function CityExplorer(props: CityProps) {
             </span>
             <button className="map-button map-options-toggle" aria-expanded={mapOptionsOpen} aria-label={lang === 'ro' ? 'Opțiuni hartă' : 'Map options'} onClick={() => setMapOptionsOpen(value => !value)}><Icon name="layers" size={17} />{lang === 'ro' ? 'Hartă' : 'Map'}</button>
             <div className="map-option-buttons" onClick={() => setMapOptionsOpen(false)}>
-            <button
-              className="map-button"
-              onClick={() =>
-                map.current?.fitBounds(bounds, { padding: [20, 20] })
-              }
-            >
-              {lang === "ro" ? "Județul Arad" : "Arad County"}
-            </button>
             <button
               className={`map-button ${cycling ? "tracking" : ""}`}
               onClick={() => setCycling(!cycling)}

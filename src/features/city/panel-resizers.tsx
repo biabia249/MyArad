@@ -30,13 +30,11 @@ export function PanelResizers({ onResize, onExploreExpand }: { onResize: () => v
           const handle = document.createElement('div');
           handle.className = 'panel-resize-handle'; handle.tabIndex = 0; handle.setAttribute('role', 'separator');
           handle.setAttribute('aria-label', id === 'details' ? 'Redimensionează rezultatele și detaliile' : 'Redimensionează panoul principal');
-          handle.title = 'Trage pentru redimensionare · Săgeți pentru ajustare · Dublu clic pentru resetare';
           handle.appendChild(document.createElement('span')); host.appendChild(handle);
           const heightHandle = document.createElement('div');
           heightHandle.className = 'panel-resize-handle horizontal'; heightHandle.tabIndex = 0;
           heightHandle.setAttribute('role', 'separator'); heightHandle.setAttribute('aria-orientation', 'horizontal');
           heightHandle.setAttribute('aria-label', id === 'details' ? 'Ajustează înălțimea rezultatelor și detaliilor' : 'Ajustează înălțimea panoului principal');
-          heightHandle.title = 'Trage în sus sau în jos pentru înălțime · Dublu clic pentru înălțimea completă';
           heightHandle.appendChild(document.createElement('span')); host.appendChild(heightHandle);
           control = { handle, heightHandle, originalWidth: panel.style.width }; controls.set(panel, control); observer.observe(panel);
         }
