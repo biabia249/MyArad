@@ -2,7 +2,7 @@
   "expo": {
     "name": "MyArad",
     "slug": "MyArad",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/images/app-icon.png",
     "scheme": "myarad",
@@ -22,7 +22,7 @@
       "permissions": [
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ],
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "output": "server",

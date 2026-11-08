@@ -45,3 +45,5 @@ main.city-app[data-theme] .favorite-place-link { background:transparent; padding
 .favorite-place-image { width:80px; height:80px; flex-shrink:0; border-radius:10px; object-fit:cover; }
 main.city-app[data-theme] :is(.favorite-remove,.favorite-place-button.is-favorite) { background:var(--ui-selection,#c5c9ec); color:#10182e; border-color:var(--line); }
 main.city-app[data-theme] :is(.favorite-place-button>span,.favorites-open-button>span:first-child) { color:var(--ui-action,#8e93cb); }
+
+.venue-picker { min-width:0; } .venue-picker summary { cursor:pointer; padding:12px; } .venue-options { max-height:180px; overflow:auto; display:grid; gap:4px; } main.city-app[data-theme] .venue-options button { text-align:left; justify-content:flex-start; background:var(--surface); color:var(--ink); padding:12px; } .composer-panel { overflow-y:auto; overscroll-behavior:contain; }

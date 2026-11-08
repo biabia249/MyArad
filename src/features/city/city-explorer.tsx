@@ -417,6 +417,7 @@ export default function CityExplorer(props: CityProps) {
       ) > 0;
     },
   );
+  items.sort((a,b) => ("title" in a ? a.title : a.name).localeCompare("title" in b ? b.title : b.name, "ro"));
   if (props.initialPage === "events" && selected && !items.some((item) => item.id === selected.id)) items.push(selected);
   useEffect(() => {
     currentItems.current = items;
@@ -1458,25 +1459,13 @@ export default function CityExplorer(props: CityProps) {
                   placeholder={t.selectPlace}
                 />
               </label>
-              <select
-                aria-label={t.selectPlace}
-                value=""
-                onChange={(e) => {
-                  const p = data.places.find((p) => p.id === e.target.value);
-                  if (p) {
-                    setVenue(p.name);
-                    setPin({ lat: p.lat, lng: p.lng });
-                    map.current?.flyTo([p.lat, p.lng], 16);
-                  }
-                }}
-              >
-                <option value="">{t.selectPlace}…</option>
-                {data.places.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
+              <details className="venue-picker">
+                <summary>{t.selectPlace}</summary>
+                <input aria-label={lang === 'ro' ? 'Caută locația' : 'Search places'} placeholder={t.selectPlace} value={venue} onChange={e => setVenue(e.target.value)} />
+                <div className="venue-options">
+                  {data.places.filter(p => !venue || p.name.toLocaleLowerCase('ro').includes(venue.toLocaleLowerCase('ro'))).sort((a,b) => a.name.localeCompare(b.name, 'ro')).slice(0,30).map(p => <button type="button" key={p.id} onClick={e => { setVenue(p.name); setPin({lat:p.lat,lng:p.lng}); map.current?.flyTo([p.lat,p.lng],16); e.currentTarget.closest('details')?.removeAttribute('open'); }}>{p.name}</button>)}
+                </div>
+              </details>
               <small className="pin-coordinates">
                 <Icon name="pin" size={14} />
                 {pin

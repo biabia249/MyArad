@@ -56,7 +56,7 @@ export function EventNews({ request, events, onSelect, onCloseMap, onPublish, ca
   const local: Article[] = events.map((event) => ({ ...event, source: event.author, source_kind: 'community', url: '', image: '', published_at: null, location: { name: event.venue, address: '', lat: event.lat, lng: event.lng } }));
   const categorized = [...local, ...(feed?.articles || [])].map((a) => ({ ...a, category: eventCategory(a.category, `${a.title} ${a.description}`) }));
   const rangeError = !!dateFrom && !!dateTo && dateFrom > dateTo;
-  const articles = categorized.filter((a) => !rangeError && inEventRange(a, dateFrom, dateTo) && (category === 'all' || a.category === category) && (phase === 'all' ? phaseOf(a) !== 'past' : phaseOf(a) === phase) && (sourceFilter === 'all' || a.source_kind === sourceFilter) && (smartSearchScore(query, a.title, `${a.description} ${a.location?.name || ''}`) > 0 || (!!a.discovery_lane && searchedQuery === query))).sort(compareEvents);
+  const articles = categorized.filter((a) => !rangeError && phaseOf(a) !== 'past' && inEventRange(a, dateFrom, dateTo) && (category === 'all' || a.category === category) && (phase === 'all' ? phaseOf(a) !== 'past' : phaseOf(a) === phase) && (sourceFilter === 'all' || a.source_kind === sourceFilter) && (smartSearchScore(query, a.title, `${a.description} ${a.location?.name || ''}`) > 0 || (!!a.discovery_lane && searchedQuery === query))).sort(compareEvents);
   function choose(article: Article) {
     setSelected(article);
     onArticleOpen?.();
