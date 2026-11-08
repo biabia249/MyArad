@@ -174,6 +174,7 @@ export default function CityExplorer(props: CityProps) {
     [busy, setBusy] = useState(false);
   const [pin, setPin] = useState<{ lat: number; lng: number } | null>(null),
     [venue, setVenue] = useState("");
+  const [venueSuggestionsOpen, setVenueSuggestionsOpen] = useState(false);
   const [correction, setCorrection] = useState(false),
     [comment, setComment] = useState(""),
     [suggestion, setSuggestion] = useState("");
@@ -648,6 +649,15 @@ export default function CityExplorer(props: CityProps) {
     let active = true;
     void Promise.resolve().then(() => {
       if(!active) return;
+      if (props.initialPlaceId?.startsWith('route:')) {
+        const [lat,lng] = props.initialPlaceId.slice(6).split(',').map(Number);
+        if (Number.isFinite(lat) && Number.isFinite(lng) && Math.abs(lat)<=90 && Math.abs(lng)<=180) {
+          const known = data.places.find(p => Math.abs(p.lat-lat)<0.00001 && Math.abs(p.lng-lng)<0.00001);
+          setSelected(known || { id:props.initialPlaceId, name:'Destinație', lat,lng, category:'landmark', address:'',description:'',source:'',tags:[],phone:'',website:'',hours:'',image:'',wikipedia:'' });
+          setMobileList(false);
+        }
+        return;
+      }
       const place=props.initialPlaceId?.startsWith("event:") ? data.events.find(event=>event.id===props.initialPlaceId?.slice(6)) : data.places.find(p=>p.id===props.initialPlaceId || p.alias_ids?.includes(props.initialPlaceId!));
       if(place) {setSelected(place);setMobileList(false);}
     });
@@ -740,7 +750,7 @@ export default function CityExplorer(props: CityProps) {
               <span>{props.userName.split(" ")[0]}</span>
             </button>
           ) : (
-            <button className="account" onClick={() => void props.onSignIn()}>
+            <button className="account sign-in-button" onClick={() => void props.onSignIn()}>
               <Icon name="user" size={17} />
               <span>{t.signIn}</span>
             </button>
@@ -1255,7 +1265,7 @@ export default function CityExplorer(props: CityProps) {
                   )
                 }
               />
-              <details className="place-directions" key={`directions-${selected.id}`}>
+              <details className="place-directions" open={props.initialPlaceId?.startsWith('route:') || undefined} key={`directions-${selected.id}`}>
               <summary><Icon name="arrow" size={18} />{lang === 'ro' ? 'Direcții către acest loc' : 'Directions to this place'}</summary>
               <Journey
                 key={selected.id}
@@ -1449,23 +1459,28 @@ export default function CityExplorer(props: CityProps) {
                   ))}
                 </select>
               </label>
-              <label>
-                {t.venue}
-                <input
-                  required
-                  value={venue}
-                  onChange={(e) => setVenue(e.target.value)}
-                  maxLength={200}
-                  placeholder={t.selectPlace}
-                />
-              </label>
-              <details className="venue-picker">
-                <summary>{t.selectPlace}</summary>
-                <input aria-label={lang === 'ro' ? 'Caută locația' : 'Search places'} placeholder={t.selectPlace} value={venue} onChange={e => setVenue(e.target.value)} />
-                <div className="venue-options">
-                  {data.places.filter(p => !venue || p.name.toLocaleLowerCase('ro').includes(venue.toLocaleLowerCase('ro'))).sort((a,b) => a.name.localeCompare(b.name, 'ro')).slice(0,30).map(p => <button type="button" key={p.id} onClick={e => { setVenue(p.name); setPin({lat:p.lat,lng:p.lng}); map.current?.flyTo([p.lat,p.lng],16); e.currentTarget.closest('details')?.removeAttribute('open'); }}>{p.name}</button>)}
-                </div>
-              </details>
+              <div className="venue-picker">
+                <label>
+                  {t.venue}
+                  <input
+                    name="venue" required value={venue} maxLength={200}
+                    placeholder={t.selectPlace} enterKeyHint="next"
+                    onFocus={() => setVenueSuggestionsOpen(true)}
+                    onBlur={() => setVenueSuggestionsOpen(false)}
+                    onChange={e => { setVenue(e.target.value); setVenueSuggestionsOpen(true); }}
+                    onKeyDown={e => {
+                      if (e.key !== 'Enter') return;
+                      e.preventDefault(); setVenueSuggestionsOpen(false);
+                      const next = e.currentTarget.form?.elements.namedItem('starts_at') as HTMLInputElement | null;
+                      next?.focus();
+                      try { next?.showPicker(); } catch { /* Focus still allows manual date selection. */ }
+                    }}
+                  />
+                </label>
+                {venueSuggestionsOpen && <div className="venue-options" aria-label={t.selectPlace}>
+                  {data.places.filter(p => !venue || p.name.toLocaleLowerCase('ro').includes(venue.toLocaleLowerCase('ro'))).sort((a,b) => a.name.localeCompare(b.name, 'ro')).slice(0,30).map(p => <button type="button" key={p.id} onPointerDown={e => e.preventDefault()} onClick={() => { setVenue(p.name); setPin({lat:p.lat,lng:p.lng}); map.current?.flyTo([p.lat,p.lng],16); setVenueSuggestionsOpen(false); }}>{p.name}</button>)}
+                </div>}
+              </div>
               <small className="pin-coordinates">
                 <Icon name="pin" size={14} />
                 {pin

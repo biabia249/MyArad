@@ -193,12 +193,7 @@ export function SocialView({
       <article className="social-person" key={person.username}>
         <Avatar person={person} />
         <div className="social-person-info">
-          <strong>{person.fullName}</strong>
-          <small>@{person.username}</small>
-          {person.bio && <p>{person.bio}</p>}
-          <button onClick={() => onProfile(person.username)}>
-            {ro ? "Program public" : "Public schedule"}
-          </button>
+          <button className="friend-profile-button" onClick={() => onProfile(person.username)} aria-label={`${ro ? 'Vezi profilul' : 'View profile'} ${person.fullName}`}><strong>{person.fullName}</strong><small>@{person.username}</small></button>
         </div>
         <div className="social-person-actions">
           {relationship?.status === "accepted" ? (

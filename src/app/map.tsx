@@ -1,3 +1,4 @@
+import { isGamblingLink } from '@/features/city/link-policy';
 import { useCallback, useRef, useState } from "react";
 import { Alert, Linking, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -94,11 +95,8 @@ export function CityScreen({
     }
   }, []);
   const directions = useCallback<CityProps["onDirections"]>(
-    async (lat, lng, mode, origin) => {
-      const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=${encodeURIComponent(mode)}${origin ? `&origin=${encodeURIComponent(origin)}` : ""}`;
-      if (Platform.OS === "web")
-        window.open(url, "_blank", "noopener,noreferrer");
-      else await Linking.openURL(url);
+    async (lat, lng) => {
+      router.push(('/map?place=' + encodeURIComponent(`route:${lat},${lng}`)) as Href);
     },
     [],
   );
@@ -134,6 +132,7 @@ export function CityScreen({
         userName={name}
         onExternalLink={async (url) =>
           safely(async () => {
+            if (isGamblingLink(url)) return;
             if (!/^(https?:|tel:)/.test(url))
               throw new Error("Unsupported link.");
             if (Platform.OS === "web")

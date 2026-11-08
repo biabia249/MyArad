@@ -47,3 +47,23 @@ main.city-app[data-theme] :is(.favorite-remove,.favorite-place-button.is-favorit
 main.city-app[data-theme] :is(.favorite-place-button>span,.favorites-open-button>span:first-child) { color:var(--ui-action,#8e93cb); }
 
 .venue-picker { min-width:0; } .venue-picker summary { cursor:pointer; padding:12px; } .venue-options { max-height:180px; overflow:auto; display:grid; gap:4px; } main.city-app[data-theme] .venue-options button { text-align:left; justify-content:flex-start; background:var(--surface); color:var(--ink); padding:12px; } .composer-panel { overflow-y:auto; overscroll-behavior:contain; }
+
+main.city-app[data-theme] .friend-profile-button { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:4px; width:100%; min-width:0; min-height:48px; padding:12px 16px; border:1px solid #8e93cb; border-radius:12px; background:#c5c9ec; color:#10182e; text-align:left; overflow-wrap:anywhere; }
+main.city-app[data-theme] .friend-profile-button small { color:#354165; }
+main.city-app[data-theme] .friend-profile-button:hover:not(:disabled) { background:#b5bae3; }
+main.city-app[data-theme] .friend-profile-button:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+main.city-app[data-theme] .connection-list li>.friend-profile-button { flex:1; }
+/* Give the identity its own full row instead of shrinking between actions. */
+main.city-app[data-theme] .social-person { display:grid; grid-template-columns:44px minmax(0,1fr); align-items:start; gap:12px; }
+main.city-app[data-theme] .social-person>.social-avatar { grid-column:1; width:44px; height:44px; }
+main.city-app[data-theme] .social-person-info { grid-column:2; width:100%; min-width:0; }
+main.city-app[data-theme] .social-person-info .friend-profile-button { overflow-wrap:break-word; word-break:normal; }
+main.city-app[data-theme] .social-person-actions { grid-column:1 / -1; display:flex; flex-wrap:wrap; width:100%; gap:8px; }
+main.city-app[data-theme] .social-person-actions button { flex:1 1 120px; white-space:normal; }
+
+main.city-app[data-theme] .city-header :is(.sign-in-button,.account-user) { display:inline-flex; align-items:center; justify-content:center; gap:8px; width:auto; min-height:44px; padding:10px 14px; border:1px solid #8e93cb; border-radius:12px; background:#8e93cb; color:#10182e; font-size:14px; font-weight:600; white-space:nowrap; }
+main.city-app[data-theme] .city-header :is(.sign-in-button,.account-user) span { display:inline; }
+@media(max-width:400px) { main.city-app[data-theme] .city-header :is(.sign-in-button,.account-user) { padding:10px; font-size:12px; gap:5px; } }
+
+main.city-app[data-theme] .city-header .account-user { max-width:180px; }
+main.city-app[data-theme] .city-header .account-user span { overflow:hidden; text-overflow:ellipsis; }

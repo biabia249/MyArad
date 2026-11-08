@@ -91,7 +91,9 @@ export function ScheduleView({
       null,
     );
     if (r.ok) {
-      setSchedule(JSON.parse(r.data));
+      const next: Schedule = JSON.parse(r.data);
+      next.plans = next.plans.filter(plan => !Number.isFinite(Date.parse(plan.ends_at)) || Date.parse(plan.ends_at) > Date.now());
+      setSchedule(next);
       setError("");
     } else setError(r.error || "Connection failed");
   }, [props, username]);

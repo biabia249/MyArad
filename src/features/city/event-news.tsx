@@ -1,3 +1,4 @@
+import { isGamblingLink } from './link-policy';
 import { useCallback, useEffect, useState } from 'react';
 import type { CityEvent, Place, CityProps } from './types';
 import { EventCalendarForm } from './calendar-choices';
@@ -79,7 +80,7 @@ export function EventNews({ request, events, onSelect, onCloseMap, onPublish, ca
         <div className="news-schedule"><strong>Locație</strong><p>{selected.location ? `${selected.location.name} · ${selected.location.address}` : 'Locația exactă nu este confirmată. Consultă anunțul organizatorului.'}</p>
           {selected.location && <button className="news-link" onClick={() => { if (selected.source_kind === 'community') void calendarProps.onNavigate('/map?place=' + encodeURIComponent('event:' + selected.id)); else onCloseMap(); }}>Vezi pe hartă ↗</button>}</div>
         <p className="news-date">Ultima verificare: {fmt(feed?.updated_at) || 'indisponibilă'}. Programul se poate modifica.</p>
-        {selected.url && <a className="news-source" href={selected.url}>Citește anunțul original ↗</a>}
+        {selected.url && !isGamblingLink(selected.url) && <a className="news-source" href={selected.url}>Citește anunțul original ↗</a>}
         <details className="news-calendar"><summary>＋ Adaugă în calendarul meu</summary><EventCalendarForm key={selected.id} props={calendarProps} item={{ id: selected.id, title: selected.title, description: selected.description, category: selected.category, venue: selected.location?.name || '', lat: selected.location?.lat || 0, lng: selected.location?.lng || 0, starts_at: selected.starts_at || '', ends_at: selected.ends_at || '', author: selected.source }} /></details>
       </div>
     </article> : <>
