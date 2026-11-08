@@ -10,7 +10,7 @@ Datele importate pot fi neconfirmate; respingem ani/luni fără zi. Raportul „
 
 Vasile folosește Groq pe server și catalogul public de locuri. Folosește imaginea pixel wizard din vasile-avatar.json. Butonul flotant este mutabil; există și intrare în meniul web. Istoricul este per utilizator. Nu include datele private ale utilizatorilor în catalogul de recomandări.
 
-APK-ul existent 1.2.2/code6 folosește un hostname temporar. Recompilarea cu domeniul stabil este necesară. Cheia originală se păstrează privat, în afara repo. APK-ul distribuit nu are push închis fără FCM. iOS nu are un release semnat distribuit prin Apple.
+APK-ul temporar verificat la ultima pornire este 1.3.1/code9 folosește un hostname temporar. Recompilarea cu domeniul stabil este necesară. Cheia originală se păstrează privat, în afara repo. APK-ul distribuit nu are push închis fără FCM. iOS nu are un release semnat distribuit prin Apple.
 
 Validări anterioare: lint/TypeScript, teste backend pentru planuri, participări idempotente, ștergere/cascade și date parțiale; verificări Chromium și emulator. Au existat corecții pentru carduri de prieteni înghesuite, formularul de locație duplicat, Google Maps extern și scara hărții rămasă în mijloc în map-only. Satelitul este limitat la zoom16 pentru a evita tile-uri indisponibile; alte straturi merg până la19.
 

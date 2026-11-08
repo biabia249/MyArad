@@ -31,7 +31,7 @@ Arhiva privată este un snapshot la data împachetării, nu un backup care se ac
 ## Lucruri care nu trebuie considerate gata
 
 - Instalarea pe un Debian/Proxmox nou NU a fost executată aici; scripturile au fost verificate sintactic, iar arhivele au fost inspectate.
-- APK-ul are versiunea 1.2.2/code6, dar recuperarea ultimului tunel a eșuat la verificarea URL-ului în APK și a fost întreruptă când s-a cerut împachetarea. Nu distribui fișierul local/public ca release valid pentru un domeniu nou. Reconstruiește cu domeniul stabil și verifică URL-ul în bundle, certificatul original și instalarea reală.
+- Ultima pornire temporară a fost refăcută la cererea utilizatorului: APK 1.3.1/code9, URL-ul API verificat în bundle și certificatul original confirmat. Manifestul local `.cache/releases/manifest.json` conține adresa și hashul efectiv. Această verificare rezolvă tentativa anterioară eșuată, dar nu face APK-ul portabil: pentru domeniul stabil reconstruiește și verifică din nou. La această ultimă pornire nu era conectat un emulator sau telefon pentru test de instalare.
 - Schimbarea variabilei EXPO_PUBLIC_API_URL sau a CSS-ului nu garantează că Gradle/Metro regenerează resursele. Verifică conținutul APK-ului; build reușit nu înseamnă interfață actuală.
 - „Toate datele sunt 1 ianuarie” nu a fost reprodus integral. Datele comunității verificate în SQLite erau în noiembrie; am respins datele parțiale importate. Cere evenimentul și ecranul exact dacă problema reapare.
 - Participarea la evenimente importate din surse externe, push cu aplicația închisă prin FCM și release-ul iOS rămân de făcut.
