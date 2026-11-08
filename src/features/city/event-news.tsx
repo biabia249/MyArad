@@ -1,5 +1,6 @@
 import { isGamblingLink } from './link-policy';
 import { useCallback, useEffect, useState } from 'react';
+import { eventProgramLabel } from './event-program';
 import type { CityEvent, Place, CityProps } from './types';
 import { EventCalendarForm } from './calendar-choices';
 import { smartSearchScore } from './smart-search';
@@ -24,6 +25,7 @@ function phaseOf(article: Article) {
   if (start > Date.now()) return 'upcoming';
   return Number.isFinite(end) && end > start ? end > Date.now() ? 'now' : 'past' : 'unconfirmed';
 }
+const phaseLabel = (article: Article) => phaseOf(article) === 'unconfirmed' && eventProgramLabel(article) ? 'Program din anunț' : phaseLabels[phaseOf(article)];
 const fmt = (value?: string | null) => value && /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(value) && Number.isFinite(Date.parse(value)) ? new Date(value).toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
 export function EventNews({ request, events, onSelect, onCloseMap, onPublish, calendarProps, onEventsChanged, publishedEvent, onArticleOpen }: {
   onArticleOpen?: () => void;
@@ -72,9 +74,9 @@ export function EventNews({ request, events, onSelect, onCloseMap, onPublish, ca
       </div>
       <ResultsSplitter page="event-article" />
       <div className="news-article-body"><span className="news-kicker">{selected.source} · {categories.find(([id]) => id === selected.category)?.[1] || 'Eveniment'}</span>
-        <h1>{selected.title}</h1><span className={`news-phase phase-${phaseOf(selected)}`}>{phaseLabels[phaseOf(selected)]}</span><p className="news-date">{selected.published_at ? `Publicat ${fmt(selected.published_at)}` : 'Anunț de eveniment'}</p>
+        <h1>{selected.title}</h1><span className={`news-phase phase-${phaseOf(selected)}`}>{phaseLabel(selected)}</span><p className="news-date">{selected.published_at ? `Publicat ${fmt(selected.published_at)}` : 'Anunț de eveniment'}</p>
         {selected.source_kind === 'community' ? <EventAttendance key={selected.id} eventId={selected.id} initialCount={events.find((event) => event.id === selected.id)?.attending ?? selected.attending} initialGoing={!!selected.going} props={calendarProps} onChanged={onEventsChanged} /> : <p className="news-date">Pentru înscrierea la acest eveniment extern, consultă anunțul organizatorului. Participarea nu este sincronizată cu rețelele sociale.</p>}
-        <div className="news-schedule"><strong>Programul evenimentului</strong><p>{fmt(selected.starts_at) || 'Ora și data nu sunt confirmate în fluxul sursei.'}{selected.ends_at ? ` — ${fmt(selected.ends_at)}` : ''}</p></div>
+        <div className="news-schedule"><strong>Programul evenimentului</strong><p>{eventProgramLabel(selected) || 'Ora și data nu sunt confirmate în fluxul sursei.'}{selected.ends_at ? ` — ${fmt(selected.ends_at)}` : ''}</p></div>
         <h2>Ce trebuie să știi</h2><p className="news-body">{selected.description}</p>
         {selected.event_status?.includes('Cancelled') && <p role="status">Organizatorul marchează evenimentul ca anulat.</p>}
         <div className="news-schedule"><strong>Locație</strong><p>{selected.location ? `${selected.location.name} · ${selected.location.address}` : 'Locația exactă nu este confirmată. Consultă anunțul organizatorului.'}</p>
@@ -104,7 +106,7 @@ export function EventNews({ request, events, onSelect, onCloseMap, onPublish, ca
       <div className="news-stories"><div className="news-section-title"><h2>Acum și în curând</h2><span>{articles.length} articole</span></div><p className="news-date">În desfășurare, apoi evenimentele viitoare în ordine cronologică. Anunțurile fără dată apar la final.</p>{(dateFrom || dateTo) && <p className="news-date">Anunțurile fără dată confirmată sunt excluse din interval. Alege „Toate datele” pentru a le vedea.</p>}
         {busy && !feed && <p role="status">Căutăm cele mai recente anunțuri…</p>}
         {!busy && !articles.length && <div className="news-empty"><h3>Nicio știre pentru această selecție</h3><p>Încearcă altă categorie sau revino după actualizarea surselor.</p></div>}
-        {articles.map((article, index) => <button className={`news-card ${index === 0 ? 'news-featured' : ''}`} key={article.id} onClick={() => choose(article)}><Cover article={article} /><div className="news-card-copy"><span className="news-kicker">{article.source} · {categories.find(([id]) => id === article.category)?.[1] || 'Altele'}{article.source_kind === 'official' ? ' · Instituție oficială' : ''}</span><h3>{article.title}</h3>{article.source_kind === 'community' && <span className="news-attendance-count">{article.attending || 0} persoane merg{article.going ? ' · ✓ Mergi și tu' : ''}</span>}<span className={`news-phase phase-${phaseOf(article)}`}>{phaseLabels[phaseOf(article)]}</span><p>{index === 0 ? article.description.slice(0, 145) : fmt(article.starts_at || article.published_at) || 'Vezi detaliile'}</p><span className="news-card-bottom">{article.location?.name || 'Detalii în anunț'} <b>↗</b></span></div></button>)}
+        {articles.map((article, index) => <button className={`news-card ${index === 0 ? 'news-featured' : ''}`} key={article.id} onClick={() => choose(article)}><Cover article={article} /><div className="news-card-copy"><span className="news-kicker">{article.source} · {categories.find(([id]) => id === article.category)?.[1] || 'Altele'}{article.source_kind === 'official' ? ' · Instituție oficială' : ''}</span><h3>{article.title}</h3>{article.source_kind === 'community' && <span className="news-attendance-count">{article.attending || 0} persoane merg{article.going ? ' · ✓ Mergi și tu' : ''}</span>}<span className={`news-phase phase-${phaseOf(article)}`}>{phaseLabel(article)}</span><span className="news-event-date">{eventProgramLabel(article) || 'Program de confirmat'}</span>{index === 0 && <p>{article.description.slice(0, 145)}</p>}<span className="news-card-bottom">{article.location?.name || 'Detalii în anunț'} <b>↗</b></span></div></button>)}
       </div><footer className="news-footer"><button onClick={onPublish}>＋ Publică un eveniment</button><p>Surse: {feed?.sources.map((s) => `${s.name}${s.ok ? '' : ' (indisponibil)'}`).join(' · ') || 'Se conectează…'}</p>{feed && !feed.socialEnabled && <p>Căutarea publică Facebook / Instagram / TikTok nu este încă activată.</p>}</footer>
       </div>
     </>}

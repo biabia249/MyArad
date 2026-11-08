@@ -86,3 +86,4 @@ main.city-app[data-theme] .connection-list { padding:16px; border-radius:20px; b
 .city-app .vasile-portrait { display:inline-flex; align-items:center; justify-content:center; background:white; border-radius:50%; overflow:hidden; flex-shrink:0; }
 .city-app .vasile-launcher-letter.vasile-portrait { width:42px; height:42px; }
 .city-app .vasile-portrait img { width:100%; height:100%; display:block; object-fit:contain; transform:scale(2.65); image-rendering:pixelated; pointer-events:none; }
+.city-app .news-event-date { display:block; margin:8px 0; font-size:12px; font-weight:600; color:var(--ink); line-height:1.6; }

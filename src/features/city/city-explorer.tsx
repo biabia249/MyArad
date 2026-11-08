@@ -745,7 +745,7 @@ export default function CityExplorer(props: CityProps) {
           {props.userName && props.isFocused !== false && <Notifications api={api} ro={lang === 'ro'} onEnablePush={props.onEnablePush} onOpen={() => void props.onNavigate('/people')} />}
           {props.userName ? (
             <button
-              className="account"
+              className="account account-user"
               title={lang === "ro" ? "Programul meu" : "My schedule"}
               onClick={() => void props.onNavigate("/schedule")}
             >
