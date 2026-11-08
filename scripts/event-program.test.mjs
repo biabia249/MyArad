@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { eventProgramLabel } from '../src/features/city/event-program.ts';
+import { eventProgramLabel, eventProgramDays, eventProgramPhase } from '../src/features/city/event-program.ts';
 
 test('RSS publication date never becomes the displayed event program', () => {
   assert.equal(eventProgramLabel({ published_at: '2026-01-01T17:12:43Z' }), '');
@@ -14,4 +14,13 @@ test('organiser ranges and times remain intact, including cross-year exhibitions
 test('explicit event metadata takes precedence and partial years are not January 1', () => {
   assert.match(eventProgramLabel({ starts_at: '2026-11-12T19:00:00+02:00', published_at: '2026-01-01T00:00:00Z' }), /12 nov/);
   assert.equal(eventProgramLabel({ starts_at: '2026', published_at: '2026-01-01T00:00:00Z' }), '');
+});
+
+test('explicit source years support calendar ranges and current-event classification', () => {
+  const exhibition = { description: '6 noiembrie 2026 – 6 ianuarie 2027 Galeria Delta', published_at: '2026-01-01T16:51:23Z' };
+  assert.deepEqual(eventProgramDays(exhibition), { from:'2026-11-06', to:'2027-01-06' });
+  assert.equal(eventProgramPhase(exhibition, Date.parse('2026-11-08T12:00:00Z')), 'now');
+  assert.equal(eventProgramPhase(exhibition, Date.parse('2027-01-07T12:00:00Z')), 'past');
+  assert.equal(eventProgramDays({ description:'9 noiembrie, 19:00', published_at:'2026-01-01T00:00:00Z' }), null);
+  assert.equal(eventProgramDays({ description:'31 februarie 2026' }), null);
 });

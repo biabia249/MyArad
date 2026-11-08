@@ -1,4 +1,5 @@
-export type DatedEvent = { starts_at?: string | null; ends_at?: string | null; published_at?: string | null; event_status?: string };
+import { eventProgramDays, eventProgramPhase } from './event-program.ts';
+export type DatedEvent = { starts_at?: string | null; ends_at?: string | null; published_at?: string | null; event_status?: string; description?: string; title?: string };
 export function eventDay(value: string | number) {
   const date = new Date(value);
   if (!Number.isFinite(+date)) return '';
@@ -8,24 +9,14 @@ export function eventDay(value: string | number) {
 }
 export function inEventRange(event: DatedEvent, from: string, to: string) {
   if (!from && !to) return true;
-  const start = eventDay(event.starts_at || '');
-  if (!start) return false;
-  const endTime = Date.parse(event.ends_at || '');
-  const end = Number.isFinite(endTime) && endTime > Date.parse(event.starts_at || '') ? eventDay(endTime - 1) : start;
-  return (!to || start <= to) && (!from || end >= from);
+  const range = eventProgramDays(event);
+  return !!range && (!to || range.from <= to) && (!from || range.to >= from);
 }
 export function compareEvents(a: DatedEvent, b: DatedEvent, now = Date.now()) {
-  const rank = (event: DatedEvent) => {
-    if (/Cancelled|Postponed/.test(event.event_status || '')) return 4;
-    const start = Date.parse(event.starts_at || ''), end = Date.parse(event.ends_at || '');
-    if (!Number.isFinite(start)) return 2;
-    if (start > now) return 1;
-    if (Number.isFinite(end) && end > now && end > start) return 0;
-    return Number.isFinite(end) ? 3 : 2;
-  };
+  const rank = (event: DatedEvent) => ({ now:0, upcoming:1, unconfirmed:2, past:3, changed:4 })[eventProgramPhase(event, now)];
   const diff = rank(a) - rank(b);
   if (diff) return diff;
-  if (rank(a) <= 1) return Date.parse(a.starts_at || '') - Date.parse(b.starts_at || '');
+  if (rank(a) <= 1) return Date.parse(a.starts_at || eventProgramDays(a)?.from || '') - Date.parse(b.starts_at || eventProgramDays(b)?.from || '');
   return (Date.parse(b.published_at || '') || Date.parse(b.starts_at || '') || 0) - (Date.parse(a.published_at || '') || Date.parse(a.starts_at || '') || 0);
 }
 export function eventCategory(category: string, text: string) {

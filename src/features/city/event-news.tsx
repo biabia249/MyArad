@@ -1,6 +1,6 @@
 import { isGamblingLink } from './link-policy';
 import { useCallback, useEffect, useState } from 'react';
-import { eventProgramLabel } from './event-program';
+import { eventProgramLabel, eventProgramPhase } from './event-program';
 import type { CityEvent, Place, CityProps } from './types';
 import { EventCalendarForm } from './calendar-choices';
 import { smartSearchScore } from './smart-search';
@@ -18,13 +18,7 @@ type Article = {
 type Feed = { articles: Article[]; updated_at: string | null; stale: boolean; socialEnabled: boolean; sources: { name: string; ok: boolean }[] };
 const categories = [['all', 'Toate'], ['music', 'Muzică'], ['art', 'Artă & teatru'], ['film', 'Film'], ['family', 'Familie'], ['sport', 'Sport'], ['outdoors', 'În aer liber'], ['coffee', 'Cafea'], ['food', 'Gastronomie'], ['nightlife', 'Petreceri'], ['education', 'Educație'], ['community', 'Comunitate'], ['other', 'Altele']];
 const phaseLabels: Record<string, string> = { now: 'În desfășurare', upcoming: 'Urmează', unconfirmed: 'Program de confirmat', past: 'Încheiat', changed: 'Program modificat' };
-function phaseOf(article: Article) {
-  if (/Cancelled|Postponed/.test(article.event_status || '')) return 'changed';
-  const start = Date.parse(article.starts_at || ''), end = Date.parse(article.ends_at || '');
-  if (!Number.isFinite(start)) return 'unconfirmed';
-  if (start > Date.now()) return 'upcoming';
-  return Number.isFinite(end) && end > start ? end > Date.now() ? 'now' : 'past' : 'unconfirmed';
-}
+const phaseOf = eventProgramPhase;
 const phaseLabel = (article: Article) => phaseOf(article) === 'unconfirmed' && eventProgramLabel(article) ? 'Program din anunț' : phaseLabels[phaseOf(article)];
 const fmt = (value?: string | null) => value && /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(value) && Number.isFinite(Date.parse(value)) ? new Date(value).toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
 export function EventNews({ request, events, onSelect, onCloseMap, onPublish, calendarProps, onEventsChanged, publishedEvent, onArticleOpen }: {

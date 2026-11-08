@@ -14,6 +14,8 @@ test('calendar range uses Romanian days, includes overlapping events and exclude
   assert.equal(inEventRange({ starts_at: '2026-11-07T20:00:00+02:00', ends_at: '2026-11-08T00:00:00+02:00' }, '2026-11-08', '2026-11-08'), false);
   assert.equal(inEventRange({ published_at: '2026-11-07T12:00:00Z' }, '2026-11-07', ''), false);
   assert.ok(inEventRange({}, '', ''));
+  assert.ok(inEventRange({ description: '6 noiembrie 2026 – 6 ianuarie 2027 Galeria Delta' }, '2026-12-01', '2026-12-31'));
+  assert.equal(inEventRange({ description: '9 noiembrie, 19:00', published_at:'2026-01-01T00:00:00Z' }, '2026-11-09', '2026-11-09'), false);
 });
 test('every category maps to a selectable group', () => {
   assert.equal(eventCategory('community', 'Cinema Arta: film documentar'), 'film');
