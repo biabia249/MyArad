@@ -1,3 +1,4 @@
+import { isGamblingLink, isGamblingPlace } from '../src/features/city/link-policy.ts';
 import { randomUUID } from "node:crypto";
 import { createSocial, friendshipSummary } from './social.mjs';
 import { readFileSync } from "node:fs";
@@ -65,6 +66,12 @@ function placeCover(place) {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 function completePlace(place) {
+  place = { ...place };
+  const gamblingPlace = isGamblingPlace(`${place.name || ''} ${(place.tags || []).join(' ')}`);
+  for (const [key,value] of Object.entries(place)) {
+    if (typeof value !== 'string') continue;
+    if (isGamblingLink(value) || (gamblingPlace && /website|booking|ticket|social|facebook|instagram/i.test(key))) place[key] = '';
+  }
   const fallback = placeDefaults[place.category] || placeDefaults.landmark;
   const addressRo = place.address
     ? ` Se află la adresa ${place.address}, iar poziția din hartă te ajută să o găsești și să planifici traseul.`
@@ -155,7 +162,10 @@ export function createCity(store, config) {
     const path = url.pathname;
     if (path.startsWith('/city/social/')) return social(req, url, body);
     if (req.method === 'GET' && path === '/city/schools') return schoolCatalog;
-    if (req.method === "GET" && path === "/city/event-news") return eventNews(places, url.searchParams.get('q') || '');
+    if (req.method === "GET" && path === "/city/event-news") {
+      const feed = await eventNews(places, url.searchParams.get('q') || '');
+      return {...feed,articles:feed.articles.filter(article => !isGamblingLink(article.url) && !isGamblingPlace(article.title || ''))};
+    }
     if (req.method === "GET" && path === "/city/bootstrap") {
       let user = null;
       if (req.headers.authorization) {
