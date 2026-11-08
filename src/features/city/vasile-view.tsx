@@ -1,3 +1,4 @@
+import vasileAvatar from './vasile-avatar.json';
 import { useEffect, useRef, useState } from "react";
 import "./vasile.css";
 type Recommendation = {
@@ -86,7 +87,7 @@ export function VasileView({
     return (
       <section className="vasile-page">
         <div className="vasile-heading">
-          <span className="vasile-monogram">V</span>
+          <span className="vasile-monogram vasile-portrait"><img src={vasileAvatar} alt="" /></span>
           <div>
             <span className="eyebrow">MYARAD · VASILE</span>
             <h1>
@@ -107,7 +108,7 @@ export function VasileView({
   return (
     <section className="vasile-page">
       <header className="vasile-heading">
-        <span className="vasile-monogram">V</span>
+        <span className="vasile-monogram vasile-portrait"><img src={vasileAvatar} alt="" /></span>
         <div>
           <span className="eyebrow">
             {ro ? "ASISTENTUL MYARAD" : "YOUR MYARAD GUIDE"}

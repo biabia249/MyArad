@@ -1,3 +1,4 @@
+import vasileAvatar from './vasile-avatar.json';
 import { useEffect, useRef, useState } from 'react';
 
 type Point = { x: number; y: number };
@@ -46,7 +47,7 @@ export function VasileLauncher({ label, onOpen }: { label: string; onOpen: () =>
       if (ignoreClick.current && event.detail !== 0) { ignoreClick.current = false; return; }
       onOpen();
     }}>
-    <span className="vasile-launcher-letter" aria-hidden="true">V</span>
+    <span className="vasile-launcher-letter vasile-portrait" aria-hidden="true"><img src={vasileAvatar} alt="" draggable={false} /></span>
     <span className="vasile-launcher-name" aria-hidden="true">Vasile</span>
   </button>;
 }
