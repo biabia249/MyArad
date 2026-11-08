@@ -1,0 +1,23 @@
+[Unit]
+Description=MyArad gateway
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=myarad
+Group=myarad
+WorkingDirectory=/opt/myarad
+EnvironmentFile=/etc/myarad.env
+Environment=EXPO_PUBLIC_API_URL=/api
+Environment=MYARAD_PUBLIC_URL_FILE=/var/lib/myarad/public-url.txt
+ExecStart=/usr/local/bin/node server/public-preview.mjs
+Restart=always
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

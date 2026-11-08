@@ -67,3 +67,9 @@ SQLite data and local environment files are ignored by Git. The prototype permit
 any signed-in account to publish events when `EVENT_POSTING=signed-in`; password
 signup does not verify email ownership. Production requires an HTTPS backend,
 appropriate origins, deployment configuration, and physical-device testing.
+
+## Deploy later to Debian / Proxmox
+
+See [deploy/debian/README.md](deploy/debian/README.md) for a fresh Debian LXC setup with systemd, Caddy HTTPS, SQLite migration and stable-domain APK instructions. Read [WhatWeLearnt.md](WhatWeLearnt.md) and [deployment context](deploy/debian/STATE.md) before continuing development.
+
+Create the source package from the committed revision with `bash scripts/package-debian.sh ~/Downloads`. Add `--private` as the second argument only when creating the separate confidential migration backup; this contains real accounts and keys and must not be uploaded to GitHub.
