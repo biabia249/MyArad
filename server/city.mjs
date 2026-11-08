@@ -149,6 +149,9 @@ export function createCity(store, config) {
   const canPost = (user) =>
     !!user && (config.eventPosting === "signed-in" || !!user.google_sub);
   return async function city(req, url, body) {
+    const now = new Date().toISOString();
+    db.prepare('DELETE FROM city_events WHERE julianday(ends_at)<=julianday(?)').run(now);
+    db.prepare('DELETE FROM city_plans WHERE julianday(ends_at)<=julianday(?)').run(now);
     const path = url.pathname;
     if (path.startsWith('/city/social/')) return social(req, url, body);
     if (req.method === 'GET' && path === '/city/schools') return schoolCatalog;
@@ -466,14 +469,21 @@ export function createCity(store, config) {
         if (action === "attend") {
           if (typeof d.going !== "boolean")
             throw new HttpError(400, "Invalid attendance choice.");
-          if (d.going)
-            db.prepare(
-              "INSERT OR IGNORE INTO city_attendance VALUES (?,?)",
-            ).run(id, user.id);
-          else
-            db.prepare(
-              "DELETE FROM city_attendance WHERE event_id=? AND user_id=?",
-            ).run(id, user.id);
+          db.exec('BEGIN');
+          try {
+            if (d.going) {
+              db.prepare('INSERT OR IGNORE INTO city_attendance VALUES (?,?)').run(id, user.id);
+              if (!db.prepare('SELECT 1 FROM city_plans WHERE user_id=? AND event_id=?').get(user.id,id)) {
+                if (db.prepare('SELECT COUNT(*) AS n FROM city_plans WHERE user_id=?').get(user.id).n >= 300)
+                  throw new HttpError(400, 'Your schedule has reached 300 plans.');
+                db.prepare('INSERT INTO city_plans VALUES (?,?,?,?,?,?,?,?,?,?,?)').run(randomUUID(),user.id,null,id,found.title,found.venue,found.lat,found.lng,found.starts_at,found.ends_at,new Date().toISOString());
+              }
+            } else {
+              db.prepare('DELETE FROM city_attendance WHERE event_id=? AND user_id=?').run(id,user.id);
+              db.prepare('DELETE FROM city_plans WHERE event_id=? AND user_id=?').run(id,user.id);
+            }
+            db.exec('COMMIT');
+          } catch (error) { db.exec('ROLLBACK'); throw error; }
           return { ok: true };
         }
         const value = text(d, "body", 2000);

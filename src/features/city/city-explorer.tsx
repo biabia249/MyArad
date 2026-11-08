@@ -1534,7 +1534,7 @@ export default function CityExplorer(props: CityProps) {
       <nav className="drawer-links" aria-label={lang === 'ro' ? 'Pagini' : 'Pages'}>
         {[
           ["/map", t.street, 'pin'],
-          ...(props.calendarPlatform !== 'web' ? [["/vasile", "Vasile", "vasile"]] : []),
+          ["/vasile", "Vasile", "vasile"],
           ["/events", t.events, 'events'],
           ["/favorites", lang === "ro" ? "Favorite" : "Favorites", "pin"],
           ['/people', lang === 'ro' ? 'Mesaje' : 'Messages', 'message'],

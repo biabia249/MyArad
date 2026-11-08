@@ -43,7 +43,7 @@ export function eventMetadata(html) {
     try {
       const event = walk(JSON.parse(json));
       if (!event) continue;
-      const date = (v) => typeof v === 'string' && Number.isFinite(Date.parse(v)) ? v : null;
+      const date = (v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(v) && Number.isFinite(Date.parse(v)) ? v : null;
       const lat = Number(event.location?.geo?.latitude), lng = Number(event.location?.geo?.longitude);
       return { starts_at: date(event.startDate), ends_at: date(event.endDate), event_status: plain(event.eventStatus || ''),
         confirmed_location: lat >= 46.13 && lat <= 46.23 && lng >= 21.23 && lng <= 21.39 ? { name: plain(event.location.name), lat, lng, address: plain(event.location.address?.streetAddress || '') } : null };

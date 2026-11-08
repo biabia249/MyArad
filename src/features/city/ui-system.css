@@ -67,3 +67,12 @@ main.city-app[data-theme] .city-header :is(.sign-in-button,.account-user) span {
 
 main.city-app[data-theme] .city-header .account-user { max-width:180px; }
 main.city-app[data-theme] .city-header .account-user span { overflow:hidden; text-overflow:ellipsis; }
+
+/* Keep contact cards contained inside their rounded list surface. */
+main.city-app[data-theme] .social-contacts { box-sizing:border-box; padding:16px; border:1px solid var(--line); border-radius:20px; min-width:0; }
+main.city-app[data-theme] .social-person { box-sizing:border-box; width:100%; max-width:100%; border-radius:18px; }
+main.city-app[data-theme] .social-search { min-width:0; }
+main.city-app[data-theme] .social-search input { box-sizing:border-box; width:100%; min-width:0; }
+main.city-app[data-theme] .social-person-info>.friend-profile-button { box-sizing:border-box; max-width:100%; }
+main.city-app[data-theme] .connection-list { padding:16px; border-radius:20px; box-sizing:border-box; }
+@media(max-width:400px) { main.city-app[data-theme] .social-contacts { padding:12px; } }

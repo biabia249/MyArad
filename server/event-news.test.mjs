@@ -28,3 +28,12 @@ test('refresh coalesces requests and marks unavailable feeds honestly', async ()
   assert.equal(offline.stale, true);
   assert.equal(offline.updated_at, null);
 });
+
+test('partial publisher dates are unconfirmed instead of becoming January 1', () => {
+  for (const date of ['2026','2026-01','1',null]) {
+    const data={'@type':'Event',startDate:date,endDate:date};
+    const parsed=eventMetadata(`<script type="application/ld+json">${JSON.stringify(data)}</script>`);
+    assert.equal(parsed.starts_at,null);
+    assert.equal(parsed.ends_at,null);
+  }
+});

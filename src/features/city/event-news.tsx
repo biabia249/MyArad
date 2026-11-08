@@ -24,7 +24,7 @@ function phaseOf(article: Article) {
   if (start > Date.now()) return 'upcoming';
   return Number.isFinite(end) && end > start ? end > Date.now() ? 'now' : 'past' : 'unconfirmed';
 }
-const fmt = (value?: string | null) => value && Number.isFinite(Date.parse(value)) ? new Date(value).toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+const fmt = (value?: string | null) => value && /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(value) && Number.isFinite(Date.parse(value)) ? new Date(value).toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
 export function EventNews({ request, events, onSelect, onCloseMap, onPublish, calendarProps, onEventsChanged, publishedEvent, onArticleOpen }: {
   onArticleOpen?: () => void;
   publishedEvent?: CityEvent | null;

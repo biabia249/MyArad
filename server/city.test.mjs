@@ -351,3 +351,23 @@ test("event participants include their saved profile photo without dropping user
   assert.equal(details.data.participants.length, 1);
   assert.equal(details.data.participants[0].photo, photo);
 });
+
+test('attendance adds one correctly dated plan, cancellation removes it, and expired events are deleted', async t => {
+  const {call,token,store} = await fixture(t);
+  const input=event();
+  const id=(await call('/city/events',input,token)).data.event.id;
+  for (let i=0;i<2;i++) await call(`/city/events/${id}/attend`,{going:true},token);
+  let plans=(await call('/city/schedule',undefined,token)).data.plans;
+  assert.equal(plans.length,1);
+  assert.equal(plans[0].event_id,id);
+  assert.equal(plans[0].starts_at,input.starts_at);
+  assert.equal(plans[0].ends_at,input.ends_at);
+  await call(`/city/events/${id}/attend`,{going:false},token);
+  assert.equal((await call('/city/schedule',undefined,token)).data.plans.length,0);
+  await call(`/city/events/${id}/attend`,{going:true},token);
+  store.db.prepare('UPDATE city_events SET ends_at=? WHERE id=?').run('2020-01-01T00:00:00Z',id);
+  await call('/city/bootstrap');
+  assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM city_events WHERE id=?').get(id).n,0);
+  assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM city_attendance WHERE event_id=?').get(id).n,0);
+  assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM city_plans WHERE event_id=?').get(id).n,0);
+});
