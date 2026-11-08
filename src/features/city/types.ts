@@ -59,7 +59,7 @@ export type Comment = {
 };
 export type EventDetails = {
   event: CityEvent;
-  participants: { username: string; fullName: string }[];
+  participants: { username: string; fullName: string; photo?: string }[];
   attending: number;
   going: boolean;
   comments: Comment[];

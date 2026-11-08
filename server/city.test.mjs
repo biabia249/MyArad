@@ -100,7 +100,7 @@ test("guests browse places; authenticated users create, attend, comment and sugg
   );
   const details = (await call(`/city/events/${id}`, undefined, token)).data;
   assert.equal(details.going, true);
-  assert.deepEqual(details.participants, [{ username: 'city_tester', fullName: 'City Tester' }]);
+  assert.deepEqual(details.participants, [{ username: 'city_tester', fullName: 'City Tester', photo: '' }]);
   const ownEvent = (await call('/city/bootstrap', undefined, token)).data.events.find((event) => event.id === id);
   assert.equal(ownEvent.attending, 1);
   assert.equal(ownEvent.going, 1);
@@ -337,4 +337,17 @@ test('profile friends include accepted friendships only and keep private profile
   assert.equal((await call('/city/citizens/pending_friend/friends',undefined,friend.token)).status,404);
   await call('/city/social/friend/accepted_friend',{action:'remove'},token);
   assert.equal((await call('/city/citizens/city_tester')).data.friends,0);
+});
+
+test("event participants include their saved profile photo without dropping users without a bio", async (t) => {
+  const { call, token, store } = await fixture(t);
+  const created = await call('/city/events', event(), token);
+  const id = created.data.event.id;
+  await call(`/city/events/${id}/attend`, { going: true }, token);
+  assert.equal((await call(`/city/events/${id}`)).data.participants[0].photo, '');
+  const photo = 'data:image/png;base64,iVBORw0KGgo=';
+  store.db.prepare("INSERT INTO city_bios(user_id,photo) SELECT id,? FROM users WHERE username='city_tester'").run(photo);
+  const details = await call(`/city/events/${id}`);
+  assert.equal(details.data.participants.length, 1);
+  assert.equal(details.data.participants[0].photo, photo);
 });

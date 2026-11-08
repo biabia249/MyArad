@@ -647,11 +647,11 @@ export default function CityExplorer(props: CityProps) {
     let active = true;
     void Promise.resolve().then(() => {
       if(!active) return;
-      const place=data.places.find(p=>p.id===props.initialPlaceId || p.alias_ids?.includes(props.initialPlaceId!));
+      const place=props.initialPlaceId?.startsWith("event:") ? data.events.find(event=>event.id===props.initialPlaceId?.slice(6)) : data.places.find(p=>p.id===props.initialPlaceId || p.alias_ids?.includes(props.initialPlaceId!));
       if(place) {setSelected(place);setMobileList(false);}
     });
     return () => {active=false;};
-  }, [props.initialPlaceId, loading, data.places]);
+  }, [props.initialPlaceId, loading, data.places, data.events]);
   const selectedEvent = selected && isEvent(selected) ? selected : null;
   const selectedPlace = selected && !isEvent(selected) ? selected : null;
   const label = (key: string) => (t as Record<string, string>)[key] || key;

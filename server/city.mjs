@@ -439,7 +439,7 @@ export function createCity(store, config) {
         return {
           event: found,
           participants: db.prepare(
-            'SELECT u.username,u.full_name AS fullName FROM city_attendance a JOIN users u ON u.id=a.user_id WHERE a.event_id=? ORDER BY u.full_name COLLATE NOCASE,u.username',
+            'SELECT u.username,u.full_name AS fullName,COALESCE(b.photo,\'\') AS photo FROM city_attendance a JOIN users u ON u.id=a.user_id LEFT JOIN city_bios b ON b.user_id=u.id WHERE a.event_id=? ORDER BY u.full_name COLLATE NOCASE,u.username',
           ).all(id),
           attending: db
             .prepare(
