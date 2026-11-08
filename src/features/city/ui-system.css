@@ -81,3 +81,4 @@ main.city-app[data-theme] .connection-list { padding:16px; border-radius:20px; b
 
 /* Map-only mode must never retain floating panel controls. */
 .city-app.map-only :is(.panel-resize-layer,.panel-resize-handle,.results-splitter) { display:none !important; pointer-events:none !important; }
+.city-app.map-only .map-area .leaflet-bottom.leaflet-left { bottom:8px !important; left:0; }
